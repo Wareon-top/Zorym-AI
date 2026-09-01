@@ -1,20 +1,35 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zorym AI Workspace</title><link rel="stylesheet" href="styles.css"></head>
-<body><div class="shell">
-<aside class="side"><div class="brand"><b>Z</b> ZORYM</div><button class="new">+ Новая задача <kbd>⌘ K</kbd></button><p>РАБОЧЕЕ ПРОСТРАНСТВО</p><nav><a class="on">◈ <span>Мой AI Agent</span></a><a>▦ <span>Проекты</span><i>4</i></a><a>◇ <span>Games Studio</span></a><a>▤ <span>Build Vault</span></a></nav><div class="foot"><section><small>CREATOR</small><b>2,480 / 4,000</b><div class="meter"><i></i></div><em>Лимит обновится через 12 дней</em></section><button class="person"><strong>АК</strong><span><b>Алексей К.</b><small>Профиль и подписка</small></span><i>···</i></button></div></aside>
-<main><header><div><span>Проекты</span> / <b>Skyblock: Genesis</b></div><button>Открыть проект ↗</button></header>
-<div class="project"><div class="icon">◆</div><div><h1>Skyblock: Genesis</h1><p>Minecraft Paper 1.21.1 · Версия 12</p></div><aside><i></i> Рабочая среда <b>·</b> Изменён 12 мин назад</aside></div>
-<div class="grid"><section class="work"><div class="title"><div><small>ТЕКУЩАЯ ЗАДАЧА</small><h2>Система островов</h2></div><mark>Требует проверки</mark></div>
-<article class="request"><div class="who"><b>АК</b><span><strong>Алексей К.</strong><small>сегодня, 14:32</small></span></div><p>Сделай создание личного острова, приглашение друзей и сохранение прогресса. Нужны права владельца и меню управления.</p></article>
-<article class="agent"><div class="who"><b class="z">Z</b><span><strong>Zorym AI</strong><small>План подготовлен · 32 сек</small></span><em>Агент проекта</em></div><p>Подготовил изменения для системы островов. Проверьте состав файлов — после подтверждения Zorym AI сгенерирует черновики кода.</p><div class="counts"><b>4 <small>новых файла</small></b><b>2 <small>изменения</small></b><b>0 <small>удалений</small></b></div><button class="lime">Посмотреть план файлов →</button></article>
-<div class="title diff-title"><div><small>ПОСЛЕДНИЙ DIFF</small><h2>IslandService.java</h2></div><div class="tabs"><b>Diff</b><span>Полный файл</span></div></div>
-<article class="diff"><div>● <code>src/main/java/.../IslandService.java</code><b>+84</b></div><pre><span>28</span>  public void createIsland(Player player) {
-<ins><span>29</span>    UUID islandId = UUID.randomUUID();</ins>
-<ins><span>30</span>    Island island = Island.create(islandId, player.getUniqueId());</ins>
-<ins><span>31</span>    repository.save(island);</ins>
-<span>32</span>    player.teleport(spawnResolver.resolve(island));
-<span>33</span>  }</pre></article></section>
-<aside class="right"><section><small>СОСТОЯНИЕ ЗАДАЧИ</small><ol><li class="done"><b>✓</b><span>План файлов<em>Подготовлен</em></span></li><li class="now"><b>2</b><span>Проверка изменений<em>Ожидает подтверждения</em></span></li><li><b>3</b><span>Генерация кода<em>Не запускалась</em></span></li><li><b>4</b><span>Сборка и проверка<em>Не запускалась</em></span></li></ol><button class="lime full">Подтвердить план</button><button class="link">Отменить задачу</button></section>
-<section><small>ФАЙЛЫ ПРОЕКТА</small><div class="tree">⌄ src<br>&nbsp;&nbsp;⌄ main<br>&nbsp;&nbsp;&nbsp;&nbsp;⌄ java<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● <b>IslandService.java</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● IslandMenu.java<br>&nbsp;&nbsp;&nbsp;&nbsp;◇ resources<br>◇ build.gradle.kts<br>◇ plugin.yml</div><button class="link">Открыть все файлы →</button></section>
-<section class="vault"><div><small>BUILD VAULT</small><b>Версия 11</b><em>ZIP исходников готов</em></div><button>Скачать ZIP ↓</button></section></aside></div>
-<section class="recent"><div class="title"><div><small>ПРОЕКТЫ</small><h2>Недавние</h2></div><button class="link">Все проекты →</button></div><div class="cards"><article><b class="sq purple">SG</b><span><strong>Skyblock: Genesis</strong><small>Minecraft Paper · версия 12</small></span><mark>В работе</mark>→</article><article><b class="sq pink">NO</b><span><strong>Neon Obby</strong><small>Roblox Studio · черновик</small></span><mark>Черновик</mark>→</article><article class="create">＋ <b>Создать проект</b></article></div></section></main></div></body></html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zorym AI</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app">
+  <aside class="sidebar">
+    <a class="mark" href="#"><span>z</span></a>
+    <button class="collapse" aria-label="Свернуть меню">⌘</button>
+    <button class="new-chat"><i>＋</i> Новый чат <kbd>⌘ K</kbd></button>
+    <nav>
+      <a class="active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12h6M12 9v6"/></svg>Мой AI Agent</a>
+      <a><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 5v14M4 10h16"/></svg>Проекты <b>4</b></a>
+      <a><svg viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5M12 13v8"/></svg>Games Studio <em>new</em></a>
+      <a><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Build Vault</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="account"><span>АК</span><div><b>Алексей К.</b><small>Профиль и подписка</small></div><i>⌄</i></button>
+    </div>
+  </aside>
+  <main>
+    <header><div class="project-switcher"><span class="project-avatar">S</span><div><b>Skyblock: Genesis</b><small>Minecraft Paper</small></div><button>⌄</button></div><div class="header-actions"><button class="limits">2 480 <span>/ 4 000</span></button><button class="help">?</button></div></header>
+    <section class="center">
+      <div class="welcome"><p>Добрый день, Алексей</p><h1>Над чем поработаем?</h1><span>Zorym AI помогает проектировать, писать и проверять игровые проекты.</span></div>
+      <div class="composer">
+        <textarea placeholder="Опишите задачу для вашего игрового проекта..." aria-label="Задача"></textarea>
+        <div class="composer-footer"><button class="add" aria-label="Добавить контекст">＋</button><button class="context"><span class="dot"></span> Skyblock: Genesis <i>⌄</i></button><span class="hint">⌘ Enter для запуска</span><button class="send" aria-label="Запустить задачу">↑</button></div>
+      </div>
+      <div class="suggestions"><button>Создать механику <span>↗</span></button><button>Исправить ошибку <span>↗</span></button><button>Придумать игровой режим <span>↗</span></button></div>
+      <div class="recent">
+        <div class="recent-head"><span>ПОСЛЕДНЯЯ АКТИВНОСТЬ</span><button>Все задачи →</button></div>
+        <article><span class="status ready"></span><div><b>Черновики кода готовы к проверке</b><p>Система островов · Skyblock: Genesis</p></div><time>12 мин назад</time><button>Открыть →</button></article>
+        <article><span class="status archive"></span><div><b>ZIP исходников подготовлен</b><p>Версия 11 · Build Vault</p></div><time>Вчера</time><button>Скачать ↓</button></article>
+      </div>
+    </section>
+    <footer><span>Zorym AI может ошибаться. Проверяйте изменения перед применением.</span><div><a>Конфиденциальность</a><a>Поддержка</a></div></footer>
+  </main>
+</div></body></html>
