@@ -6,10 +6,10 @@
     <button class="collapse" aria-label="Свернуть меню">⌘</button>
     <button class="new-chat"><i>＋</i> Новый чат <kbd>⌘ K</kbd></button>
     <nav>
-      <a class="active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12h6M12 9v6"/></svg>Мой AI Agent</a>
-      <a><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 5v14M4 10h16"/></svg>Проекты <b>4</b></a>
-      <a><svg viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5M12 13v8"/></svg>Games Studio <em>new</em></a>
-      <a><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Build Vault</a>
+      <a class="active" data-view="agent"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12h6M12 9v6"/></svg>Мой AI Agent</a>
+      <a data-view="projects"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 5v14M4 10h16"/></svg>Проекты <b>4</b></a>
+      <a data-view="games"><svg viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5M12 13v8"/></svg>Games Studio <em>new</em></a>
+      <a data-view="vault"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Build Vault</a>
     </nav>
     <div class="sidebar-footer">
       <button class="account"><span>АК</span><div><b>Алексей К.</b><small>Профиль и подписка</small></div><i>⌄</i></button>
@@ -17,7 +17,7 @@
   </aside>
   <main>
     <header><div class="project-switcher"><span class="project-avatar">S</span><div><b>Skyblock: Genesis</b><small>Minecraft Paper</small></div><button>⌄</button></div><div class="header-actions"><button class="limits">2 480 <span>/ 4 000</span></button><button class="help">?</button></div></header>
-    <section class="center">
+    <section class="center view active" data-screen="agent">
       <div class="welcome"><p>Добрый день, Алексей</p><h1>Над чем поработаем?</h1><span>Zorym AI помогает проектировать, писать и проверять игровые проекты.</span></div>
       <div class="composer">
         <textarea placeholder="Опишите задачу для вашего игрового проекта..." aria-label="Задача"></textarea>
@@ -30,6 +30,23 @@
         <article><span class="status archive"></span><div><b>ZIP исходников подготовлен</b><p>Версия 11 · Build Vault</p></div><time>Вчера</time><button>Скачать ↓</button></article>
       </div>
     </section>
+    <section class="center view" data-screen="projects">
+      <div class="section-title"><div><p>ПРОЕКТЫ</p><h1>Ваши игровые миры</h1><span>Исходники, история задач и результаты сборки — в одном месте.</span></div><button class="solid">＋ Новый проект</button></div>
+      <div class="project-list">
+        <button class="project-card"><span class="project-mark blue">S</span><div><b>Skyblock: Genesis</b><small>Minecraft Paper · 12 задач</small></div><i>Открыть →</i></button>
+        <button class="project-card"><span class="project-mark purple">V</span><div><b>Vault Raiders</b><small>Roblox Studio · 4 задачи</small></div><i>Открыть →</i></button>
+        <button class="project-card"><span class="project-mark orange">A</span><div><b>Aether Parkour</b><small>Minecraft Paper · 2 задачи</small></div><i>Открыть →</i></button>
+      </div>
+    </section>
+    <section class="center view" data-screen="games">
+      <div class="section-title"><div><p>GAMES STUDIO</p><h1>Соберите основу игры</h1><span>Опишите направление — Zorym AI подготовит первую архитектуру.</span></div><small class="step">Шаг 1 из 1</small></div>
+      <form class="game-form"><label>Название игры<input placeholder="Например, Frostfall" required></label><fieldset><legend>Платформа</legend><div class="platform-choice"><button type="button" class="selected"><b>Minecraft Paper</b><span>Плагин для сервера</span></button><button type="button"><b>Roblox Studio</b><span>Luau и игровые системы</span></button></div></fieldset><div class="two-fields"><label>Жанр<select><option>Выживание</option><option>RPG</option><option>PvP</option><option>Приключение</option></select></label><label>Формат<select><option>Открытый мир</option><option>Раунды</option><option>Кооператив</option></select></label></div><button class="solid">Продолжить с Zorym AI →</button></form>
+    </section>
+    <section class="center view" data-screen="vault">
+      <div class="section-title"><div><p>BUILD VAULT</p><h1>Результаты сборок</h1><span>Готовые исходники, JAR и отчёты проверки.</span></div></div>
+      <div class="vault-row"><span class="project-mark blue">S</span><div><b>Skyblock: Genesis · Версия 11</b><p>ZIP исходников · 14 файлов · подготовлен сегодня</p></div><button>Скачать ↓</button></div>
+      <div class="vault-row"><span class="project-mark purple">V</span><div><b>Vault Raiders · Версия 4</b><p>План готов к проверке · сборка не запускалась</p></div><button>Открыть →</button></div>
+    </section>
     <footer><span>Zorym AI может ошибаться. Проверяйте изменения перед применением.</span><div><a>Конфиденциальность</a><a>Поддержка</a></div></footer>
   </main>
-</div></body></html>
+</div><script>const links=document.querySelectorAll('[data-view]'),screens=document.querySelectorAll('[data-screen]');links.forEach(link=>link.addEventListener('click',()=>{links.forEach(x=>x.classList.remove('active'));screens.forEach(x=>x.classList.remove('active'));link.classList.add('active');document.querySelector(`[data-screen="${link.dataset.view}"]`).classList.add('active')}));document.querySelectorAll('.platform-choice button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.platform-choice button').forEach(x=>x.classList.remove('selected'));button.classList.add('selected')}));</script></body></html>
