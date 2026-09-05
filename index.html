@@ -36,6 +36,10 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4.5 9.7 7a4 4 0 0 0 2 2l2.8 1.4-2.8 1.3a4 4 0 0 0-2 2L8.5 16.5l-1.3-2.8a4 4 0 0 0-2-2L3 10.5l2.2-1.4a4 4 0 0 0 2-2zM17 13l.7 1.5a3 3 0 0 0 1.5 1.5l1.5.7-1.5.8a3 3 0 0 0-1.5 1.5l-.7 1.5-.8-1.5a3 3 0 0 0-1.5-1.5l-1.5-.8 1.5-.7a3 3 0 0 0 1.5-1.5z"/></svg>
           <span class="nav-label">Мой AI Agent</span>
         </a>
+        <div class="chat-section">
+          <div class="chat-section-heading"><span>Последние чаты</span><button id="chat-list-action" type="button" aria-label="Все чаты">•••</button></div>
+          <div class="chat-history" id="chat-history" aria-label="История чатов"></div>
+        </div>
         <a class="nav-item" href="#projects" data-view="projects" data-title="Проекты" data-subtitle="4 рабочих пространства" data-avatar="P">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"/></svg>
           <span class="nav-label">Проекты</span><span class="nav-count">4</span>
@@ -79,6 +83,13 @@
 
     <section class="view active" data-screen="agent">
       <div class="agent-page page-container">
+        <div class="conversation-shell" id="conversation-shell">
+          <header class="conversation-header">
+            <div><span class="eyebrow">Чат с Zorym AI</span><h1 id="conversation-title">Система сезонных заданий</h1><p><span id="conversation-project">Skyblock: Genesis</span><i></i><span id="conversation-settings">Zorym 1 Orbit · Мастер</span></p></div>
+            <div class="conversation-actions"><button type="button" aria-label="Поделиться чатом"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg></button><button type="button" aria-label="Меню чата">•••</button></div>
+          </header>
+          <div class="chat-thread" id="chat-thread" aria-live="polite"></div>
+        </div>
         <div class="agent-hero"><span class="availability"><i></i>Zorym AI готов к работе</span><p>Добрый день, Алексей</p><h1>Что построим сегодня?</h1><span class="hero-copy">Опишите результат — агент разберёт задачу, составит план и покажет ход выполнения.</span></div>
 
         <div class="prompt-card">
@@ -178,6 +189,119 @@ const contextAvatar = document.querySelector('#context-avatar');
 const sidebar = document.querySelector('#sidebar');
 const mobileBackdrop = document.querySelector('#mobile-backdrop');
 const toast = document.querySelector('#toast');
+const agentPage = document.querySelector('.agent-page');
+const chatHistory = document.querySelector('#chat-history');
+const chatThread = document.querySelector('#chat-thread');
+const prompt = document.querySelector('#agent-prompt');
+const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; });
+
+let chats = [
+  {
+    id: 'seasonal-quests',
+    title: 'Система сезонных заданий',
+    project: 'Skyblock: Genesis',
+    model: 'Orbit',
+    mode: 'Мастер',
+    updated: 'сейчас',
+    messages: [
+      { role: 'user', time: '14:18', text: 'Разработай систему сезонных заданий: ежедневные и недельные цели, серии выполнения и награды без возможности получить их повторно.' },
+      { role: 'assistant', time: '14:18', text: 'Понял. Сначала проверю текущую структуру прогресса и наград, затем спроектирую совместимую систему сезонов. Изменения не затронут существующие данные игроков.', stage: 'Выполняю задачу', progress: 58 },
+      { role: 'user', time: '14:21', text: 'Предусмотри ещё восстановление серии один раз за сезон.' },
+      { role: 'assistant', time: '14:21', text: 'Добавлю одноразовый жетон восстановления и серверную проверку его использования. Сейчас связываю это правило с календарём сезона и журналом наград.', stage: 'Проверяю решение', progress: 82 }
+    ]
+  },
+  {
+    id: 'island-economy',
+    title: 'Экономика островов',
+    project: 'Skyblock: Genesis',
+    model: 'Quasar',
+    mode: 'Архитектор',
+    updated: '12 мин',
+    messages: [
+      { role: 'user', time: '13:42', text: 'Продумай экономику островов так, чтобы игроки не могли быстро обесценить редкие ресурсы.' },
+      { role: 'assistant', time: '13:43', text: 'Подготовил модель с динамическими лимитами добычи, расходными механиками и контролем денежной массы. В результате цена редких ресурсов реагирует на активность сервера, но остаётся предсказуемой для игроков.', stage: 'Результат готов', progress: 100 }
+    ]
+  },
+  {
+    id: 'reward-bug',
+    title: 'Ошибка повторной награды',
+    project: 'Skyblock: Genesis',
+    model: 'Comet',
+    mode: 'Импульс',
+    updated: 'вчера',
+    messages: [
+      { role: 'user', time: 'Вчера', text: 'Игрок иногда получает награду дважды после переподключения. Найди возможную причину.' },
+      { role: 'assistant', time: 'Вчера', text: 'Причина оказалась в повторной обработке незавершённого события после входа. Добавил идемпотентный идентификатор выдачи и проверку транзакции перед начислением.', stage: 'Завершено', progress: 100 }
+    ]
+  }
+];
+let activeChatId = 'seasonal-quests';
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, function (character) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[character];
+  });
+}
+
+function currentChat() { return chats.find(function (chat) { return chat.id === activeChatId; }); }
+
+function renderChatList() {
+  chatHistory.innerHTML = chats.slice(0, 5).map(function (chat) {
+    const active = chat.id === activeChatId ? ' active' : '';
+    return '<button class="chat-entry' + active + '" type="button" data-chat-id="' + escapeHtml(chat.id) + '">' +
+      '<span class="chat-bubble-icon"><svg viewBox="0 0 24 24"><path d="M5 6h14v10H9l-4 3z"/></svg></span>' +
+      '<span class="chat-entry-copy"><b>' + escapeHtml(chat.title) + '</b><small>' + escapeHtml(chat.updated) + '</small></span>' +
+      '<span class="chat-more">•••</span></button>';
+  }).join('');
+}
+
+function messageMarkup(message) {
+  const isUser = message.role === 'user';
+  const avatar = isUser ? 'АК' : '<span></span>';
+  const author = isUser ? 'Вы' : 'Zorym AI';
+  const model = isUser ? '' : '<em>Zorym 1 ' + escapeHtml(currentChat().model) + '</em>';
+  const workState = message.stage ? '<div class="message-work"><div><span><i></i>' + escapeHtml(message.stage) + '</span><b>' + Number(message.progress || 0) + '%</b></div><div class="message-progress"><i style="width:' + Number(message.progress || 0) + '%"></i></div><small>Анализ запроса → выполнение → проверка → результат</small></div>' : '';
+  const actions = isUser ? '' : '<div class="message-actions"><button type="button" aria-label="Скопировать ответ"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button><button type="button" aria-label="Полезный ответ"><svg viewBox="0 0 24 24"><path d="M7 21H4V10h3M7 10l4-7 2 1v5h6l1 2-2 8H7z"/></svg></button><button type="button" aria-label="Неполезный ответ"><svg viewBox="0 0 24 24"><path d="M7 3H4v11h3M7 14l4 7 2-1v-5h6l1-2-2-8H7z"/></svg></button></div>';
+  return '<article class="chat-message ' + (isUser ? 'user-message' : 'assistant-message') + '">' +
+    '<div class="message-avatar">' + avatar + '</div><div class="message-column"><header><div><b>' + author + '</b>' + model + '</div><time>' + escapeHtml(message.time) + '</time></header>' +
+    '<div class="message-body"><p>' + escapeHtml(message.text) + '</p>' + workState + '</div>' + actions + '</div></article>';
+}
+
+function syncChatChoices(chat) {
+  document.querySelectorAll('[data-choice-group="model"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.model); });
+  document.querySelectorAll('[data-choice-group="mode"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.mode); });
+}
+
+function renderConversation(chat) {
+  if (!chat || !chat.messages.length) {
+    agentPage.classList.remove('chat-active');
+    return;
+  }
+  agentPage.classList.add('chat-active');
+  document.querySelector('#conversation-title').textContent = chat.title;
+  document.querySelector('#conversation-project').textContent = chat.project;
+  document.querySelector('#conversation-settings').textContent = 'Zorym 1 ' + chat.model + ' · ' + chat.mode;
+  document.querySelector('.project-context b').textContent = chat.project;
+  chatThread.innerHTML = chat.messages.map(messageMarkup).join('');
+  syncChatChoices(chat);
+}
+
+function syncChatContext(chat) {
+  contextTitle.textContent = chat.title;
+  contextSubtitle.textContent = chat.project;
+  contextAvatar.textContent = 'Z';
+  agentLink.dataset.subtitle = chat.project;
+}
+
+function openChat(chatId) {
+  const chat = chats.find(function (item) { return item.id === chatId; });
+  if (!chat) return;
+  activeChatId = chat.id;
+  showView(agentLink);
+  renderChatList();
+  renderConversation(chat);
+  syncChatContext(chat);
+}
 
 function notify(message) {
   toast.textContent = message;
@@ -194,16 +318,41 @@ function showView(link, updateHash) {
   if (updateHash !== false) window.location.hash = link.dataset.view;
   window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu();
 }
-links.forEach(function (link) { link.addEventListener('click', function (event) { event.preventDefault(); showView(link); }); });
+links.forEach(function (link) { link.addEventListener('click', function (event) { event.preventDefault(); showView(link); if (link.dataset.view === 'agent' && currentChat()) syncChatContext(currentChat()); }); });
 document.querySelector('#mobile-menu').addEventListener('click', function () { sidebar.classList.add('mobile-open'); mobileBackdrop.classList.add('show'); });
 mobileBackdrop.addEventListener('click', closeMobileMenu);
 document.querySelector('#sidebar-collapse').addEventListener('click', function () { document.body.classList.toggle('sidebar-collapsed'); });
 
-function beginNewChat() {
-  const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; });
-  showView(agentLink); document.querySelector('#agent-prompt').value = ''; document.querySelector('#agent-prompt').focus(); notify('Новый чат готов');
+function beginNewChat(projectName) {
+  const selectedModel = document.querySelector('[data-choice-group="model"] .selected');
+  const selectedMode = document.querySelector('[data-choice-group="mode"] .selected');
+  const chat = {
+    id: 'chat-' + Date.now(),
+    title: 'Новый чат',
+    project: typeof projectName === 'string' ? projectName : document.querySelector('.project-context b').textContent,
+    model: selectedModel ? selectedModel.textContent.trim() : 'Orbit',
+    mode: selectedMode ? selectedMode.textContent.trim() : 'Мастер',
+    updated: 'сейчас',
+    messages: []
+  };
+  chats.unshift(chat);
+  activeChatId = chat.id;
+  showView(agentLink);
+  agentPage.classList.remove('chat-active');
+  document.querySelector('.project-context b').textContent = chat.project;
+  prompt.value = '';
+  renderChatList();
+  syncChatChoices(chat);
+  syncChatContext(chat);
+  prompt.focus();
+  notify('Новый чат создан');
 }
 document.querySelector('#new-chat').addEventListener('click', beginNewChat);
+chatHistory.addEventListener('click', function (event) {
+  const entry = event.target.closest('[data-chat-id]');
+  if (entry) openChat(entry.dataset.chatId);
+});
+document.querySelector('#chat-list-action').addEventListener('click', function () { notify('Показаны последние чаты'); });
 
 document.querySelectorAll('[data-choice-group]').forEach(function (group) {
   group.querySelectorAll('button').forEach(function (button) {
@@ -211,17 +360,42 @@ document.querySelectorAll('[data-choice-group]').forEach(function (group) {
       group.querySelectorAll('button').forEach(function (item) { item.classList.remove('selected'); }); button.classList.add('selected');
       if (group.dataset.choiceGroup === 'platform') document.querySelector('#concept-platform').textContent = button.dataset.platformName;
       if (group.dataset.choiceGroup === 'project-filter') filterProjects(button.textContent.trim().toLowerCase());
+      if ((group.dataset.choiceGroup === 'model' || group.dataset.choiceGroup === 'mode') && currentChat()) {
+        currentChat()[group.dataset.choiceGroup] = button.textContent.trim();
+        if (currentChat().messages.length) renderConversation(currentChat());
+      }
     });
   });
 });
 
-const prompt = document.querySelector('#agent-prompt');
 document.querySelectorAll('[data-prompt]').forEach(function (button) { button.addEventListener('click', function () { prompt.value = button.dataset.prompt; prompt.focus(); }); });
-document.querySelector('#send-task').addEventListener('click', function () {
+function makeChatTitle(text) {
+  const cleaned = text.replace(/^(пожалуйста|можешь|нужно|хочу|давай)\s+/i, '').replace(/\s+/g, ' ').trim();
+  const words = cleaned.split(' ').slice(0, 5).join(' ').replace(/[.,!?;:]+$/g, '');
+  const title = words || 'Новая задача';
+  return title.charAt(0).toUpperCase() + title.slice(1) + (cleaned.split(' ').length > 5 ? '…' : '');
+}
+
+function sendCurrentMessage() {
   if (!prompt.value.trim()) { notify('Сначала опишите задачу'); prompt.focus(); return; }
-  const title = prompt.value.trim().split(/[.!?]/)[0].slice(0, 58);
-  document.querySelector('#active-task-title').textContent = title; document.querySelector('#active-task-status').textContent = 'Анализирует запрос'; document.querySelector('#task-progress-bar').style.width = '18%'; document.querySelector('#active-task-card').classList.add('task-updated');
-  notify('Zorym AI начал анализ задачи'); document.querySelector('#active-task-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  let chat = currentChat();
+  if (!chat) { beginNewChat(); chat = currentChat(); }
+  const text = prompt.value.trim();
+  if (!chat.messages.length) chat.title = makeChatTitle(text);
+  const time = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+  chat.messages.push({ role: 'user', time: time, text: text });
+  chat.messages.push({ role: 'assistant', time: time, text: 'Принял задачу. Сначала изучаю контекст и зависимости, затем подготовлю решение и проверю связанные части. Здесь будут появляться только ключевые этапы работы.', stage: 'Анализирую запрос', progress: 18 });
+  chat.updated = 'сейчас';
+  prompt.value = '';
+  renderChatList();
+  renderConversation(chat);
+  syncChatContext(chat);
+  notify('Zorym AI начал работу');
+  window.setTimeout(function () { chatThread.scrollTo({ top: chatThread.scrollHeight, behavior: 'smooth' }); }, 0);
+}
+document.querySelector('#send-task').addEventListener('click', sendCurrentMessage);
+prompt.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { event.preventDefault(); sendCurrentMessage(); }
 });
 
 function filterProjects(filter) { document.querySelectorAll('.project-tile').forEach(function (card) { card.hidden = filter !== 'все' && card.dataset.platform !== filter; }); }
@@ -234,7 +408,7 @@ const gameName = document.querySelector('#game-name');
 gameName.addEventListener('input', function () { document.querySelector('#concept-name').textContent = gameName.value.trim() || 'Новый проект'; document.querySelector('.concept-mark').textContent = (gameName.value.trim()[0] || 'N').toUpperCase(); });
 document.querySelector('#studio-form').addEventListener('submit', function (event) { event.preventDefault(); notify('Концепция передана Zorym AI'); });
 
-document.querySelector('#business-task').addEventListener('click', function () { const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; }); agentLink.dataset.subtitle = 'Northstar Group'; showView(agentLink); prompt.placeholder = 'Опишите бизнес-задачу, желаемый результат и ограничения…'; prompt.focus(); });
+document.querySelector('#business-task').addEventListener('click', function () { beginNewChat('Northstar Group'); prompt.placeholder = 'Опишите бизнес-задачу, желаемый результат и ограничения…'; });
 document.querySelectorAll('.approve-button').forEach(function (button) { button.addEventListener('click', function () { button.textContent = 'Утверждено'; button.disabled = true; button.closest('article').classList.add('approved'); notify('Решение утверждено'); }); });
 
 function filterVault() {
@@ -253,7 +427,11 @@ function closeProfile() { profileDrawer.classList.remove('open'); drawerBackdrop
 document.querySelector('#account-button').addEventListener('click', openProfile); document.querySelector('#top-avatar').addEventListener('click', openProfile); document.querySelector('#close-profile').addEventListener('click', closeProfile); drawerBackdrop.addEventListener('click', closeProfile);
 document.querySelector('#command-button').addEventListener('click', function () { notify('Поиск по проектам, задачам и файлам'); });
 document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeMobileMenu(); } });
-const initialView = links.find(function (link) { return link.dataset.view === window.location.hash.slice(1); }); if (initialView) showView(initialView, false);
+renderChatList();
+renderConversation(currentChat());
+const initialView = links.find(function (link) { return link.dataset.view === window.location.hash.slice(1); });
+if (initialView) showView(initialView, false);
+if (!initialView || initialView.dataset.view === 'agent') syncChatContext(currentChat());
 </script>
 </body>
 </html>
