@@ -88,6 +88,60 @@
 .business-features ul { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 20px; margin: 0; padding: 0; color: #a3a89f; font-size: 10px; list-style: none; }
 .business-features li::before { margin-right: 7px; color: #8b7af3; content: "✓"; }
 
+.signature-section { position: relative; overflow: hidden; background: #eef0ec; }
+.signature-section::before { position: absolute; top: 80px; left: 50%; width: 760px; height: 500px; border-radius: 50%; background: radial-gradient(circle,rgba(108,92,231,.1),transparent 68%); content: ""; transform: translateX(-50%); pointer-events: none; }
+.signature-section .container { position: relative; z-index: 1; }
+.browser-showcase { position: relative; display: grid; grid-template-columns: .8fr 1.2fr; gap: 54px; overflow: hidden; border-radius: 28px; background: #191b19; color: #fff; padding: 52px 52px 112px; box-shadow: 0 34px 80px rgba(24,27,22,.18); }
+.browser-showcase::after { position: absolute; top: -320px; right: -190px; width: 650px; height: 650px; border: 1px solid rgba(139,122,243,.15); border-radius: 50%; content: ""; }
+.browser-copy { position: relative; z-index: 2; padding-top: 10px; }
+.signature-kicker { display: flex; align-items: center; gap: 9px; color: #aaa69a; font-size: 10px; font-weight: 740; letter-spacing: .09em; text-transform: uppercase; }
+.signature-kicker i { width: 8px; height: 8px; border-radius: 50%; background: #8e7cf5; box-shadow: 0 0 0 5px rgba(142,124,245,.1); }
+.browser-copy h3 { margin: 26px 0 0; font-size: clamp(38px,4.2vw,58px); font-weight: 590; letter-spacing: -.062em; line-height: 1.02; }
+.browser-copy h3 em { color: #898f86; font-style: normal; }
+.browser-copy > p { max-width: 500px; margin: 24px 0 0; color: #989e95; font-size: 13px; line-height: 1.7; }
+.browser-safety { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.browser-safety span { border: 1px solid rgba(255,255,255,.09); border-radius: 99px; background: rgba(255,255,255,.04); color: #a9aea5; padding: 8px 10px; font-size: 9px; }
+.browser-window { position: relative; z-index: 2; align-self: center; overflow: hidden; border: 1px solid rgba(255,255,255,.11); border-radius: 18px; background: #f7f8f5; color: #242723; box-shadow: 0 28px 60px rgba(0,0,0,.28); transform: rotate(1.2deg); }
+.browser-bar { display: flex; align-items: center; gap: 6px; min-height: 44px; border-bottom: 1px solid #e2e4de; background: #eef0ec; padding: 0 13px; }
+.browser-bar > i { width: 7px; height: 7px; border-radius: 50%; background: #c8cbc4; }
+.browser-bar > span { flex: 1; margin-left: 8px; border: 1px solid #e0e2dc; border-radius: 8px; background: #fafbf8; color: #8a8e86; padding: 7px 10px; font-size: 9px; }
+.browser-bar > b { color: #4a7e61; font-size: 8px; font-weight: 710; text-transform: uppercase; }
+.browser-body { padding: 25px; }
+.browser-task { border-radius: 14px; background: #232622; color: #fff; padding: 22px; }
+.browser-task small { color: #8f82e7; font-size: 8px; font-weight: 760; letter-spacing: .1em; }
+.browser-task strong { display: block; max-width: 320px; margin-top: 11px; font-size: 17px; font-weight: 590; letter-spacing: -.025em; }
+.browser-task > span { display: flex; align-items: center; gap: 7px; margin-top: 22px; color: #9ba097; font-size: 9px; }
+.browser-task > span i { width: 7px; height: 7px; border-radius: 50%; background: #8b79f4; box-shadow: 0 0 0 5px rgba(139,121,244,.11); animation: browser-pulse 1.8s infinite; }
+.source-stack { display: grid; gap: 8px; margin-top: 12px; }
+.source-stack > div { display: grid; grid-template-columns: 27px 1fr 22px; align-items: center; gap: 11px; border: 1px solid #e4e6e0; border-radius: 11px; background: #fff; padding: 11px; }
+.source-stack b { color: #aaaDA6; font-size: 8px; }
+.source-stack strong,.source-stack small { display: block; }
+.source-stack strong { font-size: 10px; font-weight: 620; }
+.source-stack small { margin-top: 3px; color: #969a92; font-size: 8px; }
+.source-stack i { color: #6b5bd5; font-size: 10px; font-style: normal; text-align: center; }
+.browser-levels { position: absolute; z-index: 3; right: 52px; bottom: 28px; left: 52px; display: grid; grid-template-columns: repeat(5,1fr); overflow: hidden; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; background: rgba(255,255,255,.035); backdrop-filter: blur(12px); }
+.browser-levels div { border-left: 1px solid rgba(255,255,255,.08); padding: 13px 15px; }
+.browser-levels div:first-child { border-left: 0; }
+.browser-levels small,.browser-levels b,.browser-levels span { display: block; }
+.browser-levels small { color: #777d74; font-size: 7px; font-weight: 730; letter-spacing: .08em; text-transform: uppercase; }
+.browser-levels b { margin-top: 5px; color: #dadcd7; font-size: 10px; }
+.browser-levels span { margin-top: 3px; color: #7f857c; font-size: 8px; }
+.signature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 12px; }
+.signature-card { position: relative; min-height: 255px; overflow: hidden; border: 1px solid #dfe2db; border-radius: 20px; background: rgba(255,255,255,.8); padding: 25px; box-shadow: var(--shadow-sm); }
+.signature-card > span { color: #afb2ab; font-size: 9px; font-weight: 720; }
+.feature-glyph { display: grid; width: 44px; height: 44px; margin-top: 31px; place-items: center; border-radius: 13px; background: var(--violet-soft); color: #6554d0; font-size: 20px; font-style: normal; }
+.signature-card h3 { margin: 20px 0 0; font-size: 20px; font-weight: 620; letter-spacing: -.035em; }
+.signature-card p { max-width: 310px; margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.signature-card > small { position: absolute; bottom: 23px; left: 25px; color: #969a92; font-size: 8px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+.signature-card.dark { border-color: #292c29; background: #202320; color: #fff; }
+.signature-card.dark p,.signature-card.dark > small { color: #838980; }
+.signature-card.dark .feature-glyph { background: rgba(139,122,243,.12); color: #a99cf5; }
+.signature-card.business { border-color: #6654d4; background: #6c5ce7; color: #fff; }
+.signature-card.business::after { position: absolute; right: -75px; bottom: -130px; width: 240px; height: 240px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; content: ""; }
+.signature-card.business p,.signature-card.business > small,.signature-card.business > span { color: rgba(255,255,255,.68); }
+.signature-card.business .feature-glyph { background: rgba(255,255,255,.13); color: #fff; }
+@keyframes browser-pulse { 50% { opacity: .45; transform: scale(.8); } }
+
 .comparison-section { background: #fafbf8; }
 .comparison-table { overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: #fff; box-shadow: var(--shadow-sm); }
 .comparison-row { display: grid; grid-template-columns: 1.35fr repeat(5,1fr); min-width: 960px; border-bottom: 1px solid var(--line-soft); }
@@ -148,6 +202,9 @@
   .limit-layout { grid-template-columns: 1fr; gap: 60px; }
   .addon-grid { grid-template-columns: 1fr; }
   .addon-grid article { min-height: 0; }
+  .browser-showcase { grid-template-columns: 1fr; padding-bottom: 126px; }
+  .browser-window { transform: none; }
+  .signature-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   .pricing-hero { padding: 140px 0 80px; }
@@ -162,6 +219,9 @@
   .business-price-block { position: relative; top: auto; right: auto; width: auto; margin: 0 28px; }
   .business-features { position: relative; right: auto; bottom: auto; left: auto; grid-template-columns: repeat(3,1fr); margin: 34px 28px 36px; }
   .business-features ul { grid-column: 1 / -1; margin-top: 10px; }
+  .browser-showcase { gap: 34px; padding: 36px 28px 152px; }
+  .browser-levels { right: 28px; bottom: 25px; left: 28px; grid-template-columns: repeat(5,130px); overflow-x: auto; }
+  .signature-grid { grid-template-columns: 1fr; }
   .limit-section { padding: 90px 0; }
 }
 @media (max-width: 560px) {
@@ -176,6 +236,11 @@
   .business-features > div { display: grid; grid-template-columns: 85px 1fr; align-items: center; }
   .business-features > div small { margin-top: 0; }
   .business-features ul { grid-template-columns: 1fr; }
+  .browser-showcase { padding-right: 20px; padding-left: 20px; }
+  .browser-copy h3 { font-size: 38px; }
+  .browser-body { padding: 15px; }
+  .browser-levels { right: 20px; left: 20px; }
+  .signature-card { min-height: 240px; }
   .addon-grid article { grid-template-columns: 52px 1fr; padding: 20px; }
   .addon-grid article > span { width: 48px; height: 48px; border-radius: 13px; }
   .pricing-final .container > div:last-child { flex-direction: column; }
