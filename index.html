@@ -3,435 +3,246 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
+  <meta name="description" content="Zorym AI превращает запрос в план, выполненную задачу и готовый результат — для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
-  <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Zorym AI — поручайте результат</title>
+  <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-<div class="mobile-backdrop" id="mobile-backdrop"></div>
-
-<div class="app-shell">
-  <aside class="sidebar" id="sidebar" aria-label="Основная навигация">
-    <div class="brand-row">
-      <a class="wordmark" href="#agent" aria-label="Zorym AI">
-        <span class="brand-symbol"><i></i></span>
-        <span class="brand-name">Zorym</span>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#top" aria-label="Zorym AI — главная">
+        <span class="brand-symbol"><i></i></span><span>Zorym</span>
       </a>
-      <button class="sidebar-collapse" id="sidebar-collapse" type="button" aria-label="Свернуть меню">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 7-5 5 5 5"/></svg>
-      </button>
+      <nav class="desktop-nav" aria-label="Навигация по странице">
+        <a href="#benefits">Возможности</a>
+        <a href="#solutions">Решения</a>
+        <a href="#how">Как работает</a>
+        <a href="#trust">Безопасность</a>
+      </nav>
+      <div class="header-actions">
+        <a class="login-link" href="app.html#agent">Войти</a>
+        <a class="header-cta" href="app.html#agent">Создать аккаунт <span>↗</span></a>
+        <button class="menu-button" id="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+      </div>
     </div>
-
-    <button class="new-chat" id="new-chat" type="button">
-      <span class="new-chat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-      <span class="nav-label">Новый чат</span>
-      <kbd>⌘ K</kbd>
-    </button>
-
-    <nav class="main-nav">
-      <div class="nav-group">
-        <p class="nav-heading">Рабочее пространство</p>
-        <a class="nav-item active" href="#agent" data-view="agent" data-title="Мой AI Agent" data-subtitle="Skyblock: Genesis" data-avatar="Z">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4.5 9.7 7a4 4 0 0 0 2 2l2.8 1.4-2.8 1.3a4 4 0 0 0-2 2L8.5 16.5l-1.3-2.8a4 4 0 0 0-2-2L3 10.5l2.2-1.4a4 4 0 0 0 2-2zM17 13l.7 1.5a3 3 0 0 0 1.5 1.5l1.5.7-1.5.8a3 3 0 0 0-1.5 1.5l-.7 1.5-.8-1.5a3 3 0 0 0-1.5-1.5l-1.5-.8 1.5-.7a3 3 0 0 0 1.5-1.5z"/></svg>
-          <span class="nav-label">Мой AI Agent</span>
-        </a>
-        <div class="chat-section">
-          <div class="chat-section-heading"><span>Последние чаты</span><button id="chat-list-action" type="button" aria-label="Все чаты">•••</button></div>
-          <div class="chat-history" id="chat-history" aria-label="История чатов"></div>
-        </div>
-        <a class="nav-item" href="#projects" data-view="projects" data-title="Проекты" data-subtitle="4 рабочих пространства" data-avatar="P">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"/></svg>
-          <span class="nav-label">Проекты</span><span class="nav-count">4</span>
-        </a>
-      </div>
-      <div class="nav-group">
-        <p class="nav-heading">Продукты</p>
-        <a class="nav-item" href="#games" data-view="games" data-title="Games Studio" data-subtitle="Создание игровых проектов" data-avatar="G">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
-          <span class="nav-label">Games Studio</span><span class="nav-badge">new</span>
-        </a>
-        <a class="nav-item" href="#business" data-view="business" data-title="Zorym Business" data-subtitle="Northstar Group" data-avatar="N">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l6-3v15M10 9h10v11M14 13h2M14 16h2"/></svg>
-          <span class="nav-label">Zorym Business</span><span class="nav-count nav-count-accent">3</span>
-        </a>
-        <a class="nav-item" href="#vault" data-view="vault" data-title="Build Vault" data-subtitle="Результаты и версии" data-avatar="V">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>
-          <span class="nav-label">Build Vault</span>
-        </a>
-      </div>
-    </nav>
-
-    <div class="sidebar-bottom">
-      <div class="resource-card"><div><span>Ресурсы</span><strong>62%</strong></div><div class="resource-track"><i></i></div><small>2 480 из 4 000 единиц</small></div>
-      <button class="account" id="account-button" type="button" aria-haspopup="dialog"><span class="account-avatar">АК</span><span class="account-copy"><b>Алексей К.</b><small>Pro · Личное пространство</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 10 3 3 3-3"/></svg></button>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#benefits">Возможности</a><a href="#solutions">Решения</a><a href="#how">Как работает</a><a href="#trust">Безопасность</a><a href="app.html#agent">Войти в кабинет</a>
     </div>
-  </aside>
+  </header>
 
-  <main class="app-main">
-    <header class="topbar">
-      <div class="topbar-left">
-        <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Открыть меню"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button>
-        <div class="workspace-context"><span class="workspace-avatar" id="context-avatar">Z</span><div><b id="context-title">Мой AI Agent</b><small id="context-subtitle">Skyblock: Genesis</small></div><button type="button" aria-label="Сменить пространство"><svg viewBox="0 0 24 24"><path d="m9 10 3 3 3-3"/></svg></button></div>
-      </div>
-      <div class="topbar-actions">
-        <button class="command-button" type="button" id="command-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><span>Поиск</span><kbd>⌘ /</kbd></button>
-        <button class="round-button notification-button" type="button" aria-label="Уведомления"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></svg><i></i></button>
-        <button class="top-avatar" type="button" id="top-avatar" aria-label="Открыть профиль">АК</button>
-      </div>
-    </header>
-
-    <section class="view active" data-screen="agent">
-      <div class="agent-page page-container">
-        <div class="conversation-shell" id="conversation-shell">
-          <header class="conversation-header">
-            <div><span class="eyebrow">Чат с Zorym AI</span><h1 id="conversation-title">Система сезонных заданий</h1><p><span id="conversation-project">Skyblock: Genesis</span><i></i><span id="conversation-settings">Zorym 1 Orbit · Мастер</span></p></div>
-            <div class="conversation-actions"><button type="button" aria-label="Поделиться чатом"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg></button><button type="button" aria-label="Меню чата">•••</button></div>
-          </header>
-          <div class="chat-thread" id="chat-thread" aria-live="polite"></div>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <span class="hero-kicker"><i></i>AI-агент для реальной работы</span>
+          <h1>Не просите ИИ помочь.<br><em>Поручайте ему результат.</em></h1>
+          <p>Zorym AI понимает задачу, составляет план, выполняет работу и показывает ход — от первой идеи до готовых файлов.</p>
+          <div class="hero-actions">
+            <a class="primary-cta" href="app.html#agent">Начать работу <span>→</span></a>
+            <a class="secondary-cta" href="#how"><span class="play-icon">▶</span>Посмотреть, как работает</a>
+          </div>
+          <div class="hero-assurances"><span><i>✓</i>План до запуска</span><span><i>✓</i>Можно остановить</span><span><i>✓</i>Вся история сохранена</span></div>
         </div>
-        <div class="agent-hero"><span class="availability"><i></i>Zorym AI готов к работе</span><p>Добрый день, Алексей</p><h1>Что построим сегодня?</h1><span class="hero-copy">Опишите результат — агент разберёт задачу, составит план и покажет ход выполнения.</span></div>
 
-        <div class="prompt-card">
-          <div class="prompt-context"><div class="project-context"><span class="mini-project-icon">S</span><div><small>Работаем в проекте</small><b>Skyblock: Genesis</b></div></div><button type="button">Изменить <svg viewBox="0 0 24 24"><path d="m9 10 3 3 3-3"/></svg></button></div>
-          <textarea id="agent-prompt" aria-label="Опишите задачу" placeholder="Например: разработай систему сезонных заданий с наградами и защитой от повторного получения…"></textarea>
-          <div class="prompt-toolbar">
-            <div class="prompt-tools"><button class="tool-button" type="button" aria-label="Добавить файлы"><svg viewBox="0 0 24 24"><path d="m9 12 5.6-5.6a3 3 0 0 1 4.2 4.2l-7.7 7.7a5 5 0 0 1-7.1-7.1L11.2 4"/></svg></button><button class="tool-button" type="button" aria-label="Добавить изображение"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m5 17 4.5-4 3 2.5 2.5-2 4 3.5"/></svg></button></div>
-            <div class="run-settings"><div class="choice-menu model-choice" data-choice-group="model"><button type="button">Comet</button><button class="selected" type="button">Orbit</button><button type="button">Quasar</button></div><span class="toolbar-divider"></span><div class="choice-menu mode-choice" data-choice-group="mode"><button type="button">Импульс</button><button class="selected" type="button">Мастер</button><button type="button">Архитектор</button></div><button class="send-button" id="send-task" type="button" aria-label="Запустить задачу"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div>
+        <div class="hero-visual reveal" aria-label="Демонстрация работы Zorym AI">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="demo-window">
+            <div class="demo-topbar"><div class="demo-brand"><span class="mini-z"><i></i></span><b>Zorym AI</b></div><div class="demo-project"><span>S</span>Skyblock: Genesis</div><div class="window-actions"><i></i><i></i><i></i></div></div>
+            <div class="demo-content">
+              <div class="demo-user"><span>АК</span><div><small>Вы · сейчас</small><p>Создай систему сезонных заданий с наградами и защитой от повторной выдачи.</p></div></div>
+              <div class="demo-agent"><span class="mini-z light"><i></i></span><div class="demo-agent-body"><div class="demo-agent-head"><b>Zorym AI</b><span>Zorym 1 Orbit</span></div><p id="demo-copy">Изучаю структуру проекта и связанные механики наград…</p><div class="demo-progress-card"><div><span><i></i><b id="demo-status">Анализирую запрос</b></span><em id="demo-percent">18%</em></div><div class="demo-progress"><i id="demo-bar"></i></div><div class="demo-stages"><span class="active">Анализ</span><span>План</span><span>Работа</span><span>Проверка</span></div></div></div></div>
+              <div class="demo-result" id="demo-result"><span><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span><div><small>Результат задачи</small><b>season-system.zip</b></div><em>Готово</em></div>
+            </div>
+            <div class="demo-composer"><span>Уточнить задачу…</span><div><button type="button">Orbit</button><button type="button">Мастер</button><i>↑</i></div></div>
+          </div>
+          <div class="floating-note note-plan"><span>01</span><div><small>План согласован</small><b>8 шагов · 14 файлов</b></div><i>✓</i></div>
+          <div class="floating-note note-safe"><svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3 8-8 10-5-2-8-5-8-10V7zM9 12l2 2 4-5"/></svg><div><small>Контроль пользователя</small><b>Ничего без подтверждения</b></div></div>
+          <div class="demo-controls" aria-label="Этапы демонстрации"><button class="active" type="button" data-demo-step="0" aria-label="Анализ"></button><button type="button" data-demo-step="1" aria-label="План"></button><button type="button" data-demo-step="2" aria-label="Выполнение"></button><button type="button" data-demo-step="3" aria-label="Результат"></button></div>
+        </div>
+      </div>
+
+      <div class="proof-strip container reveal">
+        <article><strong>01</strong><span>запрос вместо<br>долгого брифа</span></article>
+        <article><strong>04</strong><span>понятных этапа<br>в каждой задаче</span></article>
+        <article><strong>03</strong><span>уровня интеллекта<br>под разную работу</span></article>
+        <article><strong>100%</strong><span>контроля над<br>каждым запуском</span></article>
+      </div>
+    </section>
+
+    <div class="capability-ticker" aria-hidden="true"><div>ПРОЕКТЫ <i>✦</i> ИГРЫ <i>✦</i> БИЗНЕС <i>✦</i> КОД <i>✦</i> АНАЛИТИКА <i>✦</i> АВТОМАТИЗАЦИЯ <i>✦</i> ПРОЕКТЫ <i>✦</i> ИГРЫ <i>✦</i> БИЗНЕС <i>✦</i> КОД <i>✦</i> АНАЛИТИКА <i>✦</i> АВТОМАТИЗАЦИЯ <i>✦</i></div></div>
+
+    <section class="benefits section-space" id="benefits">
+      <div class="container">
+        <div class="section-intro reveal"><span class="section-index">01 · Польза</span><h2>Не просто отвечает.<br><em>Доводит задачу до результата.</em></h2><p>Обычный чат заканчивается текстом. Zorym продолжает работу: изучает контекст, планирует действия, создаёт результат и проверяет его.</p></div>
+        <div class="benefit-grid">
+          <article class="benefit-card benefit-large reveal">
+            <div class="card-number">01</div><span class="benefit-label">Понимает контекст</span><h3>Видит проект целиком,<br>а не один вопрос</h3><p>Файлы, предыдущие решения, требования и история диалога остаются в контексте каждой задачи.</p>
+            <div class="context-visual"><div class="context-file active"><span>JAVA</span><div><b>SeasonService.java</b><small>текущая логика сезонов</small></div><i>✓</i></div><div class="context-file"><span>YML</span><div><b>rewards.yml</b><small>правила наград</small></div><i>✓</i></div><div class="context-file"><span>SQL</span><div><b>player_progress</b><small>история прогресса</small></div><i>✓</i></div><div class="context-line"></div><div class="context-core"><span class="mini-z light"><i></i></span><b>Единый контекст</b></div></div>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="card-number">02</div><span class="benefit-label">Сначала план</span><h3>Вы знаете, что изменится</h3><p>До начала работы видны этапы, ожидаемый результат и расход лимита.</p>
+            <div class="plan-visual"><div><span>План задачи</span><em>8 шагов</em></div><ol><li class="done"><i>✓</i><span>Изучить текущую систему</span></li><li class="active"><i>2</i><span>Добавить модель сезона</span></li><li><i>3</i><span>Связать правила наград</span></li></ol><button type="button">Подтвердить запуск <span>→</span></button></div>
+          </article>
+          <article class="benefit-card benefit-dark reveal">
+            <div class="card-number">03</div><span class="benefit-label">Прозрачная работа</span><h3>Понимаете, что происходит</h3><p>Вместо технического шума — короткие и полезные статусы.</p>
+            <div class="status-stack"><span class="complete"><i>✓</i>Анализ запроса<time>12 сек</time></span><span class="current"><i></i>Выполняю задачу<time>сейчас</time></span><span><i></i>Проверяю результат</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow-section" id="how">
+      <div class="container">
+        <div class="workflow-heading reveal"><span class="section-index light">02 · Как работает</span><h2>От задачи до готового результата.<br><em>Без чёрного ящика.</em></h2></div>
+        <div class="workflow-layout reveal">
+          <div class="workflow-steps" role="tablist" aria-label="Этапы работы Zorym AI">
+            <button class="active" type="button" data-flow-step="0"><span>01</span><div><b>Опишите результат</b><small>Обычным языком, без сложного брифа</small></div><i>↗</i></button>
+            <button type="button" data-flow-step="1"><span>02</span><div><b>Проверьте план</b><small>Агент покажет действия до запуска</small></div><i>↗</i></button>
+            <button type="button" data-flow-step="2"><span>03</span><div><b>Следите за работой</b><small>Короткие статусы вместо технического шума</small></div><i>↗</i></button>
+            <button type="button" data-flow-step="3"><span>04</span><div><b>Заберите результат</b><small>Файлы, версия и отчёт проверки</small></div><i>↗</i></button>
+          </div>
+          <div class="workflow-preview">
+            <div class="workflow-preview-top"><span id="flow-number">01</span><em>Интерактивный пример</em></div>
+            <div class="workflow-preview-body"><span class="flow-icon" id="flow-icon">✦</span><small id="flow-kicker">Ваш запрос</small><h3 id="flow-title">Скажите, что должно получиться</h3><p id="flow-copy">Напишите задачу так, как объяснили бы её участнику команды. Zorym сам уточнит недостающие детали.</p><div class="flow-example" id="flow-example"><span>«Добавь сезонные задания и подготовь готовую сборку»</span><i>↑</i></div></div>
+            <div class="workflow-preview-footer"><span>Вы сохраняете контроль на каждом этапе</span><i>zorym / process 01</i></div>
           </div>
         </div>
-
-        <div class="quick-prompts" aria-label="Примеры задач">
-          <button type="button" data-prompt="Создай новую игровую механику и подготовь план реализации"><span class="quick-icon violet"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span><span><b>Создать механику</b><small>От идеи до готового плана</small></span><i>↗</i></button>
-          <button type="button" data-prompt="Найди причину ошибки, предложи исправление и проверь связанные компоненты"><span class="quick-icon amber"><svg viewBox="0 0 24 24"><path d="M8 9h8M7 13h10M9 17h6M12 3v3M5 6l2 2M19 6l-2 2"/></svg></span><span><b>Исправить ошибку</b><small>Диагностика и безопасное решение</small></span><i>↗</i></button>
-          <button type="button" data-prompt="Спроектируй архитектуру системы с учётом масштабирования и рисков"><span class="quick-icon green"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span><span><b>Продумать систему</b><small>Архитектура, этапы и риски</small></span><i>↗</i></button>
-        </div>
-
-        <div class="agent-dashboard">
-          <article class="active-task-card" id="active-task-card"><div class="card-heading"><div><span class="eyebrow">Активная задача</span><h2 id="active-task-title">Система сезонных заданий</h2></div><span class="status-pill status-live"><i></i><span id="active-task-status">Выполняет задачу</span></span></div><p class="task-summary">Zorym AI готовит структуру данных, правила прогресса и защиту наград.</p><div class="task-progress"><i id="task-progress-bar"></i></div><div class="task-stages"><span class="done"><i>✓</i>Анализ запроса</span><span class="current"><i>2</i>Реализация</span><span><i>3</i>Проверка</span><span><i>4</i>Результат</span></div><div class="task-footer"><span><b>Zorym 1 Orbit</b> · режим Мастер</span><button type="button">Открыть ход работы →</button></div></article>
-          <section class="activity-card"><div class="card-heading"><div><span class="eyebrow">Недавнее</span><h2>Последняя активность</h2></div><button class="text-action" type="button">Все задачи</button></div><div class="activity-list"><button type="button"><span class="activity-symbol success"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9"/></svg></span><span><b>Черновики кода готовы</b><small>Система островов · 12 минут назад</small></span><i>›</i></button><button type="button"><span class="activity-symbol archive"><svg viewBox="0 0 24 24"><path d="M5 8h14v11H5zM4 5h16v3H4M9 12h6"/></svg></span><span><b>Версия 11 сохранена</b><small>Build Vault · вчера</small></span><i>›</i></button><button type="button"><span class="activity-symbol neutral"><svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V8M12 16V5M17 16v-4"/></svg></span><span><b>Отчёт проверки готов</b><small>Экономика сервера · 2 дня назад</small></span><i>›</i></button></div></section>
-        </div>
       </div>
     </section>
 
-    <section class="view" data-screen="projects">
-      <div class="page-container content-page">
-        <div class="page-heading"><div><span class="eyebrow">Рабочие пространства</span><h1>Проекты</h1><p>Каждый проект хранит контекст, задачи, исходники и историю решений.</p></div><button class="primary-button" id="new-project" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новый проект</button></div>
-        <div class="project-overview"><article><span class="overview-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4zM8 7V4h8v3"/></svg></span><div><strong>4</strong><small>активных проекта</small></div></article><article><span class="overview-icon"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9"/></svg></span><div><strong>18</strong><small>задач завершено</small></div></article><article><span class="overview-icon"><svg viewBox="0 0 24 24"><path d="M12 7v5l3 2M4 12a8 8 0 1 0 2.3-5.7"/></svg></span><div><strong>2</strong><small>задачи в работе</small></div></article></div>
-        <div class="toolbar-row"><label class="search-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="project-search" aria-label="Поиск проектов" placeholder="Найти проект"></label><div class="filter-pills" data-choice-group="project-filter"><button class="selected" type="button">Все</button><button type="button">Minecraft</button><button type="button">Roblox</button></div></div>
-        <div class="project-grid" id="project-grid">
-          <article class="project-tile featured" data-platform="minecraft"><div class="project-visual skyblock"><span class="project-monogram">S</span><span class="project-state"><i></i>Активен</span><div class="visual-lines"><i></i><i></i><i></i></div></div><div class="project-content"><div class="project-title-row"><div><h2>Skyblock: Genesis</h2><p>Minecraft Paper · Java 21</p></div><button type="button" aria-label="Меню проекта">•••</button></div><div class="project-progress-row"><span>Готовность текущего этапа</span><b>74%</b></div><div class="project-progress"><i style="width:74%"></i></div><div class="project-footer"><span>Изменён 12 минут назад</span><button type="button" data-open-project="Skyblock: Genesis" data-project-avatar="S">Открыть <i>→</i></button></div></div></article>
-          <article class="project-tile" data-platform="roblox"><div class="project-visual vault-raiders"><span class="project-monogram">V</span><span class="project-state"><i></i>Активен</span><div class="visual-lines"><i></i><i></i><i></i></div></div><div class="project-content"><div class="project-title-row"><div><h2>Vault Raiders</h2><p>Roblox Studio · Luau</p></div><button type="button" aria-label="Меню проекта">•••</button></div><div class="project-progress-row"><span>Готовность текущего этапа</span><b>46%</b></div><div class="project-progress"><i style="width:46%"></i></div><div class="project-footer"><span>Изменён вчера</span><button type="button" data-open-project="Vault Raiders" data-project-avatar="V">Открыть <i>→</i></button></div></div></article>
-          <article class="project-tile" data-platform="minecraft"><div class="project-visual aether"><span class="project-monogram">A</span><span class="project-state paused">Пауза</span><div class="visual-lines"><i></i><i></i><i></i></div></div><div class="project-content"><div class="project-title-row"><div><h2>Aether Parkour</h2><p>Minecraft Paper · Java 21</p></div><button type="button" aria-label="Меню проекта">•••</button></div><div class="project-progress-row"><span>Готовность текущего этапа</span><b>28%</b></div><div class="project-progress"><i style="width:28%"></i></div><div class="project-footer"><span>Изменён 4 дня назад</span><button type="button" data-open-project="Aether Parkour" data-project-avatar="A">Открыть <i>→</i></button></div></div></article>
-          <button class="empty-project" id="empty-project" type="button"><span><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><b>Создать новый проект</b><small>Начните с идеи или импортируйте исходники</small></button>
+    <section class="solutions section-space" id="solutions">
+      <div class="container">
+        <div class="section-intro split reveal"><div><span class="section-index">03 · Пространства</span><h2>Один интеллект.<br><em>Разные задачи.</em></h2></div><p>Выберите рабочее пространство — контекст, инструменты и результат подстроятся под вашу цель.</p></div>
+        <div class="solution-grid">
+          <a class="solution-card agent-solution reveal" href="app.html#agent"><div class="solution-top"><span>01</span><i>↗</i></div><div class="solution-icon"><span class="mini-z light"><i></i></span></div><div><small>Универсальная работа</small><h3>Мой AI Agent</h3><p>Исследования, документы, код, анализ и сложные задачи в одном диалоге.</p></div><em>Открыть агента →</em></a>
+          <a class="solution-card games-solution reveal" href="app.html#games"><div class="solution-top"><span>02</span><i>↗</i></div><div class="solution-icon"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></div><div><small>От идеи до прототипа</small><h3>Games Studio</h3><p>Концепция, игровые системы, исходники и сборки для Minecraft и Roblox.</p></div><em>Создать игру →</em></a>
+          <a class="solution-card business-solution reveal" href="app.html#business"><div class="solution-top"><span>03</span><i>↗</i></div><div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M4 20V8l6-3v15M10 9h10v11M14 13h2M14 16h2"/></svg></div><div><small>Для компаний и команд</small><h3>Zorym Business</h3><p>Продажи, аналитика, документы и процессы бизнеса под контролем.</p></div><em>Посмотреть Business →</em></a>
+          <a class="solution-card vault-solution reveal" href="app.html#vault"><div class="solution-top"><span>04</span><i>↗</i></div><div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></div><div><small>Версии и результаты</small><h3>Build Vault</h3><p>Готовые файлы, история изменений, отчёты проверки и безопасные версии.</p></div><em>Открыть хранилище →</em></a>
         </div>
       </div>
     </section>
 
-    <section class="view" data-screen="games">
-      <div class="page-container content-page studio-page">
-        <div class="page-heading"><div><span class="eyebrow">Zorym Games Studio</span><h1>Создайте основу новой игры</h1><p>Ответьте на несколько вопросов — агент подготовит концепцию, архитектуру и первый план разработки.</p></div><span class="studio-step">01 <i></i> 03</span></div>
-        <div class="studio-layout">
-          <form class="studio-form" id="studio-form">
-            <div class="form-section"><div class="form-number">01</div><div class="form-content"><label for="game-name">Как называется проект?</label><input id="game-name" placeholder="Например, Frostfall" value="Frostfall"><small>Название можно изменить позже</small></div></div>
-            <div class="form-section"><div class="form-number">02</div><div class="form-content"><span class="form-label">Выберите платформу</span><div class="platform-cards" data-choice-group="platform"><button class="selected" type="button" data-platform-name="Minecraft Paper"><span class="platform-icon cube"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span><span><b>Minecraft Paper</b><small>Серверный плагин на Java</small></span><i>✓</i></button><button type="button" data-platform-name="Roblox Studio"><span class="platform-icon diamond"><svg viewBox="0 0 24 24"><path d="m7 3 14 4-4 14-14-4zM10 9l5 1-1 5-5-1z"/></svg></span><span><b>Roblox Studio</b><small>Игровые системы на Luau</small></span><i>✓</i></button></div></div></div>
-            <div class="form-section"><div class="form-number">03</div><div class="form-content"><span class="form-label">Какой будет игра?</span><div class="genre-chips" data-choice-group="genre"><button class="selected" type="button">Выживание</button><button type="button">RPG</button><button type="button">PvP</button><button type="button">Приключение</button><button type="button">Симулятор</button></div><textarea id="game-description" placeholder="Кратко опишите мир, основную механику и цель игрока…">Кооперативное выживание в мире вечной зимы. Игроки исследуют острова, собирают ресурсы и вместе развивают убежище.</textarea></div></div>
-            <button class="studio-submit" type="submit"><span><small>Продолжить с</small><b>Zorym 1 Orbit</b></span><span>Создать концепцию <i>→</i></span></button>
-          </form>
-          <aside class="concept-panel"><div class="concept-top"><span class="concept-kicker"><i></i>Предпросмотр концепции</span><button type="button" aria-label="Обновить концепцию"><svg viewBox="0 0 24 24"><path d="M19 8a7 7 0 1 0 1 7M19 4v4h-4"/></svg></button></div><div class="concept-identity"><span class="concept-mark">F</span><div><small id="concept-platform">Minecraft Paper</small><h2 id="concept-name">Frostfall</h2><p>Кооперативное выживание</p></div></div><div class="concept-divider"></div><span class="concept-label">План первого релиза</span><ol class="release-plan"><li><span>01</span><div><b>Ядро мира</b><small>Острова, климат и ресурсы</small></div></li><li><span>02</span><div><b>Прогресс игроков</b><small>Убежище, навыки и награды</small></div></li><li><span>03</span><div><b>Кооперативный цикл</b><small>Общие цели и события</small></div></li><li><span>04</span><div><b>Проверка прототипа</b><small>Сценарии и критерии готовности</small></div></li></ol><div class="concept-readiness"><div><span>Готовность брифа</span><b>82%</b></div><div class="resource-track"><i style="width:82%"></i></div><small>Для точного плана агент задаст ещё 2 вопроса</small></div></aside>
+    <section class="models-section section-space">
+      <div class="container">
+        <div class="models-heading reveal"><span class="section-index">04 · Интеллект</span><h2>Скорость, глубина или максимум качества.<br><em>Вы решаете.</em></h2><p>Модель и режим можно менять в каждом чате — даже между сообщениями.</p></div>
+        <div class="model-grid">
+          <article class="model-card reveal"><div class="model-orb comet">C</div><span class="model-speed">Быстрый</span><h3>Zorym 1 Comet</h3><p>Короткие задачи, правки, поиск ошибок и ответы без лишнего ожидания.</p><ul><li>Мгновенный старт</li><li>Экономный расход</li><li>Повседневные задачи</li></ul></article>
+          <article class="model-card featured reveal"><div class="recommended">Оптимальный выбор</div><div class="model-orb orbit">O</div><span class="model-speed">Сбалансированный</span><h3>Zorym 1 Orbit</h3><p>Основная рабочая модель для разработки, анализа и многоэтапных задач.</p><ul><li>Глубокий контекст</li><li>Сильная реализация</li><li>Проверка результата</li></ul></article>
+          <article class="model-card reveal"><div class="model-orb quasar">Q</div><span class="model-speed">Максимальный</span><h3>Zorym 1 Quasar</h3><p>Архитектура, стратегия и задачи, где особенно важна глубина решения.</p><ul><li>Сложные системы</li><li>Стратегические решения</li><li>Максимум рассуждения</li></ul></article>
         </div>
-        <section class="blueprints-section"><div class="section-heading"><div><span class="eyebrow">Быстрый старт</span><h2>Начните с готовой основы</h2></div><button class="text-action" type="button">Все шаблоны →</button></div><div class="blueprint-grid" data-choice-group="blueprint"><button class="blueprint-card selected" type="button"><span class="blueprint-icon green"><svg viewBox="0 0 24 24"><path d="M12 21V9M7 14c-3 0-4-2-4-5 3 0 5 1 5 4M17 12c3 0 4-2 4-5-3 0-5 1-5 4M9 8c0-3 1-5 3-6 2 1 3 3 3 6"/></svg></span><span><b>Survival Economy</b><small>Ресурсы, торговля и развитие</small></span><i>↗</i></button><button class="blueprint-card" type="button"><span class="blueprint-icon violet"><svg viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11M5 9v10h10"/></svg></span><span><b>Quest Adventure</b><small>История, квесты и персонажи</small></span><i>↗</i></button><button class="blueprint-card" type="button"><span class="blueprint-icon amber"><svg viewBox="0 0 24 24"><path d="M6 4h12v5a6 6 0 0 1-12 0zM9 19h6M12 15v4M6 7H3v2a4 4 0 0 0 4 4M18 7h3v2a4 4 0 0 1-4 4"/></svg></span><span><b>Competitive Arena</b><small>Матчи, рейтинг и сезоны</small></span><i>↗</i></button></div></section>
+        <div class="mode-strip reveal"><span>Три режима работы</span><div><b>Импульс</b><small>быстро и по существу</small></div><i></i><div><b>Мастер</b><small>баланс скорости и качества</small></div><i></i><div><b>Архитектор</b><small>максимальная глубина</small></div></div>
       </div>
     </section>
 
-    <section class="view" data-screen="business">
-      <div class="page-container content-page business-page">
-        <div class="page-heading business-heading"><div><span class="eyebrow">Zorym Business · Northstar Group</span><h1>Доброе утро, Алексей</h1><p>Три решения ждут вашего внимания. Остальные процессы идут по плану.</p></div><div class="heading-actions"><button class="secondary-button" type="button">Настроить пространство</button><button class="primary-button" id="business-task" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новая задача</button></div></div>
-        <div class="metric-grid" aria-label="Сводка компании"><article><div><small>В работе</small><span class="metric-trend neutral">сейчас</span></div><strong>24</strong><p><i class="live-dot"></i>7 агентов активны</p></article><article><div><small>На согласовании</small><span class="metric-trend warning">нужно решение</span></div><strong>3</strong><p>2 документа · 1 действие</p></article><article><div><small>Завершено за неделю</small><span class="metric-trend positive">+18%</span></div><strong>86</strong><p>На 13 больше прошлой недели</p></article><article><div><small>Бюджет AI</small><span class="metric-trend neutral">68%</span></div><strong>34 200</strong><div class="metric-progress"><i></i></div><p>из 50 000 единиц</p></article></div>
-        <div class="business-grid">
-          <section class="surface-panel operations-panel"><div class="panel-heading"><div><span class="eyebrow">Операционный центр</span><h2>Сейчас в работе</h2></div><button class="text-action" type="button">Все задачи →</button></div><div class="operation-list"><article><span class="agent-orb quasar">Q</span><div class="operation-copy"><div><h3>Стратегия выхода в новый регион</h3><span class="status-pill status-thinking">Анализирует</span></div><p>Стратегия · Zorym 1 Quasar</p><div class="operation-progress"><i style="width:68%"></i></div><small>Сравниваю спрос, конкурентов и финансовые риски…</small></div><time>18 мин</time><button type="button" aria-label="Открыть задачу">›</button></article><article><span class="agent-orb orbit">O</span><div class="operation-copy"><div><h3>Предложение для Meridian</h3><span class="status-pill status-checking">Проверяет</span></div><p>Продажи · Zorym 1 Orbit</p><div class="operation-progress"><i style="width:86%"></i></div><small>Проверяю цены и условия перед отправкой…</small></div><time>4 мин</time><button type="button" aria-label="Открыть задачу">›</button></article><article><span class="agent-orb comet">C</span><div class="operation-copy"><div><h3>Разбор обращений за август</h3><span class="status-pill status-working">Выполняет</span></div><p>Поддержка · Zorym 1 Comet</p><div class="operation-progress"><i style="width:41%"></i></div><small>Группирую обращения по причинам и приоритету…</small></div><time>9 мин</time><button type="button" aria-label="Открыть задачу">›</button></article></div></section>
-          <aside class="surface-panel approval-panel"><div class="panel-heading"><div><span class="eyebrow">Контроль</span><h2>Требует решения <b>3</b></h2></div><button class="text-action" type="button">История</button></div><div class="approval-list"><article><div class="approval-meta"><span>Документ</span><time>5 мин назад</time></div><h3>Договор с поставщиком</h3><p>Отмечены два изменённых условия.</p><div class="approval-actions"><button class="review-button" type="button">Просмотреть</button><button class="approve-button" type="button">Утвердить</button></div></article><article><div class="approval-meta"><span>Отправка</span><time>21 мин назад</time></div><h3>Кампания для 1 240 клиентов</h3><p>Письма проверены по правилам бренда.</p><div class="approval-actions"><button class="review-button" type="button">Просмотреть</button><button class="approve-button" type="button">Утвердить</button></div></article><article><div class="approval-meta"><span>Бюджет</span><time>1 ч назад</time></div><h3>Лимит аналитики</h3><p>Запрошено ещё 8 000 единиц.</p><div class="approval-actions"><button class="review-button" type="button">Подробнее</button><button class="approve-button" type="button">Утвердить</button></div></article></div></aside>
+    <section class="trust-section" id="trust">
+      <div class="container trust-grid">
+        <div class="trust-copy reveal"><span class="section-index light">05 · Контроль</span><h2>Ваш проект.<br><em>Ваши правила.</em></h2><p>Агент помогает работать быстрее, но финальные решения остаются у вас.</p><a href="app.html#agent">Попробовать в своём проекте <span>→</span></a></div>
+        <div class="trust-list reveal">
+          <article><span><svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3 8-8 10-5-2-8-5-8-10V7zM9 12l2 2 4-5"/></svg></span><div><h3>Подтверждение до запуска</h3><p>Сначала вы видите план и ожидаемый расход, потом разрешаете работу.</p></div><i>01</i></article>
+          <article><span><svg viewBox="0 0 24 24"><path d="M6 6h12v12H6zM9 9h6v6H9"/></svg></span><div><h3>Остановка в любой момент</h3><p>Задачу можно безопасно отменить, если направление изменилось.</p></div><i>02</i></article>
+          <article><span><svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V8M12 16V5M17 16v-4"/></svg></span><div><h3>Полная история действий</h3><p>Запросы, планы, статусы и результаты остаются в журнале проекта.</p></div><i>03</i></article>
+          <article><span><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2-5.3M4 4v5h5"/></svg></span><div><h3>Версии вместо риска</h3><p>Каждый результат сохраняется отдельно — предыдущая версия не теряется.</p></div><i>04</i></article>
         </div>
-        <div class="business-bottom"><section class="surface-panel process-panel"><div class="panel-heading"><div><span class="eyebrow">Автоматизации</span><h2>Ключевые процессы</h2></div><button class="text-action" type="button">Process Studio →</button></div><div class="process-list"><article><span class="process-number">01</span><div><h3>Новая заявка</h3><p>Квалификация → предложение → CRM</p></div><em><i class="live-dot"></i>128 запусков</em><button type="button">›</button></article><article><span class="process-number">02</span><div><h3>Еженедельный отчёт</h3><p>Сбор данных → выводы → рассылка</p></div><em>Готов в пятницу</em><button type="button">›</button></article><article><span class="process-number">03</span><div><h3>Новый сотрудник</h3><p>Документы → доступы → адаптация</p></div><em>4 активных</em><button type="button">›</button></article></div></section><aside class="memory-panel"><div class="memory-orbit"><i></i><i></i><span>M</span></div><span class="memory-label">Business Memory</span><h2>Знания компании в едином контексте</h2><p>486 документов · 12 источников<br>Обновлено 2 часа назад</p><button type="button">Открыть базу знаний <i>→</i></button></aside></div>
       </div>
     </section>
 
-    <section class="view" data-screen="vault">
-      <div class="page-container content-page vault-page">
-        <div class="page-heading"><div><span class="eyebrow">Хранилище результатов</span><h1>Build Vault</h1><p>Версии, сборки, исходники и отчёты проверки всех ваших проектов.</p></div><button class="secondary-button" id="upload-build" type="button"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>Загрузить исходники</button></div>
-        <div class="vault-summary"><article><span class="vault-summary-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span><div><strong>12</strong><small>сохранённых версий</small></div></article><article><span class="vault-summary-icon"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg></span><div><strong>8</strong><small>готовы к скачиванию</small></div></article><article><span class="vault-summary-icon"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9"/></svg></span><div><strong>7</strong><small>прошли проверку</small></div></article></div>
-        <div class="vault-toolbar"><div class="filter-pills" id="vault-filters"><button class="selected" type="button" data-filter="all">Все результаты</button><button type="button" data-filter="ready">Готовые</button><button type="button" data-filter="review">На проверке</button><button type="button" data-filter="source">Исходники</button></div><label class="search-field compact"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="vault-search" aria-label="Поиск результатов" placeholder="Поиск"></label></div>
-        <section class="vault-table" aria-label="Результаты сборок"><div class="vault-table-head"><span>Результат</span><span>Статус</span><span>Создан</span><span>Размер</span><span></span></div><article class="vault-item" data-type="ready source" data-search="skyblock genesis версия 11 zip исходники"><div class="artifact-main"><span class="artifact-icon zip">ZIP</span><div><h2>Skyblock: Genesis · Версия 11</h2><p>Исходники · 14 файлов</p></div></div><span class="status-pill status-ready"><i></i>Готово</span><time>Сегодня, 14:32</time><span class="artifact-size">8,4 МБ</span><div class="artifact-actions"><button type="button" class="download-button">Скачать <svg viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></button><button type="button" aria-label="Другие действия">•••</button></div></article><article class="vault-item" data-type="ready" data-search="skyblock genesis отчет проверки"><div class="artifact-main"><span class="artifact-icon report">PDF</span><div><h2>Отчёт проверки · Версия 11</h2><p>Skyblock: Genesis · 18 проверок</p></div></div><span class="status-pill status-ready"><i></i>Проверено</span><time>Сегодня, 14:28</time><span class="artifact-size">1,2 МБ</span><div class="artifact-actions"><button type="button" class="download-button">Открыть <svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button><button type="button" aria-label="Другие действия">•••</button></div></article><article class="vault-item" data-type="review source" data-search="vault raiders версия 4 luau исходники"><div class="artifact-main"><span class="artifact-icon code">LUAU</span><div><h2>Vault Raiders · Версия 4</h2><p>Исходники · 9 файлов</p></div></div><span class="status-pill status-review"><i></i>На проверке</span><time>Вчера, 19:04</time><span class="artifact-size">3,7 МБ</span><div class="artifact-actions"><button type="button" class="download-button">Открыть <svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button><button type="button" aria-label="Другие действия">•••</button></div></article><article class="vault-item" data-type="ready source" data-search="aether parkour версия 2 jar"><div class="artifact-main"><span class="artifact-icon jar">JAR</span><div><h2>Aether Parkour · Версия 2</h2><p>Сборка Paper · Java 21</p></div></div><span class="status-pill status-ready"><i></i>Готово</span><time>29 августа</time><span class="artifact-size">5,1 МБ</span><div class="artifact-actions"><button type="button" class="download-button">Скачать <svg viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></button><button type="button" aria-label="Другие действия">•••</button></div></article><div class="vault-empty" id="vault-empty"><span>Ничего не найдено</span><small>Измените фильтр или поисковый запрос</small></div></section>
+    <section class="faq-section section-space" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-heading reveal"><span class="section-index">06 · Вопросы</span><h2>Всё важное<br><em>до регистрации.</em></h2><p>Если останется вопрос, мы поможем разобраться до начала работы.</p></div>
+        <div class="faq-list reveal">
+          <details open><summary><span>01</span>Чем Zorym отличается от обычного AI-чата?<i>＋</i></summary><p>Обычный чат даёт ответ. Zorym ведёт задачу по этапам: изучает контекст, показывает план, выполняет работу, проверяет результат и сохраняет его в проекте.</p></details>
+          <details><summary><span>02</span>Нужно ли уметь программировать?<i>＋</i></summary><p>Нет. Опишите желаемый результат обычным языком. Агент задаст уточняющие вопросы и покажет понятный план до начала выполнения.</p></details>
+          <details><summary><span>03</span>Можно ли контролировать действия агента?<i>＋</i></summary><p>Да. Вы подтверждаете план, видите основные этапы работы, можете остановить задачу и проверить все изменения перед использованием результата.</p></details>
+          <details><summary><span>04</span>Что я получу после выполнения задачи?<i>＋</i></summary><p>Это зависит от задачи: готовые исходники, ZIP или JAR, документ, исследование, отчёт проверки либо структурированный план дальнейшей работы.</p></details>
+          <details><summary><span>05</span>Можно ли использовать Zorym для бизнеса?<i>＋</i></summary><p>Да. Zorym Business предназначен для продаж, документов, аналитики, поддержки, внутренних процессов и других задач компаний.</p></details>
+        </div>
       </div>
     </section>
 
-    <footer class="app-footer"><span>Zorym AI может ошибаться. Проверяйте важные решения.</span><div><a href="#privacy">Конфиденциальность</a><a href="#support">Поддержка</a><span>© 2026 Zorym</span></div></footer>
+    <section class="final-cta">
+      <div class="cta-orbit orbit-left" aria-hidden="true"></div><div class="cta-orbit orbit-right" aria-hidden="true"></div>
+      <div class="container final-cta-inner reveal"><span class="hero-kicker dark"><i></i>Zorym AI готов к работе</span><h2>Начните не с настройки.<br><em>Начните с задачи.</em></h2><p>Создайте аккаунт, опишите результат и получите понятный план действий.</p><div><a class="primary-cta light" href="app.html#agent">Создать аккаунт <span>→</span></a><a class="cta-login" href="app.html#agent">Уже есть аккаунт? Войти</a></div></div>
+    </section>
   </main>
-</div>
 
-<div class="drawer-backdrop" id="drawer-backdrop"></div>
-<aside class="profile-drawer" id="profile-drawer" role="dialog" aria-modal="true" aria-labelledby="profile-title">
-  <div class="drawer-header"><div><span class="eyebrow">Личное пространство</span><h2 id="profile-title">Профиль</h2></div><button id="close-profile" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
-  <div class="profile-identity"><span class="profile-avatar">АК</span><div><h3>Алексей К.</h3><p>alexey@example.com</p></div><button type="button">Изменить</button></div>
-  <section class="plan-card"><div><span>Zorym Pro</span><b>Активна</b></div><h3>2 480 <small>/ 4 000 единиц</small></h3><div class="plan-track"><i></i></div><p>Лимит обновится 14 сентября</p><button type="button">Управлять подпиской →</button></section>
-  <nav class="profile-nav" aria-label="Настройки профиля"><button type="button"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><div><b>Личные данные</b><small>Имя, email и язык</small></div><i>›</i></button><button type="button"><span><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><b>Безопасность</b><small>Пароль и активные сессии</small></div><i>›</i></button><button type="button"><span><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M9 18h6"/></svg></span><div><b>Настройки агента</b><small>Модель, режим и инструкции</small></div><i>›</i></button><button type="button"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 14h3"/></svg></span><div><b>Оплата и документы</b><small>История платежей и реквизиты</small></div><i>›</i></button></nav>
-  <div class="drawer-footer"><button type="button"><svg viewBox="0 0 24 24"><path d="M10 5H5v14h5M14 8l4 4-4 4M8 12h10"/></svg>Выйти из аккаунта</button><span>Версия интерфейса 0.8</span></div>
-</aside>
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="wordmark footer-brand" href="#top"><span class="brand-symbol"><i></i></span><span>Zorym</span></a><p>AI-агент для проектов, игр и бизнеса.<br>От запроса до готового результата.</p><div class="footer-links"><div><b>Продукт</b><a href="#benefits">Возможности</a><a href="#how">Как работает</a><a href="#solutions">Решения</a></div><div><b>Пространства</b><a href="app.html#agent">AI Agent</a><a href="app.html#games">Games Studio</a><a href="app.html#business">Zorym Business</a></div><div><b>Информация</b><a href="#trust">Безопасность</a><a href="#faq">Вопросы</a><a href="app.html#agent">Личный кабинет</a></div></div></div>
+    <div class="container footer-bottom"><span>© 2026 Zorym AI</span><div><a href="#privacy">Политика конфиденциальности</a><a href="#terms">Условия использования</a></div><span>Сделано для результата</span></div>
+  </footer>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const demoSteps = [
+      { status: 'Анализирую запрос', percent: 18, copy: 'Изучаю структуру проекта и связанные механики наград…', stage: 0 },
+      { status: 'Формирую план', percent: 36, copy: 'Разбиваю задачу на безопасные изменения и оцениваю зависимости…', stage: 1 },
+      { status: 'Выполняю задачу', percent: 68, copy: 'Создаю систему сезонов, прогресс игроков и защиту наград…', stage: 2 },
+      { status: 'Результат готов', percent: 100, copy: 'Проверка пройдена. Файлы и отчёт сохранены в Build Vault.', stage: 3 }
+    ];
+    let demoIndex = 0;
+    let demoTimer;
+    function setDemoStep(index) {
+      demoIndex = index;
+      const step = demoSteps[index];
+      document.querySelector('#demo-status').textContent = step.status;
+      document.querySelector('#demo-percent').textContent = step.percent + '%';
+      document.querySelector('#demo-copy').textContent = step.copy;
+      document.querySelector('#demo-bar').style.width = step.percent + '%';
+      document.querySelectorAll('.demo-stages span').forEach(function (item, itemIndex) { item.classList.toggle('active', itemIndex <= step.stage); });
+      document.querySelectorAll('[data-demo-step]').forEach(function (button, buttonIndex) { button.classList.toggle('active', buttonIndex === index); });
+      document.querySelector('#demo-result').classList.toggle('visible', index === 3);
+    }
+    function restartDemo() {
+      window.clearInterval(demoTimer);
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) demoTimer = window.setInterval(function () { setDemoStep((demoIndex + 1) % demoSteps.length); }, 3200);
+    }
+    document.querySelectorAll('[data-demo-step]').forEach(function (button) { button.addEventListener('click', function () { setDemoStep(Number(button.dataset.demoStep)); restartDemo(); }); });
+    restartDemo();
 
-<script>
-const links = Array.from(document.querySelectorAll('[data-view]'));
-const screens = Array.from(document.querySelectorAll('[data-screen]'));
-const contextTitle = document.querySelector('#context-title');
-const contextSubtitle = document.querySelector('#context-subtitle');
-const contextAvatar = document.querySelector('#context-avatar');
-const sidebar = document.querySelector('#sidebar');
-const mobileBackdrop = document.querySelector('#mobile-backdrop');
-const toast = document.querySelector('#toast');
-const agentPage = document.querySelector('.agent-page');
-const chatHistory = document.querySelector('#chat-history');
-const chatThread = document.querySelector('#chat-thread');
-const prompt = document.querySelector('#agent-prompt');
-const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; });
-
-let chats = [
-  {
-    id: 'seasonal-quests',
-    title: 'Система сезонных заданий',
-    project: 'Skyblock: Genesis',
-    model: 'Orbit',
-    mode: 'Мастер',
-    updated: 'сейчас',
-    messages: [
-      { role: 'user', time: '14:18', text: 'Разработай систему сезонных заданий: ежедневные и недельные цели, серии выполнения и награды без возможности получить их повторно.' },
-      { role: 'assistant', time: '14:18', text: 'Понял. Сначала проверю текущую структуру прогресса и наград, затем спроектирую совместимую систему сезонов. Изменения не затронут существующие данные игроков.', stage: 'Выполняю задачу', progress: 58 },
-      { role: 'user', time: '14:21', text: 'Предусмотри ещё восстановление серии один раз за сезон.' },
-      { role: 'assistant', time: '14:21', text: 'Добавлю одноразовый жетон восстановления и серверную проверку его использования. Сейчас связываю это правило с календарём сезона и журналом наград.', stage: 'Проверяю решение', progress: 82 }
-    ]
-  },
-  {
-    id: 'island-economy',
-    title: 'Экономика островов',
-    project: 'Skyblock: Genesis',
-    model: 'Quasar',
-    mode: 'Архитектор',
-    updated: '12 мин',
-    messages: [
-      { role: 'user', time: '13:42', text: 'Продумай экономику островов так, чтобы игроки не могли быстро обесценить редкие ресурсы.' },
-      { role: 'assistant', time: '13:43', text: 'Подготовил модель с динамическими лимитами добычи, расходными механиками и контролем денежной массы. В результате цена редких ресурсов реагирует на активность сервера, но остаётся предсказуемой для игроков.', stage: 'Результат готов', progress: 100 }
-    ]
-  },
-  {
-    id: 'reward-bug',
-    title: 'Ошибка повторной награды',
-    project: 'Skyblock: Genesis',
-    model: 'Comet',
-    mode: 'Импульс',
-    updated: 'вчера',
-    messages: [
-      { role: 'user', time: 'Вчера', text: 'Игрок иногда получает награду дважды после переподключения. Найди возможную причину.' },
-      { role: 'assistant', time: 'Вчера', text: 'Причина оказалась в повторной обработке незавершённого события после входа. Добавил идемпотентный идентификатор выдачи и проверку транзакции перед начислением.', stage: 'Завершено', progress: 100 }
-    ]
-  }
-];
-let activeChatId = 'seasonal-quests';
-
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, function (character) {
-    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[character];
-  });
-}
-
-function currentChat() { return chats.find(function (chat) { return chat.id === activeChatId; }); }
-
-function renderChatList() {
-  chatHistory.innerHTML = chats.slice(0, 5).map(function (chat) {
-    const active = chat.id === activeChatId ? ' active' : '';
-    return '<button class="chat-entry' + active + '" type="button" data-chat-id="' + escapeHtml(chat.id) + '">' +
-      '<span class="chat-bubble-icon"><svg viewBox="0 0 24 24"><path d="M5 6h14v10H9l-4 3z"/></svg></span>' +
-      '<span class="chat-entry-copy"><b>' + escapeHtml(chat.title) + '</b><small>' + escapeHtml(chat.updated) + '</small></span>' +
-      '<span class="chat-more">•••</span></button>';
-  }).join('');
-}
-
-function messageMarkup(message) {
-  const isUser = message.role === 'user';
-  const avatar = isUser ? 'АК' : '<span></span>';
-  const author = isUser ? 'Вы' : 'Zorym AI';
-  const model = isUser ? '' : '<em>Zorym 1 ' + escapeHtml(currentChat().model) + '</em>';
-  const workState = message.stage ? '<div class="message-work"><div><span><i></i>' + escapeHtml(message.stage) + '</span><b>' + Number(message.progress || 0) + '%</b></div><div class="message-progress"><i style="width:' + Number(message.progress || 0) + '%"></i></div><small>Анализ запроса → выполнение → проверка → результат</small></div>' : '';
-  const actions = isUser ? '' : '<div class="message-actions"><button type="button" aria-label="Скопировать ответ"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button><button type="button" aria-label="Полезный ответ"><svg viewBox="0 0 24 24"><path d="M7 21H4V10h3M7 10l4-7 2 1v5h6l1 2-2 8H7z"/></svg></button><button type="button" aria-label="Неполезный ответ"><svg viewBox="0 0 24 24"><path d="M7 3H4v11h3M7 14l4 7 2-1v-5h6l1-2-2-8H7z"/></svg></button></div>';
-  return '<article class="chat-message ' + (isUser ? 'user-message' : 'assistant-message') + '">' +
-    '<div class="message-avatar">' + avatar + '</div><div class="message-column"><header><div><b>' + author + '</b>' + model + '</div><time>' + escapeHtml(message.time) + '</time></header>' +
-    '<div class="message-body"><p>' + escapeHtml(message.text) + '</p>' + workState + '</div>' + actions + '</div></article>';
-}
-
-function syncChatChoices(chat) {
-  document.querySelectorAll('[data-choice-group="model"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.model); });
-  document.querySelectorAll('[data-choice-group="mode"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.mode); });
-}
-
-function renderConversation(chat) {
-  if (!chat || !chat.messages.length) {
-    agentPage.classList.remove('chat-active');
-    return;
-  }
-  agentPage.classList.add('chat-active');
-  document.querySelector('#conversation-title').textContent = chat.title;
-  document.querySelector('#conversation-project').textContent = chat.project;
-  document.querySelector('#conversation-settings').textContent = 'Zorym 1 ' + chat.model + ' · ' + chat.mode;
-  document.querySelector('.project-context b').textContent = chat.project;
-  chatThread.innerHTML = chat.messages.map(messageMarkup).join('');
-  syncChatChoices(chat);
-}
-
-function syncChatContext(chat) {
-  contextTitle.textContent = chat.title;
-  contextSubtitle.textContent = chat.project;
-  contextAvatar.textContent = 'Z';
-  agentLink.dataset.subtitle = chat.project;
-}
-
-function openChat(chatId) {
-  const chat = chats.find(function (item) { return item.id === chatId; });
-  if (!chat) return;
-  activeChatId = chat.id;
-  showView(agentLink);
-  renderChatList();
-  renderConversation(chat);
-  syncChatContext(chat);
-}
-
-function notify(message) {
-  toast.textContent = message;
-  toast.classList.add('show');
-  window.clearTimeout(window.zorymToastTimer);
-  window.zorymToastTimer = window.setTimeout(function () { toast.classList.remove('show'); }, 2400);
-}
-function closeMobileMenu() { sidebar.classList.remove('mobile-open'); mobileBackdrop.classList.remove('show'); }
-function showView(link, updateHash) {
-  if (!link) return;
-  links.forEach(function (item) { item.classList.toggle('active', item === link); });
-  screens.forEach(function (screen) { screen.classList.toggle('active', screen.dataset.screen === link.dataset.view); });
-  contextTitle.textContent = link.dataset.title; contextSubtitle.textContent = link.dataset.subtitle; contextAvatar.textContent = link.dataset.avatar;
-  if (updateHash !== false) window.location.hash = link.dataset.view;
-  window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu();
-}
-links.forEach(function (link) { link.addEventListener('click', function (event) { event.preventDefault(); showView(link); if (link.dataset.view === 'agent' && currentChat()) syncChatContext(currentChat()); }); });
-document.querySelector('#mobile-menu').addEventListener('click', function () { sidebar.classList.add('mobile-open'); mobileBackdrop.classList.add('show'); });
-mobileBackdrop.addEventListener('click', closeMobileMenu);
-document.querySelector('#sidebar-collapse').addEventListener('click', function () { document.body.classList.toggle('sidebar-collapsed'); });
-
-function beginNewChat(projectName) {
-  const selectedModel = document.querySelector('[data-choice-group="model"] .selected');
-  const selectedMode = document.querySelector('[data-choice-group="mode"] .selected');
-  const chat = {
-    id: 'chat-' + Date.now(),
-    title: 'Новый чат',
-    project: typeof projectName === 'string' ? projectName : document.querySelector('.project-context b').textContent,
-    model: selectedModel ? selectedModel.textContent.trim() : 'Orbit',
-    mode: selectedMode ? selectedMode.textContent.trim() : 'Мастер',
-    updated: 'сейчас',
-    messages: []
-  };
-  chats.unshift(chat);
-  activeChatId = chat.id;
-  showView(agentLink);
-  agentPage.classList.remove('chat-active');
-  document.querySelector('.project-context b').textContent = chat.project;
-  prompt.value = '';
-  renderChatList();
-  syncChatChoices(chat);
-  syncChatContext(chat);
-  prompt.focus();
-  notify('Новый чат создан');
-}
-document.querySelector('#new-chat').addEventListener('click', beginNewChat);
-chatHistory.addEventListener('click', function (event) {
-  const entry = event.target.closest('[data-chat-id]');
-  if (entry) openChat(entry.dataset.chatId);
-});
-document.querySelector('#chat-list-action').addEventListener('click', function () { notify('Показаны последние чаты'); });
-
-document.querySelectorAll('[data-choice-group]').forEach(function (group) {
-  group.querySelectorAll('button').forEach(function (button) {
-    button.addEventListener('click', function () {
-      group.querySelectorAll('button').forEach(function (item) { item.classList.remove('selected'); }); button.classList.add('selected');
-      if (group.dataset.choiceGroup === 'platform') document.querySelector('#concept-platform').textContent = button.dataset.platformName;
-      if (group.dataset.choiceGroup === 'project-filter') filterProjects(button.textContent.trim().toLowerCase());
-      if ((group.dataset.choiceGroup === 'model' || group.dataset.choiceGroup === 'mode') && currentChat()) {
-        currentChat()[group.dataset.choiceGroup] = button.textContent.trim();
-        if (currentChat().messages.length) renderConversation(currentChat());
-      }
+    const flowSteps = [
+      { number: '01', icon: '✦', kicker: 'Ваш запрос', title: 'Скажите, что должно получиться', copy: 'Напишите задачу так, как объяснили бы её участнику команды. Zorym сам уточнит недостающие детали.', example: '«Добавь сезонные задания и подготовь готовую сборку»' },
+      { number: '02', icon: '≡', kicker: 'План задачи', title: 'Проверьте подход до запуска', copy: 'Агент покажет этапы, затрагиваемые части проекта, ожидаемый результат и расход доступного лимита.', example: '8 шагов · 14 файлов · можно изменить до запуска' },
+      { number: '03', icon: '◌', kicker: 'Ход выполнения', title: 'Видите главное, пока агент работает', copy: 'Короткие статусы объясняют текущий этап. При необходимости задачу можно остановить без потери проекта.', example: 'Анализирую → выполняю → проверяю' },
+      { number: '04', icon: '✓', kicker: 'Готовый результат', title: 'Получите то, что можно использовать', copy: 'Файлы, исходники, сборка и отчёт проверки сохраняются как новая версия — всё готово к просмотру или скачиванию.', example: 'season-system.zip · версия 12 · проверено' }
+    ];
+    document.querySelectorAll('[data-flow-step]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        const index = Number(button.dataset.flowStep);
+        const step = flowSteps[index];
+        document.querySelectorAll('[data-flow-step]').forEach(function (item) { item.classList.remove('active'); });
+        button.classList.add('active');
+        document.querySelector('#flow-number').textContent = step.number;
+        document.querySelector('#flow-icon').textContent = step.icon;
+        document.querySelector('#flow-kicker').textContent = step.kicker;
+        document.querySelector('#flow-title').textContent = step.title;
+        document.querySelector('#flow-copy').textContent = step.copy;
+        document.querySelector('#flow-example span').textContent = step.example;
+      });
     });
-  });
-});
 
-document.querySelectorAll('[data-prompt]').forEach(function (button) { button.addEventListener('click', function () { prompt.value = button.dataset.prompt; prompt.focus(); }); });
-function makeChatTitle(text) {
-  const cleaned = text.replace(/^(пожалуйста|можешь|нужно|хочу|давай)\s+/i, '').replace(/\s+/g, ' ').trim();
-  const words = cleaned.split(' ').slice(0, 5).join(' ').replace(/[.,!?;:]+$/g, '');
-  const title = words || 'Новая задача';
-  return title.charAt(0).toUpperCase() + title.slice(1) + (cleaned.split(' ').length > 5 ? '…' : '');
-}
+    const menuButton = document.querySelector('#menu-button');
+    const mobileNav = document.querySelector('#mobile-nav');
+    menuButton.addEventListener('click', function () { const open = mobileNav.classList.toggle('open'); menuButton.classList.toggle('open', open); menuButton.setAttribute('aria-expanded', String(open)); });
+    mobileNav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { mobileNav.classList.remove('open'); menuButton.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }); });
+    const siteHeader = document.querySelector('#site-header');
+    function updateHeader() { siteHeader.classList.toggle('scrolled', window.scrollY > 18); }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
 
-function sendCurrentMessage() {
-  if (!prompt.value.trim()) { notify('Сначала опишите задачу'); prompt.focus(); return; }
-  let chat = currentChat();
-  if (!chat) { beginNewChat(); chat = currentChat(); }
-  const text = prompt.value.trim();
-  if (!chat.messages.length) chat.title = makeChatTitle(text);
-  const time = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
-  chat.messages.push({ role: 'user', time: time, text: text });
-  chat.messages.push({ role: 'assistant', time: time, text: 'Принял задачу. Сначала изучаю контекст и зависимости, затем подготовлю решение и проверю связанные части. Здесь будут появляться только ключевые этапы работы.', stage: 'Анализирую запрос', progress: 18 });
-  chat.updated = 'сейчас';
-  prompt.value = '';
-  renderChatList();
-  renderConversation(chat);
-  syncChatContext(chat);
-  notify('Zorym AI начал работу');
-  window.setTimeout(function () { chatThread.scrollTo({ top: chatThread.scrollHeight, behavior: 'smooth' }); }, 0);
-}
-document.querySelector('#send-task').addEventListener('click', sendCurrentMessage);
-prompt.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { event.preventDefault(); sendCurrentMessage(); }
-});
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: .12 });
+      revealItems.forEach(function (element) { observer.observe(element); });
+    } else {
+      revealItems.forEach(function (element) { element.classList.add('visible'); });
+    }
 
-function filterProjects(filter) { document.querySelectorAll('.project-tile').forEach(function (card) { card.hidden = filter !== 'все' && card.dataset.platform !== filter; }); }
-document.querySelector('#project-search').addEventListener('input', function (event) { const query = event.target.value.trim().toLowerCase(); document.querySelectorAll('.project-tile').forEach(function (card) { card.hidden = query && !card.textContent.toLowerCase().includes(query); }); });
-document.querySelectorAll('[data-open-project]').forEach(function (button) { button.addEventListener('click', function () { const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; }); agentLink.dataset.subtitle = button.dataset.openProject; document.querySelector('.project-context b').textContent = button.dataset.openProject; document.querySelector('.mini-project-icon').textContent = button.dataset.projectAvatar; showView(agentLink); notify('Проект открыт в Zorym AI'); }); });
-function newProjectNotice() { notify('Мастер нового проекта готов к запуску'); }
-document.querySelector('#new-project').addEventListener('click', newProjectNotice); document.querySelector('#empty-project').addEventListener('click', newProjectNotice);
-
-const gameName = document.querySelector('#game-name');
-gameName.addEventListener('input', function () { document.querySelector('#concept-name').textContent = gameName.value.trim() || 'Новый проект'; document.querySelector('.concept-mark').textContent = (gameName.value.trim()[0] || 'N').toUpperCase(); });
-document.querySelector('#studio-form').addEventListener('submit', function (event) { event.preventDefault(); notify('Концепция передана Zorym AI'); });
-
-document.querySelector('#business-task').addEventListener('click', function () { beginNewChat('Northstar Group'); prompt.placeholder = 'Опишите бизнес-задачу, желаемый результат и ограничения…'; });
-document.querySelectorAll('.approve-button').forEach(function (button) { button.addEventListener('click', function () { button.textContent = 'Утверждено'; button.disabled = true; button.closest('article').classList.add('approved'); notify('Решение утверждено'); }); });
-
-function filterVault() {
-  const active = document.querySelector('#vault-filters .selected').dataset.filter; const query = document.querySelector('#vault-search').value.trim().toLowerCase(); let visible = 0;
-  document.querySelectorAll('.vault-item').forEach(function (item) { const typeMatch = active === 'all' || item.dataset.type.split(' ').includes(active); const searchMatch = !query || item.dataset.search.includes(query) || item.textContent.toLowerCase().includes(query); item.hidden = !(typeMatch && searchMatch); if (!item.hidden) visible += 1; });
-  document.querySelector('#vault-empty').classList.toggle('show', visible === 0);
-}
-document.querySelectorAll('#vault-filters button').forEach(function (button) { button.addEventListener('click', function () { document.querySelectorAll('#vault-filters button').forEach(function (item) { item.classList.remove('selected'); }); button.classList.add('selected'); filterVault(); }); });
-document.querySelector('#vault-search').addEventListener('input', filterVault);
-document.querySelectorAll('.download-button').forEach(function (button) { button.addEventListener('click', function () { notify('Файл подготовлен к скачиванию'); }); });
-document.querySelector('#upload-build').addEventListener('click', function () { notify('Выберите ZIP с исходниками'); });
-
-const profileDrawer = document.querySelector('#profile-drawer'); const drawerBackdrop = document.querySelector('#drawer-backdrop');
-function openProfile() { profileDrawer.classList.add('open'); drawerBackdrop.classList.add('show'); document.body.classList.add('drawer-open'); document.querySelector('#close-profile').focus(); }
-function closeProfile() { profileDrawer.classList.remove('open'); drawerBackdrop.classList.remove('show'); document.body.classList.remove('drawer-open'); }
-document.querySelector('#account-button').addEventListener('click', openProfile); document.querySelector('#top-avatar').addEventListener('click', openProfile); document.querySelector('#close-profile').addEventListener('click', closeProfile); drawerBackdrop.addEventListener('click', closeProfile);
-document.querySelector('#command-button').addEventListener('click', function () { notify('Поиск по проектам, задачам и файлам'); });
-document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeMobileMenu(); } });
-renderChatList();
-renderConversation(currentChat());
-const initialView = links.find(function (link) { return link.dataset.view === window.location.hash.slice(1); });
-if (initialView) showView(initialView, false);
-if (!initialView || initialView.dataset.view === 'agent') syncChatContext(currentChat());
-</script>
+    document.querySelectorAll('.faq-list details').forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (!item.open) return;
+        document.querySelectorAll('.faq-list details').forEach(function (other) { if (other !== item) other.open = false; });
+      });
+    });
+  </script>
 </body>
 </html>
