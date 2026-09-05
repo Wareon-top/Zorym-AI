@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css?v=20260905-chat-bubbles">
+  <link rel="stylesheet" href="styles.css?v=20260905-model-motion">
 </head>
 <body>
 <div class="mobile-backdrop" id="mobile-backdrop"></div>
@@ -110,6 +110,33 @@
           <button type="button" data-prompt="Найди причину ошибки, предложи исправление и проверь связанные компоненты"><span class="quick-icon amber"><svg viewBox="0 0 24 24"><path d="M8 9h8M7 13h10M9 17h6M12 3v3M5 6l2 2M19 6l-2 2"/></svg></span><span><b>Исправить ошибку</b><small>Диагностика и безопасное решение</small></span><i>↗</i></button>
           <button type="button" data-prompt="Спроектируй архитектуру системы с учётом масштабирования и рисков"><span class="quick-icon green"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span><span><b>Продумать систему</b><small>Архитектура, этапы и риски</small></span><i>↗</i></button>
         </div>
+
+        <section class="model-lab" aria-labelledby="model-lab-title">
+          <header class="model-lab-header">
+            <div><span class="eyebrow">Характер работы</span><h2 id="model-lab-title">Три уровня интеллекта</h2><p>От быстрого решения до глубокой автономной разработки.</p></div>
+            <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span></span><b>Анимация включена</b></button>
+          </header>
+          <div class="model-showcase" id="model-showcase">
+            <button class="model-card comet-card" type="button" data-model-card="Comet" aria-pressed="false">
+              <span class="model-card-top"><span class="model-visual comet-visual" aria-hidden="true"><i></i><b></b></span><span class="model-number">01</span></span>
+              <span class="model-copy"><strong>Comet</strong><em>Быстрое выполнение</em><small>Для повседневных задач и точечных изменений.</small></span>
+              <span class="model-stage-line"><i class="active">Анализирую</i><i>Выполняю</i><i>Готово</i></span>
+              <span class="model-select-label">Выбрать Comet <i>→</i></span>
+            </button>
+            <button class="model-card orbit-card selected" type="button" data-model-card="Orbit" aria-pressed="true">
+              <span class="model-card-top"><span class="model-visual orbit-visual" aria-hidden="true"><i></i><i></i><b></b></span><span class="model-number">02</span></span>
+              <span class="model-copy"><strong>Orbit</strong><em>Продуманная работа</em><small>Планирует, реализует и проверяет связанные части.</small></span>
+              <span class="model-stage-line"><i>Контекст</i><i class="active">План</i><i>Работа</i><i>Проверка</i></span>
+              <span class="model-select-label">Выбрана <i>✓</i></span>
+            </button>
+            <button class="model-card quasar-card" type="button" data-model-card="Quasar" aria-pressed="false">
+              <span class="model-card-top"><span class="model-visual quasar-visual" aria-hidden="true"><i></i><i></i><i></i><b></b></span><span class="model-number">03</span></span>
+              <span class="model-copy"><strong>Quasar</strong><em>Глубокая автономная работа</em><small>Стратегия, параллельные потоки и усиленная проверка.</small></span>
+              <span class="model-stage-line"><i>Стратегия</i><i>Потоки</i><i class="active">Сверка</i><i>Тесты</i></span>
+              <span class="model-select-label">Выбрать Quasar <i>→</i></span>
+            </button>
+          </div>
+        </section>
 
         <div class="agent-dashboard">
           <article class="active-task-card" id="active-task-card"><div class="card-heading"><div><span class="eyebrow">Активная задача</span><h2 id="active-task-title">Система сезонных заданий</h2></div><span class="status-pill status-live"><i></i><span id="active-task-status">Выполняет задачу</span></span></div><p class="task-summary">Zorym AI готовит структуру данных, правила прогресса и защиту наград.</p><div class="task-progress"><i id="task-progress-bar"></i></div><div class="task-stages"><span class="done"><i>✓</i>Анализ запроса</span><span class="current"><i>2</i>Реализация</span><span><i>3</i>Проверка</span><span><i>4</i>Результат</span></div><div class="task-footer"><span><b>Zorym 1 Orbit</b> · режим Мастер</span><button type="button">Открыть ход работы →</button></div></article>
@@ -226,6 +253,12 @@ const chatThread = document.querySelector('#chat-thread');
 const prompt = document.querySelector('#agent-prompt');
 const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; });
 
+const modelProfiles = {
+  Comet: { label: 'Быстрое выполнение', stages: ['Анализирую', 'Выполняю', 'Готово'] },
+  Orbit: { label: 'Продуманная работа', stages: ['Изучаю контекст', 'Планирую', 'Выполняю', 'Проверяю'] },
+  Quasar: { label: 'Глубокая работа', stages: ['Формирую стратегию', 'Разделяю задачу', 'Сверяю решения', 'Тестирую', 'Финализирую'] }
+};
+
 let chats = [
   {
     id: 'seasonal-quests',
@@ -286,12 +319,33 @@ function renderChatList() {
   }).join('');
 }
 
+function modelWorkMarkup(modelName, stage, progress) {
+  const safeModel = modelProfiles[modelName] ? modelName : 'Orbit';
+  const profile = modelProfiles[safeModel];
+  const normalizedProgress = Math.max(0, Math.min(100, Number(progress || 0)));
+  const currentIndex = Math.min(profile.stages.length - 1, Math.floor((normalizedProgress / 100) * profile.stages.length));
+  const motion = safeModel === 'Comet'
+    ? '<span class="work-motion comet-work" aria-hidden="true"><i></i><b></b></span>'
+    : safeModel === 'Orbit'
+      ? '<span class="work-motion orbit-work" aria-hidden="true"><i></i><i></i><b></b></span>'
+      : '<span class="work-motion quasar-work" aria-hidden="true"><i></i><i></i><i></i><b></b></span>';
+  const stages = profile.stages.map(function (item, index) {
+    const state = normalizedProgress === 100 || index < currentIndex ? ' done' : index === currentIndex ? ' current' : '';
+    return '<span class="work-stage' + state + '"><i>' + (state === ' done' ? '✓' : index + 1) + '</i>' + escapeHtml(item) + '</span>';
+  }).join('');
+  const quasarDetails = safeModel === 'Quasar' ? '<div class="quasar-streams"><span><i></i>Стратегия</span><span><i></i>Реализация</span><span><i></i>Проверка</span></div>' : '';
+  return '<div class="message-work model-work model-work-' + safeModel.toLowerCase() + '">' +
+    '<div class="model-work-heading"><div>' + motion + '<span><small>' + escapeHtml(profile.label) + '</small><b>' + escapeHtml(stage) + '</b></span></div><strong>' + normalizedProgress + '%</strong></div>' +
+    '<div class="message-progress"><i style="width:' + normalizedProgress + '%"></i></div>' + quasarDetails +
+    '<div class="work-stages">' + stages + '</div></div>';
+}
+
 function messageMarkup(message) {
   const isUser = message.role === 'user';
   const avatar = isUser ? 'АК' : '<span></span>';
   const author = isUser ? 'Вы' : 'Zorym AI';
   const model = isUser ? '' : '<em>Zorym 1 ' + escapeHtml(currentChat().model) + '</em>';
-  const workState = message.stage ? '<div class="message-work"><div><span><i></i>' + escapeHtml(message.stage) + '</span><b>' + Number(message.progress || 0) + '%</b></div><div class="message-progress"><i style="width:' + Number(message.progress || 0) + '%"></i></div><small>Анализ запроса → выполнение → проверка → результат</small></div>' : '';
+  const workState = message.stage ? modelWorkMarkup(currentChat().model, message.stage, message.progress) : '';
   const verification = !isUser && currentChat().model === 'Quasar' ? '<div class="verification-chips"><span>Proof Chain</span><span>Shadow Test</span></div>' : '';
   const actions = isUser ? '' : '<div class="message-actions"><button type="button" aria-label="Скопировать ответ"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button><button type="button" aria-label="Полезный ответ"><svg viewBox="0 0 24 24"><path d="M7 21H4V10h3M7 10l4-7 2 1v5h6l1 2-2 8H7z"/></svg></button><button type="button" aria-label="Неполезный ответ"><svg viewBox="0 0 24 24"><path d="M7 3H4v11h3M7 14l4 7 2-1v-5h6l1-2-2-8H7z"/></svg></button></div>';
   return '<article class="chat-message ' + (isUser ? 'user-message' : 'assistant-message') + '">' +
@@ -302,6 +356,17 @@ function messageMarkup(message) {
 function syncChatChoices(chat) {
   document.querySelectorAll('[data-choice-group="model"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.model); });
   document.querySelectorAll('[data-choice-group="mode"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.mode); });
+  syncModelShowcase(chat.model);
+}
+
+function syncModelShowcase(modelName) {
+  document.querySelectorAll('[data-model-card]').forEach(function (card) {
+    const selected = card.dataset.modelCard === modelName;
+    card.classList.toggle('selected', selected);
+    card.setAttribute('aria-pressed', String(selected));
+    const label = card.querySelector('.model-select-label');
+    if (label) label.innerHTML = selected ? 'Выбрана <i>✓</i>' : 'Выбрать ' + escapeHtml(card.dataset.modelCard) + ' <i>→</i>';
+  });
 }
 
 function renderConversation(chat) {
@@ -399,6 +464,26 @@ document.querySelectorAll('[data-choice-group]').forEach(function (group) {
     });
   });
 });
+
+document.querySelectorAll('[data-model-card]').forEach(function (card) {
+  card.addEventListener('click', function () {
+    const modelName = card.dataset.modelCard;
+    const modelButton = Array.from(document.querySelectorAll('[data-choice-group="model"] button')).find(function (button) { return button.textContent.trim() === modelName; });
+    if (modelButton) modelButton.click();
+    syncModelShowcase(modelName);
+    notify(modelName + ' выбрана для следующей задачи');
+  });
+});
+
+const motionToggle = document.querySelector('#motion-toggle');
+function setReducedMotion(reduced) {
+  document.body.classList.toggle('reduced-motion', reduced);
+  motionToggle.setAttribute('aria-pressed', String(reduced));
+  motionToggle.querySelector('b').textContent = reduced ? 'Анимация уменьшена' : 'Анимация включена';
+  try { window.localStorage.setItem('zorym-reduced-motion', reduced ? '1' : '0'); } catch (error) {}
+}
+motionToggle.addEventListener('click', function () { setReducedMotion(!document.body.classList.contains('reduced-motion')); });
+try { if (window.localStorage.getItem('zorym-reduced-motion') === '1') setReducedMotion(true); } catch (error) {}
 
 document.querySelectorAll('[data-prompt]').forEach(function (button) { button.addEventListener('click', function () { prompt.value = button.dataset.prompt; prompt.focus(); }); });
 const toolsTrigger = document.querySelector('#agent-tools-trigger');
