@@ -1,52 +1,127 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zorym AI</title><link rel="stylesheet" href="styles.css"></head>
-<body><div class="app">
-  <aside class="sidebar">
-    <a class="mark" href="#"><span>z</span></a>
-    <button class="collapse" aria-label="Свернуть меню">⌘</button>
-    <button class="new-chat"><i>＋</i> Новый чат <kbd>⌘ K</kbd></button>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Рабочее пространство Zorym AI для проектов, игр и бизнеса.">
+  <title>Zorym AI — рабочее пространство</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Основная навигация">
+    <div class="brand-row"><a class="mark" href="#agent" aria-label="Zorym AI">z</a><b>Zorym</b><button class="collapse" aria-label="Свернуть меню">‹</button></div>
+    <button class="new-chat"><span>＋</span>Новый чат<kbd>⌘ K</kbd></button>
+
     <nav>
-      <a class="active" data-view="agent"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12h6M12 9v6"/></svg>Мой AI Agent</a>
-      <a data-view="projects"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 5v14M4 10h16"/></svg>Проекты <b>4</b></a>
-      <a data-view="games"><svg viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5M12 13v8"/></svg>Games Studio <em>new</em></a>
-      <a data-view="vault"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Build Vault</a>
+      <p>Рабочее пространство</p>
+      <a class="active" href="#agent" data-view="agent" data-title="Skyblock: Genesis" data-subtitle="Minecraft Paper" data-avatar="S"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12h6M12 9v6"/></svg>Мой AI Agent</a>
+      <a href="#projects" data-view="projects" data-title="Все проекты" data-subtitle="Личное пространство" data-avatar="4"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 5v14M4 10h16"/></svg>Проекты<span class="nav-count">4</span></a>
+      <p>Продукты</p>
+      <a href="#games" data-view="games" data-title="Games Studio" data-subtitle="Создание игровых проектов" data-avatar="G"><svg viewBox="0 0 24 24"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5M12 13v8"/></svg>Games Studio<span class="nav-new">new</span></a>
+      <a href="#business" data-view="business" data-title="Northstar Group" data-subtitle="Zorym Business" data-avatar="N"><svg viewBox="0 0 24 24"><path d="M4 20V7l5-3v16M9 9h11v11M13 13h3M13 16h3"/></svg>Zorym Business<span class="nav-count accent">3</span></a>
+      <a href="#vault" data-view="vault" data-title="Build Vault" data-subtitle="Результаты и версии" data-avatar="B"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Build Vault</a>
     </nav>
-    <div class="sidebar-footer">
-      <button class="account"><span>АК</span><div><b>Алексей К.</b><small>Профиль и подписка</small></div><i>⌄</i></button>
-    </div>
+
+    <div class="sidebar-footer"><button class="account"><span>АК</span><div><b>Алексей К.</b><small>Профиль и подписка</small></div><i>⌄</i></button></div>
   </aside>
+
   <main>
-    <header><div class="project-switcher"><span class="project-avatar">S</span><div><b>Skyblock: Genesis</b><small>Minecraft Paper</small></div><button>⌄</button></div><div class="header-actions"><button class="limits">2 480 <span>/ 4 000</span></button><button class="help">?</button></div></header>
-    <section class="center view active" data-screen="agent">
-      <div class="welcome"><p>Добрый день, Алексей</p><h1>Над чем поработаем?</h1><span>Zorym AI помогает проектировать, писать и проверять игровые проекты.</span></div>
+    <header class="topbar">
+      <div class="workspace-context"><span class="workspace-avatar" id="context-avatar">S</span><div><b id="context-title">Skyblock: Genesis</b><small id="context-subtitle">Minecraft Paper</small></div><button aria-label="Сменить пространство">⌄</button></div>
+      <div class="header-actions"><button class="usage"><b>2 480</b><span>/ 4 000 единиц</span></button><button class="icon-button" aria-label="Уведомления"><svg viewBox="0 0 24 24"><path d="M6 16V10a6 6 0 0 1 12 0v6l2 2H4zM10 21h4"/></svg><i></i></button><button class="help" aria-label="Помощь">?</button></div>
+    </header>
+
+    <section class="page page-agent view active" data-screen="agent">
+      <div class="welcome"><p>Добрый день, Алексей</p><h1>Над чем поработаем?</h1><span>Zorym AI поможет превратить задачу в проверенный результат.</span></div>
       <div class="composer">
-        <textarea placeholder="Опишите задачу для вашего игрового проекта..." aria-label="Задача"></textarea>
-        <div class="composer-footer"><button class="add" aria-label="Добавить контекст">＋</button><button class="context"><span class="dot"></span> Skyblock: Genesis <i>⌄</i></button><span class="hint">⌘ Enter для запуска</span><button class="send" aria-label="Запустить задачу">↑</button></div>
+        <div class="composer-settings">
+          <div class="setting-group"><small>Модель</small><div class="choice-row model-choice"><button>Zorym 1 Comet</button><button class="selected">Zorym 1 Orbit</button><button>Zorym 1 Quasar</button></div></div>
+          <div class="setting-group mode-group"><small>Режим</small><div class="choice-row mode-choice"><button>Импульс</button><button class="selected">Мастер</button><button>Архитектор</button></div></div>
+        </div>
+        <textarea placeholder="Опишите задачу — что должно измениться и какой результат вы ожидаете?" aria-label="Задача"></textarea>
+        <div class="composer-footer"><button class="add" aria-label="Добавить контекст">＋</button><button class="context"><span class="context-dot"></span>Skyblock: Genesis<i>⌄</i></button><span class="hint">⌘ Enter</span><button class="send" aria-label="Запустить задачу">↑</button></div>
       </div>
-      <div class="suggestions"><button>Создать механику <span>↗</span></button><button>Исправить ошибку <span>↗</span></button><button>Придумать игровой режим <span>↗</span></button></div>
+      <div class="suggestions"><button>Создать механику<span>↗</span></button><button>Исправить ошибку<span>↗</span></button><button>Спроектировать систему<span>↗</span></button></div>
       <div class="recent">
-        <div class="recent-head"><span>ПОСЛЕДНЯЯ АКТИВНОСТЬ</span><button>Все задачи →</button></div>
-        <article><span class="status ready"></span><div><b>Черновики кода готовы к проверке</b><p>Система островов · Skyblock: Genesis</p></div><time>12 мин назад</time><button>Открыть →</button></article>
-        <article><span class="status archive"></span><div><b>ZIP исходников подготовлен</b><p>Версия 11 · Build Vault</p></div><time>Вчера</time><button>Скачать ↓</button></article>
+        <div class="section-caption"><span>Последняя активность</span><button>Все задачи →</button></div>
+        <article><span class="activity-icon success">✓</span><div><b>Черновики кода готовы к проверке</b><p>Система островов · Zorym 1 Orbit</p></div><time>12 мин назад</time><button>Открыть</button></article>
+        <article><span class="activity-icon violet">↓</span><div><b>ZIP исходников подготовлен</b><p>Версия 11 · Build Vault</p></div><time>Вчера</time><button>Скачать</button></article>
       </div>
     </section>
-    <section class="center view" data-screen="projects">
-      <div class="section-title"><div><p>ПРОЕКТЫ</p><h1>Ваши игровые миры</h1><span>Исходники, история задач и результаты сборки — в одном месте.</span></div><button class="solid">＋ Новый проект</button></div>
+
+    <section class="page view" data-screen="projects">
+      <div class="section-title"><div><p>Проекты</p><h1>Ваши рабочие пространства</h1><span>Задачи, исходники и история решений собраны по проектам.</span></div><button class="primary">＋ Новый проект</button></div>
       <div class="project-list">
         <button class="project-card"><span class="project-mark blue">S</span><div><b>Skyblock: Genesis</b><small>Minecraft Paper · 12 задач</small></div><i>Открыть →</i></button>
         <button class="project-card"><span class="project-mark purple">V</span><div><b>Vault Raiders</b><small>Roblox Studio · 4 задачи</small></div><i>Открыть →</i></button>
         <button class="project-card"><span class="project-mark orange">A</span><div><b>Aether Parkour</b><small>Minecraft Paper · 2 задачи</small></div><i>Открыть →</i></button>
       </div>
     </section>
-    <section class="center view" data-screen="games">
-      <div class="section-title"><div><p>GAMES STUDIO</p><h1>Соберите основу игры</h1><span>Опишите направление — Zorym AI подготовит первую архитектуру.</span></div><small class="step">Шаг 1 из 1</small></div>
-      <form class="game-form"><label>Название игры<input placeholder="Например, Frostfall" required></label><fieldset><legend>Платформа</legend><div class="platform-choice"><button type="button" class="selected"><b>Minecraft Paper</b><span>Плагин для сервера</span></button><button type="button"><b>Roblox Studio</b><span>Luau и игровые системы</span></button></div></fieldset><div class="two-fields"><label>Жанр<select><option>Выживание</option><option>RPG</option><option>PvP</option><option>Приключение</option></select></label><label>Формат<select><option>Открытый мир</option><option>Раунды</option><option>Кооператив</option></select></label></div><button class="solid">Продолжить с Zorym AI →</button></form>
+
+    <section class="page view" data-screen="games">
+      <div class="section-title"><div><p>Games Studio</p><h1>Соберите основу игры</h1><span>Задайте направление — Zorym AI подготовит архитектуру первого релиза.</span></div><small class="step">Шаг 1 из 1</small></div>
+      <form class="game-form"><label>Название игры<input placeholder="Например, Frostfall" required></label><fieldset><legend>Платформа</legend><div class="platform-choice"><button type="button" class="selected"><b>Minecraft Paper</b><span>Плагин для сервера</span></button><button type="button"><b>Roblox Studio</b><span>Luau и игровые системы</span></button></div></fieldset><div class="two-fields"><label>Жанр<select><option>Выживание</option><option>RPG</option><option>PvP</option><option>Приключение</option></select></label><label>Формат<select><option>Открытый мир</option><option>Раунды</option><option>Кооператив</option></select></label></div><button class="primary">Продолжить с Zorym AI →</button></form>
     </section>
-    <section class="center view" data-screen="vault">
-      <div class="section-title"><div><p>BUILD VAULT</p><h1>Результаты сборок</h1><span>Готовые исходники, JAR и отчёты проверки.</span></div></div>
+
+    <section class="business-page view" data-screen="business">
+      <div class="business-heading"><div><p>Zorym Business</p><h1>Доброе утро, Алексей</h1><span>Три решения ждут вашего внимания.</span></div><div class="business-actions"><button class="secondary">Настроить пространство</button><button class="primary" id="business-task">＋ Новая задача</button></div></div>
+
+      <div class="metric-strip" aria-label="Сводка компании">
+        <article><small>В работе</small><strong>24</strong><span><i class="live-dot"></i>7 агентов активны</span></article>
+        <article><small>На согласовании</small><strong>3</strong><span>2 документа · 1 действие</span></article>
+        <article><small>Завершено за неделю</small><strong>86</strong><span class="positive">+18% к прошлой</span></article>
+        <article><small>Бюджет AI</small><strong>68%</strong><span>34 200 из 50 000 единиц</span></article>
+      </div>
+
+      <div class="command-grid">
+        <section class="operations-panel">
+          <div class="panel-head"><div><p>Сейчас в работе</p><span>Обновлено только что</span></div><button>Все задачи →</button></div>
+          <div class="operation-list">
+            <article><div class="agent-orb quasar">Q</div><div class="operation-main"><div><b>Стратегия выхода в новый регион</b><span class="pill thinking">Анализирует</span></div><p>Стратегия · Zorym 1 Quasar</p><div class="progress"><i style="width:68%"></i></div><small>Сравниваю спрос, конкурентов и финансовые риски…</small></div><time>18 мин</time></article>
+            <article><div class="agent-orb orbit">O</div><div class="operation-main"><div><b>Коммерческое предложение для Meridian</b><span class="pill checking">Проверяет</span></div><p>Отдел продаж · Zorym 1 Orbit</p><div class="progress"><i style="width:86%"></i></div><small>Проверяю цены и условия перед отправкой…</small></div><time>4 мин</time></article>
+            <article><div class="agent-orb comet">C</div><div class="operation-main"><div><b>Разбор обращений клиентов за август</b><span class="pill working">Выполняет</span></div><p>Поддержка · Zorym 1 Comet</p><div class="progress"><i style="width:41%"></i></div><small>Группирую обращения по причинам и приоритету…</small></div><time>9 мин</time></article>
+          </div>
+        </section>
+
+        <aside class="approval-panel">
+          <div class="panel-head"><div><p>Требует решения</p><span>3 запроса</span></div><button>История</button></div>
+          <div class="approval-list">
+            <article><span class="approval-type">Документ</span><b>Договор с поставщиком</b><p>Юридический контур отметил два изменённых условия.</p><div><button class="review">Просмотреть</button><button class="approve">Утвердить</button></div></article>
+            <article><span class="approval-type">Отправка</span><b>Кампания для 1 240 клиентов</b><p>Письма подготовлены и проверены по правилам бренда.</p><div><button class="review">Просмотреть</button><button class="approve">Утвердить</button></div></article>
+            <article><span class="approval-type">Бюджет</span><b>Увеличение лимита аналитики</b><p>Отдел операций запрашивает ещё 8 000 единиц.</p><div><button class="review">Подробнее</button><button class="approve">Утвердить</button></div></article>
+          </div>
+        </aside>
+      </div>
+
+      <div class="business-lower">
+        <section class="process-panel"><div class="panel-head"><div><p>Ключевые процессы</p><span>Автоматизации компании</span></div><button>Process Studio →</button></div><div class="process-list"><article><span>01</span><div><b>Новая заявка</b><p>Квалификация → предложение → CRM</p></div><em>128 запусков</em></article><article><span>02</span><div><b>Еженедельный отчёт</b><p>Сбор данных → выводы → рассылка</p></div><em>Готов в пятницу</em></article><article><span>03</span><div><b>Новый сотрудник</b><p>Документы → доступы → план адаптации</p></div><em>4 активных</em></article></div></section>
+        <aside class="memory-panel"><span class="memory-mark">M</span><p>Business Memory</p><h2>Знания компании под контролем</h2><span>486 документов · 12 источников<br>Обновлено 2 часа назад</span><button>Открыть базу знаний →</button></aside>
+      </div>
+    </section>
+
+    <section class="page view" data-screen="vault">
+      <div class="section-title"><div><p>Build Vault</p><h1>Результаты и версии</h1><span>Готовые исходники, архивы и отчёты проверки.</span></div></div>
       <div class="vault-row"><span class="project-mark blue">S</span><div><b>Skyblock: Genesis · Версия 11</b><p>ZIP исходников · 14 файлов · подготовлен сегодня</p></div><button>Скачать ↓</button></div>
       <div class="vault-row"><span class="project-mark purple">V</span><div><b>Vault Raiders · Версия 4</b><p>План готов к проверке · сборка не запускалась</p></div><button>Открыть →</button></div>
     </section>
-    <footer><span>Zorym AI может ошибаться. Проверяйте изменения перед применением.</span><div><a>Конфиденциальность</a><a>Поддержка</a></div></footer>
+
+    <footer><span>Zorym AI может ошибаться. Проверяйте важные решения.</span><div><a href="#privacy">Конфиденциальность</a><a href="#support">Поддержка</a></div></footer>
   </main>
-</div><script>const links=document.querySelectorAll('[data-view]'),screens=document.querySelectorAll('[data-screen]');links.forEach(link=>link.addEventListener('click',()=>{links.forEach(x=>x.classList.remove('active'));screens.forEach(x=>x.classList.remove('active'));link.classList.add('active');document.querySelector(`[data-screen="${link.dataset.view}"]`).classList.add('active')}));document.querySelectorAll('.platform-choice button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.platform-choice button').forEach(x=>x.classList.remove('selected'));button.classList.add('selected')}));</script></body></html>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+<script>
+const links=[...document.querySelectorAll('[data-view]')],screens=[...document.querySelectorAll('[data-screen]')];
+const title=document.querySelector('#context-title'),subtitle=document.querySelector('#context-subtitle'),avatar=document.querySelector('#context-avatar'),toast=document.querySelector('.toast');
+function showView(link){links.forEach(x=>x.classList.toggle('active',x===link));screens.forEach(x=>x.classList.toggle('active',x.dataset.screen===link.dataset.view));title.textContent=link.dataset.title;subtitle.textContent=link.dataset.subtitle;avatar.textContent=link.dataset.avatar;window.location.hash=link.dataset.view;window.scrollTo({top:0,behavior:'smooth'})}
+links.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();showView(link)}));
+document.querySelector('.new-chat').addEventListener('click',()=>showView(links.find(link=>link.dataset.view==='agent')));
+document.querySelectorAll('.platform-choice button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.platform-choice button').forEach(x=>x.classList.remove('selected'));button.classList.add('selected')}));
+document.querySelectorAll('.choice-row').forEach(group=>group.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{group.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));button.classList.add('selected')})));
+function notify(message){toast.textContent=message;toast.classList.add('show');window.setTimeout(()=>toast.classList.remove('show'),2200)}
+document.querySelector('#business-task').addEventListener('click',()=>notify('Новая бизнес-задача готова к созданию'));
+document.querySelectorAll('.approve').forEach(button=>button.addEventListener('click',()=>{button.textContent='Утверждено';button.disabled=true;button.closest('article').classList.add('approved');notify('Решение утверждено')}));
+const initial=links.find(link=>link.dataset.view===window.location.hash.slice(1));if(initial)showView(initial);
+</script>
+</body>
+</html>
