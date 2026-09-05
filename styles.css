@@ -200,9 +200,9 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .agent-hero h1 { margin: 0; font-size: clamp(39px, 5vw, 56px); font-weight: 625; letter-spacing: -.065em; line-height: 1.03; }
 .hero-copy { display: block; max-width: 590px; margin: 15px auto 0; color: #81847d; font-size: 15px; line-height: 1.55; }
 
-.prompt-card { overflow: hidden; border: 1px solid var(--line-strong); border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-md); transition: border .18s ease, box-shadow .18s ease; }
+.prompt-card { position: relative; overflow: visible; border: 1px solid var(--line-strong); border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-md); transition: border .18s ease, box-shadow .18s ease; }
 .prompt-card:focus-within { border-color: #c7c2ed; box-shadow: 0 20px 54px rgba(60,53,112,.1), 0 0 0 3px rgba(104,87,232,.06); }
-.prompt-context { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eff0ed; background: #fbfcf9; padding: 11px 14px; }
+.prompt-context { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eff0ed; border-radius: 19px 19px 0 0; background: #fbfcf9; padding: 11px 14px; }
 .project-context { display: flex; align-items: center; gap: 9px; }
 .mini-project-icon { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; background: #284e6e; color: #fff; font-size: 12px; font-weight: 760; }
 .project-context small, .project-context b { display: block; }
@@ -213,18 +213,32 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .prompt-context > button svg { width: 15px; height: 15px; }
 .prompt-card textarea { display: block; width: 100%; min-height: 144px; resize: vertical; border: 0; outline: 0; background: transparent; padding: 22px 20px 14px; color: #2c2e2b; font-size: 16px; line-height: 1.58; }
 .prompt-card textarea::placeholder { color: #9b9e96; }
-.capability-row { display: flex; gap: 6px; overflow-x: auto; border-top: 1px solid #f0f1ed; padding: 9px 12px 0; scrollbar-width: none; }
-.capability-row::-webkit-scrollbar { display: none; }
-.capability-button { display: grid; min-width: 0; grid-template-columns: 24px auto; grid-template-rows: auto auto; column-gap: 7px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: #6f726c; padding: 7px 9px; text-align: left; }
-.capability-button:hover { background: #f5f6f3; }
-.capability-button.active { border-color: #ddd9f6; background: #f7f5ff; color: #5546bc; }
-.capability-button > span { display: grid; width: 24px; height: 24px; grid-row: 1 / 3; place-items: center; border-radius: 7px; background: #eeefeb; color: #747770; font-size: 12px; }
-.capability-button.active > span { background: #e8e3ff; color: #5e4cd0; }
-.capability-button b { align-self: end; font-size: 10px; font-weight: 680; white-space: nowrap; }
-.capability-button small { color: #a0a39b; font-size: 8px; white-space: nowrap; }
 .prompt-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 12px 12px; }
 .prompt-tools, .run-settings, .choice-menu { display: flex; align-items: center; }
 .prompt-tools { gap: 5px; }
+.tools-divider { width: 1px; height: 20px; margin: 0 2px; background: #e4e6e0; }
+.agent-tools { position: relative; }
+.agent-tools-trigger { display: flex; height: 34px; align-items: center; gap: 7px; border: 0; border-radius: 9px; background: transparent; color: #686b65; padding: 0 8px; font-size: 11px; font-weight: 620; }
+.agent-tools-trigger:hover,.agent-tools-trigger[aria-expanded="true"] { background: #f1f2ee; color: #30322f; }
+.agent-tools-trigger svg { width: 16px; height: 16px; color: #6252cf; }
+.agent-tools-trigger i { display: grid; min-width: 18px; height: 18px; place-items: center; border-radius: 6px; background: var(--violet-soft); color: #5b49c8; font-size: 8px; font-style: normal; }
+.capability-menu { position: absolute; z-index: 30; bottom: calc(100% + 11px); left: 0; visibility: hidden; width: 330px; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 15px; background: #fff; box-shadow: 0 20px 54px rgba(24,27,22,.16),0 2px 8px rgba(24,27,22,.05); opacity: 0; transform: translateY(7px) scale(.98); transform-origin: bottom left; transition: opacity .16s ease,transform .16s ease,visibility .16s ease; }
+.capability-menu.open { visibility: visible; opacity: 1; transform: translateY(0) scale(1); }
+.capability-menu > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; border-bottom: 1px solid #eceee9; background: #fafbf8; padding: 14px 15px; }
+.capability-menu header b,.capability-menu header small { display: block; }
+.capability-menu header b { font-size: 11px; font-weight: 670; }
+.capability-menu header small { margin-top: 4px; color: var(--quiet); font-size: 8px; }
+.capability-menu header > span { border-radius: 99px; background: #eeefeb; color: #747770; padding: 5px 7px; font-size: 8px; font-weight: 650; white-space: nowrap; }
+.capability-list { display: grid; padding: 5px; }
+.capability-option { display: grid; grid-template-columns: 36px minmax(0,1fr) 22px; align-items: center; gap: 10px; border: 0; border-radius: 11px; background: transparent; padding: 9px 10px; text-align: left; }
+.capability-option:hover { background: #f5f6f3; }
+.capability-symbol { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 10px; background: #eff0ec; color: #676a64; font-size: 14px; }
+.capability-option.active .capability-symbol { background: var(--violet-soft); color: #5e4ccf; }
+.capability-option b,.capability-option small { display: block; }
+.capability-option b { font-size: 11px; font-weight: 640; }
+.capability-option small { margin-top: 4px; color: var(--quiet); font-size: 8px; }
+.capability-option > i { display: none; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: var(--violet); color: #fff; font-size: 8px; font-style: normal; }
+.capability-option.active > i { display: grid; }
 .tool-button { display: grid; width: 34px; height: 34px; place-items: center; border: 0; border-radius: 9px; background: transparent; color: #6f726c; }
 .tool-button:hover { background: #f1f2ee; color: var(--ink); }
 .tool-button svg { width: 18px; height: 18px; }
@@ -736,8 +750,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
   .agent-hero h1 { font-size: 42px; }
   .hero-copy { font-size: 14px; }
   .prompt-toolbar { align-items: flex-start; flex-direction: column; }
-  .capability-row { padding-right: 10px; padding-left: 10px; }
-  .capability-button { flex: 0 0 auto; }
+  .capability-menu { position: fixed; right: 16px; bottom: 92px; left: 16px; width: auto; transform-origin: bottom center; }
   .run-settings { width: 100%; overflow-x: auto; padding-bottom: 1px; }
   .send-button { margin-left: auto; }
   .quick-prompts { gap: 7px; }
@@ -803,6 +816,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
   .prompt-context > button { font-size: 0; }
   .prompt-context > button svg { width: 17px; height: 17px; }
   .mode-choice { display: none; }
+  .agent-tools-trigger > span { display: none; }
   .toolbar-divider { display: none; }
   .quick-prompts > button { grid-template-columns: 32px minmax(0,1fr) auto; }
   .quick-icon { width: 32px; height: 32px; }

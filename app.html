@@ -99,13 +99,8 @@
         <div class="prompt-card">
           <div class="prompt-context"><div class="project-context"><span class="mini-project-icon">S</span><div><small>Работаем в проекте</small><b>Skyblock: Genesis</b></div></div><button type="button">Изменить <svg viewBox="0 0 24 24"><path d="m9 10 3 3 3-3"/></svg></button></div>
           <textarea id="agent-prompt" aria-label="Опишите задачу" placeholder="Например: разработай систему сезонных заданий с наградами и защитой от повторного получения…"></textarea>
-          <div class="capability-row" aria-label="Инструменты задачи">
-            <button class="capability-button active" type="button" data-capability="Smart Brief"><span>⌁</span><b>Smart Brief</b><small>Уточнит задачу</small></button>
-            <button class="capability-button" type="button" data-capability="Zorym Browser"><span>◎</span><b>Browser</b><small>Найдёт источники</small></button>
-            <button class="capability-button" type="button" data-capability="Zorym Crew"><span>◌</span><b>Crew</b><small>Сверит решение</small></button>
-          </div>
           <div class="prompt-toolbar">
-            <div class="prompt-tools"><button class="tool-button" type="button" aria-label="Добавить файлы"><svg viewBox="0 0 24 24"><path d="m9 12 5.6-5.6a3 3 0 0 1 4.2 4.2l-7.7 7.7a5 5 0 0 1-7.1-7.1L11.2 4"/></svg></button><button class="tool-button" type="button" aria-label="Добавить изображение"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m5 17 4.5-4 3 2.5 2.5-2 4 3.5"/></svg></button></div>
+            <div class="prompt-tools"><button class="tool-button" type="button" aria-label="Добавить файлы"><svg viewBox="0 0 24 24"><path d="m9 12 5.6-5.6a3 3 0 0 1 4.2 4.2l-7.7 7.7a5 5 0 0 1-7.1-7.1L11.2 4"/></svg></button><button class="tool-button" type="button" aria-label="Добавить изображение"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m5 17 4.5-4 3 2.5 2.5-2 4 3.5"/></svg></button><span class="tools-divider"></span><div class="agent-tools"><button class="agent-tools-trigger" id="agent-tools-trigger" type="button" aria-expanded="false" aria-controls="capability-menu"><svg viewBox="0 0 24 24"><path d="M8.5 4.5 9.7 7a4 4 0 0 0 2 2l2.8 1.4-2.8 1.3a4 4 0 0 0-2 2l-1.2 2.8-1.3-2.8a4 4 0 0 0-2-2L3 10.5l2.2-1.4a4 4 0 0 0 2-2zM17 13l.7 1.5a3 3 0 0 0 1.5 1.5l1.5.7-1.5.8a3 3 0 0 0-1.5 1.5l-.7 1.5-.8-1.5a3 3 0 0 0-1.5-1.5l-1.5-.8 1.5-.7a3 3 0 0 0 1.5-1.5z"/></svg><span>Инструменты</span><i id="active-tool-count">1</i></button><div class="capability-menu" id="capability-menu" aria-hidden="true"><header><div><b>Инструменты агента</b><small>Подключаются только к текущей задаче</small></div><span id="capability-plan">Forge Pro</span></header><div class="capability-list"><button class="capability-option active" type="button" data-capability="Smart Brief"><span class="capability-symbol">⌁</span><span><b>Smart Brief</b><small>Уточнит цель и критерии готовности</small></span><i>✓</i></button><button class="capability-option" type="button" data-capability="Zorym Browser"><span class="capability-symbol">◎</span><span><b>Zorym Browser</b><small>Изучит интернет и приложит источники</small></span><i>✓</i></button><button class="capability-option" type="button" data-capability="Zorym Crew"><span class="capability-symbol">◌</span><span><b>Zorym Crew</b><small>Подключит агентов для независимой проверки</small></span><i>✓</i></button></div></div></div></div>
             <div class="run-settings"><div class="choice-menu model-choice" data-choice-group="model"><button type="button">Comet</button><button class="selected" type="button">Orbit</button><button type="button">Quasar</button></div><span class="toolbar-divider"></span><div class="choice-menu mode-choice" data-choice-group="mode"><button type="button">Импульс</button><button class="selected" type="button">Мастер</button><button type="button">Архитектор</button></div><button class="send-button" id="send-task" type="button" aria-label="Запустить задачу"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div>
           </div>
         </div>
@@ -406,7 +401,13 @@ document.querySelectorAll('[data-choice-group]').forEach(function (group) {
 });
 
 document.querySelectorAll('[data-prompt]').forEach(function (button) { button.addEventListener('click', function () { prompt.value = button.dataset.prompt; prompt.focus(); }); });
-document.querySelectorAll('.capability-button').forEach(function (button) { button.addEventListener('click', function () { button.classList.toggle('active'); notify(button.dataset.capability + (button.classList.contains('active') ? ' включён' : ' выключен')); }); });
+const toolsTrigger = document.querySelector('#agent-tools-trigger');
+const capabilityMenu = document.querySelector('#capability-menu');
+function closeCapabilityMenu() { capabilityMenu.classList.remove('open'); capabilityMenu.setAttribute('aria-hidden', 'true'); toolsTrigger.setAttribute('aria-expanded', 'false'); }
+toolsTrigger.addEventListener('click', function (event) { event.stopPropagation(); const opening = !capabilityMenu.classList.contains('open'); closeCapabilityMenu(); if (opening) { capabilityMenu.classList.add('open'); capabilityMenu.setAttribute('aria-hidden', 'false'); toolsTrigger.setAttribute('aria-expanded', 'true'); } });
+capabilityMenu.addEventListener('click', function (event) { event.stopPropagation(); });
+document.addEventListener('click', closeCapabilityMenu);
+document.querySelectorAll('.capability-option').forEach(function (button) { button.addEventListener('click', function () { button.classList.toggle('active'); const count = document.querySelectorAll('.capability-option.active').length; document.querySelector('#active-tool-count').textContent = String(count); notify(button.dataset.capability + (button.classList.contains('active') ? ' включён' : ' выключен')); }); });
 function makeChatTitle(text) {
   const cleaned = text.replace(/^(пожалуйста|можешь|нужно|хочу|давай)\s+/i, '').replace(/\s+/g, ' ').trim();
   const words = cleaned.split(' ').slice(0, 5).join(' ').replace(/[.,!?;:]+$/g, '');
@@ -468,7 +469,7 @@ function openProfile() { profileDrawer.classList.add('open'); drawerBackdrop.cla
 function closeProfile() { profileDrawer.classList.remove('open'); drawerBackdrop.classList.remove('show'); document.body.classList.remove('drawer-open'); }
 document.querySelector('#account-button').addEventListener('click', openProfile); document.querySelector('#top-avatar').addEventListener('click', openProfile); document.querySelector('#close-profile').addEventListener('click', closeProfile); drawerBackdrop.addEventListener('click', closeProfile);
 document.querySelector('#command-button').addEventListener('click', function () { notify('Поиск по проектам, задачам и файлам'); });
-document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeMobileMenu(); } });
+document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeMobileMenu(); closeCapabilityMenu(); } });
 renderChatList();
 renderConversation(currentChat());
 const initialView = links.find(function (link) { return link.dataset.view === window.location.hash.slice(1); });
