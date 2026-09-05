@@ -550,7 +550,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .plan-track { background: rgba(255,255,255,.1); }
 .plan-track i { background: #8d7cf8; }
 .plan-card p { margin: 8px 0 17px; color: #8f958c; font-size: 12px; }
-.plan-card button { border: 0; background: transparent; color: #eef0ec; padding: 0; font-size: 12px; font-weight: 620; }
+.plan-card button, .plan-manage-link { border: 0; background: transparent; color: #eef0ec; padding: 0; font-size: 12px; font-weight: 620; text-decoration: none; }
 .profile-nav { display: grid; margin-top: 20px; }
 .profile-nav > button { display: grid; grid-template-columns: 36px minmax(0,1fr) auto; align-items: center; gap: 11px; border: 0; border-bottom: 1px solid var(--line); background: transparent; padding: 13px 4px; color: var(--ink); text-align: left; }
 .profile-nav > button:hover { background: #f5f6f3; }
