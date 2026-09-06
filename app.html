@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css?v=20260906-model-depth">
+  <link rel="stylesheet" href="styles.css?v=20260906-personal-space">
 </head>
 <body>
 <div class="mobile-backdrop" id="mobile-backdrop"></div>
@@ -229,11 +229,62 @@
 
 <div class="drawer-backdrop" id="drawer-backdrop"></div>
 <aside class="profile-drawer" id="profile-drawer" role="dialog" aria-modal="true" aria-labelledby="profile-title">
-  <div class="drawer-header"><div><span class="eyebrow">Личное пространство</span><h2 id="profile-title">Профиль</h2></div><button id="close-profile" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
-  <div class="profile-identity"><span class="profile-avatar">АК</span><div><h3>Алексей К.</h3><p>alexey@example.com</p></div><button type="button">Изменить</button></div>
-  <section class="plan-card"><div><span>Forge Pro</span><b>Активна</b></div><h3>62 <small>/ 100% лимита</small></h3><div class="plan-track"><i></i></div><p>Лимит обновится 14 сентября</p><a class="plan-manage-link" href="pricing.html">Управлять подпиской →</a></section>
-  <nav class="profile-nav" aria-label="Настройки профиля"><button type="button"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><div><b>Личные данные</b><small>Имя, email и язык</small></div><i>›</i></button><button type="button"><span><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><b>Безопасность</b><small>Пароль и активные сессии</small></div><i>›</i></button><button type="button"><span><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M9 18h6"/></svg></span><div><b>Настройки агента</b><small>Модель, режим и инструкции</small></div><i>›</i></button><button type="button"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 14h3"/></svg></span><div><b>Оплата и документы</b><small>История платежей и реквизиты</small></div><i>›</i></button></nav>
-  <div class="drawer-footer"><button type="button"><svg viewBox="0 0 24 24"><path d="M10 5H5v14h5M14 8l4 4-4 4M8 12h10"/></svg>Выйти из аккаунта</button><span>Версия интерфейса 0.8</span></div>
+  <header class="personal-header">
+    <div><span class="eyebrow">Личное пространство</span><h2 id="profile-title">Центр управления</h2></div>
+    <div class="personal-header-actions"><span><i></i>Все изменения защищены</span><button id="close-profile" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  </header>
+  <div class="personal-layout">
+    <aside class="personal-sidebar">
+      <div class="profile-identity"><button class="profile-avatar profile-avatar-button" id="profile-avatar-button" type="button" aria-label="Изменить аватар"><span id="profile-avatar-main">АК</span><i>+</i></button><input id="profile-avatar-input" type="file" accept="image/*" hidden><div><h3 data-profile-name>Алексей К.</h3><p data-profile-email>alexey@example.com</p></div></div>
+      <nav class="profile-nav" aria-label="Настройки профиля">
+        <button class="active" type="button" data-profile-section="personal"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><div><b>Личные данные</b><small>Имя, email и язык</small></div><i>›</i></button>
+        <button type="button" data-profile-section="security"><span><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><b>Безопасность</b><small>Пароль и активные сессии</small></div><i>›</i></button>
+        <button type="button" data-profile-section="agent-settings"><span><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M9 18h6"/></svg></span><div><b>Настройки агента</b><small>Модель, режим и инструкции</small></div><i>›</i></button>
+        <button type="button" data-profile-section="billing"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 14h3"/></svg></span><div><b>Оплата и документы</b><small>История платежей и реквизиты</small></div><i>›</i></button>
+      </nav>
+      <section class="personal-plan"><div><span>Forge Pro</span><b>Активен</b></div><strong>1 872 <small>из 2 610 ед.</small></strong><div class="plan-track"><i></i></div><p><span>Осталось 738</span><time>до 14 сентября</time></p><a href="pricing.html">Управлять тарифом <i>→</i></a></section>
+      <button class="profile-signout" type="button"><svg viewBox="0 0 24 24"><path d="M10 5H5v14h5M14 8l4 4-4 4M8 12h10"/></svg>Выйти из аккаунта</button>
+    </aside>
+
+    <div class="personal-content">
+      <section class="profile-panel active" data-profile-panel="personal">
+        <div class="profile-panel-heading"><div><span class="section-kicker">Профиль</span><h3>Личные данные</h3><p>То, как Zorym обращается к вам и показывает ваш аккаунт.</p></div><span class="profile-completeness"><i></i><b>Профиль заполнен</b><small>на 86%</small></span></div>
+        <form class="settings-form" id="personal-form">
+          <div class="field-row"><label class="settings-field"><span>Имя</span><input id="profile-name-input" name="name" value="Алексей К." autocomplete="name"><small>Отображается в чатах и рабочих пространствах.</small></label><label class="settings-field"><span>Язык интерфейса</span><select id="profile-language"><option selected>Русский</option><option>English</option><option>Қазақша</option></select><small>Zorym отвечает на языке сообщения.</small></label></div>
+          <label class="settings-field"><span>Email</span><div class="verified-input"><input id="profile-email-input" name="email" type="email" value="alexey@example.com" autocomplete="email"><b>✓ Подтверждён</b></div><small>Используется для входа, чеков и важных уведомлений.</small></label>
+          <div class="field-row"><label class="settings-field"><span>Часовой пояс</span><select id="profile-timezone"><option>Москва · UTC+3</option><option>Калининград · UTC+2</option><option>Екатеринбург · UTC+5</option><option>Новосибирск · UTC+7</option></select></label><label class="settings-field"><span>Формат даты</span><select id="profile-date-format"><option>06 сентября 2026</option><option>06.09.2026</option><option>2026-09-06</option></select></label></div>
+          <div class="settings-actions"><span id="personal-saved-state">Последнее изменение сегодня, 14:32</span><button class="save-settings" type="submit">Сохранить изменения</button></div>
+        </form>
+      </section>
+
+      <section class="profile-panel" data-profile-panel="security">
+        <div class="profile-panel-heading"><div><span class="section-kicker">Контроль доступа</span><h3>Безопасность</h3><p>Пароль, дополнительная защита и устройства с доступом.</p></div><span class="security-score"><i>92</i><span><b>Надёжная защита</b><small>2 рекомендации выполнены</small></span></span></div>
+        <div class="security-grid">
+          <form class="settings-card password-card" id="password-form"><div class="settings-card-title"><span class="settings-card-icon"><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><h4>Изменить пароль</h4><p>Минимум 10 символов и одна цифра.</p></div></div><label class="settings-field"><span>Текущий пароль</span><input type="password" id="current-password" autocomplete="current-password"></label><label class="settings-field"><span>Новый пароль</span><div class="password-input"><input type="password" id="new-password" autocomplete="new-password"><button class="password-visibility" type="button">Показать</button></div><div class="password-strength"><i></i><i></i><i></i><i></i><span>Введите новый пароль</span></div></label><label class="settings-field"><span>Повторите пароль</span><input type="password" id="confirm-password" autocomplete="new-password"></label><button class="save-settings" type="submit">Обновить пароль</button></form>
+          <div class="settings-card protection-card"><div class="settings-card-title"><span class="settings-card-icon violet"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8 7 10 4.2-2 7-5.2 7-10V6zM9 12l2 2 4-5"/></svg></span><div><h4>Двухэтапная защита</h4><p>Код подтверждения при новом входе.</p></div></div><button class="setting-switch" id="two-factor-toggle" type="button" role="switch" aria-checked="false"><span><b>Включить 2FA</b><small>Рекомендуется для защиты проектов</small></span><i></i></button><div class="recovery-note"><span>Коды восстановления</span><b>Будут доступны после подключения 2FA</b></div></div>
+        </div>
+        <div class="sessions-block"><div class="sessions-heading"><div><h4>Активные сессии</h4><p>Устройства, на которых выполнен вход в Zorym.</p></div><button id="end-other-sessions" type="button">Завершить остальные</button></div><div class="session-list" id="session-list"><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h5>Chrome · Windows 11 <b>Это устройство</b></h5><p>Москва, Россия · активна сейчас</p></div><i class="session-live"></i></article><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><h5>Safari · iPhone</h5><p>Москва, Россия · 2 часа назад</p></div><button class="end-session" type="button">Завершить</button></article><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h5>Edge · Windows 10</h5><p>Тверь, Россия · 4 дня назад</p></div><button class="end-session" type="button">Завершить</button></article></div></div>
+      </section>
+
+      <section class="profile-panel" data-profile-panel="agent-settings">
+        <div class="profile-panel-heading"><div><span class="section-kicker">Ваш стиль работы</span><h3>Настройки агента</h3><p>Значения по умолчанию для новых чатов. Их можно менять перед каждой задачей.</p></div><span class="agent-config-signal"><i></i><b>Персональный контур</b></span></div>
+        <form class="settings-form" id="agent-settings-form">
+          <fieldset class="preference-group"><legend>Модель по умолчанию</legend><div class="profile-model-picker"><button type="button" data-profile-model="Comet"><span class="mini-model comet"><i></i></span><b>Comet</b><small>Быстро и экономно</small><em>01</em></button><button class="selected" type="button" data-profile-model="Orbit"><span class="mini-model orbit"><i></i></span><b>Orbit</b><small>Баланс глубины и скорости</small><em>02</em></button><button type="button" data-profile-model="Quasar"><span class="mini-model quasar"><i></i></span><b>Quasar</b><small>Максимальная глубина</small><em>03</em></button></div></fieldset>
+          <fieldset class="preference-group"><legend>Режим работы</legend><div class="profile-mode-picker"><button type="button" data-profile-mode="Импульс"><b>Импульс</b><small>Короткий прямой путь</small></button><button class="selected" type="button" data-profile-mode="Мастер"><b>Мастер</b><small>План, работа и проверка</small></button><button type="button" data-profile-mode="Архитектор"><b>Архитектор</b><small>Системная проработка</small></button></div></fieldset>
+          <label class="settings-field instruction-field"><span>Персональные инструкции</span><textarea id="agent-instructions" maxlength="1200" placeholder="Например: объясняй решения простым языком, сохраняй обратную совместимость и всегда предлагай критерии проверки."></textarea><small><span>Применяются к новым чатам</span><b id="instruction-count">0 / 1200</b></small></label>
+          <div class="preference-toggles"><button class="setting-switch active" type="button" role="switch" aria-checked="true" data-agent-toggle="memory"><span><b>Учитывать предпочтения</b><small>Zorym запоминает стиль работы между чатами</small></span><i></i></button><button class="setting-switch" type="button" role="switch" aria-checked="false" data-agent-toggle="reduced-motion"><span><b>Уменьшить анимацию</b><small>Спокойное отображение этапов выполнения</small></span><i></i></button></div>
+          <div class="settings-actions"><span>Настройки можно изменить в любом чате</span><button class="save-settings" type="submit">Сохранить настройки агента</button></div>
+        </form>
+      </section>
+
+      <section class="profile-panel" data-profile-panel="billing">
+        <div class="profile-panel-heading"><div><span class="section-kicker">Финансы аккаунта</span><h3>Оплата и документы</h3><p>Тариф, способ оплаты, реквизиты и закрывающие документы.</p></div><a class="billing-support" href="#support">Вопрос по оплате ↗</a></div>
+        <div class="billing-overview"><article class="billing-plan-card"><div><span>Текущий тариф</span><b>Активен</b></div><h4>Forge Pro</h4><p>1 490 ₽ <small>/ месяц</small></p><footer><span>Следующее списание 14 сентября</span><a href="pricing.html">Изменить тариф</a></footer></article><article class="payment-method-card"><div class="card-chip"></div><span>Основной способ оплаты</span><h4>МИР •••• 4821</h4><p>Действует до 08/29</p><button id="change-payment-method" type="button">Изменить способ</button></article></div>
+        <form class="billing-details" id="billing-form"><div class="settings-card-title"><span class="settings-card-icon"><svg viewBox="0 0 24 24"><path d="M4 20V8l6-3v15M10 9h10v11M14 13h2M14 16h2"/></svg></span><div><h4>Реквизиты для документов</h4><p>Оставьте пустыми, если оплачиваете как физическое лицо.</p></div></div><div class="field-row"><label class="settings-field"><span>Название или ФИО</span><input id="billing-name" placeholder="Алексей Константинов"></label><label class="settings-field"><span>ИНН</span><input id="billing-tax-id" inputmode="numeric" maxlength="12" placeholder="000000000000"></label></div><label class="settings-field"><span>Email для чеков</span><input id="billing-email" type="email" value="alexey@example.com"></label><div class="settings-actions"><span>Чеки отправляются автоматически</span><button class="save-settings" type="submit">Сохранить реквизиты</button></div></form>
+        <div class="payment-history"><div class="sessions-heading"><div><h4>История платежей</h4><p>Чеки и документы доступны в любое время.</p></div><select id="payment-year" aria-label="Год платежей"><option>2026</option><option>2025</option></select></div><div class="payment-table"><div class="payment-row payment-head"><span>Дата</span><span>Описание</span><span>Сумма</span><span>Статус</span><span></span></div><div class="payment-row"><time>14 авг 2026</time><span><b>Forge Pro</b><small>Период до 14 сентября</small></span><strong>1 490 ₽</strong><em>Оплачено</em><button class="download-invoice" type="button" data-invoice="ZRY-2026-0814">Скачать</button></div><div class="payment-row"><time>14 июл 2026</time><span><b>Forge Pro</b><small>Период до 14 августа</small></span><strong>1 490 ₽</strong><em>Оплачено</em><button class="download-invoice" type="button" data-invoice="ZRY-2026-0714">Скачать</button></div><div class="payment-row"><time>14 июн 2026</time><span><b>Forge Pro</b><small>Период до 14 июля</small></span><strong>1 490 ₽</strong><em>Оплачено</em><button class="download-invoice" type="button" data-invoice="ZRY-2026-0614">Скачать</button></div></div></div>
+      </section>
+    </div>
+  </div>
 </aside>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -549,10 +600,186 @@ document.querySelector('#vault-search').addEventListener('input', filterVault);
 document.querySelectorAll('.download-button').forEach(function (button) { button.addEventListener('click', function () { notify('Файл подготовлен к скачиванию'); }); });
 document.querySelector('#upload-build').addEventListener('click', function () { notify('Выберите ZIP с исходниками'); });
 
-const profileDrawer = document.querySelector('#profile-drawer'); const drawerBackdrop = document.querySelector('#drawer-backdrop');
-function openProfile() { profileDrawer.classList.add('open'); drawerBackdrop.classList.add('show'); document.body.classList.add('drawer-open'); document.querySelector('#close-profile').focus(); }
+const profileDrawer = document.querySelector('#profile-drawer');
+const drawerBackdrop = document.querySelector('#drawer-backdrop');
+const profileSectionButtons = Array.from(document.querySelectorAll('[data-profile-section]'));
+const profilePanels = Array.from(document.querySelectorAll('[data-profile-panel]'));
+const profileSectionTitles = { personal: 'Личные данные', security: 'Безопасность', 'agent-settings': 'Настройки агента', billing: 'Оплата и документы' };
+
+function selectProfileSection(section) {
+  const safeSection = profileSectionTitles[section] ? section : 'personal';
+  profileSectionButtons.forEach(function (button) { button.classList.toggle('active', button.dataset.profileSection === safeSection); });
+  profilePanels.forEach(function (panel) { panel.classList.toggle('active', panel.dataset.profilePanel === safeSection); });
+  document.querySelector('#profile-title').textContent = profileSectionTitles[safeSection];
+  const content = document.querySelector('.personal-content');
+  if (content) content.scrollTop = 0;
+}
+function openProfile(section) {
+  selectProfileSection(typeof section === 'string' ? section : 'personal');
+  profileDrawer.classList.add('open');
+  drawerBackdrop.classList.add('show');
+  document.body.classList.add('drawer-open');
+  document.querySelector('#close-profile').focus();
+}
 function closeProfile() { profileDrawer.classList.remove('open'); drawerBackdrop.classList.remove('show'); document.body.classList.remove('drawer-open'); }
-document.querySelector('#account-button').addEventListener('click', openProfile); document.querySelector('#top-avatar').addEventListener('click', openProfile); document.querySelector('#close-profile').addEventListener('click', closeProfile); drawerBackdrop.addEventListener('click', closeProfile);
+profileSectionButtons.forEach(function (button) { button.addEventListener('click', function () { selectProfileSection(button.dataset.profileSection); }); });
+document.querySelector('#account-button').addEventListener('click', openProfile);
+document.querySelector('#top-avatar').addEventListener('click', openProfile);
+document.querySelector('#close-profile').addEventListener('click', closeProfile);
+drawerBackdrop.addEventListener('click', closeProfile);
+
+function saveProfileState(key, value) { try { window.localStorage.setItem('zorym-profile-' + key, JSON.stringify(value)); } catch (error) {} }
+function readProfileState(key, fallback) { try { const value = window.localStorage.getItem('zorym-profile-' + key); return value ? JSON.parse(value) : fallback; } catch (error) { return fallback; } }
+function profileInitials(name) { return name.split(/\s+/).filter(Boolean).slice(0, 2).map(function (part) { return part[0]; }).join('').toUpperCase() || 'Z'; }
+function updateProfileIdentity(name, email) {
+  document.querySelectorAll('[data-profile-name]').forEach(function (item) { item.textContent = name; });
+  document.querySelectorAll('[data-profile-email]').forEach(function (item) { item.textContent = email; });
+  document.querySelector('.account-copy b').textContent = name;
+  const initials = profileInitials(name);
+  document.querySelector('.account-avatar').textContent = initials;
+  document.querySelector('#top-avatar').textContent = initials;
+  if (!document.querySelector('#profile-avatar-main img')) document.querySelector('#profile-avatar-main').textContent = initials;
+}
+
+const storedPersonal = readProfileState('personal', null);
+if (storedPersonal) {
+  document.querySelector('#profile-name-input').value = storedPersonal.name || 'Алексей К.';
+  document.querySelector('#profile-email-input').value = storedPersonal.email || 'alexey@example.com';
+  document.querySelector('#profile-language').value = storedPersonal.language || 'Русский';
+  document.querySelector('#profile-timezone').value = storedPersonal.timezone || 'Москва · UTC+3';
+  document.querySelector('#profile-date-format').value = storedPersonal.dateFormat || '06 сентября 2026';
+  document.querySelector('#billing-email').value = storedPersonal.email || 'alexey@example.com';
+  updateProfileIdentity(document.querySelector('#profile-name-input').value, document.querySelector('#profile-email-input').value);
+}
+document.querySelector('#personal-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const name = document.querySelector('#profile-name-input').value.trim();
+  const email = document.querySelector('#profile-email-input').value.trim();
+  if (name.length < 2 || !/^\S+@\S+\.\S+$/.test(email)) { notify('Проверьте имя и email'); return; }
+  saveProfileState('personal', { name: name, email: email, language: document.querySelector('#profile-language').value, timezone: document.querySelector('#profile-timezone').value, dateFormat: document.querySelector('#profile-date-format').value });
+  updateProfileIdentity(name, email);
+  document.querySelector('#billing-email').value = email;
+  document.querySelector('#personal-saved-state').textContent = 'Сохранено только что';
+  notify('Личные данные сохранены');
+});
+
+const avatarInput = document.querySelector('#profile-avatar-input');
+document.querySelector('#profile-avatar-button').addEventListener('click', function () { avatarInput.click(); });
+avatarInput.addEventListener('change', function () {
+  const file = avatarInput.files && avatarInput.files[0];
+  if (!file) return;
+  if (!file.type.startsWith('image/') || file.size > 1500000) { notify('Выберите изображение до 1,5 МБ'); return; }
+  const reader = new FileReader();
+  reader.addEventListener('load', function () { document.querySelector('#profile-avatar-main').innerHTML = '<img alt="Аватар пользователя" src="' + reader.result + '">'; saveProfileState('avatar', reader.result); notify('Аватар обновлён'); });
+  reader.readAsDataURL(file);
+});
+const storedAvatar = readProfileState('avatar', '');
+if (storedAvatar) document.querySelector('#profile-avatar-main').innerHTML = '<img alt="Аватар пользователя" src="' + storedAvatar + '">';
+
+const newPassword = document.querySelector('#new-password');
+newPassword.addEventListener('input', function () {
+  const value = newPassword.value;
+  const score = [value.length >= 10, /\d/.test(value), /[A-ZА-Я]/.test(value), /[^\w\sа-яА-Я]/.test(value)].filter(Boolean).length;
+  const strength = document.querySelector('.password-strength');
+  strength.dataset.score = String(score);
+  strength.querySelector('span').textContent = score < 2 ? 'Слабый пароль' : score < 4 ? 'Хороший пароль' : 'Надёжный пароль';
+});
+document.querySelector('.password-visibility').addEventListener('click', function (event) {
+  const show = newPassword.type === 'password';
+  newPassword.type = show ? 'text' : 'password';
+  event.currentTarget.textContent = show ? 'Скрыть' : 'Показать';
+});
+document.querySelector('#password-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const current = document.querySelector('#current-password');
+  const confirmation = document.querySelector('#confirm-password');
+  if (!current.value || newPassword.value.length < 10 || !/\d/.test(newPassword.value)) { notify('Пароль должен содержать минимум 10 символов и цифру'); return; }
+  if (newPassword.value !== confirmation.value) { notify('Новые пароли не совпадают'); return; }
+  event.currentTarget.reset();
+  document.querySelector('.password-strength').dataset.score = '0';
+  document.querySelector('.password-strength span').textContent = 'Введите новый пароль';
+  notify('Пароль обновлён. Другие сессии завершены');
+});
+
+function toggleSetting(button) {
+  const enabled = button.getAttribute('aria-checked') !== 'true';
+  button.setAttribute('aria-checked', String(enabled));
+  button.classList.toggle('active', enabled);
+  return enabled;
+}
+document.querySelector('#two-factor-toggle').addEventListener('click', function (event) {
+  const enabled = toggleSetting(event.currentTarget);
+  event.currentTarget.querySelector('b').textContent = enabled ? '2FA включена' : 'Включить 2FA';
+  document.querySelector('.recovery-note b').textContent = enabled ? 'Сохраните 8 резервных кодов в надёжном месте' : 'Будут доступны после подключения 2FA';
+  notify(enabled ? 'Двухэтапная защита включена' : 'Двухэтапная защита выключена');
+});
+document.querySelector('#session-list').addEventListener('click', function (event) {
+  const button = event.target.closest('.end-session');
+  if (!button) return;
+  const session = button.closest('[data-session]');
+  session.style.opacity = '0';
+  window.setTimeout(function () { session.remove(); }, 180);
+  notify('Сессия завершена');
+});
+document.querySelector('#end-other-sessions').addEventListener('click', function () {
+  document.querySelectorAll('#session-list [data-session]').forEach(function (session, index) { if (index > 0) session.remove(); });
+  notify('Все остальные сессии завершены');
+});
+
+function selectPreference(selector, button) {
+  document.querySelectorAll(selector).forEach(function (item) { item.classList.toggle('selected', item === button); });
+}
+document.querySelectorAll('[data-profile-model]').forEach(function (button) { button.addEventListener('click', function () { selectPreference('[data-profile-model]', button); }); });
+document.querySelectorAll('[data-profile-mode]').forEach(function (button) { button.addEventListener('click', function () { selectPreference('[data-profile-mode]', button); }); });
+const instructionInput = document.querySelector('#agent-instructions');
+instructionInput.addEventListener('input', function () { document.querySelector('#instruction-count').textContent = instructionInput.value.length + ' / 1200'; });
+document.querySelectorAll('[data-agent-toggle]').forEach(function (button) { button.addEventListener('click', function () { const enabled = toggleSetting(button); if (button.dataset.agentToggle === 'reduced-motion') setReducedMotion(enabled); }); });
+const storedAgent = readProfileState('agent', null);
+if (storedAgent) {
+  const modelButton = document.querySelector('[data-profile-model="' + storedAgent.model + '"]');
+  const modeButton = document.querySelector('[data-profile-mode="' + storedAgent.mode + '"]');
+  if (modelButton) selectPreference('[data-profile-model]', modelButton);
+  if (modeButton) selectPreference('[data-profile-mode]', modeButton);
+  instructionInput.value = storedAgent.instructions || '';
+  document.querySelector('#instruction-count').textContent = instructionInput.value.length + ' / 1200';
+}
+document.querySelector('#agent-settings-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const model = document.querySelector('[data-profile-model].selected').dataset.profileModel;
+  const mode = document.querySelector('[data-profile-mode].selected').dataset.profileMode;
+  saveProfileState('agent', { model: model, mode: mode, instructions: instructionInput.value.trim() });
+  const mainModel = Array.from(document.querySelectorAll('[data-choice-group="model"] button')).find(function (button) { return button.textContent.trim() === model; });
+  const mainMode = Array.from(document.querySelectorAll('[data-choice-group="mode"] button')).find(function (button) { return button.textContent.trim() === mode; });
+  if (mainModel) selectPreference('[data-choice-group="model"] button', mainModel);
+  if (mainMode) selectPreference('[data-choice-group="mode"] button', mainMode);
+  syncModelShowcase(model);
+  notify('Настройки агента сохранены');
+});
+
+const storedBilling = readProfileState('billing', null);
+if (storedBilling) {
+  document.querySelector('#billing-name').value = storedBilling.name || '';
+  document.querySelector('#billing-tax-id').value = storedBilling.taxId || '';
+  document.querySelector('#billing-email').value = storedBilling.email || 'alexey@example.com';
+}
+document.querySelector('#billing-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const taxId = document.querySelector('#billing-tax-id').value.trim();
+  if (taxId && !/^\d{10,12}$/.test(taxId)) { notify('ИНН должен содержать 10 или 12 цифр'); return; }
+  saveProfileState('billing', { name: document.querySelector('#billing-name').value.trim(), taxId: taxId, email: document.querySelector('#billing-email').value.trim() });
+  notify('Реквизиты сохранены');
+});
+document.querySelector('#change-payment-method').addEventListener('click', function () { notify('Безопасное изменение карты откроется после подключения оплаты'); });
+document.querySelectorAll('.download-invoice').forEach(function (button) {
+  button.addEventListener('click', function () {
+    const invoice = button.dataset.invoice;
+    const documentHtml = '<!doctype html><meta charset="utf-8"><title>Документ ' + invoice + '</title><style>body{font:16px Arial;max-width:720px;margin:60px auto;color:#222}h1{font-size:28px}table{width:100%;border-collapse:collapse;margin-top:30px}td{padding:14px;border-bottom:1px solid #ddd}</style><h1>Zorym AI · Электронный чек</h1><p>Документ ' + invoice + '</p><table><tr><td>Тариф</td><td>Forge Pro</td></tr><tr><td>Сумма</td><td>1 490 ₽</td></tr><tr><td>Статус</td><td>Оплачено</td></tr></table>';
+    const url = URL.createObjectURL(new Blob([documentHtml], { type: 'text/html;charset=utf-8' }));
+    const link = document.createElement('a'); link.href = url; link.download = invoice + '.html'; link.click(); URL.revokeObjectURL(url);
+    notify('Документ скачан');
+  });
+});
+document.querySelector('.profile-signout').addEventListener('click', function () { notify('Демо: выход будет подключён к авторизации'); });
 document.querySelector('#command-button').addEventListener('click', function () { notify('Поиск по проектам, задачам и файлам'); });
 document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeMobileMenu(); closeCapabilityMenu(); } });
 renderChatList();
