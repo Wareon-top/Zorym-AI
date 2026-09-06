@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI превращает запрос в план, выполненную задачу и готовый результат — для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — поручайте результат</title>
-  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="landing.css?v=20260906-model-power">
 </head>
 <body>
   <header class="site-header" id="site-header">
@@ -53,20 +53,20 @@
             <div class="demo-topbar"><div class="demo-brand"><span class="mini-z"><i></i></span><b>Zorym AI</b></div><div class="demo-project"><span>S</span>Skyblock: Genesis</div><div class="window-actions"><i></i><i></i><i></i></div></div>
             <div class="demo-content">
               <div class="demo-user"><span>АК</span><div><small>Вы · сейчас</small><p>Создай систему сезонных заданий с наградами и защитой от повторной выдачи.</p></div></div>
-              <div class="demo-agent"><span class="mini-z light"><i></i></span><div class="demo-agent-body"><div class="demo-agent-head"><b>Zorym AI</b><span>Zorym 1 Orbit</span></div><p id="demo-copy">Изучаю структуру проекта и связанные механики наград…</p><div class="demo-progress-card"><div><span><i></i><b id="demo-status">Анализирую запрос</b></span><em id="demo-percent">18%</em></div><div class="demo-progress"><i id="demo-bar"></i></div><div class="demo-stages"><span class="active">Анализ</span><span>План</span><span>Работа</span><span>Проверка</span></div></div></div></div>
+              <div class="demo-agent"><span class="mini-z light"><i></i></span><div class="demo-agent-body"><div class="demo-agent-head"><b>Zorym AI</b><span>Zorym 1 Orbit</span></div><p id="demo-copy">Собираю карту проекта, правил прогресса и связанных наград…</p><div class="demo-progress-card"><div><span><i></i><b id="demo-status">Картирую контекст</b></span><em id="demo-percent">14%</em></div><div class="demo-progress"><i id="demo-bar"></i></div><div class="demo-stages"><span class="active">Карта</span><span>Проект</span><span>Связи</span><span>Проверка</span><span>Результат</span></div></div></div></div>
               <div class="demo-result" id="demo-result"><span><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span><div><small>Результат задачи</small><b>season-system.zip</b></div><em>Готово</em></div>
             </div>
             <div class="demo-composer"><span>Уточнить задачу…</span><div><button type="button">Orbit</button><button type="button">Мастер</button><i>↑</i></div></div>
           </div>
           <div class="floating-note note-plan"><span>01</span><div><small>План согласован</small><b>8 шагов · 14 файлов</b></div><i>✓</i></div>
           <div class="floating-note note-safe"><svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3 8-8 10-5-2-8-5-8-10V7zM9 12l2 2 4-5"/></svg><div><small>Контроль пользователя</small><b>Ничего без подтверждения</b></div></div>
-          <div class="demo-controls" aria-label="Этапы демонстрации"><button class="active" type="button" data-demo-step="0" aria-label="Анализ"></button><button type="button" data-demo-step="1" aria-label="План"></button><button type="button" data-demo-step="2" aria-label="Выполнение"></button><button type="button" data-demo-step="3" aria-label="Результат"></button></div>
+          <div class="demo-controls" aria-label="Этапы демонстрации"><button class="active" type="button" data-demo-step="0" aria-label="Карта контекста"></button><button type="button" data-demo-step="1" aria-label="Проектирование"></button><button type="button" data-demo-step="2" aria-label="Связывание"></button><button type="button" data-demo-step="3" aria-label="Проверка системы"></button><button type="button" data-demo-step="4" aria-label="Результат"></button></div>
         </div>
       </div>
 
       <div class="proof-strip container reveal">
         <article><strong>01</strong><span>запрос вместо<br>долгого брифа</span></article>
-        <article><strong>04</strong><span>понятных этапа<br>в каждой задаче</span></article>
+        <article><strong>до 6</strong><span>осмысленных этапов<br>под мощность модели</span></article>
         <article><strong>03</strong><span>уровня интеллекта<br>под разную работу</span></article>
         <article><strong>100%</strong><span>контроля над<br>каждым запуском</span></article>
       </div>
@@ -125,15 +125,39 @@
       </div>
     </section>
 
-    <section class="models-section section-space">
+    <section class="models-section section-space" id="models">
       <div class="container">
-        <div class="models-heading reveal"><span class="section-index">04 · Интеллект</span><h2>Скорость, глубина или максимум качества.<br><em>Вы решаете.</em></h2><p>Модель и режим можно менять в каждом чате — даже между сообщениями.</p></div>
+        <div class="models-heading reveal"><span class="section-index">04 · Интеллект</span><h2>Один запрос.<br><em>Три масштаба мышления.</em></h2><p>Каждая модель не просто отвечает по-разному — она по-разному строит работу, проверяет решение и формирует результат.</p></div>
         <div class="model-grid">
-          <article class="model-card reveal"><div class="model-orb comet">C</div><span class="model-speed">Быстрый</span><h3>Zorym 1 Comet</h3><p>Короткие задачи, правки, поиск ошибок и ответы без лишнего ожидания.</p><ul><li>Мгновенный старт</li><li>Экономный расход</li><li>Повседневные задачи</li></ul></article>
-          <article class="model-card featured reveal"><div class="recommended">Оптимальный выбор</div><div class="model-orb orbit">O</div><span class="model-speed">Сбалансированный</span><h3>Zorym 1 Orbit</h3><p>Основная рабочая модель для разработки, анализа и многоэтапных задач.</p><ul><li>Глубокий контекст</li><li>Сильная реализация</li><li>Проверка результата</li></ul></article>
-          <article class="model-card reveal"><div class="model-orb quasar">Q</div><span class="model-speed">Максимальный</span><h3>Zorym 1 Quasar</h3><p>Архитектура, стратегия и задачи, где особенно важна глубина решения.</p><ul><li>Сложные системы</li><li>Стратегические решения</li><li>Максимум рассуждения</li></ul></article>
+          <article class="model-card comet-model reveal">
+            <div class="model-card-head"><div class="landing-model-visual comet-engine" aria-hidden="true"><i></i><b></b></div><span class="model-index">01 · Быстрый</span></div>
+            <div class="model-title"><h3>Comet</h3><span>Прямой цикл</span></div>
+            <p>Берёт чёткую цель и кратчайшим путём превращает её в готовое действие.</p>
+            <div class="model-process comet-process"><span class="process-label">Как мыслит</span><div class="direct-path"><i class="done">Цель</i><b></b><i class="active">Решение</i><b></b><i>Готово</i></div></div>
+            <div class="model-result"><small>Лучший выбор</small><strong>Правки, ответы и быстрые задачи</strong></div>
+            <a href="app.html#agent">Запустить Comet <i>→</i></a>
+          </article>
+          <article class="model-card orbit-model featured reveal">
+            <div class="recommended">Основная модель</div>
+            <div class="model-card-head"><div class="landing-model-visual orbit-engine" aria-hidden="true"><i></i><i></i><b></b></div><span class="model-index">02 · Системный</span></div>
+            <div class="model-title"><h3>Orbit</h3><span>Связное решение</span></div>
+            <p>Строит карту контекста, видит зависимости и проверяет, как изменение влияет на всю систему.</p>
+            <div class="model-process orbit-process"><span class="process-label">Как мыслит</span><div class="orbit-map"><span><i>01</i>Контекст</span><span class="active"><i>02</i>Проект</span><span><i>03</i>Связи</span><span><i>04</i>Проверка</span><b aria-hidden="true"></b></div></div>
+            <div class="model-result"><small>На выходе</small><strong>План, реализация и проверенный результат</strong></div>
+            <a href="app.html#agent">Работать с Orbit <i>→</i></a>
+          </article>
+          <article class="model-card quasar-model reveal">
+            <div class="model-card-head"><div class="landing-model-visual quasar-engine" aria-hidden="true"><i></i><i></i><i></i><b></b></div><span class="model-index">03 · Флагманский</span></div>
+            <div class="model-title"><h3>Quasar</h3><span>Интеллектуальный максимум</span></div>
+            <p>Разворачивает стратегию в несколько потоков, независимо сверяет их и синтезирует сильнейшее решение.</p>
+            <div class="model-process quasar-process"><span class="process-label">Как мыслит</span><div class="quasar-map"><span><i></i>Стратегия</span><span><i></i>Реализация</span><span><i></i>Аудит</span><b><i></i>Синтез</b></div></div>
+            <div class="model-proof"><span>Proof Chain</span><span>Zorym Crew</span><span>Shadow Test</span></div>
+            <div class="model-result"><small>На выходе</small><strong>Решение, испытания, риски и рекомендации</strong></div>
+            <a href="app.html#agent">Открыть Quasar <i>→</i></a>
+          </article>
         </div>
-        <div class="mode-strip reveal"><span>Три режима работы</span><div><b>Импульс</b><small>быстро и по существу</small></div><i></i><div><b>Мастер</b><small>баланс скорости и качества</small></div><i></i><div><b>Архитектор</b><small>максимальная глубина</small></div></div>
+        <div class="model-principle reveal"><span class="principle-mark">Z</span><div><b>Качество результата — базовый стандарт</b><small>Мощность модели влияет на масштаб контекста, глубину проверки и сложность задач, а не на право получить хороший ответ.</small></div><a href="pricing.html">Сравнить доступ <i>→</i></a></div>
+        <div class="mode-strip reveal"><span>Управляйте глубиной</span><div><b>Импульс</b><small>быстро и по существу</small></div><i></i><div><b>Мастер</b><small>баланс скорости и глубины</small></div><i></i><div><b>Архитектор</b><small>полный цикл рассуждения</small></div></div>
       </div>
     </section>
 
@@ -175,10 +199,11 @@
 
   <script>
     const demoSteps = [
-      { status: 'Анализирую запрос', percent: 18, copy: 'Изучаю структуру проекта и связанные механики наград…', stage: 0 },
-      { status: 'Формирую план', percent: 36, copy: 'Разбиваю задачу на безопасные изменения и оцениваю зависимости…', stage: 1 },
-      { status: 'Выполняю задачу', percent: 68, copy: 'Создаю систему сезонов, прогресс игроков и защиту наград…', stage: 2 },
-      { status: 'Результат готов', percent: 100, copy: 'Проверка пройдена. Файлы и отчёт сохранены в Build Vault.', stage: 3 }
+      { status: 'Картирую контекст', percent: 14, copy: 'Собираю карту проекта, правил прогресса и связанных наград…', stage: 0 },
+      { status: 'Проектирую решение', percent: 32, copy: 'Выстраиваю архитектуру сезона и безопасный маршрут изменений…', stage: 1 },
+      { status: 'Связываю изменения', percent: 61, copy: 'Соединяю цели, серии, награды и защиту повторной выдачи…', stage: 2 },
+      { status: 'Проверяю систему', percent: 84, copy: 'Проверяю сценарии игрока, границы сезона и обратную совместимость…', stage: 3 },
+      { status: 'Упаковываю результат', percent: 100, copy: 'Система проверена. Файлы и отчёт сохранены в Build Vault.', stage: 4 }
     ];
     let demoIndex = 0;
     let demoTimer;
@@ -191,7 +216,7 @@
       document.querySelector('#demo-bar').style.width = step.percent + '%';
       document.querySelectorAll('.demo-stages span').forEach(function (item, itemIndex) { item.classList.toggle('active', itemIndex <= step.stage); });
       document.querySelectorAll('[data-demo-step]').forEach(function (button, buttonIndex) { button.classList.toggle('active', buttonIndex === index); });
-      document.querySelector('#demo-result').classList.toggle('visible', index === 3);
+      document.querySelector('#demo-result').classList.toggle('visible', index === demoSteps.length - 1);
     }
     function restartDemo() {
       window.clearInterval(demoTimer);

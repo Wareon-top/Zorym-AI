@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css?v=20260905-model-motion">
+  <link rel="stylesheet" href="styles.css?v=20260906-model-depth">
 </head>
 <body>
 <div class="mobile-backdrop" id="mobile-backdrop"></div>
@@ -119,27 +119,27 @@
           <div class="model-showcase" id="model-showcase">
             <button class="model-card comet-card" type="button" data-model-card="Comet" aria-pressed="false">
               <span class="model-card-top"><span class="model-visual comet-visual" aria-hidden="true"><i></i><b></b></span><span class="model-number">01</span></span>
-              <span class="model-copy"><strong>Comet</strong><em>Быстрое выполнение</em><small>Для повседневных задач и точечных изменений.</small></span>
-              <span class="model-stage-line"><i class="active">Анализирую</i><i>Выполняю</i><i>Готово</i></span>
+              <span class="model-copy"><strong>Comet</strong><em>Прямой путь к результату</em><small>Фокусируется на цели и быстро закрывает точечные задачи.</small></span>
+              <span class="model-stage-line" aria-label="Схватываю цель, собираю решение, проверяю готовность"><i class="active">Цель</i><i>Решение</i><i>Готовность</i></span>
               <span class="model-select-label">Выбрать Comet <i>→</i></span>
             </button>
             <button class="model-card orbit-card selected" type="button" data-model-card="Orbit" aria-pressed="true">
               <span class="model-card-top"><span class="model-visual orbit-visual" aria-hidden="true"><i></i><i></i><b></b></span><span class="model-number">02</span></span>
-              <span class="model-copy"><strong>Orbit</strong><em>Продуманная работа</em><small>Планирует, реализует и проверяет связанные части.</small></span>
-              <span class="model-stage-line"><i>Контекст</i><i class="active">План</i><i>Работа</i><i>Проверка</i></span>
+              <span class="model-copy"><strong>Orbit</strong><em>Системное решение</em><small>Видит связи, проектирует маршрут и проверяет целую систему.</small></span>
+              <span class="model-stage-line" aria-label="Карта контекста, проектирование, связи, проверка системы, результат"><i>Карта</i><i class="active">Проект</i><i>Связи</i><i>Проверка</i><i>Результат</i></span>
               <span class="model-select-label">Выбрана <i>✓</i></span>
             </button>
             <button class="model-card quasar-card" type="button" data-model-card="Quasar" aria-pressed="false">
               <span class="model-card-top"><span class="model-visual quasar-visual" aria-hidden="true"><i></i><i></i><i></i><b></b></span><span class="model-number">03</span></span>
-              <span class="model-copy"><strong>Quasar</strong><em>Глубокая автономная работа</em><small>Стратегия, параллельные потоки и усиленная проверка.</small></span>
-              <span class="model-stage-line"><i>Стратегия</i><i>Потоки</i><i class="active">Сверка</i><i>Тесты</i></span>
+              <span class="model-copy"><strong>Quasar</strong><em>Интеллектуальный максимум</em><small>Строит стратегию, ведёт несколько потоков и синтезирует лучшее решение.</small></span>
+              <span class="model-stage-line" aria-label="Карта системы, стратегия, потоки, синтез, испытания, фиксация"><i>Карта</i><i>Стратегия</i><i class="active">Потоки</i><i>Синтез</i><i>Тесты</i><i>Финал</i></span>
               <span class="model-select-label">Выбрать Quasar <i>→</i></span>
             </button>
           </div>
         </section>
 
         <div class="agent-dashboard">
-          <article class="active-task-card" id="active-task-card"><div class="card-heading"><div><span class="eyebrow">Активная задача</span><h2 id="active-task-title">Система сезонных заданий</h2></div><span class="status-pill status-live"><i></i><span id="active-task-status">Выполняет задачу</span></span></div><p class="task-summary">Zorym AI готовит структуру данных, правила прогресса и защиту наград.</p><div class="task-progress"><i id="task-progress-bar"></i></div><div class="task-stages"><span class="done"><i>✓</i>Анализ запроса</span><span class="current"><i>2</i>Реализация</span><span><i>3</i>Проверка</span><span><i>4</i>Результат</span></div><div class="task-footer"><span><b>Zorym 1 Orbit</b> · режим Мастер</span><button type="button">Открыть ход работы →</button></div></article>
+          <article class="active-task-card" id="active-task-card"><div class="card-heading"><div><span class="eyebrow">Активная задача</span><h2 id="active-task-title">Система сезонных заданий</h2></div><span class="status-pill status-live"><i></i><span id="active-task-status">Связывает изменения</span></span></div><p class="task-summary">Zorym AI собирает механику сезонов в единую систему и проверяет влияние на прогресс и награды.</p><div class="task-progress"><i id="task-progress-bar"></i></div><div class="task-stages"><span class="done"><i>✓</i>Карта контекста</span><span class="done"><i>✓</i>Проект решения</span><span class="current"><i>3</i>Связи</span><span><i>4</i>Проверка системы</span></div><div class="task-footer"><span><b>Zorym 1 Orbit</b> · режим Мастер</span><button type="button">Открыть ход работы →</button></div></article>
           <section class="activity-card"><div class="card-heading"><div><span class="eyebrow">Недавнее</span><h2>Последняя активность</h2></div><button class="text-action" type="button">Все задачи</button></div><div class="activity-list"><button type="button"><span class="activity-symbol success"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9"/></svg></span><span><b>Черновики кода готовы</b><small>Система островов · 12 минут назад</small></span><i>›</i></button><button type="button"><span class="activity-symbol archive"><svg viewBox="0 0 24 24"><path d="M5 8h14v11H5zM4 5h16v3H4M9 12h6"/></svg></span><span><b>Версия 11 сохранена</b><small>Build Vault · вчера</small></span><i>›</i></button><button type="button"><span class="activity-symbol neutral"><svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V8M12 16V5M17 16v-4"/></svg></span><span><b>Отчёт проверки готов</b><small>Экономика сервера · 2 дня назад</small></span><i>›</i></button></div></section>
         </div>
       </div>
@@ -254,9 +254,9 @@ const prompt = document.querySelector('#agent-prompt');
 const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; });
 
 const modelProfiles = {
-  Comet: { label: 'Быстрое выполнение', stages: ['Анализирую', 'Выполняю', 'Готово'] },
-  Orbit: { label: 'Продуманная работа', stages: ['Изучаю контекст', 'Планирую', 'Выполняю', 'Проверяю'] },
-  Quasar: { label: 'Глубокая работа', stages: ['Формирую стратегию', 'Разделяю задачу', 'Сверяю решения', 'Тестирую', 'Финализирую'] }
+  Comet: { label: 'Прямой цикл', stages: ['Схватываю цель', 'Собираю решение', 'Проверяю готовность'] },
+  Orbit: { label: 'Системный цикл', stages: ['Картирую контекст', 'Проектирую решение', 'Связываю изменения', 'Проверяю систему', 'Упаковываю результат'] },
+  Quasar: { label: 'Глубокий цикл', stages: ['Строю карту системы', 'Формирую стратегию', 'Запускаю потоки', 'Синтезирую решения', 'Провожу испытания', 'Фиксирую результат'] }
 };
 
 let chats = [
@@ -269,9 +269,9 @@ let chats = [
     updated: 'сейчас',
     messages: [
       { role: 'user', time: '14:18', text: 'Разработай систему сезонных заданий: ежедневные и недельные цели, серии выполнения и награды без возможности получить их повторно.' },
-      { role: 'assistant', time: '14:18', text: 'Понял. Сначала проверю текущую структуру прогресса и наград, затем спроектирую совместимую систему сезонов. Изменения не затронут существующие данные игроков.', stage: 'Выполняю задачу', progress: 58 },
+      { role: 'assistant', time: '14:18', text: 'Понял. Сначала проверю текущую структуру прогресса и наград, затем спроектирую совместимую систему сезонов. Изменения не затронут существующие данные игроков.', stage: 'Связываю изменения', progress: 58 },
       { role: 'user', time: '14:21', text: 'Предусмотри ещё восстановление серии один раз за сезон.' },
-      { role: 'assistant', time: '14:21', text: 'Добавлю одноразовый жетон восстановления и серверную проверку его использования. Сейчас связываю это правило с календарём сезона и журналом наград.', stage: 'Проверяю решение', progress: 82 }
+      { role: 'assistant', time: '14:21', text: 'Добавлю одноразовый жетон восстановления и серверную проверку его использования. Сейчас связываю это правило с календарём сезона и журналом наград.', stage: 'Проверяю систему', progress: 82 }
     ]
   },
   {
@@ -283,7 +283,7 @@ let chats = [
     updated: '12 мин',
     messages: [
       { role: 'user', time: '13:42', text: 'Продумай экономику островов так, чтобы игроки не могли быстро обесценить редкие ресурсы.' },
-      { role: 'assistant', time: '13:43', text: 'Подготовил модель с динамическими лимитами добычи, расходными механиками и контролем денежной массы. В результате цена редких ресурсов реагирует на активность сервера, но остаётся предсказуемой для игроков.', stage: 'Результат готов', progress: 100 }
+      { role: 'assistant', time: '13:43', text: 'Подготовил модель с динамическими лимитами добычи, расходными механиками и контролем денежной массы. В результате цена редких ресурсов реагирует на активность сервера, но остаётся предсказуемой для игроков.', stage: 'Фиксирую результат', progress: 100 }
     ]
   },
   {
@@ -295,7 +295,7 @@ let chats = [
     updated: 'вчера',
     messages: [
       { role: 'user', time: 'Вчера', text: 'Игрок иногда получает награду дважды после переподключения. Найди возможную причину.' },
-      { role: 'assistant', time: 'Вчера', text: 'Причина оказалась в повторной обработке незавершённого события после входа. Добавил идемпотентный идентификатор выдачи и проверку транзакции перед начислением.', stage: 'Завершено', progress: 100 }
+      { role: 'assistant', time: 'Вчера', text: 'Причина оказалась в повторной обработке незавершённого события после входа. Добавил идемпотентный идентификатор выдачи и проверку транзакции перед начислением.', stage: 'Проверяю готовность', progress: 100 }
     ]
   }
 ];
@@ -508,7 +508,7 @@ function sendCurrentMessage() {
   if (!chat.messages.length) chat.title = makeChatTitle(text);
   const time = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
   chat.messages.push({ role: 'user', time: time, text: text });
-  chat.messages.push({ role: 'assistant', time: time, text: 'Принял задачу. Сначала изучаю контекст и зависимости, затем подготовлю решение и проверю связанные части. Здесь будут появляться только ключевые этапы работы.', stage: 'Анализирую запрос', progress: 18 });
+  chat.messages.push({ role: 'assistant', time: time, text: 'Принял задачу. Покажу только ключевые переходы: что уже понял, какой маршрут выбрал и когда результат прошёл проверку.', stage: modelProfiles[chat.model].stages[0], progress: 14 });
   chat.updated = 'сейчас';
   prompt.value = '';
   renderChatList();
