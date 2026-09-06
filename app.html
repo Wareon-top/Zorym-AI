@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css?v=20260906-integrations-hub">
+  <link rel="stylesheet" href="styles.css?v=20260906-roblox-workspace">
 </head>
 <body>
 <div class="mobile-backdrop" id="mobile-backdrop"></div>
@@ -47,9 +47,9 @@
       </div>
       <div class="nav-group">
         <p class="nav-heading">Продукты</p>
-        <a class="nav-item" href="#games" data-view="games" data-title="Games Studio" data-subtitle="Создание игровых проектов" data-avatar="G">
+        <a class="nav-item" href="#games" data-view="games" data-title="AI Agent Games" data-subtitle="Roblox Studio · Live" data-avatar="G">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
-          <span class="nav-label">Games Studio</span><span class="nav-badge">new</span>
+          <span class="nav-label">AI Agent Games</span><span class="nav-badge">new</span>
         </a>
         <a class="nav-item" href="#browser" data-view="browser" data-title="Zorym Browser" data-subtitle="Исследования и веб-миссии" data-avatar="B">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 10h17M8 20c-2-5-2-11 0-16M16 20c2-5 2-11 0-16"/></svg>
@@ -169,6 +169,47 @@
     </section>
 
     <section class="view" data-screen="games">
+      <div class="games-workspace-page">
+        <header class="games-workspace-header">
+          <div><span class="games-product-label"><i></i>AI Agent Games</span><div class="games-project-switch"><span class="roblox-mark">◇</span><div><small>Roblox Studio</small><b>Vault Raiders</b></div><button type="button" aria-label="Сменить игровой проект">⌄</button></div></div>
+          <div class="studio-session"><span><i></i><b>Studio Live</b><small>синхронизировано сейчас</small></span><button type="button" data-open-roblox-connection>Управлять подключением</button></div>
+        </header>
+
+        <div class="games-workspace-grid">
+          <aside class="game-explorer">
+            <div class="game-panel-title"><span>Проект</span><button type="button">•••</button></div>
+            <div class="game-tree"><button class="open" type="button"><i>⌄</i><span>◇</span><b>Workspace</b></button><button class="tree-child" type="button"><i>›</i><span>◫</span><b>Map</b></button><button class="tree-child" type="button"><i>›</i><span>◫</span><b>TeleportPads</b></button><button class="open selected" type="button"><i>⌄</i><span>⌁</span><b>ServerScriptService</b></button><button class="tree-child script" type="button"><i></i><span>⌘</span><b>TeleportService</b></button><button class="tree-child script" type="button"><i></i><span>⌘</span><b>PlayerData</b></button><button type="button"><i>›</i><span>▣</span><b>StarterGui</b></button><button type="button"><i>›</i><span>◇</span><b>ReplicatedStorage</b></button></div>
+            <div class="game-memory-card"><span>GAME MEMORY</span><b>37 решений в контексте</b><small>Архитектура, DataStore и стиль Luau</small><button type="button">Открыть память →</button></div>
+            <div class="game-version"><span><i>↶</i><div><b>Версия 08</b><small>до текущей задачи</small></div></span><button type="button">Откатить</button></div>
+          </aside>
+
+          <main class="game-chat">
+            <header><div><span class="eyebrow">Текущая задача</span><h1>Телепортные площадки</h1></div><div class="game-chat-actions"><button type="button" aria-label="История версий">↶</button><button type="button" aria-label="Меню задачи">•••</button></div></header>
+            <div class="game-chat-thread">
+              <article class="game-user-message"><span>АК</span><div><small>Вы · 14:32</small><p>Добавь выбор точки телепортации с превью камеры. Защити систему от повторного нажатия и проверь её в Studio.</p></div></article>
+              <article class="game-agent-message"><span class="game-z"><i></i></span><div><header><b>Zorym AI</b><small>Orbit · Мастер</small></header><p>Вижу четыре площадки и существующий RemoteEvent. Сохраню текущую версию, добавлю интерфейс выбора и проверю полный путь игрока.</p><button type="button">План выполнен · 7 изменений <i>⌄</i></button></div></article>
+              <section class="studio-proof-run" aria-label="Ход проверки задачи">
+                <header><div><span><i></i>Studio Proof</span><b>Проверяю путь игрока</b></div><em>4 из 6</em></header>
+                <div class="studio-proof-progress"><i></i></div>
+                <ol id="studio-proof-steps"><li class="done"><span>✓</span><div><b>Изменения применены</b><small>4 объекта · 3 скрипта</small></div><em>12 сек</em></li><li class="done"><span>✓</span><div><b>Интерфейс открывается</b><small>кнопка и список площадок доступны</small></div><em>пройдено</em></li><li class="done"><span>✓</span><div><b>Камера показывает назначение</b><small>переход и возврат работают</small></div><em>пройдено</em></li><li class="active"><span></span><div><b>Телепортирую тестового игрока</b><small>проверяю сервер и повторное нажатие</small></div><em>сейчас</em></li><li><span></span><div><b>Проверю крайние случаи</b><small>отключение и недоступная площадка</small></div></li><li><span></span><div><b>Зафиксирую доказательства</b><small>отчёт и версия результата</small></div></li></ol>
+                <footer><span><i></i>Studio отвечает · тестовый сеанс активен</span><button type="button" id="simulate-proof">Завершить демо-проверку</button></footer>
+              </section>
+            </div>
+            <div class="game-composer"><textarea aria-label="Сообщение Zorym AI" placeholder="Опишите механику или изменение…"></textarea><div><span><button type="button">＋</button><button type="button">◎</button></span><span><button class="game-model-button" type="button"><i></i>Orbit</button><button type="button">Мастер⌄</button><button class="game-send" type="button">↑</button></span></div></div>
+          </main>
+
+          <aside class="game-inspector">
+            <div class="game-panel-title"><span>Контроль задачи</span><button type="button">×</button></div>
+            <section class="game-cost"><span>До запуска согласовано</span><div><b>Orbit · Мастер</b><strong>36 ед.</strong></div><small>Повторные проверки входят в оценку</small></section>
+            <section class="changed-instances"><header><span>Изменения</span><b>7</b></header><article><i class="created">+</i><div><b>TeleportMenu</b><small>StarterGui</small></div></article><article><i class="edited">±</i><div><b>TeleportService</b><small>ServerScriptService</small></div></article><article><i class="created">+</i><div><b>TeleportRequest</b><small>ReplicatedStorage</small></div></article><button type="button">Показать все изменения</button></section>
+            <section class="proof-evidence"><header><span>Доказательства</span><b>LIVE</b></header><div><span><i>✓</i><b>0</b><small>runtime errors</small></span><span><i>✓</i><b>3</b><small>теста пройдено</small></span></div><p>Итоговый статус появится только после ответа Studio.</p></section>
+            <section class="game-quick-tools"><span>Инструменты</span><button type="button"><i>◇</i><div><b>Player Journey</b><small>путь игрока</small></div><em>Вкл.</em></button><button type="button"><i>⌾</i><div><b>Economy Guard</b><small>валюта и награды</small></div><em>＋</em></button><button type="button"><i>▣</i><div><b>UI Vision</b><small>экраны и устройства</small></div><em>＋</em></button></section>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="view legacy-games-view" data-screen="games-legacy">
       <div class="page-container content-page studio-page">
         <div class="page-heading"><div><span class="eyebrow">Zorym Games Studio</span><h1>Создайте основу новой игры</h1><p>Ответьте на несколько вопросов — агент подготовит концепцию, архитектуру и первый план разработки.</p></div><span class="studio-step">01 <i></i> 03</span></div>
         <div class="studio-layout">
@@ -224,17 +265,21 @@
 
         <div class="integration-overview">
           <article><span>Активные</span><strong>1</strong><small>GitHub синхронизирован</small></article>
-          <article><span>Поддерживается</span><strong>4</strong><small>включая GitHub</small></article>
+          <article><span>Поддерживается</span><strong>5</strong><small>включая Roblox и GitHub</small></article>
           <article><span>Скоро</span><strong>2</strong><small>готовим интеграции</small></article>
           <div><span class="integration-orbit"><i></i><i></i><b>Z</b></span><p><b>Единый контекст</b><small>Агент использует только выбранные вами источники.</small></p></div>
         </div>
 
         <div class="integrations-toolbar">
-          <div class="integration-filters" id="integration-filters"><button class="selected" type="button" data-integration-filter="all">Все</button><button type="button" data-integration-filter="development">Разработка</button><button type="button" data-integration-filter="knowledge">Знания</button><button type="button" data-integration-filter="communication">Общение</button></div>
+          <div class="integration-filters" id="integration-filters"><button class="selected" type="button" data-integration-filter="all">Все</button><button type="button" data-integration-filter="games">Игры</button><button type="button" data-integration-filter="development">Разработка</button><button type="button" data-integration-filter="knowledge">Знания</button><button type="button" data-integration-filter="communication">Общение</button></div>
           <label class="search-field integration-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="integration-search" aria-label="Поиск подключений" placeholder="Найти интеграцию"></label>
         </div>
 
         <section class="integration-grid" id="integration-grid" aria-label="Каталог интеграций">
+          <button class="integration-card roblox-integration" type="button" aria-haspopup="dialog" aria-controls="roblox-detail-drawer" data-integration="roblox" data-integration-category="games" data-integration-name="roblox studio игры luau plugin">
+            <span class="integration-card-top"><span class="integration-logo roblox-logo"><svg viewBox="0 0 24 24"><path d="m7 3 14 4-4 14-14-4zM10 9l5 1-1 5-5-1z"/></svg></span><span class="integration-state">Доступно</span></span>
+            <span class="integration-card-copy"><b>Roblox</b><small>Аккаунт, игровые проекты и Studio Link</small></span><span class="integration-card-footer"><span>Игры</span><i>Подключить</i></span>
+          </button>
           <button class="integration-card connected" type="button" aria-haspopup="dialog" aria-controls="integration-detail-drawer" data-integration="github" data-integration-category="development" data-integration-name="github репозитории код разработка">
             <span class="integration-card-top"><span class="integration-logo github-logo"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.3-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8Z"/></svg></span><span class="integration-state connected"><i></i>Подключено</span></span>
             <span class="integration-card-copy"><b>GitHub</b><small>Репозитории, ветки и Pull Request</small></span><span class="integration-card-footer"><span>2 репозитория</span><i>Подробнее →</i></span>
@@ -420,6 +465,16 @@
 
       <section class="github-capabilities-note"><span><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8 7 10 4.2-2 7-5.2 7-10V6zM9 12l2 2 4-5"/></svg></span><div><b>Только разрешённые данные</b><p>Секреты и другие репозитории остаются недоступны.</p></div><button id="github-permissions-info" type="button">Разрешения</button></section>
     </div>
+  </div>
+</aside>
+
+<aside class="roblox-detail-drawer" id="roblox-detail-drawer" role="dialog" aria-modal="true" aria-labelledby="roblox-detail-title">
+  <header class="integration-detail-header"><div><span class="eyebrow">Подключение · Игры</span><h2 id="roblox-detail-title">Roblox</h2></div><button id="close-roblox-detail" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+  <div class="roblox-detail-content">
+    <section class="roblox-connect-hero"><span class="roblox-hero-mark"><svg viewBox="0 0 24 24"><path d="m7 3 14 4-4 14-14-4zM10 9l5 1-1 5-5-1z"/></svg></span><div><span>ROBLOX + ZORYM</span><h3>Создавайте и проверяйте<br>прямо в Studio</h3><p>Аккаунт определяет доступные игры. Studio Link связывает Zorym с открытым проектом.</p></div></section>
+    <div class="roblox-connect-flow"><article class="active"><span>01</span><div><b>Подключить аккаунт</b><small>Только выбранные игры и разрешения</small></div><button type="button" id="connect-roblox-account">Подключить</button></article><article><span>02</span><div><b>Установить Studio Link</b><small>Плагин появится во вкладке Plugins</small></div><button type="button">Инструкция</button></article><article><span>03</span><div><b>Связать открытую Studio</b><small>Одноразовый код без API-ключей</small></div><em>После шага 1</em></article></div>
+    <section class="roblox-permissions"><header><div><span class="eyebrow">Контроль доступа</span><h4>Zorym видит только разрешённое</h4></div><span>Без пароля Roblox</span></header><div><article><i>✓</i><span><b>Структура открытой игры</b><small>Instances, свойства и выбранные скрипты</small></span></article><article><i>✓</i><span><b>Результаты теста</b><small>Статусы и сообщения проверочного сеанса</small></span></article><article><i>×</i><span><b>Личные данные и другие файлы</b><small>Остаются недоступны агенту</small></span></article></div></section>
+    <section class="roblox-session-preview"><header><span>Состояния Studio Link</span><b><i></i>OFFLINE</b></header><div><span class="current"><i>01</i>Offline</span><b></b><span><i>02</i>Связь</span><b></b><span><i>03</i>Live</span><b></b><span><i>04</i>Test</span></div><p>Статус «Проверено в Studio» появится только при активной сессии.</p></section>
   </div>
 </aside>
 
@@ -761,18 +816,25 @@ integrationSearch.addEventListener('input', filterIntegrations);
 
 const integrationDetailDrawer = document.querySelector('#integration-detail-drawer');
 const integrationDetailBackdrop = document.querySelector('#integration-detail-backdrop');
+const robloxDetailDrawer = document.querySelector('#roblox-detail-drawer');
 let integrationReturnFocus = null;
 function openIntegrationDetail() { integrationReturnFocus = document.activeElement; integrationDetailDrawer.classList.add('open'); integrationDetailBackdrop.classList.add('show'); document.body.classList.add('integration-detail-open'); document.querySelector('#close-integration-detail').focus(); }
 function closeIntegrationDetail() { const wasOpen = integrationDetailDrawer.classList.contains('open'); integrationDetailDrawer.classList.remove('open'); integrationDetailBackdrop.classList.remove('show'); document.body.classList.remove('integration-detail-open'); if (wasOpen && integrationReturnFocus && typeof integrationReturnFocus.focus === 'function') integrationReturnFocus.focus(); }
+function openRobloxDetail() { integrationReturnFocus = document.activeElement; robloxDetailDrawer.classList.add('open'); integrationDetailBackdrop.classList.add('show'); document.body.classList.add('integration-detail-open'); document.querySelector('#close-roblox-detail').focus(); }
+function closeRobloxDetail() { const wasOpen = robloxDetailDrawer.classList.contains('open'); robloxDetailDrawer.classList.remove('open'); integrationDetailBackdrop.classList.remove('show'); document.body.classList.remove('integration-detail-open'); if (wasOpen && integrationReturnFocus && typeof integrationReturnFocus.focus === 'function') integrationReturnFocus.focus(); }
 document.querySelector('#close-integration-detail').addEventListener('click', closeIntegrationDetail);
-integrationDetailBackdrop.addEventListener('click', closeIntegrationDetail);
+document.querySelector('#close-roblox-detail').addEventListener('click', closeRobloxDetail);
+integrationDetailBackdrop.addEventListener('click', function () { closeIntegrationDetail(); closeRobloxDetail(); });
 document.querySelector('#integration-grid').addEventListener('click', function (event) {
   const card = event.target.closest('[data-integration]');
   if (!card) return;
   if (card.dataset.integration === 'github') { openIntegrationDetail(); return; }
+  if (card.dataset.integration === 'roblox') { openRobloxDetail(); return; }
   if (card.classList.contains('soon')) { notify(card.querySelector('.integration-card-copy b').textContent + ' появится в одном из следующих обновлений'); return; }
   notify('Подключение ' + card.querySelector('.integration-card-copy b').textContent + ' откроется после серверной интеграции');
 });
+document.querySelectorAll('[data-open-roblox-connection]').forEach(function (button) { button.addEventListener('click', openRobloxDetail); });
+document.querySelector('#connect-roblox-account').addEventListener('click', function (event) { event.currentTarget.textContent = 'Подключено'; event.currentTarget.closest('article').classList.add('complete'); document.querySelector('[data-integration="roblox"] .integration-state').textContent = 'Настройка'; notify('Аккаунт Roblox подключён в демонстрационном режиме'); });
 
 const profileDrawer = document.querySelector('#profile-drawer');
 const drawerBackdrop = document.querySelector('#drawer-backdrop');
@@ -1143,7 +1205,9 @@ document.querySelectorAll('.download-invoice').forEach(function (button) {
 });
 document.querySelector('.profile-signout').addEventListener('click', function () { notify('Демо: выход будет подключён к авторизации'); });
 document.querySelector('#command-button').addEventListener('click', function () { notify('Поиск по проектам, задачам и файлам'); });
-document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeIntegrationDetail(); closeMobileMenu(); closeCapabilityMenu(); } });
+const simulateProofButton = document.querySelector('#simulate-proof');
+if (simulateProofButton) simulateProofButton.addEventListener('click', function () { const proofSteps = Array.from(document.querySelectorAll('#studio-proof-steps li')); proofSteps.forEach(function (step) { step.classList.remove('active'); step.classList.add('done'); step.querySelector('span').textContent = '✓'; }); document.querySelector('.studio-proof-progress i').style.width = '100%'; document.querySelector('.studio-proof-run > header em').textContent = '6 из 6'; document.querySelector('.studio-proof-run > header b').textContent = 'Проверено в Studio'; document.querySelector('.studio-proof-run > footer > span').innerHTML = '<i></i>Доказательства получены · версия 09 сохранена'; simulateProofButton.textContent = 'Отчёт готов'; simulateProofButton.disabled = true; notify('Studio Proof завершён: 6 из 6 проверок'); });
+document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeIntegrationDetail(); closeRobloxDetail(); closeMobileMenu(); closeCapabilityMenu(); } });
 renderChatList();
 renderConversation(currentChat());
 const initialView = links.find(function (link) { return link.dataset.view === window.location.hash.slice(1); });
