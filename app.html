@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css?v=20260906-connections">
+  <link rel="stylesheet" href="styles.css?v=20260906-integrations-hub">
 </head>
 <body>
 <div class="mobile-backdrop" id="mobile-backdrop"></div>
@@ -58,6 +58,10 @@
         <a class="nav-item" href="#business" data-view="business" data-title="Zorym Business" data-subtitle="Northstar Group" data-avatar="N">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l6-3v15M10 9h10v11M14 13h2M14 16h2"/></svg>
           <span class="nav-label">Zorym Business</span><span class="nav-count nav-count-accent">3</span>
+        </a>
+        <a class="nav-item" href="#connections" data-view="connections" data-title="Подключения" data-subtitle="1 интеграция активна" data-avatar="C">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8 6.5 5.5a3.5 3.5 0 0 0-5 5L6 15a3.5 3.5 0 0 0 5 0l1-1M15 16l2.5 2.5a3.5 3.5 0 0 0 5-5L18 9a3.5 3.5 0 0 0-5 0l-1 1M8 12h8"/></svg>
+          <span class="nav-label">Подключения</span><span class="connection-nav-dot" aria-label="1 подключение"></span>
         </a>
         <a class="nav-item" href="#vault" data-view="vault" data-title="Build Vault" data-subtitle="Результаты и версии" data-avatar="V">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>
@@ -214,6 +218,52 @@
       </div>
     </section>
 
+    <section class="view" data-screen="connections">
+      <div class="page-container content-page integrations-page">
+        <div class="page-heading integrations-page-heading"><div><span class="eyebrow">Экосистема Zorym</span><h1>Подключения</h1><p>Объедините код, документы, общение и публикацию в одном рабочем пространстве.</p></div><span class="integration-health"><i></i><span><b>1 интеграция активна</b><small>все подключения работают</small></span></span></div>
+
+        <div class="integration-overview">
+          <article><span>Активные</span><strong>1</strong><small>GitHub синхронизирован</small></article>
+          <article><span>Поддерживается</span><strong>4</strong><small>включая GitHub</small></article>
+          <article><span>Скоро</span><strong>2</strong><small>готовим интеграции</small></article>
+          <div><span class="integration-orbit"><i></i><i></i><b>Z</b></span><p><b>Единый контекст</b><small>Агент использует только выбранные вами источники.</small></p></div>
+        </div>
+
+        <div class="integrations-toolbar">
+          <div class="integration-filters" id="integration-filters"><button class="selected" type="button" data-integration-filter="all">Все</button><button type="button" data-integration-filter="development">Разработка</button><button type="button" data-integration-filter="knowledge">Знания</button><button type="button" data-integration-filter="communication">Общение</button></div>
+          <label class="search-field integration-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="integration-search" aria-label="Поиск подключений" placeholder="Найти интеграцию"></label>
+        </div>
+
+        <section class="integration-grid" id="integration-grid" aria-label="Каталог интеграций">
+          <button class="integration-card connected" type="button" aria-haspopup="dialog" aria-controls="integration-detail-drawer" data-integration="github" data-integration-category="development" data-integration-name="github репозитории код разработка">
+            <span class="integration-card-top"><span class="integration-logo github-logo"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.3-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8Z"/></svg></span><span class="integration-state connected"><i></i>Подключено</span></span>
+            <span class="integration-card-copy"><b>GitHub</b><small>Репозитории, ветки и Pull Request</small></span><span class="integration-card-footer"><span>2 репозитория</span><i>Подробнее →</i></span>
+          </button>
+          <button class="integration-card" type="button" data-integration="gitlab" data-integration-category="development" data-integration-name="gitlab репозитории ci разработка">
+            <span class="integration-card-top"><span class="integration-logo gitlab-logo"><svg viewBox="0 0 24 24"><path d="m12 21 8-6-2.4-9-2.2 5H8.6L6.4 6 4 15z"/></svg></span><span class="integration-state">Доступно</span></span>
+            <span class="integration-card-copy"><b>GitLab</b><small>Код, Merge Request и CI/CD</small></span><span class="integration-card-footer"><span>Разработка</span><i>Подключить</i></span>
+          </button>
+          <button class="integration-card" type="button" data-integration="drive" data-integration-category="knowledge" data-integration-name="google drive документы файлы знания">
+            <span class="integration-card-top"><span class="integration-logo drive-logo"><svg viewBox="0 0 24 24"><path d="m8 3 4 7-4 7H3l4-7 4-7zM12 10h7l3 5-4 6-4-7zM8 17h10l-3 4H6l-3-4z"/></svg></span><span class="integration-state">Доступно</span></span>
+            <span class="integration-card-copy"><b>Google Drive</b><small>Документы и рабочие материалы</small></span><span class="integration-card-footer"><span>Знания</span><i>Подключить</i></span>
+          </button>
+          <button class="integration-card" type="button" data-integration="notion" data-integration-category="knowledge" data-integration-name="notion база знаний документы">
+            <span class="integration-card-top"><span class="integration-logo notion-logo">N</span><span class="integration-state">Доступно</span></span>
+            <span class="integration-card-copy"><b>Notion</b><small>Базы знаний, страницы и задачи</small></span><span class="integration-card-footer"><span>Знания</span><i>Подключить</i></span>
+          </button>
+          <button class="integration-card soon" type="button" data-integration="slack" data-integration-category="communication" data-integration-name="slack сообщения команда общение">
+            <span class="integration-card-top"><span class="integration-logo slack-logo"><i></i><i></i><i></i><i></i></span><span class="integration-state soon">Скоро</span></span>
+            <span class="integration-card-copy"><b>Slack</b><small>Каналы, сообщения и уведомления</small></span><span class="integration-card-footer"><span>Общение</span><i>В разработке</i></span>
+          </button>
+          <button class="integration-card soon" type="button" data-integration="vercel" data-integration-category="development" data-integration-name="vercel деплой публикация разработка">
+            <span class="integration-card-top"><span class="integration-logo vercel-logo"><svg viewBox="0 0 24 24"><path d="m12 4 9 16H3z"/></svg></span><span class="integration-state soon">Скоро</span></span>
+            <span class="integration-card-copy"><b>Vercel</b><small>Предпросмотр и публикация проектов</small></span><span class="integration-card-footer"><span>Разработка</span><i>В разработке</i></span>
+          </button>
+        </section>
+        <div class="integrations-empty" id="integrations-empty"><span>Ничего не найдено</span><small>Измените категорию или поисковый запрос.</small></div>
+      </div>
+    </section>
+
     <section class="view" data-screen="vault">
       <div class="page-container content-page vault-page">
         <div class="page-heading"><div><span class="eyebrow">Хранилище результатов</span><h1>Build Vault</h1><p>Версии, сборки, исходники и отчёты проверки всех ваших проектов.</p></div><button class="secondary-button" id="upload-build" type="button"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>Загрузить исходники</button></div>
@@ -240,7 +290,6 @@
         <button class="active" type="button" data-profile-section="personal"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><div><b>Личные данные</b><small>Имя, email и язык</small></div><i>›</i></button>
         <button type="button" data-profile-section="security"><span><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><b>Безопасность</b><small>Пароль и активные сессии</small></div><i>›</i></button>
         <button type="button" data-profile-section="agent-settings"><span><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M9 18h6"/></svg></span><div><b>Настройки агента</b><small>Модель, режим и инструкции</small></div><i>›</i></button>
-        <button type="button" data-profile-section="connections"><span><svg viewBox="0 0 24 24"><path d="M9 8 6.5 5.5a3.5 3.5 0 0 0-5 5L6 15a3.5 3.5 0 0 0 5 0l1-1M15 16l2.5 2.5a3.5 3.5 0 0 0 5-5L18 9a3.5 3.5 0 0 0-5 0l-1 1M8 12h8"/></svg></span><div><b>Подключения</b><small>GitHub и репозитории</small></div><i>›</i></button>
         <button type="button" data-profile-section="usage"><span><svg viewBox="0 0 24 24"><path d="M5 19V9M12 19V4M19 19v-7M3 19h18"/></svg></span><div><b>Лимиты и использование</b><small>Расход, остаток и сброс</small></div><i>›</i></button>
         <button type="button" data-profile-section="billing"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 14h3"/></svg></span><div><b>Оплата и документы</b><small>История платежей и реквизиты</small></div><i>›</i></button>
       </nav>
@@ -277,52 +326,6 @@
           <div class="preference-toggles"><button class="setting-switch active" type="button" role="switch" aria-checked="true" data-agent-toggle="memory"><span><b>Учитывать предпочтения</b><small>Zorym запоминает стиль работы между чатами</small></span><i></i></button><button class="setting-switch" type="button" role="switch" aria-checked="false" data-agent-toggle="reduced-motion"><span><b>Уменьшить анимацию</b><small>Спокойное отображение этапов выполнения</small></span><i></i></button></div>
           <div class="settings-actions"><span>Настройки можно изменить в любом чате</span><button class="save-settings" type="submit">Сохранить настройки агента</button></div>
         </form>
-      </section>
-
-      <section class="profile-panel connections-panel" data-profile-panel="connections">
-        <div class="profile-panel-heading connections-heading"><div><span class="section-kicker">Интеграции</span><h3>Подключения</h3><p>Свяжите Zorym с рабочими инструментами и точно управляйте доступом агента.</p></div><span class="connections-summary"><i></i><span><b id="connections-count">1 подключение</b><small>защищено GitHub App</small></span></span></div>
-
-        <section class="github-connection-card" id="github-connection-card">
-          <div class="github-card-main">
-            <span class="github-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.3-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8Z"/></svg></span>
-            <div class="github-card-copy"><span class="connection-eyebrow">Разработка</span><h4>GitHub</h4><p id="github-account-copy">Аккаунт <b>Wareon-top</b> подключён к Zorym AI.</p></div>
-          </div>
-          <div class="github-card-state"><span class="connection-status" id="github-status"><i></i>Подключено</span><button type="button" id="github-connection-action">Отключить</button></div>
-          <div class="github-connection-meta" data-github-connected>
-            <span><small>Репозитории</small><b>2 доступны</b></span><span><small>Последняя синхронизация</small><b>только что</b></span><span><small>Режим изменений</small><b>Pull Request</b></span>
-          </div>
-        </section>
-
-        <div class="github-disconnected" id="github-disconnected" hidden>
-          <span><svg viewBox="0 0 24 24"><path d="M12 3v5M12 16v5M3 12h5M16 12h5M5.6 5.6l3.5 3.5M14.9 14.9l3.5 3.5M18.4 5.6l-3.5 3.5M9.1 14.9l-3.5 3.5"/></svg></span><div><h4>Подключите GitHub</h4><p>Вы выберете конкретные репозитории. Zorym не получит доступ ко всему аккаунту автоматически.</p></div>
-        </div>
-
-        <div class="github-connected-content" data-github-connected>
-          <section class="connection-card repositories-connection-card">
-            <div class="connection-card-heading"><div><h4>Доступные репозитории</h4><p>Агент работает только с включёнными проектами.</p></div><span id="selected-repositories-count">Выбрано 2 из 2</span></div>
-            <div class="repository-access-list">
-              <article><span class="repository-icon">Z</span><div><b>Zorym-AI</b><small><i>Открытый</i> · ветка main · обновлён 4 мин назад</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="Zorym-AI"><i></i></button></article>
-              <article><span class="repository-icon private">F</span><div><b>forgeplayai</b><small><i>Приватный</i> · ветка main · обновлён 18 мин назад</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="forgeplayai"><i></i></button></article>
-            </div>
-            <button class="repository-manage-button" id="manage-github-repositories" type="button"><span>＋</span>Изменить список в GitHub</button>
-          </section>
-
-          <section class="connection-card agent-github-policy">
-            <div class="connection-card-heading"><div><h4>Как агент вносит изменения</h4><p>Безопасный сценарий применяется ко всем подключённым репозиториям.</p></div><span class="recommended-label">Рекомендуется</span></div>
-            <div class="github-policy-options" role="radiogroup" aria-label="Режим работы с GitHub">
-              <button class="selected" type="button" role="radio" aria-checked="true" data-github-policy="pull-request"><span><i></i></span><div><b>Через Pull Request</b><small>Новая ветка, проверки и ваше подтверждение перед объединением.</small></div><em>Безопасно</em></button>
-              <button type="button" role="radio" aria-checked="false" data-github-policy="branch-only"><span><i></i></span><div><b>Только рабочая ветка</b><small>Zorym сохранит изменения в ветке без создания Pull Request.</small></div></button>
-            </div>
-            <div class="github-guardrails">
-              <div><span class="guardrail-lock"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg></span><span><b>Основная ветка защищена</b><small>Прямая запись в main всегда запрещена</small></span><i>Всегда</i></div>
-              <button class="setting-switch active connection-setting" type="button" role="switch" aria-checked="true" data-github-setting="checks"><span><b>Проверять перед публикацией</b><small>Тесты и сборка до создания Pull Request</small></span><i></i></button>
-              <button class="setting-switch active connection-setting" type="button" role="switch" aria-checked="true" data-github-setting="sync"><span><b>Следить за изменениями</b><small>Обновлять контекст после новых коммитов</small></span><i></i></button>
-            </div>
-            <div class="connection-actions"><span><i></i>Доступ выдаётся временно для каждой задачи</span><button class="save-settings" id="save-github-settings" type="button">Сохранить настройки</button></div>
-          </section>
-
-          <section class="github-capabilities-note"><span><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8 7 10 4.2-2 7-5.2 7-10V6zM9 12l2 2 4-5"/></svg></span><div><b>Zorym видит только то, что вы разрешили</b><p>Секреты репозитория, настройки организации и другие проекты остаются недоступны.</p></div><button id="github-permissions-info" type="button">Разрешения</button></section>
-        </div>
       </section>
 
       <section class="profile-panel usage-panel-v2" data-profile-panel="usage">
@@ -382,6 +385,40 @@
         <form class="billing-details" id="billing-form"><div class="settings-card-title"><span class="settings-card-icon"><svg viewBox="0 0 24 24"><path d="M4 20V8l6-3v15M10 9h10v11M14 13h2M14 16h2"/></svg></span><div><h4>Реквизиты для документов</h4><p>Оставьте пустыми, если оплачиваете как физическое лицо.</p></div></div><div class="field-row"><label class="settings-field"><span>Название или ФИО</span><input id="billing-name" placeholder="Алексей Константинов"></label><label class="settings-field"><span>ИНН</span><input id="billing-tax-id" inputmode="numeric" maxlength="12" placeholder="000000000000"></label></div><label class="settings-field"><span>Email для чеков</span><input id="billing-email" type="email" value="alexey@example.com"></label><div class="settings-actions"><span>Чеки отправляются автоматически</span><button class="save-settings" type="submit">Сохранить реквизиты</button></div></form>
         <div class="payment-history"><div class="sessions-heading"><div><h4>История платежей</h4><p>Чеки и документы доступны в любое время.</p></div><select id="payment-year" aria-label="Год платежей"><option>2026</option><option>2025</option></select></div><div class="payment-table"><div class="payment-row payment-head"><span>Дата</span><span>Описание</span><span>Сумма</span><span>Статус</span><span></span></div><div class="payment-row"><time>14 авг 2026</time><span><b>Forge Pro</b><small>Период до 14 сентября</small></span><strong>1 490 ₽</strong><em>Оплачено</em><button class="download-invoice" type="button" data-invoice="ZRY-2026-0814">Скачать</button></div><div class="payment-row"><time>14 июл 2026</time><span><b>Forge Pro</b><small>Период до 14 августа</small></span><strong>1 490 ₽</strong><em>Оплачено</em><button class="download-invoice" type="button" data-invoice="ZRY-2026-0714">Скачать</button></div><div class="payment-row"><time>14 июн 2026</time><span><b>Forge Pro</b><small>Период до 14 июля</small></span><strong>1 490 ₽</strong><em>Оплачено</em><button class="download-invoice" type="button" data-invoice="ZRY-2026-0614">Скачать</button></div></div></div>
       </section>
+    </div>
+  </div>
+</aside>
+
+<div class="integration-detail-backdrop" id="integration-detail-backdrop"></div>
+<aside class="integration-detail-drawer" id="integration-detail-drawer" role="dialog" aria-modal="true" aria-labelledby="integration-detail-title">
+  <header class="integration-detail-header"><div><span class="eyebrow">Подключение</span><h2 id="integration-detail-title">GitHub</h2></div><button id="close-integration-detail" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+  <div class="integration-detail-content">
+    <section class="github-connection-card" id="github-connection-card">
+      <div class="github-card-main">
+        <span class="github-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.3-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8Z"/></svg></span>
+        <div class="github-card-copy"><span class="connection-eyebrow">Разработка</span><h4>GitHub</h4><p id="github-account-copy">Аккаунт <b>Wareon-top</b> подключён к Zorym AI.</p></div>
+      </div>
+      <div class="github-card-state"><span class="connection-status" id="github-status"><i></i>Подключено</span><button type="button" id="github-connection-action">Отключить</button></div>
+      <div class="github-connection-meta" data-github-connected><span><small>Репозитории</small><b>2 доступны</b></span><span><small>Синхронизация</small><b>только что</b></span><span><small>Режим</small><b>Pull Request</b></span></div>
+    </section>
+
+    <div class="github-disconnected" id="github-disconnected" hidden><span><svg viewBox="0 0 24 24"><path d="M12 3v5M12 16v5M3 12h5M16 12h5M5.6 5.6l3.5 3.5M14.9 14.9l3.5 3.5M18.4 5.6l-3.5 3.5M9.1 14.9l-3.5 3.5"/></svg></span><div><h4>Подключите GitHub</h4><p>Выберите конкретные репозитории — доступ ко всему аккаунту не выдаётся автоматически.</p></div></div>
+
+    <div class="github-connected-content" data-github-connected>
+      <section class="connection-card repositories-connection-card">
+        <div class="connection-card-heading"><div><h4>Репозитории</h4><p>Агент работает только с включёнными проектами.</p></div><span id="selected-repositories-count">Выбрано 2 из 2</span></div>
+        <div class="repository-access-list"><article><span class="repository-icon">Z</span><div><b>Zorym-AI</b><small><i>Открытый</i> · ветка main</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="Zorym-AI"><i></i></button></article><article><span class="repository-icon private">F</span><div><b>forgeplayai</b><small><i>Приватный</i> · ветка main</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="forgeplayai"><i></i></button></article></div>
+        <button class="repository-manage-button" id="manage-github-repositories" type="button"><span>＋</span>Изменить список в GitHub</button>
+      </section>
+
+      <section class="connection-card agent-github-policy">
+        <div class="connection-card-heading"><div><h4>Как вносить изменения</h4><p>Безопасный сценарий для подключённых репозиториев.</p></div><span class="recommended-label">Рекомендуется</span></div>
+        <div class="github-policy-options" role="radiogroup" aria-label="Режим работы с GitHub"><button class="selected" type="button" role="radio" aria-checked="true" data-github-policy="pull-request"><span><i></i></span><div><b>Через Pull Request</b><small>Новая ветка, проверки и подтверждение перед объединением.</small></div><em>Безопасно</em></button><button type="button" role="radio" aria-checked="false" data-github-policy="branch-only"><span><i></i></span><div><b>Только рабочая ветка</b><small>Сохранить изменения без создания Pull Request.</small></div></button></div>
+        <div class="github-guardrails"><div><span class="guardrail-lock"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg></span><span><b>Основная ветка защищена</b><small>Прямая запись в main запрещена</small></span><i>Всегда</i></div><button class="setting-switch active connection-setting" type="button" role="switch" aria-checked="true" data-github-setting="checks"><span><b>Проверять перед публикацией</b><small>Тесты и сборка до Pull Request</small></span><i></i></button><button class="setting-switch active connection-setting" type="button" role="switch" aria-checked="true" data-github-setting="sync"><span><b>Следить за изменениями</b><small>Обновлять контекст после коммитов</small></span><i></i></button></div>
+        <div class="connection-actions"><span><i></i>Временный доступ для каждой задачи</span><button class="save-settings" id="save-github-settings" type="button">Сохранить</button></div>
+      </section>
+
+      <section class="github-capabilities-note"><span><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8 7 10 4.2-2 7-5.2 7-10V6zM9 12l2 2 4-5"/></svg></span><div><b>Только разрешённые данные</b><p>Секреты и другие репозитории остаются недоступны.</p></div><button id="github-permissions-info" type="button">Разрешения</button></section>
     </div>
   </div>
 </aside>
@@ -699,11 +736,49 @@ document.querySelector('#vault-search').addEventListener('input', filterVault);
 document.querySelectorAll('.download-button').forEach(function (button) { button.addEventListener('click', function () { notify('Файл подготовлен к скачиванию'); }); });
 document.querySelector('#upload-build').addEventListener('click', function () { notify('Выберите ZIP с исходниками'); });
 
+const integrationCards = Array.from(document.querySelectorAll('[data-integration]'));
+const integrationSearch = document.querySelector('#integration-search');
+let activeIntegrationFilter = 'all';
+function filterIntegrations() {
+  const query = integrationSearch.value.trim().toLowerCase();
+  let visible = 0;
+  integrationCards.forEach(function (card) {
+    const categoryMatch = activeIntegrationFilter === 'all' || card.dataset.integrationCategory === activeIntegrationFilter;
+    const queryMatch = !query || card.dataset.integrationName.includes(query) || card.textContent.toLowerCase().includes(query);
+    card.hidden = !(categoryMatch && queryMatch);
+    if (!card.hidden) visible += 1;
+  });
+  document.querySelector('#integrations-empty').classList.toggle('show', visible === 0);
+}
+document.querySelectorAll('[data-integration-filter]').forEach(function (button) {
+  button.addEventListener('click', function () {
+    activeIntegrationFilter = button.dataset.integrationFilter;
+    document.querySelectorAll('[data-integration-filter]').forEach(function (item) { item.classList.toggle('selected', item === button); });
+    filterIntegrations();
+  });
+});
+integrationSearch.addEventListener('input', filterIntegrations);
+
+const integrationDetailDrawer = document.querySelector('#integration-detail-drawer');
+const integrationDetailBackdrop = document.querySelector('#integration-detail-backdrop');
+let integrationReturnFocus = null;
+function openIntegrationDetail() { integrationReturnFocus = document.activeElement; integrationDetailDrawer.classList.add('open'); integrationDetailBackdrop.classList.add('show'); document.body.classList.add('integration-detail-open'); document.querySelector('#close-integration-detail').focus(); }
+function closeIntegrationDetail() { const wasOpen = integrationDetailDrawer.classList.contains('open'); integrationDetailDrawer.classList.remove('open'); integrationDetailBackdrop.classList.remove('show'); document.body.classList.remove('integration-detail-open'); if (wasOpen && integrationReturnFocus && typeof integrationReturnFocus.focus === 'function') integrationReturnFocus.focus(); }
+document.querySelector('#close-integration-detail').addEventListener('click', closeIntegrationDetail);
+integrationDetailBackdrop.addEventListener('click', closeIntegrationDetail);
+document.querySelector('#integration-grid').addEventListener('click', function (event) {
+  const card = event.target.closest('[data-integration]');
+  if (!card) return;
+  if (card.dataset.integration === 'github') { openIntegrationDetail(); return; }
+  if (card.classList.contains('soon')) { notify(card.querySelector('.integration-card-copy b').textContent + ' появится в одном из следующих обновлений'); return; }
+  notify('Подключение ' + card.querySelector('.integration-card-copy b').textContent + ' откроется после серверной интеграции');
+});
+
 const profileDrawer = document.querySelector('#profile-drawer');
 const drawerBackdrop = document.querySelector('#drawer-backdrop');
 const profileSectionButtons = Array.from(document.querySelectorAll('[data-profile-section]'));
 const profilePanels = Array.from(document.querySelectorAll('[data-profile-panel]'));
-const profileSectionTitles = { personal: 'Личные данные', security: 'Безопасность', 'agent-settings': 'Настройки агента', connections: 'Подключения', usage: 'Лимиты и использование', billing: 'Оплата и документы' };
+const profileSectionTitles = { personal: 'Личные данные', security: 'Безопасность', 'agent-settings': 'Настройки агента', usage: 'Лимиты и использование', billing: 'Оплата и документы' };
 
 function selectProfileSection(section) {
   const safeSection = profileSectionTitles[section] ? section : 'personal';
@@ -883,6 +958,8 @@ function updateRepositoryCount() {
   document.querySelector('#selected-repositories-count').textContent = 'Выбрано ' + selected + ' из ' + toggles.length;
   const meta = document.querySelector('.github-connection-meta span:first-child b');
   if (meta) meta.textContent = selected + (selected === 1 ? ' доступен' : selected > 1 && selected < 5 ? ' доступны' : ' доступно');
+  const hubRepositoryCount = document.querySelector('[data-integration="github"] .integration-card-footer span');
+  if (hubRepositoryCount && githubConnected) hubRepositoryCount.textContent = selected + (selected === 1 ? ' репозиторий' : selected > 1 && selected < 5 ? ' репозитория' : ' репозиториев');
 }
 
 function setGithubConnection(connected) {
@@ -895,8 +972,25 @@ function setGithubConnection(connected) {
   githubConnectionAction.textContent = connected ? 'Отключить' : 'Подключить GitHub';
   githubConnectionAction.classList.remove('confirm-disconnect');
   document.querySelector('#github-account-copy').innerHTML = connected ? 'Аккаунт <b>Wareon-top</b> подключён к Zorym AI.' : 'Безопасное подключение через GitHub App.';
-  document.querySelector('#connections-count').textContent = connected ? '1 подключение' : 'Нет подключений';
+  const hubCard = document.querySelector('[data-integration="github"]');
+  const hubState = hubCard.querySelector('.integration-state');
+  hubCard.classList.toggle('connected', connected);
+  hubState.classList.toggle('connected', connected);
+  hubState.innerHTML = connected ? '<i></i>Подключено' : 'Доступно';
+  hubCard.querySelector('.integration-card-footer i').textContent = connected ? 'Подробнее →' : 'Подключить';
+  if (!connected) hubCard.querySelector('.integration-card-footer span').textContent = 'Разработка';
+  const health = document.querySelector('.integration-health');
+  health.classList.toggle('offline', !connected);
+  health.querySelector('b').textContent = connected ? '1 интеграция активна' : 'Нет активных интеграций';
+  health.querySelector('small').textContent = connected ? 'все подключения работают' : 'выберите нужный сервис';
+  document.querySelector('.integration-overview article:first-child strong').textContent = connected ? '1' : '0';
+  document.querySelector('.integration-overview article:first-child small').textContent = connected ? 'GitHub синхронизирован' : 'пока ничего не подключено';
+  const navLink = document.querySelector('[data-view="connections"]');
+  navLink.dataset.subtitle = connected ? '1 интеграция активна' : 'Нет активных интеграций';
+  navLink.querySelector('.connection-nav-dot').classList.toggle('offline', !connected);
+  if (navLink.classList.contains('active')) contextSubtitle.textContent = navLink.dataset.subtitle;
   githubDisconnectArmed = false;
+  updateRepositoryCount();
 }
 
 const storedGithub = readProfileState('github', { connected: true, repositories: { 'Zorym-AI': true, forgeplayai: true }, policy: 'pull-request', checks: true, sync: true });
@@ -1049,7 +1143,7 @@ document.querySelectorAll('.download-invoice').forEach(function (button) {
 });
 document.querySelector('.profile-signout').addEventListener('click', function () { notify('Демо: выход будет подключён к авторизации'); });
 document.querySelector('#command-button').addEventListener('click', function () { notify('Поиск по проектам, задачам и файлам'); });
-document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeMobileMenu(); closeCapabilityMenu(); } });
+document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeIntegrationDetail(); closeMobileMenu(); closeCapabilityMenu(); } });
 renderChatList();
 renderConversation(currentChat());
 const initialView = links.find(function (link) { return link.dataset.view === window.location.hash.slice(1); });
