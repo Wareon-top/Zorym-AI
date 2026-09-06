@@ -6,7 +6,7 @@
   <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI — рабочее пространство</title>
-  <link rel="stylesheet" href="styles.css?v=20260906-personal-space">
+  <link rel="stylesheet" href="styles.css?v=20260906-usage-center">
 </head>
 <body>
 <div class="mobile-backdrop" id="mobile-backdrop"></div>
@@ -67,7 +67,7 @@
     </nav>
 
     <div class="sidebar-bottom">
-      <div class="resource-card"><div><span>Ресурсы</span><strong>62%</strong></div><div class="resource-track"><i></i></div><small>2 480 из 4 000 единиц</small></div>
+      <button class="resource-card" id="resource-usage-button" type="button" aria-label="Открыть лимиты и использование"><div><span>Лимит недели</span><strong>71%</strong></div><div class="resource-track"><i style="width:71.3%"></i></div><small>428 из 600 · <span data-next-reset>сброс в понедельник</span></small></button>
       <button class="account" id="account-button" type="button" aria-haspopup="dialog"><span class="account-avatar">АК</span><span class="account-copy"><b>Алексей К.</b><small>Pro · Личное пространство</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 10 3 3 3-3"/></svg></button>
     </div>
   </aside>
@@ -240,9 +240,10 @@
         <button class="active" type="button" data-profile-section="personal"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><div><b>Личные данные</b><small>Имя, email и язык</small></div><i>›</i></button>
         <button type="button" data-profile-section="security"><span><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><b>Безопасность</b><small>Пароль и активные сессии</small></div><i>›</i></button>
         <button type="button" data-profile-section="agent-settings"><span><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M9 18h6"/></svg></span><div><b>Настройки агента</b><small>Модель, режим и инструкции</small></div><i>›</i></button>
+        <button type="button" data-profile-section="usage"><span><svg viewBox="0 0 24 24"><path d="M5 19V9M12 19V4M19 19v-7M3 19h18"/></svg></span><div><b>Лимиты и использование</b><small>Расход, остаток и сброс</small></div><i>›</i></button>
         <button type="button" data-profile-section="billing"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 14h3"/></svg></span><div><b>Оплата и документы</b><small>История платежей и реквизиты</small></div><i>›</i></button>
       </nav>
-      <section class="personal-plan"><div><span>Forge Pro</span><b>Активен</b></div><strong>1 872 <small>из 2 610 ед.</small></strong><div class="plan-track"><i></i></div><p><span>Осталось 738</span><time>до 14 сентября</time></p><a href="pricing.html">Управлять тарифом <i>→</i></a></section>
+      <section class="personal-plan"><div><span>Forge Pro · неделя</span><b>Активен</b></div><strong>428 <small>из 600 ед.</small></strong><div class="plan-track"><i></i></div><p><span>Осталось 172</span><time data-next-reset>Сброс 7 сентября</time></p><button type="button" data-open-usage>Открыть использование <i>→</i></button></section>
       <button class="profile-signout" type="button"><svg viewBox="0 0 24 24"><path d="M10 5H5v14h5M14 8l4 4-4 4M8 12h10"/></svg>Выйти из аккаунта</button>
     </aside>
 
@@ -275,6 +276,37 @@
           <div class="preference-toggles"><button class="setting-switch active" type="button" role="switch" aria-checked="true" data-agent-toggle="memory"><span><b>Учитывать предпочтения</b><small>Zorym запоминает стиль работы между чатами</small></span><i></i></button><button class="setting-switch" type="button" role="switch" aria-checked="false" data-agent-toggle="reduced-motion"><span><b>Уменьшить анимацию</b><small>Спокойное отображение этапов выполнения</small></span><i></i></button></div>
           <div class="settings-actions"><span>Настройки можно изменить в любом чате</span><button class="save-settings" type="submit">Сохранить настройки агента</button></div>
         </form>
+      </section>
+
+      <section class="profile-panel" data-profile-panel="usage">
+        <div class="profile-panel-heading"><div><span class="section-kicker">Ресурсы аккаунта</span><h3>Лимиты и использование</h3><p>Прозрачная картина расхода без внутренних токенов и технических моделей.</p></div><span class="usage-live"><i></i><b>Данные обновлены</b><small>только что</small></span></div>
+        <div class="usage-hero">
+          <div class="usage-ring" aria-label="Использовано 71 процент"><div><strong>71%</strong><span>использовано</span></div></div>
+          <div class="usage-hero-copy"><span class="usage-plan-label">Forge Pro · текущая неделя</span><h4><strong>428</strong> <small>из 600 единиц</small></h4><p>Осталось <b>172 единицы</b> до следующего обновления.</p><div class="reset-clock"><span><i></i><span><small>Следующий сброс</small><b id="next-reset-date">7 сентября, 00:00</b></span></span><time id="reset-countdown">каждый понедельник</time></div></div>
+        </div>
+
+        <div class="usage-summary-grid">
+          <article><span>Сегодня</span><strong>18 <small>ед.</small></strong><p><i class="down">↓ 24%</i> меньше среднего</p></article>
+          <article><span>Средний день</span><strong>61 <small>ед.</small></strong><p>за последние 7 дней</p></article>
+          <article><span>Месячный ориентир</span><strong>1 872 <small>/ 2 610</small></strong><p><i>72%</i> расчётного объёма</p></article>
+        </div>
+
+        <section class="usage-card usage-activity-card">
+          <div class="usage-card-heading"><div><h4>Динамика недели</h4><p>Сколько единиц было списано после успешно завершённых этапов.</p></div><div class="usage-period-tabs"><button class="active" type="button" data-usage-period="week">Неделя</button><button type="button" data-usage-period="month">Месяц</button></div></div>
+          <div class="usage-chart" id="usage-chart" aria-label="Расход по дням">
+            <div><span><i style="--bar:48%"></i></span><b>Пн</b><small>45</small></div><div><span><i style="--bar:87%"></i></span><b>Вт</b><small>82</small></div><div><span><i style="--bar:68%"></i></span><b>Ср</b><small>64</small></div><div><span><i style="--bar:100%"></i></span><b>Чт</b><small>93</small></div><div><span><i style="--bar:59%"></i></span><b>Пт</b><small>55</small></div><div><span><i style="--bar:76%"></i></span><b>Сб</b><small>71</small></div><div class="today"><span><i style="--bar:19%"></i></span><b>Вс</b><small>18</small></div>
+          </div>
+          <div class="usage-chart-legend"><span><i></i>Списано после успешной работы</span><strong>428 ед. за неделю</strong></div>
+        </section>
+
+        <div class="usage-detail-grid">
+          <section class="usage-card"><div class="usage-card-heading"><div><h4>По моделям Zorym</h4><p>Распределение недельного расхода.</p></div></div><div class="model-usage-list"><article><span class="usage-model-dot comet"></span><div><b>Comet</b><small>11 выполнений</small></div><strong>84 <small>ед.</small></strong><i><b style="width:20%"></b></i></article><article><span class="usage-model-dot orbit"></span><div><b>Orbit</b><small>8 выполнений</small></div><strong>231 <small>ед.</small></strong><i><b style="width:54%"></b></i></article><article><span class="usage-model-dot quasar"></span><div><b>Quasar</b><small>2 выполнения</small></div><strong>113 <small>ед.</small></strong><i><b style="width:26%"></b></i></article></div></section>
+          <section class="usage-card forecast-card"><div class="usage-card-heading"><div><h4>Прогноз</h4><p>При текущем темпе.</p></div><span class="forecast-status">В пределах лимита</span></div><div class="forecast-visual"><span><i style="width:78%"></i><b></b></span><div><small>Ожидаемый расход</small><strong>≈ 472 <em>/ 600 ед.</em></strong></div></div><p>Запаса хватит примерно на <b>4 задачи Orbit</b> или <b>12 задач Comet</b>.</p><button type="button" data-open-agent-settings>Настроить модель по умолчанию →</button></section>
+        </div>
+
+        <section class="usage-card recent-usage"><div class="usage-card-heading"><div><h4>Последние списания</h4><p>Только завершённые этапы уменьшают лимит.</p></div><button type="button" id="toggle-usage-details">Показать детали</button></div><div class="usage-transaction-list"><article><span class="usage-task-icon orbit">O</span><div><b>Система сезонных заданий</b><small>Orbit · Мастер · сегодня, 14:32</small></div><strong>−38 ед.</strong><button type="button" aria-label="Подробнее">›</button></article><article><span class="usage-task-icon comet">C</span><div><b>Ошибка повторной награды</b><small>Comet · Импульс · сегодня, 11:08</small></div><strong>−7 ед.</strong><button type="button" aria-label="Подробнее">›</button></article><article><span class="usage-task-icon quasar">Q</span><div><b>Экономика островов</b><small>Quasar · Архитектор · вчера, 19:46</small></div><strong>−74 ед.</strong><button type="button" aria-label="Подробнее">›</button></article></div><div class="usage-explanation" id="usage-explanation"><b>Как рассчитывается расход</b><p>Единицы учитывают объём контекста, сложность выбранной модели, глубину режима и количество проверок. Внутренние токены и поставщики не раскрываются.</p><span><i>✓</i>Ошибка или остановленный этап не списывают лимит</span></div></section>
+
+        <section class="usage-card usage-alerts"><div class="usage-card-heading"><div><h4>Уведомление о расходе</h4><p>Zorym заранее предупредит, когда запас приблизится к выбранной отметке.</p></div><button class="setting-switch active compact-switch" id="usage-alert-toggle" type="button" role="switch" aria-checked="true"><i></i></button></div><div class="usage-threshold" id="usage-threshold"><button type="button" data-threshold="70">70%</button><button class="active" type="button" data-threshold="80">80%</button><button type="button" data-threshold="90">90%</button><span>Сейчас уведомим при остатке 20%</span></div></section>
       </section>
 
       <section class="profile-panel" data-profile-panel="billing">
@@ -604,7 +636,7 @@ const profileDrawer = document.querySelector('#profile-drawer');
 const drawerBackdrop = document.querySelector('#drawer-backdrop');
 const profileSectionButtons = Array.from(document.querySelectorAll('[data-profile-section]'));
 const profilePanels = Array.from(document.querySelectorAll('[data-profile-panel]'));
-const profileSectionTitles = { personal: 'Личные данные', security: 'Безопасность', 'agent-settings': 'Настройки агента', billing: 'Оплата и документы' };
+const profileSectionTitles = { personal: 'Личные данные', security: 'Безопасность', 'agent-settings': 'Настройки агента', usage: 'Лимиты и использование', billing: 'Оплата и документы' };
 
 function selectProfileSection(section) {
   const safeSection = profileSectionTitles[section] ? section : 'personal';
@@ -625,6 +657,7 @@ function closeProfile() { profileDrawer.classList.remove('open'); drawerBackdrop
 profileSectionButtons.forEach(function (button) { button.addEventListener('click', function () { selectProfileSection(button.dataset.profileSection); }); });
 document.querySelector('#account-button').addEventListener('click', openProfile);
 document.querySelector('#top-avatar').addEventListener('click', openProfile);
+document.querySelector('#resource-usage-button').addEventListener('click', function () { openProfile('usage'); });
 document.querySelector('#close-profile').addEventListener('click', closeProfile);
 drawerBackdrop.addEventListener('click', closeProfile);
 
@@ -755,6 +788,79 @@ document.querySelector('#agent-settings-form').addEventListener('submit', functi
   syncModelShowcase(model);
   notify('Настройки агента сохранены');
 });
+
+document.querySelector('[data-open-usage]').addEventListener('click', function () { selectProfileSection('usage'); });
+document.querySelector('[data-open-agent-settings]').addEventListener('click', function () { selectProfileSection('agent-settings'); });
+
+function updateResetClock() {
+  const now = new Date();
+  const reset = new Date(now);
+  const daysUntilMonday = (8 - now.getDay()) % 7 || 7;
+  reset.setDate(now.getDate() + daysUntilMonday);
+  reset.setHours(0, 0, 0, 0);
+  const remaining = Math.max(0, reset.getTime() - now.getTime());
+  const days = Math.floor(remaining / 86400000);
+  const hours = Math.floor((remaining % 86400000) / 3600000);
+  const minutes = Math.floor((remaining % 3600000) / 60000);
+  const resetLabel = reset.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }) + ', 00:00';
+  document.querySelector('#next-reset-date').textContent = resetLabel;
+  document.querySelectorAll('[data-next-reset]').forEach(function (item) { item.textContent = 'Сброс ' + reset.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }); });
+  document.querySelector('#reset-countdown').textContent = days > 0 ? 'через ' + days + ' д ' + hours + ' ч' : 'через ' + hours + ' ч ' + minutes + ' мин';
+}
+updateResetClock();
+window.setInterval(updateResetClock, 60000);
+
+const usageSeries = {
+  week: { labels: ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'], values: [45,82,64,93,55,71,18], total: '428 ед. за неделю' },
+  month: { labels: ['1–5','6–10','11–15','16–20','21–25','26–30','31'], values: [236,308,271,342,287,316,112], total: '1 872 ед. за месяц' }
+};
+function renderUsageSeries(period) {
+  const series = usageSeries[period] || usageSeries.week;
+  const max = Math.max.apply(null, series.values);
+  document.querySelectorAll('#usage-chart > div').forEach(function (bar, index) {
+    bar.querySelector('b').textContent = series.labels[index];
+    bar.querySelector('small').textContent = series.values[index];
+    bar.querySelector('i').style.setProperty('--bar', Math.max(8, Math.round((series.values[index] / max) * 100)) + '%');
+    bar.classList.toggle('today', period === 'week' && index === 6);
+  });
+  document.querySelector('.usage-chart-legend strong').textContent = series.total;
+}
+document.querySelectorAll('[data-usage-period]').forEach(function (button) {
+  button.addEventListener('click', function () {
+    document.querySelectorAll('[data-usage-period]').forEach(function (item) { item.classList.toggle('active', item === button); });
+    renderUsageSeries(button.dataset.usagePeriod);
+  });
+});
+document.querySelector('#toggle-usage-details').addEventListener('click', function (event) {
+  const explanation = document.querySelector('#usage-explanation');
+  const open = explanation.classList.toggle('open');
+  event.currentTarget.textContent = open ? 'Скрыть детали' : 'Показать детали';
+});
+document.querySelector('#usage-alert-toggle').addEventListener('click', function (event) {
+  const enabled = toggleSetting(event.currentTarget);
+  saveProfileState('usage-alert-enabled', enabled);
+  notify(enabled ? 'Уведомления о лимите включены' : 'Уведомления о лимите выключены');
+});
+document.querySelectorAll('[data-threshold]').forEach(function (button) {
+  button.addEventListener('click', function () {
+    document.querySelectorAll('[data-threshold]').forEach(function (item) { item.classList.toggle('active', item === button); });
+    document.querySelector('#usage-threshold > span').textContent = 'Уведомим при остатке ' + (100 - Number(button.dataset.threshold)) + '%';
+    saveProfileState('usage-threshold', Number(button.dataset.threshold));
+    notify('Порог уведомления сохранён');
+  });
+});
+const storedUsageThreshold = readProfileState('usage-threshold', 80);
+const storedThresholdButton = document.querySelector('[data-threshold="' + storedUsageThreshold + '"]');
+if (storedThresholdButton) {
+  document.querySelectorAll('[data-threshold]').forEach(function (item) { item.classList.toggle('active', item === storedThresholdButton); });
+  document.querySelector('#usage-threshold > span').textContent = 'Уведомим при остатке ' + (100 - Number(storedUsageThreshold)) + '%';
+}
+const storedUsageAlert = readProfileState('usage-alert-enabled', true);
+if (!storedUsageAlert) {
+  const alertToggle = document.querySelector('#usage-alert-toggle');
+  alertToggle.classList.remove('active');
+  alertToggle.setAttribute('aria-checked', 'false');
+}
 
 const storedBilling = readProfileState('billing', null);
 if (storedBilling) {
