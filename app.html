@@ -93,7 +93,7 @@
       <div class="agent-page page-container">
         <div class="conversation-shell" id="conversation-shell">
           <header class="conversation-header">
-            <div><span class="eyebrow">Чат с Zorym AI</span><h1 id="conversation-title">Система сезонных заданий</h1><p><span id="conversation-project">Skyblock: Genesis</span><i></i><span id="conversation-settings">Zorym 1 Orbit · Мастер</span></p></div>
+            <div><span class="eyebrow">Чат с Zorym AI</span><h1 id="conversation-title">Система сезонных заданий</h1><p><span id="conversation-project">Skyblock: Genesis</span><i></i><span id="conversation-settings">Zorym 1 Orbit · Мастер</span><span class="conversation-state state-executing" id="conversation-state"><i></i>Выполняет</span></p></div>
             <div class="conversation-actions"><button type="button" aria-label="Поделиться чатом"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg></button><button type="button" aria-label="Меню чата">•••</button></div>
           </header>
           <div class="chat-thread" id="chat-thread" aria-live="polite"></div>
@@ -105,7 +105,7 @@
           <textarea id="agent-prompt" aria-label="Опишите задачу" placeholder="Например: разработай систему сезонных заданий с наградами и защитой от повторного получения…"></textarea>
           <div class="prompt-toolbar">
             <div class="prompt-tools"><button class="tool-button" type="button" aria-label="Добавить файлы"><svg viewBox="0 0 24 24"><path d="m9 12 5.6-5.6a3 3 0 0 1 4.2 4.2l-7.7 7.7a5 5 0 0 1-7.1-7.1L11.2 4"/></svg></button><button class="tool-button" type="button" aria-label="Добавить изображение"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m5 17 4.5-4 3 2.5 2.5-2 4 3.5"/></svg></button><span class="tools-divider"></span><div class="agent-tools"><button class="agent-tools-trigger" id="agent-tools-trigger" type="button" aria-expanded="false" aria-controls="capability-menu"><svg viewBox="0 0 24 24"><path d="M8.5 4.5 9.7 7a4 4 0 0 0 2 2l2.8 1.4-2.8 1.3a4 4 0 0 0-2 2l-1.2 2.8-1.3-2.8a4 4 0 0 0-2-2L3 10.5l2.2-1.4a4 4 0 0 0 2-2zM17 13l.7 1.5a3 3 0 0 0 1.5 1.5l1.5.7-1.5.8a3 3 0 0 0-1.5 1.5l-.7 1.5-.8-1.5a3 3 0 0 0-1.5-1.5l-1.5-.8 1.5-.7a3 3 0 0 0 1.5-1.5z"/></svg><span>Инструменты</span><i id="active-tool-count">1</i></button><div class="capability-menu" id="capability-menu" aria-hidden="true"><header><div><b>Инструменты агента</b><small>Подключаются только к текущей задаче</small></div><span id="capability-plan">Forge Pro</span></header><div class="capability-list"><button class="capability-option active" type="button" data-capability="Smart Brief"><span class="capability-symbol">⌁</span><span><b>Smart Brief</b><small>Уточнит цель и критерии готовности</small></span><i>✓</i></button><button class="capability-option" type="button" data-capability="Zorym Browser"><span class="capability-symbol">◎</span><span><b>Zorym Browser</b><small>Изучит интернет и приложит источники</small></span><i>✓</i></button><button class="capability-option" type="button" data-capability="Zorym Crew"><span class="capability-symbol">◌</span><span><b>Zorym Crew</b><small>Подключит агентов для независимой проверки</small></span><i>✓</i></button></div></div></div></div>
-            <div class="run-settings"><div class="choice-menu model-choice" data-choice-group="model"><button type="button">Comet</button><button class="selected" type="button">Orbit</button><button type="button">Quasar</button></div><span class="toolbar-divider"></span><div class="choice-menu mode-choice" data-choice-group="mode"><button type="button">Импульс</button><button class="selected" type="button">Мастер</button><button type="button">Архитектор</button></div><button class="send-button" id="send-task" type="button" aria-label="Запустить задачу"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div>
+            <div class="run-settings"><div class="choice-cluster"><span>Модель</span><div class="choice-menu model-choice" data-choice-group="model" role="radiogroup" aria-label="Модель Zorym"><button type="button" role="radio" aria-checked="false" title="Comet — быстро для точечных задач">Comet</button><button class="selected" type="button" role="radio" aria-checked="true" title="Orbit — баланс глубины и скорости">Orbit</button><button type="button" role="radio" aria-checked="false" title="Quasar — максимальная глубина">Quasar</button></div></div><span class="toolbar-divider"></span><div class="choice-cluster"><span>Режим</span><div class="choice-menu mode-choice" data-choice-group="mode" role="radiogroup" aria-label="Режим работы"><button type="button" role="radio" aria-checked="false" title="Импульс — короткий прямой путь">Импульс</button><button class="selected" type="button" role="radio" aria-checked="true" title="Мастер — план, работа и проверка">Мастер</button><button type="button" role="radio" aria-checked="false" title="Архитектор — системная проработка">Архитектор</button></div></div><button class="send-button" id="send-task" type="button" aria-label="Запустить задачу" title="Запустить · Ctrl или ⌘ + Enter"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div>
           </div>
         </div>
 
@@ -501,6 +501,14 @@ const modelProfiles = {
   Quasar: { label: 'Глубокий цикл', stages: ['Строю карту системы', 'Формирую стратегию', 'Запускаю потоки', 'Синтезирую решения', 'Провожу испытания', 'Фиксирую результат'] }
 };
 
+const chatStates = {
+  empty: { label: 'Новый чат', hint: 'Опишите результат — настройки можно изменить до запуска.' },
+  analyzing: { label: 'Анализирует', hint: 'Изучаю запрос и контекст проекта.' },
+  executing: { label: 'Выполняет', hint: 'Собираю решение и проверяю связанные части.' },
+  ready: { label: 'Готово', hint: 'Результат собран и прошёл проверку прототипа.' },
+  error: { label: 'Нужна помощь', hint: 'Работа остановлена безопасно. Данные не потеряны.' }
+};
+
 let chats = [
   {
     id: 'seasonal-quests',
@@ -508,6 +516,7 @@ let chats = [
     project: 'Skyblock: Genesis',
     model: 'Orbit',
     mode: 'Мастер',
+    status: 'executing',
     updated: 'сейчас',
     messages: [
       { role: 'user', time: '14:18', text: 'Разработай систему сезонных заданий: ежедневные и недельные цели, серии выполнения и награды без возможности получить их повторно.' },
@@ -522,6 +531,7 @@ let chats = [
     project: 'Skyblock: Genesis',
     model: 'Quasar',
     mode: 'Архитектор',
+    status: 'ready',
     updated: '12 мин',
     messages: [
       { role: 'user', time: '13:42', text: 'Продумай экономику островов так, чтобы игроки не могли быстро обесценить редкие ресурсы.' },
@@ -534,10 +544,18 @@ let chats = [
     project: 'Skyblock: Genesis',
     model: 'Comet',
     mode: 'Импульс',
+    status: 'ready',
     updated: 'вчера',
     messages: [
       { role: 'user', time: 'Вчера', text: 'Игрок иногда получает награду дважды после переподключения. Найди возможную причину.' },
       { role: 'assistant', time: 'Вчера', text: 'Причина оказалась в повторной обработке незавершённого события после входа. Добавил идемпотентный идентификатор выдачи и проверку транзакции перед начислением.', stage: 'Проверяю готовность', progress: 100 }
+    ]
+  },
+  {
+    id: 'studio-sync', title: 'Синхронизация проекта', project: 'Skyblock: Genesis', model: 'Orbit', mode: 'Мастер', status: 'error', updated: 'вчера',
+    messages: [
+      { role: 'user', time: 'Вчера', text: 'Сверь интерфейс магазина с текущей структурой проекта.' },
+      { role: 'assistant', time: 'Вчера', text: 'Не удалось прочитать один из файлов проекта. Работа остановлена до внесения изменений — уже полученный контекст сохранён.', stage: 'Доступ к файлу прерван', progress: 36, state: 'error' }
     ]
   }
 ];
@@ -554,14 +572,15 @@ function currentChat() { return chats.find(function (chat) { return chat.id === 
 function renderChatList() {
   chatHistory.innerHTML = chats.slice(0, 5).map(function (chat) {
     const active = chat.id === activeChatId ? ' active' : '';
-    return '<button class="chat-entry' + active + '" type="button" data-chat-id="' + escapeHtml(chat.id) + '">' +
+    const state = chatStates[chat.status] ? chat.status : 'empty';
+    return '<button class="chat-entry' + active + '" type="button" data-chat-id="' + escapeHtml(chat.id) + '" aria-current="' + (active ? 'true' : 'false') + '">' +
       '<span class="chat-bubble-icon"><svg viewBox="0 0 24 24"><path d="M5 6h14v10H9l-4 3z"/></svg></span>' +
-      '<span class="chat-entry-copy"><b>' + escapeHtml(chat.title) + '</b><small>' + escapeHtml(chat.updated) + '</small></span>' +
+      '<span class="chat-entry-copy"><b>' + escapeHtml(chat.title) + '</b><small>' + escapeHtml(chat.updated) + '</small></span><i class="chat-state-dot state-' + state + '" title="' + escapeHtml(chatStates[state].label) + '"></i>' +
       '<span class="chat-more">•••</span></button>';
   }).join('');
 }
 
-function modelWorkMarkup(modelName, stage, progress) {
+function modelWorkMarkup(modelName, stage, progress, state) {
   const safeModel = modelProfiles[modelName] ? modelName : 'Orbit';
   const profile = modelProfiles[safeModel];
   const normalizedProgress = Math.max(0, Math.min(100, Number(progress || 0)));
@@ -572,22 +591,23 @@ function modelWorkMarkup(modelName, stage, progress) {
       ? '<span class="work-motion orbit-work" aria-hidden="true"><i></i><i></i><b></b></span>'
       : '<span class="work-motion quasar-work" aria-hidden="true"><i></i><i></i><i></i><b></b></span>';
   const stages = profile.stages.map(function (item, index) {
-    const state = normalizedProgress === 100 || index < currentIndex ? ' done' : index === currentIndex ? ' current' : '';
-    return '<span class="work-stage' + state + '"><i>' + (state === ' done' ? '✓' : index + 1) + '</i>' + escapeHtml(item) + '</span>';
+    const itemState = normalizedProgress === 100 || index < currentIndex ? ' done' : index === currentIndex ? ' current' : '';
+    return '<span class="work-stage' + itemState + '"><i>' + (itemState === ' done' ? '✓' : index + 1) + '</i>' + escapeHtml(item) + '</span>';
   }).join('');
   const quasarDetails = safeModel === 'Quasar' ? '<div class="quasar-streams"><span><i></i>Стратегия</span><span><i></i>Реализация</span><span><i></i>Проверка</span></div>' : '';
-  return '<div class="message-work model-work model-work-' + safeModel.toLowerCase() + '">' +
+  const resolvedState = chatStates[state] ? state : normalizedProgress === 100 ? 'ready' : 'executing';
+  const stateAction = resolvedState === 'error' ? '<button class="work-retry" type="button" data-retry-task>Повторить безопасно</button>' : resolvedState === 'ready' ? '<span class="work-ready">✓ Проверено</span>' : '';
+  return '<div class="message-work model-work model-work-' + safeModel.toLowerCase() + ' state-' + resolvedState + '">' +
     '<div class="model-work-heading"><div>' + motion + '<span><small>' + escapeHtml(profile.label) + '</small><b>' + escapeHtml(stage) + '</b></span></div><strong>' + normalizedProgress + '%</strong></div>' +
-    '<div class="message-progress"><i style="width:' + normalizedProgress + '%"></i></div>' + quasarDetails +
-    '<div class="work-stages">' + stages + '</div></div>';
+    '<div class="message-progress" role="progressbar" aria-label="Прогресс задачи" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + normalizedProgress + '"><i style="width:' + normalizedProgress + '%"></i></div>' + quasarDetails +
+    '<div class="work-stages">' + stages + '</div><footer><span>' + escapeHtml(chatStates[resolvedState].hint) + '</span>' + stateAction + '</footer></div>';
 }
-
 function messageMarkup(message) {
   const isUser = message.role === 'user';
   const avatar = isUser ? 'АК' : '<span></span>';
   const author = isUser ? 'Вы' : 'Zorym AI';
   const model = isUser ? '' : '<em>Zorym 1 ' + escapeHtml(currentChat().model) + '</em>';
-  const workState = message.stage ? modelWorkMarkup(currentChat().model, message.stage, message.progress) : '';
+  const workState = message.stage ? modelWorkMarkup(currentChat().model, message.stage, message.progress, message.state || currentChat().status) : '';
   const verification = !isUser && currentChat().model === 'Quasar' ? '<div class="verification-chips"><span>Proof Chain</span><span>Shadow Test</span></div>' : '';
   const actions = isUser ? '' : '<div class="message-actions"><button type="button" aria-label="Скопировать ответ"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button><button type="button" aria-label="Полезный ответ"><svg viewBox="0 0 24 24"><path d="M7 21H4V10h3M7 10l4-7 2 1v5h6l1 2-2 8H7z"/></svg></button><button type="button" aria-label="Неполезный ответ"><svg viewBox="0 0 24 24"><path d="M7 3H4v11h3M7 14l4 7 2-1v-5h6l1-2-2-8H7z"/></svg></button></div>';
   return '<article class="chat-message ' + (isUser ? 'user-message' : 'assistant-message') + '">' +
@@ -596,8 +616,8 @@ function messageMarkup(message) {
 }
 
 function syncChatChoices(chat) {
-  document.querySelectorAll('[data-choice-group="model"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.model); });
-  document.querySelectorAll('[data-choice-group="mode"] button').forEach(function (button) { button.classList.toggle('selected', button.textContent.trim() === chat.mode); });
+  document.querySelectorAll('[data-choice-group="model"] button').forEach(function (button) { const selected = button.textContent.trim() === chat.model; button.classList.toggle('selected', selected); button.setAttribute('aria-checked', String(selected)); });
+  document.querySelectorAll('[data-choice-group="mode"] button').forEach(function (button) { const selected = button.textContent.trim() === chat.mode; button.classList.toggle('selected', selected); button.setAttribute('aria-checked', String(selected)); });
   syncModelShowcase(chat.model);
 }
 
@@ -617,9 +637,14 @@ function renderConversation(chat) {
     return;
   }
   agentPage.classList.add('chat-active');
+  agentPage.classList.remove('empty-chat');
   document.querySelector('#conversation-title').textContent = chat.title;
   document.querySelector('#conversation-project').textContent = chat.project;
   document.querySelector('#conversation-settings').textContent = 'Zorym 1 ' + chat.model + ' · ' + chat.mode;
+  const resolvedState = chatStates[chat.status] ? chat.status : 'executing';
+  const stateBadge = document.querySelector('#conversation-state');
+  stateBadge.className = 'conversation-state state-' + resolvedState;
+  stateBadge.innerHTML = '<i></i>' + escapeHtml(chatStates[resolvedState].label);
   document.querySelector('.project-context b').textContent = chat.project;
   chatThread.innerHTML = chat.messages.map(messageMarkup).join('');
   syncChatChoices(chat);
@@ -671,6 +696,7 @@ function beginNewChat(projectName) {
     project: typeof projectName === 'string' ? projectName : document.querySelector('.project-context b').textContent,
     model: selectedModel ? selectedModel.textContent.trim() : 'Orbit',
     mode: selectedMode ? selectedMode.textContent.trim() : 'Мастер',
+    status: 'empty',
     updated: 'сейчас',
     messages: []
   };
@@ -696,7 +722,7 @@ document.querySelector('#chat-list-action').addEventListener('click', function (
 document.querySelectorAll('[data-choice-group]').forEach(function (group) {
   group.querySelectorAll('button').forEach(function (button) {
     button.addEventListener('click', function () {
-      group.querySelectorAll('button').forEach(function (item) { item.classList.remove('selected'); }); button.classList.add('selected');
+      group.querySelectorAll('button').forEach(function (item) { item.classList.remove('selected'); item.setAttribute('aria-checked', 'false'); }); button.classList.add('selected'); button.setAttribute('aria-checked', 'true');
       if (group.dataset.choiceGroup === 'platform') document.querySelector('#concept-platform').textContent = button.dataset.platformName;
       if (group.dataset.choiceGroup === 'project-filter') filterProjects(button.textContent.trim().toLowerCase());
       if ((group.dataset.choiceGroup === 'model' || group.dataset.choiceGroup === 'mode') && currentChat()) {
@@ -704,6 +730,14 @@ document.querySelectorAll('[data-choice-group]').forEach(function (group) {
         if (currentChat().messages.length) renderConversation(currentChat());
       }
     });
+  });
+  group.addEventListener('keydown', function (event) {
+    if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(event.key)) return;
+    event.preventDefault();
+    const buttons = Array.from(group.querySelectorAll('button'));
+    const current = Math.max(0, buttons.indexOf(document.activeElement));
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1 : (current + (event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 1) + buttons.length) % buttons.length;
+    buttons[next].focus(); buttons[next].click();
   });
 });
 
@@ -731,9 +765,12 @@ document.querySelectorAll('[data-prompt]').forEach(function (button) { button.ad
 const toolsTrigger = document.querySelector('#agent-tools-trigger');
 const capabilityMenu = document.querySelector('#capability-menu');
 function closeCapabilityMenu() { capabilityMenu.classList.remove('open'); capabilityMenu.setAttribute('aria-hidden', 'true'); toolsTrigger.setAttribute('aria-expanded', 'false'); }
-toolsTrigger.addEventListener('click', function (event) { event.stopPropagation(); const opening = !capabilityMenu.classList.contains('open'); closeCapabilityMenu(); if (opening) { capabilityMenu.classList.add('open'); capabilityMenu.setAttribute('aria-hidden', 'false'); toolsTrigger.setAttribute('aria-expanded', 'true'); } });
+function openCapabilityMenu() { capabilityMenu.classList.add('open'); capabilityMenu.setAttribute('aria-hidden', 'false'); toolsTrigger.setAttribute('aria-expanded', 'true'); }
+toolsTrigger.addEventListener('click', function (event) { event.stopPropagation(); const opening = !capabilityMenu.classList.contains('open'); closeCapabilityMenu(); if (opening) openCapabilityMenu(); });
+toolsTrigger.addEventListener('keydown', function (event) { if (event.key === 'ArrowUp' || event.key === 'ArrowDown') { event.preventDefault(); openCapabilityMenu(); const options = capabilityMenu.querySelectorAll('.capability-option'); options[event.key === 'ArrowUp' ? options.length - 1 : 0].focus(); } });
 capabilityMenu.addEventListener('click', function (event) { event.stopPropagation(); });
 document.addEventListener('click', closeCapabilityMenu);
+capabilityMenu.addEventListener('keydown', function (event) { const options = Array.from(capabilityMenu.querySelectorAll('.capability-option')); const index = options.indexOf(document.activeElement); if (event.key === 'Escape') { event.preventDefault(); closeCapabilityMenu(); toolsTrigger.focus(); } if ((event.key === 'ArrowDown' || event.key === 'ArrowUp') && index >= 0) { event.preventDefault(); options[(index + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length].focus(); } });
 document.querySelectorAll('.capability-option').forEach(function (button) { button.addEventListener('click', function () { button.classList.toggle('active'); const count = document.querySelectorAll('.capability-option.active').length; document.querySelector('#active-tool-count').textContent = String(count); notify(button.dataset.capability + (button.classList.contains('active') ? ' включён' : ' выключен')); }); });
 function makeChatTitle(text) {
   const cleaned = text.replace(/^(пожалуйста|можешь|нужно|хочу|давай)\s+/i, '').replace(/\s+/g, ' ').trim();
@@ -742,6 +779,17 @@ function makeChatTitle(text) {
   return title.charAt(0).toUpperCase() + title.slice(1) + (cleaned.split(' ').length > 5 ? '…' : '');
 }
 
+function setChatState(chat, state, progress, text) {
+  chat.status = state;
+  const response = chat.messages[chat.messages.length - 1];
+  response.state = state; response.progress = progress; response.text = text;
+  response.stage = state === 'ready' ? modelProfiles[chat.model].stages[modelProfiles[chat.model].stages.length - 1] : modelProfiles[chat.model].stages[state === 'executing' ? Math.min(1, modelProfiles[chat.model].stages.length - 1) : 0];
+  renderChatList(); if (currentChat() === chat) renderConversation(chat);
+}
+function runChatLifecycle(chat) {
+  window.setTimeout(function () { if (chat.status === 'analyzing') setChatState(chat, 'executing', 56, 'План определён. Собираю решение и проверяю связанные части — чат можно закрыть, работа продолжится.'); }, 900);
+  window.setTimeout(function () { if (chat.status === 'executing') { setChatState(chat, 'ready', 100, 'Готово. Решение собрано, основные переходы проверены, а итог можно продолжить уточнять в этом чате.'); notify('Результат готов'); } }, 2300);
+}
 function sendCurrentMessage() {
   if (!prompt.value.trim()) { notify('Сначала опишите задачу'); prompt.focus(); return; }
   let chat = currentChat();
@@ -750,18 +798,25 @@ function sendCurrentMessage() {
   if (!chat.messages.length) chat.title = makeChatTitle(text);
   const time = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
   chat.messages.push({ role: 'user', time: time, text: text });
-  chat.messages.push({ role: 'assistant', time: time, text: 'Принял задачу. Покажу только ключевые переходы: что уже понял, какой маршрут выбрал и когда результат прошёл проверку.', stage: modelProfiles[chat.model].stages[0], progress: 14 });
-  chat.updated = 'сейчас';
-  prompt.value = '';
-  renderChatList();
-  renderConversation(chat);
-  syncChatContext(chat);
-  notify('Zorym AI начал работу');
+  chat.status = 'analyzing';
+  chat.messages.push({ role: 'assistant', time: time, text: 'Запрос принят. Сверяю цель, контекст проекта и критерии готовности перед выполнением.', stage: modelProfiles[chat.model].stages[0], progress: 14, state: 'analyzing' });
+  chat.updated = 'сейчас'; prompt.value = '';
+  renderChatList(); renderConversation(chat); syncChatContext(chat); notify('Zorym AI начал работу'); runChatLifecycle(chat);
   window.setTimeout(function () { chatThread.scrollTo({ top: chatThread.scrollHeight, behavior: 'smooth' }); }, 0);
 }
 document.querySelector('#send-task').addEventListener('click', sendCurrentMessage);
 prompt.addEventListener('keydown', function (event) {
   if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { event.preventDefault(); sendCurrentMessage(); }
+});
+chatThread.addEventListener('click', function (event) {
+  if (!event.target.closest('[data-retry-task]')) return;
+  const chat = currentChat(); if (!chat) return;
+  setChatState(chat, 'analyzing', 12, 'Повторяю безопасно: сначала перепроверяю доступ к контексту, не применяя изменений.');
+  notify('Повторная проверка запущена'); runChatLifecycle(chat);
+});
+document.addEventListener('keydown', function (event) {
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'n') { event.preventDefault(); beginNewChat(); }
+  if (event.key === 'Escape' && capabilityMenu.classList.contains('open')) { closeCapabilityMenu(); toolsTrigger.focus(); }
 });
 
 function filterProjects(filter) { document.querySelectorAll('.project-tile').forEach(function (card) { card.hidden = filter !== 'все' && card.dataset.platform !== filter; }); }
