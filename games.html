@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI Agent Games — Roblox</title>
   <link rel="stylesheet" href="landing.css?v=20260906-model-power">
-  <link rel="stylesheet" href="games.css?v=20260906-proofloop">
+  <link rel="stylesheet" href="games.css?v=20260908-game-system">
 </head>
 <body class="games-site">
   <header class="site-header" id="site-header">
@@ -30,10 +30,10 @@
       <div class="container games-hero-grid">
         <div class="games-hero-copy reveal">
           <a class="games-back" href="index.html">← Zorym AI</a>
-          <span class="games-kicker"><i></i>AI Agent Games · Roblox</span>
-          <h1>Не просто создаёт.<br><em>Доказывает в Studio.</em></h1>
-          <p>Zorym понимает игровой опыт, вносит изменения в открытый проект Roblox Studio, запускает проверку и исправляет найденное до подтверждённого результата.</p>
-          <div class="games-hero-actions"><a class="games-primary" href="app.html#connections">Подключить Roblox Studio <span>→</span></a><a class="games-secondary" href="#proofloop">Посмотреть цикл работы</a></div>
+          <span class="games-kicker"><i></i>Zorym Game Systems · Roblox</span>
+          <h1>Из замысла игрока —<br><em>в доказанную систему.</em></h1>
+          <p>Опишите игровой опыт. Zorym спроектирует механику, сохранит безопасную версию проекта и проведёт её через Studio до честного отчёта ProofLoop.</p>
+          <div class="games-hero-actions"><a class="games-primary" href="app.html#games">Открыть рабочее место <span>→</span></a><a class="games-secondary" href="app.html#connections">Подключить Roblox Studio</a></div>
           <div class="games-evidence"><span><i>✓</i>План до запуска</span><span><i>✓</i>Версия до изменений</span><span><i>✓</i>Честный статус проверки</span></div>
         </div>
 
@@ -54,8 +54,13 @@
             </div>
             <footer><span><i></i>Синхронизация защищена</span><b>Версия 08 · можно откатить</b></footer>
           </div>
-          <div class="studio-proof-badge"><span>✓</span><div><small>Результат подтверждён</small><b>Проверено в Studio</b></div></div>
+          <div class="studio-proof-badge proof-active"><span>04</span><div><small>ProofLoop выполняется</small><b>Проверка в Studio</b></div></div>
         </div>
+      </div>
+      <div class="container games-path reveal" aria-label="Путь работы с Zorym Roblox">
+        <div class="games-path-intro"><small>Маршрут одной задачи</small><b>От опыта игрока до доказательства</b></div>
+        <ol><li class="current"><span>01</span><div><b>Опишите опыт</b><small>Что игрок делает и чувствует</small></div></li><li><span>02</span><div><b>Утвердите план</b><small>Объекты, риски и масштаб</small></div></li><li><span>03</span><div><b>Подключите Studio</b><small>Только выбранный проект</small></div></li><li><span>04</span><div><b>Получите Proof</b><small>Тесты, изменения и откат</small></div></li></ol>
+        <a href="app.html#games">Начать с демо <span>→</span></a>
       </div>
     </section>
 
@@ -63,13 +68,13 @@
       <div class="container">
         <div class="games-section-heading reveal"><span>01 · Zorym ProofLoop</span><h2>Каждое изменение проходит<br><em>полный игровой цикл.</em></h2><p>Зелёный статус появляется только после реального ответа подключённой Studio.</p></div>
         <div class="proofloop-grid reveal">
-          <ol class="proofloop-steps">
-            <li class="active" data-proof-step="0"><span>01</span><div><b>Понимает игровой опыт</b><small>Определяет поведение игрока и критерии готовности.</small></div></li>
-            <li data-proof-step="1"><span>02</span><div><b>Создаёт безопасную версию</b><small>Фиксирует проект перед любым изменением.</small></div></li>
-            <li data-proof-step="2"><span>03</span><div><b>Собирает в Studio</b><small>Применяет скрипты, свойства, UI и объекты.</small></div></li>
-            <li data-proof-step="3"><span>04</span><div><b>Играет и наблюдает</b><small>Запускает тестовый сценарий и собирает доказательства.</small></div></li>
-            <li data-proof-step="4"><span>05</span><div><b>Исправляет найденное</b><small>Устраняет причину ошибки и повторяет проверку.</small></div></li>
-            <li data-proof-step="5"><span>06</span><div><b>Подтверждает результат</b><small>Показывает тесты, изменения, риски и точку отката.</small></div></li>
+          <ol class="proofloop-steps" aria-label="Этапы Zorym ProofLoop">
+            <li><button class="active" type="button" data-proof-step="0" aria-pressed="true"><span>01</span><div><b>Понимает игровой опыт</b><small>Определяет поведение игрока и критерии готовности.</small></div></button></li>
+            <li><button type="button" data-proof-step="1" aria-pressed="false"><span>02</span><div><b>Создаёт безопасную версию</b><small>Фиксирует проект перед любым изменением.</small></div></button></li>
+            <li><button type="button" data-proof-step="2" aria-pressed="false"><span>03</span><div><b>Собирает в Studio</b><small>Применяет скрипты, свойства, UI и объекты.</small></div></button></li>
+            <li><button type="button" data-proof-step="3" aria-pressed="false"><span>04</span><div><b>Играет и наблюдает</b><small>Запускает тестовый сценарий и собирает доказательства.</small></div></button></li>
+            <li><button type="button" data-proof-step="4" aria-pressed="false"><span>05</span><div><b>Исправляет найденное</b><small>Устраняет причину ошибки и повторяет проверку.</small></div></button></li>
+            <li><button type="button" data-proof-step="5" aria-pressed="false"><span>06</span><div><b>Подтверждает результат</b><small>Показывает тесты, изменения, риски и точку отката.</small></div></button></li>
           </ol>
           <div class="proofloop-preview">
             <div class="proofloop-preview-top"><span id="proof-number">01</span><em id="proof-state">Understanding</em></div>
@@ -96,7 +101,7 @@
 
     <section class="games-models">
       <div class="container games-models-grid">
-        <div class="games-section-heading reveal"><span>03 · Масштаб работы</span><h2>Выбирайте мощность.<br><em>Не чужое название.</em></h2><p>Zorym сам подбирает внутренний стек. Пользователь управляет только масштабом и глубиной.</p><a class="games-primary" href="app.html#games">Открыть рабочее место <span>→</span></a></div>
+        <div class="games-section-heading reveal"><span>03 · Масштаб работы</span><h2>Масштаб выбираете вы.<br><em>Маршрут строит Zorym.</em></h2><p>Comet, Orbit и Quasar отвечают за объём задачи. ProofLoop остаётся единым: план, безопасная версия, работа и проверка.</p><a class="games-primary" href="app.html#games">Открыть рабочее место <span>→</span></a></div>
         <div class="games-model-list reveal">
           <article><span class="model-comet-dot"></span><div><small>COMET</small><h3>Точное изменение</h3><p>Один скрипт, небольшой UI или локальная ошибка.</p></div><em>Быстро</em></article>
           <article class="featured"><span class="model-orbit-dot"><i></i></span><div><small>ORBIT</small><h3>Связанная механика</h3><p>Несколько компонентов, единый игровой цикл и проверка.</p></div><em>Основной</em></article>
@@ -106,7 +111,7 @@
     </section>
 
     <section class="games-final">
-      <div class="container games-final-inner reveal"><span>AI AGENT GAMES · ROBLOX</span><h2>Опишите, что должен<br><em>почувствовать игрок.</em></h2><p>Zorym возьмёт на себя систему, проверку и безопасную версию проекта.</p><div><a class="games-primary light" href="app.html#connections">Подключить Roblox <b>→</b></a><a href="app.html#games">Сначала открыть демо</a></div></div>
+      <div class="container games-final-inner reveal"><span>ZORYM GAME SYSTEMS · ROBLOX</span><h2>Начните с опыта,<br><em>а не с кода.</em></h2><p>Сначала откройте рабочее место. Подключение Studio понадобится только перед применением и проверкой изменений.</p><div><a class="games-primary light" href="app.html#games">Открыть рабочее место <b>→</b></a><a href="app.html#connections">Перейти к подключениям</a></div></div>
     </section>
   </main>
 
@@ -125,7 +130,9 @@
       ['05','Repair Loop','Исправляю причину сбоя','Сопоставляю ошибку с изменениями, исправляю причину и запускаю проверку ещё раз.',['Ошибка','Ремонт','Повтор']],
       ['06','Verified','Подтверждаю только доказанное','Формирую итог: что изменено, какие проверки пройдены, что не проверено и куда можно откатиться.',['Отчёт','Доказательства','Версия']]
     ];
-    document.querySelectorAll('[data-proof-step]').forEach(function (step) { step.addEventListener('click', function () { const index = Number(step.dataset.proofStep); const data = proofData[index]; document.querySelectorAll('[data-proof-step]').forEach(function (item) { item.classList.toggle('active', item === step); }); document.querySelector('#proof-number').textContent = data[0]; document.querySelector('#proof-state').textContent = data[1]; document.querySelector('#proof-title').textContent = data[2]; document.querySelector('#proof-copy').textContent = data[3]; document.querySelectorAll('.proof-signals span').forEach(function (signal, signalIndex) { signal.lastChild.textContent = data[4][signalIndex]; }); document.querySelector('.proofloop-preview footer b').textContent = 'ZORYM / PROOF ' + data[0]; }); });
+    const proofSteps = Array.from(document.querySelectorAll('[data-proof-step]'));
+    function selectProofStep(step) { const index = Number(step.dataset.proofStep); const data = proofData[index]; proofSteps.forEach(function (item) { const active = item === step; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); }); document.querySelector('#proof-number').textContent = data[0]; document.querySelector('#proof-state').textContent = data[1]; document.querySelector('#proof-title').textContent = data[2]; document.querySelector('#proof-copy').textContent = data[3]; document.querySelectorAll('.proof-signals span').forEach(function (signal, signalIndex) { signal.lastChild.textContent = data[4][signalIndex]; }); document.querySelector('.proofloop-preview footer b').textContent = 'ZORYM / PROOF ' + data[0]; }
+    proofSteps.forEach(function (step, index) { step.addEventListener('click', function () { selectProofStep(step); }); step.addEventListener('keydown', function (event) { if (!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)) return; event.preventDefault(); const next = event.key === 'Home' ? 0 : event.key === 'End' ? proofSteps.length - 1 : (index + (event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 1) + proofSteps.length) % proofSteps.length; proofSteps[next].focus(); selectProofStep(proofSteps[next]); }); });
     const observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(function (item) { observer.observe(item); });
   </script>
