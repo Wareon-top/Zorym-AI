@@ -6,45 +6,47 @@
   <meta name="description" content="Zorym AI Agent Games создаёт, изменяет и проверяет игровые системы прямо в Roblox Studio.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Zorym AI Agent Games — Roblox</title>
-  <link rel="stylesheet" href="landing.css?v=20260906-model-power">
-  <link rel="stylesheet" href="games.css?v=20260908-game-system">
+  <link rel="stylesheet" href="landing.css?v=20260909-games-funnel">
+  <link rel="stylesheet" href="games.css?v=20260909-roblox-funnel">
 </head>
 <body class="games-site">
+  <a class="skip-link" href="#main-content">К основному содержимому</a>
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="index.html" aria-label="Zorym AI — главная"><span class="brand-symbol"><i></i></span><span>Zorym</span></a>
+      <div class="games-brand-lockup"><a class="wordmark" href="index.html" aria-label="Zorym AI — главная"><span class="brand-symbol"><i></i></span><span>Zorym</span></a><span class="games-product-name"><i></i>AI Agent Games</span></div>
       <nav class="desktop-nav" aria-label="Навигация AI Agent Games">
-        <a class="games-nav-active" href="#roblox">Roblox</a>
+        <a class="games-nav-active" href="#roblox" aria-current="page">Roblox</a>
         <a href="#proofloop">Как работает</a>
         <a href="#capabilities">Возможности</a>
         <a href="pricing.html">Тарифы</a>
       </nav>
       <div class="header-actions"><a class="login-link" href="app.html#connections">Подключения</a><a class="header-cta" href="app.html#games">Открыть Games <span>↗</span></a><button class="menu-button" id="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button></div>
     </div>
-    <div class="mobile-nav" id="mobile-nav"><a href="#roblox">Roblox</a><a href="#proofloop">Как работает</a><a href="#capabilities">Возможности</a><a href="pricing.html">Тарифы</a><a href="app.html#games">Открыть Games</a></div>
+    <div class="mobile-nav" id="mobile-nav"><a href="#roblox">Roblox</a><a href="#journey">Путь задачи</a><a href="#proofloop">ProofLoop</a><a href="#capabilities">Возможности</a><a href="pricing.html">Тарифы</a><a href="app.html#games">Открыть Games</a></div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="games-hero" id="roblox">
       <div class="games-aurora" aria-hidden="true"></div>
       <div class="container games-hero-grid">
         <div class="games-hero-copy reveal">
-          <a class="games-back" href="index.html">← Zorym AI</a>
-          <span class="games-kicker"><i></i>Zorym Game Systems · Roblox</span>
-          <h1>Из замысла игрока —<br><em>в доказанную систему.</em></h1>
-          <p>Опишите игровой опыт. Zorym спроектирует механику, сохранит безопасную версию проекта и проведёт её через Studio до честного отчёта ProofLoop.</p>
-          <div class="games-hero-actions"><a class="games-primary" href="app.html#games">Открыть рабочее место <span>→</span></a><a class="games-secondary" href="app.html#connections">Подключить Roblox Studio</a></div>
-          <div class="games-evidence"><span><i>✓</i>План до запуска</span><span><i>✓</i>Версия до изменений</span><span><i>✓</i>Честный статус проверки</span></div>
+          <a class="games-back" href="index.html">← Все продукты Zorym</a>
+          <span class="games-kicker"><i></i>Roblox · основное игровое направление</span>
+          <h1>Собирайте игровые системы.<br><em>Доказывайте, что они работают.</em></h1>
+          <p>Объясните механику через опыт игрока. Zorym изучит выбранный проект, покажет план до изменений и отделит готовый код от результата, действительно проверенного в Roblox Studio.</p>
+          <div class="games-hero-actions"><a class="games-primary" href="app.html#games">Начать в рабочем месте <span>→</span></a><a class="games-secondary" href="#journey">Посмотреть путь задачи</a></div>
+          <div class="games-evidence"><span><i>01</i>Можно начать без Studio</span><span><i>02</i>Ничего до утверждения плана</span><span><i>03</i>Proof только после теста</span></div>
+          <dl class="games-contract" aria-label="Контракт результата Zorym"><div><dt>Опыт</dt><dd>что должен сделать игрок</dd></div><div><dt>Граница</dt><dd>какие объекты изменятся</dd></div><div><dt>Доказательство</dt><dd>что проверено и что нет</dd></div></dl>
         </div>
 
         <div class="studio-scene reveal" aria-label="Рабочий процесс Zorym в Roblox Studio">
           <div class="studio-window">
-            <header><span class="studio-app"><b></b>Zorym Studio Link</span><span class="studio-live"><i></i>Studio Live</span><span class="studio-place">Vault Raiders / Main Place</span></header>
+            <header><span class="studio-app"><b></b>Zorym Workspace</span><span class="studio-live studio-demo"><i></i>Демо процесса</span><span class="studio-place">Vault Raiders · Roblox</span></header>
             <div class="studio-body">
               <aside class="studio-tree"><small>EXPLORER MIRROR</small><span class="tree-root"><i>◇</i>Workspace</span><span><i>›</i>Map</span><span><i>›</i>TeleportPads</span><span class="active"><i>⌁</i>ServerScriptService</span><span class="tree-child"><i>⌘</i>TeleportService</span><span><i>›</i>StarterGui</span><span><i>›</i>ReplicatedStorage</span></aside>
               <section class="studio-task">
                 <div class="studio-prompt"><span>АК</span><p>Добавь выбор точки телепортации с превью камеры и защитой от повторного нажатия.</p></div>
-                <div class="studio-agent"><span class="studio-z"><i></i></span><div><small>Zorym Orbit · Мастер</small><b>Проверяю путь игрока</b><p>Интерфейс открыт, камера переключилась. Проверяю серверную телепортацию и повторное нажатие.</p></div></div>
+                <div class="studio-agent"><span class="studio-z"><i></i></span><div><small>Zorym AI · Orbit · Мастер</small><b>Проверяю путь игрока</b><p>Интерфейс открыт, камера переключилась. Серверный телепорт ещё не подтверждён — этот шаг требует живого Play Test.</p></div></div>
                 <div class="proof-run-card">
                   <div class="proof-run-head"><span><i></i>STUDIO PROOF</span><em>4 из 6</em></div>
                   <div class="proof-run-track"><i></i></div>
@@ -52,15 +54,15 @@
                 </div>
               </section>
             </div>
-            <footer><span><i></i>Синхронизация защищена</span><b>Версия 08 · можно откатить</b></footer>
+            <footer><span><i></i>Пример интерфейса · Studio не подключена</span><b>Версия 08 · точка до задачи</b></footer>
           </div>
-          <div class="studio-proof-badge proof-active"><span>04</span><div><small>ProofLoop выполняется</small><b>Проверка в Studio</b></div></div>
+          <div class="studio-proof-badge proof-active"><span>04</span><div><small>Следующий обязательный шаг</small><b>Проверка в Studio</b></div></div>
         </div>
       </div>
-      <div class="container games-path reveal" aria-label="Путь работы с Zorym Roblox">
-        <div class="games-path-intro"><small>Маршрут одной задачи</small><b>От опыта игрока до доказательства</b></div>
-        <ol><li class="current"><span>01</span><div><b>Опишите опыт</b><small>Что игрок делает и чувствует</small></div></li><li><span>02</span><div><b>Утвердите план</b><small>Объекты, риски и масштаб</small></div></li><li><span>03</span><div><b>Подключите Studio</b><small>Только выбранный проект</small></div></li><li><span>04</span><div><b>Получите Proof</b><small>Тесты, изменения и откат</small></div></li></ol>
-        <a href="app.html#games">Начать с демо <span>→</span></a>
+      <div class="container games-path reveal" id="journey" aria-label="Путь работы с Zorym Roblox">
+        <div class="games-path-intro"><small>Маршрут одной задачи</small><b id="funnel-title">Начните в рабочем месте</b><p id="funnel-copy">Опишите механику и изучите демо-план. Подключение Roblox на этом этапе не требуется.</p></div>
+        <ol aria-label="Этапы пути"><li class="current"><button type="button" data-funnel-step="0" aria-pressed="true"><span>01</span><div><b>Рабочее место</b><small>Запрос и диалог</small></div></button></li><li><button type="button" data-funnel-step="1" aria-pressed="false"><span>02</span><div><b>План</b><small>Объекты и риски</small></div></button></li><li><button type="button" data-funnel-step="2" aria-pressed="false"><span>03</span><div><b>Studio Link</b><small>Выбранный проект</small></div></button></li><li><button type="button" data-funnel-step="3" aria-pressed="false"><span>04</span><div><b>ProofLoop</b><small>Тесты и границы</small></div></button></li></ol>
+        <a id="funnel-action" href="app.html#games">Открыть рабочее место <span>→</span></a>
       </div>
     </section>
 
@@ -90,18 +92,19 @@
       <div class="container">
         <div class="games-section-heading split reveal"><div><span>02 · Возможности</span><h2>Один агент.<br><em>Вся игровая система.</em></h2></div><p>Простой запрос для новичка. Структура, версии и доказательства для профессиональной команды.</p></div>
         <div class="capability-mosaic">
-          <article class="capability-wide reveal"><span class="cap-index">01</span><small>PLAYER JOURNEY</small><h3>Проверяет путь игрока,<br>а не только отдельный скрипт</h3><p>Spawn → действие → награда. Zorym видит, на каком шаге ломается реальный опыт.</p><div class="journey-line"><span class="done"><i>✓</i>Spawn</span><b></b><span class="done"><i>✓</i>Quest</span><b></b><span class="active"><i></i>Reward</span><b></b><span><i></i>Save</span></div></article>
-          <article class="capability-dark reveal"><span class="cap-index">02</span><small>ECONOMY GUARD</small><h3>Защищает игровую экономику</h3><p>Покупки, награды, RemoteEvents и сохранения проходят отдельную проверку.</p><div class="guard-score"><strong>92</strong><span><i></i>7 проверок пройдено<small>1 рекомендация</small></span></div></article>
-          <article class="reveal"><span class="cap-index">03</span><small>UI VISION</small><h3>Интерфейс на каждом экране</h3><p>Проверка размеров, безопасных зон и управления на desktop, mobile и gamepad.</p><div class="device-row"><span>DESKTOP</span><span>MOBILE</span><span>GAMEPAD</span></div></article>
-          <article class="reveal"><span class="cap-index">04</span><small>TIME MACHINE</small><h3>Откат без страха</h3><p>Каждый запуск создаёт версию. Можно вернуть всю работу или отдельную систему.</p><div class="version-stack"><span>v08 <b>текущая</b></span><span>v07 <b>до задачи</b></span><span>v06</span></div></article>
-          <article class="reveal"><span class="cap-index">05</span><small>GAME MEMORY</small><h3>Помнит устройство игры</h3><p>Архитектура, стиль Luau, DataStore, RemoteEvents и принятые решения остаются в контексте.</p><div class="memory-tags"><span>Luau style</span><span>DataStore</span><span>UI tokens</span></div></article>
+          <article class="capability-wide reveal"><span class="cap-index">01</span><small>PLAYER JOURNEY</small><h3>Проверяет путь игрока,<br>а не только отдельный скрипт</h3><p>Spawn → действие → награда. Zorym показывает, на каком шаге ломается опыт и какие объекты с ним связаны.</p><div class="journey-line"><span class="done"><i>✓</i>Spawn</span><b></b><span class="done"><i>✓</i>Quest</span><b></b><span class="active"><i></i>Reward</span><b></b><span><i></i>Save</span></div><a class="capability-open" href="app.html#games">Открыть сценарий →</a></article>
+          <article class="capability-dark reveal"><span class="cap-index">02</span><small>ECONOMY GUARD</small><h3>Проверяет игровую экономику</h3><p>Покупки, награды, RemoteEvents и сохранения получают отдельные проверки и честные ограничения.</p><div class="guard-score"><strong>7/8</strong><span><i></i>демо-проверок зафиксировано<small>1 требует Play Test</small></span></div><a class="capability-open" href="app.html#games">Посмотреть проверки →</a></article>
+          <article class="reveal"><span class="cap-index">03</span><small>UI VISION</small><h3>Интерфейс на каждом экране</h3><p>Размеры, безопасные зоны и управление разделяются на расчёт и реальный тест устройства.</p><div class="device-row"><span>DESKTOP</span><span>MOBILE</span><span>GAMEPAD</span></div><a class="capability-open" href="app.html#games">Открыть UI Vision →</a></article>
+          <article class="reveal"><span class="cap-index">04</span><small>TIME MACHINE</small><h3>Понятная точка возврата</h3><p>До запуска видны версия, затронутые Instances и границы возможного восстановления.</p><div class="version-stack"><span>v09 <b>демо</b></span><span>v08 <b>до задачи</b></span><span>diff <b>7 объектов</b></span></div><a class="capability-open" href="app.html#games">Сравнить версии →</a></article>
+          <article class="reveal"><span class="cap-index">05</span><small>GAME MEMORY</small><h3>Помнит устройство этой игры</h3><p>Архитектура, стиль Luau, DataStore и решения остаются в контексте выбранного проекта.</p><div class="memory-tags"><span>Luau style</span><span>DataStore</span><span>UI tokens</span></div><a class="capability-open" href="app.html#games">Показать контекст →</a></article>
+          <article class="capability-proof reveal"><span class="cap-index">06</span><small>STUDIO PROOF</small><h3>Отделяет готовое от проверенного</h3><p>Отчёт хранит пройденные тесты, найденные ошибки, непроверенные области и версию возврата.</p><div class="proof-receipt"><span><i>✓</i>UI открыт</span><span><i>…</i>Сеть не проверена</span><b>DEMO · НЕ STUDIO VERIFIED</b></div><a class="capability-open" href="app.html#games">Открыть доказательства →</a></article>
         </div>
       </div>
     </section>
 
     <section class="games-models">
       <div class="container games-models-grid">
-        <div class="games-section-heading reveal"><span>03 · Масштаб работы</span><h2>Масштаб выбираете вы.<br><em>Маршрут строит Zorym.</em></h2><p>Comet, Orbit и Quasar отвечают за объём задачи. ProofLoop остаётся единым: план, безопасная версия, работа и проверка.</p><a class="games-primary" href="app.html#games">Открыть рабочее место <span>→</span></a></div>
+        <div class="games-section-heading reveal"><span>03 · Масштаб работы</span><h2>Масштаб выбираете вы.<br><em>Стандарт доказательства — Zorym.</em></h2><p>Comet, Orbit и Quasar определяют масштаб и глубину задачи. ProofLoop остаётся единым: план, безопасная версия, работа и проверка.</p><div class="model-rule"><b>Модель</b><span>определяет масштаб</span><i></i><b>Режим</b><span>определяет способ работы</span></div><a class="games-primary" href="app.html#games">Открыть рабочее место <span>→</span></a></div>
         <div class="games-model-list reveal">
           <article><span class="model-comet-dot"></span><div><small>COMET</small><h3>Точное изменение</h3><p>Один скрипт, небольшой UI или локальная ошибка.</p></div><em>Быстро</em></article>
           <article class="featured"><span class="model-orbit-dot"><i></i></span><div><small>ORBIT</small><h3>Связанная механика</h3><p>Несколько компонентов, единый игровой цикл и проверка.</p></div><em>Основной</em></article>
@@ -120,8 +123,18 @@
   <script>
     const menuButton = document.querySelector('#menu-button');
     const mobileNav = document.querySelector('#mobile-nav');
-    menuButton.addEventListener('click', function () { const open = mobileNav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(open)); });
-    document.querySelectorAll('.mobile-nav a').forEach(function (link) { link.addEventListener('click', function () { mobileNav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }); });
+    function closeMobileNav() { mobileNav.classList.remove('open'); menuButton.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }
+    menuButton.addEventListener('click', function () { const open = mobileNav.classList.toggle('open'); menuButton.classList.toggle('open', open); menuButton.setAttribute('aria-expanded', String(open)); });
+    document.querySelectorAll('.mobile-nav a').forEach(function (link) { link.addEventListener('click', closeMobileNav); });
+    const funnelData = [
+      ['Начните в рабочем месте','Опишите механику и изучите демо-план. Подключение Roblox на этом этапе не требуется.','Открыть рабочее место','app.html#games'],
+      ['Утвердите границы задачи','До запуска видны затронутые объекты, риски, масштаб модели и ожидаемый расход.','Посмотреть демо-план','app.html#games'],
+      ['Подключите только выбранный проект','Studio Link понадобится перед применением изменений. Zorym получает только разрешённый контекст открытой игры.','Открыть подключения','app.html#connections'],
+      ['Получите доказательства, а не обещание','ProofLoop показывает пройденные тесты, ошибки, непроверенные области и точку возврата.','Открыть Studio Proof','app.html#games']
+    ];
+    const funnelSteps = Array.from(document.querySelectorAll('[data-funnel-step]'));
+    function selectFunnelStep(step) { const index = Number(step.dataset.funnelStep); const data = funnelData[index]; funnelSteps.forEach(function (item) { const active = item === step; item.closest('li').classList.toggle('current', active); item.setAttribute('aria-pressed', String(active)); }); document.querySelector('#funnel-title').textContent = data[0]; document.querySelector('#funnel-copy').textContent = data[1]; const action = document.querySelector('#funnel-action'); action.firstChild.textContent = data[2] + ' '; action.href = data[3]; }
+    funnelSteps.forEach(function (step, index) { step.addEventListener('click', function () { selectFunnelStep(step); }); step.addEventListener('keydown', function (event) { if (!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)) return; event.preventDefault(); const next = event.key === 'Home' ? 0 : event.key === 'End' ? funnelSteps.length - 1 : (index + (event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 1) + funnelSteps.length) % funnelSteps.length; funnelSteps[next].focus(); selectFunnelStep(funnelSteps[next]); }); });
     const proofData = [
       ['01','Understanding','Проектирую опыт игрока','Сначала фиксирую, что должен увидеть, сделать и получить игрок — только потом выбираю техническое решение.',['Цель игрока','Условия','Критерии']],
       ['02','Checkpoint','Сохраняю безопасную точку','Создаю контрольную версию и карту затрагиваемых объектов, чтобы любое изменение можно было отменить.',['Версия','Объекты','Откат']],
@@ -133,8 +146,8 @@
     const proofSteps = Array.from(document.querySelectorAll('[data-proof-step]'));
     function selectProofStep(step) { const index = Number(step.dataset.proofStep); const data = proofData[index]; proofSteps.forEach(function (item) { const active = item === step; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); }); document.querySelector('#proof-number').textContent = data[0]; document.querySelector('#proof-state').textContent = data[1]; document.querySelector('#proof-title').textContent = data[2]; document.querySelector('#proof-copy').textContent = data[3]; document.querySelectorAll('.proof-signals span').forEach(function (signal, signalIndex) { signal.lastChild.textContent = data[4][signalIndex]; }); document.querySelector('.proofloop-preview footer b').textContent = 'ZORYM / PROOF ' + data[0]; }
     proofSteps.forEach(function (step, index) { step.addEventListener('click', function () { selectProofStep(step); }); step.addEventListener('keydown', function (event) { if (!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)) return; event.preventDefault(); const next = event.key === 'Home' ? 0 : event.key === 'End' ? proofSteps.length - 1 : (index + (event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 1) + proofSteps.length) % proofSteps.length; proofSteps[next].focus(); selectProofStep(proofSteps[next]); }); });
-    const observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(function (item) { observer.observe(item); });
+    if ('IntersectionObserver' in window) { const observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: .12 }); document.querySelectorAll('.reveal').forEach(function (item) { observer.observe(item); }); } else { document.querySelectorAll('.reveal').forEach(function (item) { item.classList.add('visible'); }); }
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeMobileNav(); });
   </script>
 </body>
 </html>
