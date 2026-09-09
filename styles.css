@@ -25,6 +25,9 @@
   font-synthesis: none;
 }
 
+.skip-link { position: fixed; z-index: 200; top: 12px; left: 12px; border-radius: 9px; background: var(--dark); color: #fff; padding: 10px 14px; font-size: 13px; font-weight: 650; text-decoration: none; transform: translateY(-160%); transition: transform .15s ease; }
+.skip-link:focus { outline: 3px solid rgba(104,87,232,.3); outline-offset: 2px; transform: translateY(0); }
+
 /* AI Agent Games · Roblox workspace */
 .games-workspace-page { min-height:calc(100vh - 72px); background:#f4f5f2; }
 .games-workspace-header { display:flex; min-height:83px; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #dfe2dc; padding:0 25px; }
@@ -151,6 +154,8 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .workspace-context > button:hover { background: #ebece8; }
 .workspace-context > button svg { width: 16px; height: 16px; }
 .topbar-actions { gap: 9px; }
+.prototype-badge { display: inline-flex; min-height: 28px; align-items: center; gap: 7px; border: 1px solid #ddd9fb; border-radius: 99px; background: #f4f2ff; color: #5d4fc1; padding: 0 10px; font-size: 10px; font-weight: 730; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.prototype-badge i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .command-button { display: flex; height: 36px; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.8); color: #7c7f78; padding: 0 8px 0 10px; font-size: 12px; }
 .command-button:hover { border-color: var(--line-strong); background: #fff; color: var(--ink-soft); }
 .command-button svg { width: 16px; height: 16px; }
@@ -782,6 +787,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
   .command-button span, .command-button kbd { display: none; }
   .command-button { width: 36px; justify-content: center; padding: 0; }
   .top-avatar { display: none; }
+  .prototype-badge { min-height: 26px; padding-inline: 8px; font-size: 9px; }
   .page-container, .agent-page { width: min(100% - 32px, 680px); }
   .content-page { padding: 38px 0 60px; }
   .agent-page { padding: 54px 0 64px; }
@@ -842,7 +848,9 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 
 @media (max-width: 520px) {
   .workspace-context small { display: none; }
-  .workspace-context b { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .workspace-context b { max-width: 92px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .workspace-context > button, .topbar-actions .command-button { display: none; }
+  .prototype-badge { width: 26px; justify-content: center; padding: 0; font-size: 0; }
   .agent-page { padding-top: 40px; }
   .conversation-header { align-items: flex-start; }
   .conversation-header p { align-items: flex-start; flex-direction: column; gap: 3px; }

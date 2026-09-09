@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Astrylo">
+  <rect width="64" height="64" rx="18" fill="#191b19"/>
+  <path d="M20 23 39 13M24 31l19 10M22 49l15-9" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6"/>
+</svg>

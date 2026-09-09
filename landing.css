@@ -34,6 +34,8 @@ a { color: inherit; }
 button { cursor: pointer; }
 svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .container { width: min(1200px, calc(100% - 64px)); margin: 0 auto; }
+.skip-link { position: fixed; z-index: 200; top: 12px; left: 12px; border-radius: 9px; background: var(--dark); color: #fff; padding: 10px 14px; font-size: 13px; font-weight: 650; text-decoration: none; transform: translateY(-160%); transition: transform .15s ease; }
+.skip-link:focus { outline: 3px solid rgba(108,92,231,.3); outline-offset: 2px; transform: translateY(0); }
 
 /* Header */
 .site-header { position: fixed; z-index: 50; top: 0; right: 0; left: 0; border-bottom: 1px solid transparent; transition: background .2s ease, border .2s ease, box-shadow .2s ease; }
@@ -131,7 +133,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .demo-result em { margin-left: auto; color: var(--green); font-size: 12px; font-style: normal; font-weight: 650; }
 .demo-composer { display: flex; min-height: 66px; align-items: center; justify-content: space-between; gap: 10px; margin: 0 15px 15px; border: 1px solid #dcdfd8; border-radius: 13px; background: #fff; color: #a0a39b; padding: 9px 10px 9px 14px; font-size: 12px; box-shadow: 0 8px 24px rgba(26,29,24,.06); }
 .demo-composer > div { display: flex; align-items: center; gap: 5px; }
-.demo-composer button { border: 0; border-radius: 7px; background: #f0f1ed; color: #6f726c; padding: 6px 8px; font-size: 12px; }
+.demo-chip { border-radius: 7px; background: #f0f1ed; color: #6f726c; padding: 6px 8px; font-size: 12px; }
 .demo-composer i { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 8px; background: var(--dark); color: #fff; font-size: 13px; font-style: normal; }
 .floating-note { position: absolute; z-index: 5; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,.6); border-radius: 13px; background: rgba(255,255,255,.86); padding: 10px 12px; box-shadow: 0 18px 48px rgba(25,28,23,.12); backdrop-filter: blur(12px); }
 .floating-note small, .floating-note b { display: block; }
@@ -206,7 +208,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .plan-visual li.done i { border-color: #cce5d7; background: var(--green-soft); color: var(--green); }
 .plan-visual li.active { color: #454842; font-weight: 630; }
 .plan-visual li.active i { border-color: var(--violet); background: var(--violet); color: #fff; }
-.plan-visual > button { display: flex; width: calc(100% - 22px); min-height: 38px; align-items: center; justify-content: space-between; margin: 4px 11px 11px; border: 0; border-radius: 9px; background: var(--dark); color: #fff; padding: 0 11px; font-size: 12px; font-weight: 650; }
+.plan-action { display: flex; width: calc(100% - 22px); min-height: 38px; align-items: center; justify-content: space-between; margin: 4px 11px 11px; border-radius: 9px; background: var(--dark); color: #fff; padding: 0 11px; font-size: 12px; font-weight: 650; }
 .status-stack { position: absolute; right: 25px; bottom: 25px; left: 25px; display: grid; overflow: hidden; border: 1px solid rgba(255,255,255,.1); border-radius: 14px; background: rgba(255,255,255,.035); }
 .status-stack > span { display: grid; min-height: 48px; grid-template-columns: 23px 1fr auto; align-items: center; gap: 9px; border-bottom: 1px solid rgba(255,255,255,.08); color: #757b73; padding: 0 13px; font-size: 12px; }
 .status-stack > span:last-child { border-bottom: 0; }
@@ -412,6 +414,24 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .footer-bottom a { color: inherit; text-decoration: none; }
 .footer-bottom > span:last-child { text-align: right; }
 
+/* Utility pages */
+.utility-page { min-height: calc(100vh - 186px); padding: 138px 0 82px; }
+.utility-intro { max-width: 760px; }
+.utility-kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--violet); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.utility-kicker::before { width: 7px; height: 7px; border-radius: 50%; background: currentColor; content: ""; }
+.utility-intro h1 { margin: 20px 0 0; font-size: clamp(42px,6vw,72px); font-weight: 620; letter-spacing: -.065em; line-height: 1; }
+.utility-intro > p { max-width: 650px; margin: 22px 0 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.utility-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.utility-actions .secondary-cta { border: 1px solid var(--line); background: #fff; padding: 0 18px; }
+.legal-grid { display: grid; gap: 16px; margin-top: 48px; }
+.legal-card { scroll-margin-top: 102px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.78); padding: clamp(24px,4vw,42px); box-shadow: var(--shadow-sm); }
+.legal-card > span { color: var(--violet); font-size: 11px; font-weight: 720; letter-spacing: .08em; }
+.legal-card h2 { margin: 12px 0 0; font-size: clamp(25px,3vw,36px); font-weight: 620; letter-spacing: -.04em; }
+.legal-card p { max-width: 800px; margin: 15px 0 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.legal-note { margin-top: 28px; border-left: 2px solid var(--violet); color: var(--quiet); padding-left: 14px; font-size: 12px; line-height: 1.6; }
+.utility-footer { padding-top: 25px; }
+.utility-footer .footer-bottom { margin-top: 0; }
+
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s cubic-bezier(.22,.7,.25,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -498,7 +518,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
   .demo-stages span:nth-child(2),.demo-stages span:nth-child(3),.demo-stages span:nth-child(4) { text-align: center; }
   .demo-stages span:nth-child(5) { text-align: right; }
   .demo-result { margin-left: 36px; }
-  .demo-composer button { display: none; }
+  .demo-chip { display: none; }
   .floating-note { display: none; }
   .demo-controls { right: 7px; bottom: 4px; }
   .proof-strip article { min-height: 100px; align-items: flex-start; flex-direction: column; gap: 5px; padding: 17px; }

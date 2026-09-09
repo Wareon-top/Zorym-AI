@@ -6,9 +6,11 @@
   <meta name="description" content="Astrylo AI превращает запрос в план, выполненную задачу и готовый результат — для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
   <title>Astrylo AI — поручайте результат</title>
-  <link rel="stylesheet" href="landing.css?v=20260909-games-funnel">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="landing.css?v=20260909-astrylo-rc1">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">К основному содержимому</a>
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a class="wordmark" href="#top" aria-label="Astrylo AI — главная">
@@ -23,17 +25,17 @@
         <a href="#trust">Безопасность</a>
       </nav>
       <div class="header-actions">
-        <a class="login-link" href="app.html#agent">Войти</a>
-        <a class="header-cta" href="app.html#agent">Создать аккаунт <span>↗</span></a>
-        <button class="menu-button" id="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+        <a class="login-link" href="app.html#agent">Открыть кабинет</a>
+        <a class="header-cta" href="app.html#agent">Открыть UI-демо <span>↗</span></a>
+        <button class="menu-button" id="menu-button" type="button" aria-label="Открыть меню" aria-controls="mobile-nav" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
     <div class="mobile-nav" id="mobile-nav">
-      <a class="nav-games-link" href="games.html">AI Agent Games <span>Roblox + Minecraft</span></a><a href="#benefits">Возможности</a><a href="#solutions">Решения</a><a href="#how">Как работает</a><a href="pricing.html">Тарифы</a><a href="#trust">Безопасность</a><a href="app.html#agent">Войти в кабинет</a>
+      <a class="nav-games-link" href="games.html">AI Agent Games <span>Roblox + Minecraft</span></a><a href="#benefits">Возможности</a><a href="#solutions">Решения</a><a href="#how">Как работает</a><a href="pricing.html">Тарифы</a><a href="#trust">Безопасность</a><a href="app.html#agent">Открыть UI-демо</a>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero" id="top">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-grid container">
@@ -42,7 +44,7 @@
           <h1>Не просите ИИ помочь.<br><em>Поручайте ему результат.</em></h1>
           <p>Astrylo AI понимает задачу, составляет план, выполняет работу и показывает ход — от первой идеи до готовых файлов.</p>
           <div class="hero-actions">
-            <a class="primary-cta" href="app.html#agent">Начать работу <span>→</span></a>
+            <a class="primary-cta" href="app.html#agent">Открыть UI-демо <span>→</span></a>
             <a class="secondary-cta" href="#how"><span class="play-icon">▶</span>Посмотреть, как работает</a>
           </div>
           <div class="hero-assurances"><span><i>✓</i>План до запуска</span><span><i>✓</i>Можно остановить</span><span><i>✓</i>Вся история сохранена</span></div>
@@ -57,7 +59,7 @@
               <div class="demo-agent"><span class="mini-z light"><i></i></span><div class="demo-agent-body"><div class="demo-agent-head"><b>Astrylo AI</b><span>Astrylo 1 Orbit</span></div><p id="demo-copy">Собираю карту проекта, правил прогресса и связанных наград…</p><div class="demo-progress-card"><div><span><i></i><b id="demo-status">Картирую контекст</b></span><em id="demo-percent">14%</em></div><div class="demo-progress"><i id="demo-bar"></i></div><div class="demo-stages"><span class="active">Карта</span><span>Проект</span><span>Связи</span><span>Проверка</span><span>Результат</span></div></div></div></div>
               <div class="demo-result" id="demo-result"><span><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span><div><small>Результат задачи</small><b>season-system.zip</b></div><em>Готово</em></div>
             </div>
-            <div class="demo-composer"><span>Уточнить задачу…</span><div><button type="button">Orbit</button><button type="button">Мастер</button><i>↑</i></div></div>
+            <div class="demo-composer" aria-hidden="true"><span>Уточнить задачу…</span><div><span class="demo-chip">Orbit</span><span class="demo-chip">Мастер</span><i>↑</i></div></div>
           </div>
           <div class="floating-note note-plan"><span>01</span><div><small>План согласован</small><b>8 шагов · 14 файлов</b></div><i>✓</i></div>
           <div class="floating-note note-safe"><svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3 8-8 10-5-2-8-5-8-10V7zM9 12l2 2 4-5"/></svg><div><small>Контроль пользователя</small><b>Ничего без подтверждения</b></div></div>
@@ -85,7 +87,7 @@
           </article>
           <article class="benefit-card reveal">
             <div class="card-number">02</div><span class="benefit-label">Сначала план</span><h3>Вы знаете, что изменится</h3><p>До начала работы видны этапы, ожидаемый результат и расход лимита.</p>
-            <div class="plan-visual"><div><span>План задачи</span><em>8 шагов</em></div><ol><li class="done"><i>✓</i><span>Изучить текущую систему</span></li><li class="active"><i>2</i><span>Добавить модель сезона</span></li><li><i>3</i><span>Связать правила наград</span></li></ol><button type="button">Подтвердить запуск <span>→</span></button></div>
+            <div class="plan-visual"><div><span>План задачи</span><em>8 шагов</em></div><ol><li class="done"><i>✓</i><span>Изучить текущую систему</span></li><li class="active"><i>2</i><span>Добавить модель сезона</span></li><li><i>3</i><span>Связать правила наград</span></li></ol><div class="plan-action" aria-hidden="true">Подтвердить запуск <span>→</span></div></div>
           </article>
           <article class="benefit-card benefit-dark reveal">
             <div class="card-number">03</div><span class="benefit-label">Прозрачная работа</span><h3>Понимаете, что происходит</h3><p>Вместо технического шума — короткие и полезные статусы.</p>
@@ -100,12 +102,12 @@
         <div class="workflow-heading reveal"><span class="section-index light">02 · Как работает</span><h2>От задачи до готового результата.<br><em>Без чёрного ящика.</em></h2></div>
         <div class="workflow-layout reveal">
           <div class="workflow-steps" role="tablist" aria-label="Этапы работы Astrylo AI">
-            <button class="active" type="button" data-flow-step="0"><span>01</span><div><b>Опишите результат</b><small>Обычным языком, без сложного брифа</small></div><i>↗</i></button>
-            <button type="button" data-flow-step="1"><span>02</span><div><b>Проверьте план</b><small>Агент покажет действия до запуска</small></div><i>↗</i></button>
-            <button type="button" data-flow-step="2"><span>03</span><div><b>Следите за работой</b><small>Короткие статусы вместо технического шума</small></div><i>↗</i></button>
-            <button type="button" data-flow-step="3"><span>04</span><div><b>Заберите результат</b><small>Файлы, версия и отчёт проверки</small></div><i>↗</i></button>
+            <button class="active" id="flow-tab-0" type="button" role="tab" aria-selected="true" aria-controls="flow-panel" tabindex="0" data-flow-step="0"><span>01</span><div><b>Опишите результат</b><small>Обычным языком, без сложного брифа</small></div><i>↗</i></button>
+            <button id="flow-tab-1" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-flow-step="1"><span>02</span><div><b>Проверьте план</b><small>Агент покажет действия до запуска</small></div><i>↗</i></button>
+            <button id="flow-tab-2" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-flow-step="2"><span>03</span><div><b>Следите за работой</b><small>Короткие статусы вместо технического шума</small></div><i>↗</i></button>
+            <button id="flow-tab-3" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-flow-step="3"><span>04</span><div><b>Заберите результат</b><small>Файлы, версия и отчёт проверки</small></div><i>↗</i></button>
           </div>
-          <div class="workflow-preview">
+          <div class="workflow-preview" id="flow-panel" role="tabpanel" aria-labelledby="flow-tab-0" aria-live="polite">
             <div class="workflow-preview-top"><span id="flow-number">01</span><em>Интерактивный пример</em></div>
             <div class="workflow-preview-body"><span class="flow-icon" id="flow-icon">✦</span><small id="flow-kicker">Ваш запрос</small><h3 id="flow-title">Скажите, что должно получиться</h3><p id="flow-copy">Напишите задачу так, как объяснили бы её участнику команды. Astrylo сам уточнит недостающие детали.</p><div class="flow-example" id="flow-example"><span>«Добавь сезонные задания и подготовь готовую сборку»</span><i>↑</i></div></div>
             <div class="workflow-preview-footer"><span>Вы сохраняете контроль на каждом этапе</span><i>astrylo / process 01</i></div>
@@ -189,13 +191,13 @@
 
     <section class="final-cta">
       <div class="cta-orbit orbit-left" aria-hidden="true"></div><div class="cta-orbit orbit-right" aria-hidden="true"></div>
-      <div class="container final-cta-inner reveal"><span class="hero-kicker dark"><i></i>Astrylo AI готов к работе</span><h2>Начните не с настройки.<br><em>Начните с задачи.</em></h2><p>Создайте аккаунт, опишите результат и получите понятный план действий.</p><div><a class="primary-cta light" href="app.html#agent">Создать аккаунт <span>→</span></a><a class="cta-login" href="app.html#agent">Уже есть аккаунт? Войти</a></div></div>
+      <div class="container final-cta-inner reveal"><span class="hero-kicker dark"><i></i>Интерфейсный прототип Astrylo AI</span><h2>Начните не с настройки.<br><em>Начните с задачи.</em></h2><p>Откройте рабочее пространство и изучите будущий сценарий. Серверные действия в этой версии демонстрационные.</p><div><a class="primary-cta light" href="app.html#agent">Открыть UI-демо <span>→</span></a><a class="cta-login" href="games.html">Посмотреть AI Agent Games</a></div></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-top"><a class="wordmark footer-brand" href="#top"><span class="brand-symbol"><i></i></span><span>Astrylo</span></a><p>AI-агент для проектов, игр и бизнеса.<br>От запроса до готового результата.</p><div class="footer-links"><div><b>Продукт</b><a href="#benefits">Возможности</a><a href="#how">Как работает</a><a href="#solutions">Решения</a><a href="pricing.html">Тарифы</a></div><div><b>Пространства</b><a href="app.html#agent">AI Agent</a><a href="games.html">AI Agent Games</a><a href="app.html#business">Astrylo Business</a></div><div><b>Информация</b><a href="#trust">Безопасность</a><a href="#faq">Вопросы</a><a href="app.html#agent">Личный кабинет</a></div></div></div>
-    <div class="container footer-bottom"><span>© 2026 Astrylo AI</span><div><a href="#privacy">Политика конфиденциальности</a><a href="#terms">Условия использования</a></div><span>Сделано для результата</span></div>
+    <div class="container footer-bottom"><span>© 2026 Astrylo AI</span><div><a href="legal.html#privacy">Политика конфиденциальности</a><a href="legal.html#terms">Условия использования</a></div><span>Сделано для результата</span></div>
   </footer>
 
   <script>
@@ -232,25 +234,29 @@
       { number: '03', icon: '◌', kicker: 'Ход выполнения', title: 'Видите главное, пока агент работает', copy: 'Короткие статусы объясняют текущий этап. При необходимости задачу можно остановить без потери проекта.', example: 'Анализирую → выполняю → проверяю' },
       { number: '04', icon: '✓', kicker: 'Готовый результат', title: 'Получите то, что можно использовать', copy: 'Файлы, исходники, сборка и отчёт проверки сохраняются как новая версия — всё готово к просмотру или скачиванию.', example: 'season-system.zip · версия 12 · проверено' }
     ];
-    document.querySelectorAll('[data-flow-step]').forEach(function (button) {
-      button.addEventListener('click', function () {
+    const flowButtons = Array.from(document.querySelectorAll('[data-flow-step]'));
+    function selectFlow(button) {
         const index = Number(button.dataset.flowStep);
         const step = flowSteps[index];
-        document.querySelectorAll('[data-flow-step]').forEach(function (item) { item.classList.remove('active'); });
-        button.classList.add('active');
+        flowButtons.forEach(function (item) { const selected = item === button; item.classList.toggle('active', selected); item.setAttribute('aria-selected', String(selected)); item.tabIndex = selected ? 0 : -1; });
+        document.querySelector('#flow-panel').setAttribute('aria-labelledby', button.id);
         document.querySelector('#flow-number').textContent = step.number;
         document.querySelector('#flow-icon').textContent = step.icon;
         document.querySelector('#flow-kicker').textContent = step.kicker;
         document.querySelector('#flow-title').textContent = step.title;
         document.querySelector('#flow-copy').textContent = step.copy;
         document.querySelector('#flow-example span').textContent = step.example;
-      });
+    }
+    flowButtons.forEach(function (button, index) {
+      button.addEventListener('click', function () { selectFlow(button); });
+      button.addEventListener('keydown', function (event) { if (!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)) return; event.preventDefault(); const next = event.key === 'Home' ? 0 : event.key === 'End' ? flowButtons.length - 1 : (index + (event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 1) + flowButtons.length) % flowButtons.length; selectFlow(flowButtons[next]); flowButtons[next].focus(); });
     });
 
     const menuButton = document.querySelector('#menu-button');
     const mobileNav = document.querySelector('#mobile-nav');
     menuButton.addEventListener('click', function () { const open = mobileNav.classList.toggle('open'); menuButton.classList.toggle('open', open); menuButton.setAttribute('aria-expanded', String(open)); });
     mobileNav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { mobileNav.classList.remove('open'); menuButton.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }); });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') { mobileNav.classList.remove('open'); menuButton.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); } });
     const siteHeader = document.querySelector('#site-header');
     function updateHeader() { siteHeader.classList.toggle('scrolled', window.scrollY > 18); }
     window.addEventListener('scroll', updateHeader, { passive: true });
