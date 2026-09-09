@@ -1,0 +1,322 @@
+/* Working chat · clear states, controls and accessible responsive behavior */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 10px;
+  left: 12px;
+  border-radius: 9px;
+  background: #20231f;
+  color: #fff;
+  padding: 10px 13px;
+  font-size: 14px;
+  font-weight: 680;
+  opacity: 0;
+  transform: translateY(-150%);
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.skip-link:focus {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.empty-chat .availability {
+  border-color: #ddd8f3;
+  background: #f7f5ff;
+  color: #6654c5;
+}
+
+.empty-chat .availability i {
+  background: #6c58d8;
+  box-shadow: 0 0 0 4px rgba(108, 88, 216, .1);
+}
+
+.assistant-message .message-body > p {
+  border-color: #d9dcd5;
+  border-left: 3px solid #323631;
+}
+
+.message-body > p {
+  font-size: 16px;
+}
+
+.message-actions button[aria-pressed="true"] {
+  background: #eeebfb;
+  color: #5e4bc5;
+}
+
+.run-selection-summary {
+  display: flex;
+  min-height: 39px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #eff0ed;
+  padding: 8px 14px 10px;
+  color: #686c65;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.run-selection-summary span {
+  min-width: 0;
+}
+
+.run-selection-summary kbd {
+  flex: 0 0 auto;
+  color: #686c65;
+}
+
+.choice-cluster > span {
+  color: #686c65;
+  font-size: 12px;
+}
+
+.choice-menu button {
+  min-height: 32px;
+  font-size: 13px;
+}
+
+.choice-menu button[aria-checked="true"] {
+  box-shadow: 0 1px 4px rgba(25, 28, 23, .12), inset 0 0 0 1px rgba(104, 87, 232, .08);
+}
+
+.capability-menu {
+  width: min(360px, calc(100vw - 32px));
+}
+
+.capability-menu header b {
+  font-size: 14px;
+}
+
+.capability-menu header small {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.capability-menu header > span {
+  font-size: 11px;
+}
+
+.capability-option {
+  min-height: 58px;
+}
+
+.capability-option b {
+  font-size: 14px;
+}
+
+.capability-option small {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.capability-option > i {
+  font-size: 10px;
+}
+
+.agent-tools-trigger {
+  font-size: 13px;
+}
+
+.work-retry,
+.work-result {
+  flex: 0 0 auto;
+  min-height: 34px;
+  border-radius: 9px;
+  background: #fff;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 670;
+}
+
+.work-result {
+  border: 1px solid #bdddc9;
+  color: #34774f;
+}
+
+.work-result i {
+  margin-left: 4px;
+  font-style: normal;
+}
+
+.send-button {
+  opacity: .72;
+  transition: opacity .16s ease, transform .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.send-button.is-ready {
+  opacity: 1;
+  box-shadow: 0 6px 16px rgba(37, 40, 36, .18);
+}
+
+.tool-button:focus-visible,
+.agent-tools-trigger:focus-visible,
+.capability-option:focus-visible,
+.message-actions button:focus-visible,
+.work-retry:focus-visible,
+.work-result:focus-visible,
+.conversation-actions button:focus-visible,
+.skip-link:focus-visible {
+  outline: 2px solid #6b57d7;
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .agent-page.chat-active {
+    width: min(100% - 24px, 680px);
+    padding-bottom: calc(34px + env(safe-area-inset-bottom));
+  }
+
+  .agent-page.chat-active .prompt-card {
+    margin-top: 14px;
+  }
+
+  .prompt-card {
+    padding-bottom: 0;
+  }
+
+  .prompt-card textarea {
+    min-height: 112px;
+  }
+
+  .prompt-toolbar {
+    gap: 10px;
+    padding: 10px 11px 8px;
+  }
+
+  .prompt-tools {
+    width: 100%;
+  }
+
+  .tool-button,
+  .agent-tools-trigger,
+  .send-button {
+    min-width: 44px;
+    height: 44px;
+  }
+
+  .agent-tools-trigger {
+    padding-inline: 10px;
+  }
+
+  .run-settings {
+    width: 100%;
+  }
+
+  .choice-menu button {
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  .send-button {
+    right: 11px;
+    bottom: 9px;
+  }
+
+  .run-selection-summary {
+    min-height: 60px;
+    padding: 9px 62px 10px 12px;
+  }
+
+  .run-selection-summary kbd {
+    display: none;
+  }
+
+  .capability-menu {
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    left: 12px;
+    max-height: calc(100dvh - 24px - env(safe-area-inset-bottom));
+  }
+
+  .capability-option {
+    min-height: 64px;
+  }
+
+  .message-actions button,
+  .work-retry,
+  .work-result,
+  .conversation-actions button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 520px) {
+  .conversation-header {
+    gap: 10px;
+  }
+
+  .conversation-header h1 {
+    font-size: 21px;
+  }
+
+  .conversation-state {
+    font-size: 12px;
+  }
+
+  .agent-tools-trigger > span {
+    display: inline;
+  }
+
+  .mode-choice {
+    display: grid;
+  }
+
+  .choice-menu button {
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .message-column > header {
+    gap: 8px;
+  }
+
+  .message-column > header b,
+  .message-column > header time {
+    font-size: 12px;
+  }
+
+  .message-body > p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .message-work {
+    padding: 12px;
+  }
+
+  .message-work > footer {
+    font-size: 12px;
+  }
+
+  .work-stages {
+    grid-template-columns: 1fr;
+  }
+
+  .work-stage {
+    font-size: 11px;
+  }
+
+  .run-selection-summary {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link,
+  .send-button {
+    transition: none;
+  }
+}
