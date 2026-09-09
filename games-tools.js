@@ -73,8 +73,8 @@
       summary: 'Отделяет созданный код от результата, который действительно прошёл воспроизводимый сценарий в Roblox Studio.',
       status: 'Демо · проверка выполняется', scope: 'Teleport pads · тестовый сценарий',
       objects: ['TestSession/Player-1', 'Workspace/TeleportPads', 'StarterGui/TeleportMenu', 'ServerScriptService/TeleportService'],
-      limit: 'Текущий экран — интерактивный прототип. Даже завершённое демо не получает статус «Проверено в Studio»: для него нужны реальная сессия, журнал выполнения и сохранённые доказательства.',
-      action: 'Завершить демо-проверку', result: 'Шесть демо-шагов завершены. Статус остаётся демонстрационным до подключения Roblox Studio.',
+      limit: 'В UI-демо статус «Проверено в Studio» появляется только после всех 6 шагов. В реальном продукте для него потребуются активная сессия, журнал выполнения и сохранённые доказательства.',
+      action: 'Завершить демо-проверку', result: 'Шесть демо-шагов завершены. Показанный статус — пример интерфейса, а не запись реального Studio Link.',
       variants: [
         { label: 'Проверки', checks: [c('pass','Изменения применены в сценарии','4 объекта и 3 скрипта','демо'),c('pass','Интерфейс открывается','Список площадок доступен','демо'),c('pending','Телепорт реального игрока','Play Test не запускался','не подтверждено')] },
         { label: 'Ошибки', checks: [c('pass','Runtime errors в демо: 0','По сохранённому сценарию','демо'),c('warn','Сетевой сбой не проверен','Нет живого Studio Link','ограничение'),c('pending','Многопользовательская гонка','Требуется Server & Clients','не запускался')] },
@@ -180,16 +180,10 @@
 
   runButton.addEventListener('click', function () {
     const tool = catalog[activeTool];
-    document.querySelectorAll('#game-tool-checks li.pending').forEach(function (item) {
-      item.classList.remove('pending');
-      item.classList.add('pass');
-      item.querySelector('.game-tool-check-state').textContent = '✓';
-      item.querySelector('em').textContent = 'демо';
-    });
     const visibleChecks = Array.from(document.querySelectorAll('#game-tool-checks li'));
     const capturedChecks = visibleChecks.filter(function (item) { return item.classList.contains('pass') || item.classList.contains('info'); }).length;
     document.querySelector('#game-tool-evidence-count').textContent = capturedChecks + ' из ' + visibleChecks.length + ' зафиксировано';
-    document.querySelector('#game-tool-status').textContent = 'Демо завершено · Studio не подтверждена';
+    document.querySelector('#game-tool-status').textContent = activeTool === 'studio-proof' ? 'UI-демо завершено · реальный тест не запущен' : 'Демо завершено · ограничения сохранены';
     document.querySelector('#game-tool-live-result').textContent = tool.result;
     runButton.textContent = 'Демо выполнено';
     runButton.disabled = true;
