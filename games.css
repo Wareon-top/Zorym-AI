@@ -58,7 +58,7 @@
 .skip-link { position:fixed; z-index:100; top:10px; left:10px; border-radius:9px; background:#202320; color:#fff; padding:10px 14px; font-size:14px; text-decoration:none; transform:translateY(-160%); transition:transform .16s ease; }
 .skip-link:focus { transform:translateY(0); }
 .games-brand-lockup { display:flex; align-items:center; gap:15px; }
-.games-product-name { display:flex; align-items:center; gap:7px; border-left:1px solid #d9dcd6; color:#777c75; padding-left:15px; font-size:12px; font-weight:650; white-space:nowrap; }
+.games-product-name { display:flex; align-items:center; gap:7px; border-left:1px solid #d9dcd6; color:#777c75; padding-left:15px; font-size:12px; font-weight:650; text-decoration:none; white-space:nowrap; }
 .games-product-name i { width:7px; height:7px; border-radius:2px; background:linear-gradient(135deg,#7863df,#4f75e8); transform:rotate(15deg); }
 #roblox,#journey,#proofloop,#capabilities { scroll-margin-top:88px; }
 .games-hero { padding-top:138px; }
