@@ -496,7 +496,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .blueprint-card small { margin-top: 5px; color: var(--quiet); font-size: 12px; }
 .blueprint-card > i { color: #9da098; font-size: 14px; font-style: normal; }
 
-/* Zorym Browser */
+/* Astrylo Browser */
 .browser-heading { align-items: center; }
 .browser-workspace { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(300px,.7fr); gap: 14px; }
 .browser-stage { overflow: hidden; border-radius: 18px; background: #1d201d; color: #fff; box-shadow: 0 22px 54px rgba(22,25,21,.14); }

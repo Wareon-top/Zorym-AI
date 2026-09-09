@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zorym AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
+  <meta name="description" content="Astrylo AI — интеллектуальное рабочее пространство для проектов, игр и бизнеса.">
   <meta name="theme-color" content="#f5f6f3">
-  <title>Zorym AI — рабочее пространство</title>
+  <title>Astrylo AI — рабочее пространство</title>
   <link rel="stylesheet" href="styles.css?v=20260909-games-final-audit">
   <link rel="stylesheet" href="chat.css?v=20260909-games-final-audit">
   <link rel="stylesheet" href="games-tools.css?v=20260909-games-final-audit">
@@ -17,9 +17,9 @@
 <div class="app-shell">
   <aside class="sidebar" id="sidebar" aria-label="Основная навигация">
     <div class="brand-row">
-      <a class="wordmark" href="#agent" aria-label="Zorym AI">
+      <a class="wordmark" href="#agent" aria-label="Astrylo AI">
         <span class="brand-symbol"><i></i></span>
-        <span class="brand-name">Zorym</span>
+        <span class="brand-name">Astrylo</span>
       </a>
       <button class="sidebar-collapse" id="sidebar-collapse" type="button" aria-label="Свернуть меню">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 7-5 5 5 5"/></svg>
@@ -35,7 +35,7 @@
     <nav class="main-nav">
       <div class="nav-group">
         <p class="nav-heading">Рабочее пространство</p>
-        <a class="nav-item active" href="#agent" data-view="agent" data-title="Мой AI Agent" data-subtitle="Skyblock: Genesis" data-avatar="Z">
+        <a class="nav-item active" href="#agent" data-view="agent" data-title="Мой AI Agent" data-subtitle="Skyblock: Genesis" data-avatar="A">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4.5 9.7 7a4 4 0 0 0 2 2l2.8 1.4-2.8 1.3a4 4 0 0 0-2 2L8.5 16.5l-1.3-2.8a4 4 0 0 0-2-2L3 10.5l2.2-1.4a4 4 0 0 0 2-2zM17 13l.7 1.5a3 3 0 0 0 1.5 1.5l1.5.7-1.5.8a3 3 0 0 0-1.5 1.5l-.7 1.5-.8-1.5a3 3 0 0 0-1.5-1.5l-1.5-.8 1.5-.7a3 3 0 0 0 1.5-1.5z"/></svg>
           <span class="nav-label">Мой AI Agent</span>
         </a>
@@ -54,13 +54,13 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
           <span class="nav-label">AI Agent Games</span><span class="nav-badge">new</span>
         </a>
-        <a class="nav-item" href="#browser" data-view="browser" data-title="Zorym Browser" data-subtitle="Исследования и веб-миссии" data-avatar="B">
+        <a class="nav-item" href="#browser" data-view="browser" data-title="Astrylo Browser" data-subtitle="Исследования и веб-миссии" data-avatar="B">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 10h17M8 20c-2-5-2-11 0-16M16 20c2-5 2-11 0-16"/></svg>
-          <span class="nav-label">Zorym Browser</span><span class="nav-badge browser-badge">beta</span>
+          <span class="nav-label">Astrylo Browser</span><span class="nav-badge browser-badge">beta</span>
         </a>
-        <a class="nav-item" href="#business" data-view="business" data-title="Zorym Business" data-subtitle="Northstar Group" data-avatar="N">
+        <a class="nav-item" href="#business" data-view="business" data-title="Astrylo Business" data-subtitle="Northstar Group" data-avatar="N">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l6-3v15M10 9h10v11M14 13h2M14 16h2"/></svg>
-          <span class="nav-label">Zorym Business</span><span class="nav-count nav-count-accent">3</span>
+          <span class="nav-label">Astrylo Business</span><span class="nav-count nav-count-accent">3</span>
         </a>
         <a class="nav-item" href="#connections" data-view="connections" data-title="Подключения" data-subtitle="1 интеграция активна" data-avatar="C">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8 6.5 5.5a3.5 3.5 0 0 0-5 5L6 15a3.5 3.5 0 0 0 5 0l1-1M15 16l2.5 2.5a3.5 3.5 0 0 0 5-5L18 9a3.5 3.5 0 0 0-5 0l-1 1M8 12h8"/></svg>
@@ -83,7 +83,7 @@
     <header class="topbar">
       <div class="topbar-left">
         <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Открыть меню" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button>
-        <div class="workspace-context"><span class="workspace-avatar" id="context-avatar">Z</span><div><b id="context-title">Мой AI Agent</b><small id="context-subtitle">Skyblock: Genesis</small></div><button type="button" aria-label="Сменить пространство"><svg viewBox="0 0 24 24"><path d="m9 10 3 3 3-3"/></svg></button></div>
+        <div class="workspace-context"><span class="workspace-avatar" id="context-avatar">A</span><div><b id="context-title">Мой AI Agent</b><small id="context-subtitle">Skyblock: Genesis</small></div><button type="button" aria-label="Сменить пространство"><svg viewBox="0 0 24 24"><path d="m9 10 3 3 3-3"/></svg></button></div>
       </div>
       <div class="topbar-actions">
         <button class="command-button" type="button" id="command-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><span>Поиск</span><kbd>⌘ /</kbd></button>
@@ -96,12 +96,12 @@
       <div class="agent-page page-container">
         <div class="conversation-shell" id="conversation-shell">
           <header class="conversation-header">
-            <div><span class="eyebrow">Чат с Zorym AI</span><h1 id="conversation-title">Система сезонных заданий</h1><p><span id="conversation-project">Skyblock: Genesis</span><i></i><span id="conversation-settings">Zorym 1 Orbit · Мастер</span><span class="conversation-state state-executing" id="conversation-state" role="status" aria-live="polite" aria-atomic="true"><i aria-hidden="true"></i><span>Выполняет</span></span></p></div>
+            <div><span class="eyebrow">Чат с Astrylo AI</span><h1 id="conversation-title">Система сезонных заданий</h1><p><span id="conversation-project">Skyblock: Genesis</span><i></i><span id="conversation-settings">Astrylo 1 Orbit · Мастер</span><span class="conversation-state state-executing" id="conversation-state" role="status" aria-live="polite" aria-atomic="true"><i aria-hidden="true"></i><span>Выполняет</span></span></p></div>
             <div class="conversation-actions"><button type="button" data-chat-action="share" aria-label="Поделиться чатом"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg></button><button type="button" data-chat-action="menu" aria-label="Меню чата">•••</button></div>
           </header>
           <div class="chat-thread" id="chat-thread" role="log" aria-label="Сообщения чата" aria-live="polite" aria-relevant="additions text" aria-busy="true"></div>
         </div>
-        <div class="agent-hero"><span class="availability"><i aria-hidden="true"></i>Новый чат · Zorym AI готов</span><p>Добрый день, Алексей</p><h1>Что построим сегодня?</h1><span class="hero-copy">Опишите результат — агент разберёт задачу, составит план и покажет ход выполнения.</span></div>
+        <div class="agent-hero"><span class="availability"><i aria-hidden="true"></i>Новый чат · Astrylo AI готов</span><p>Добрый день, Алексей</p><h1>Что построим сегодня?</h1><span class="hero-copy">Опишите результат — агент разберёт задачу, составит план и покажет ход выполнения.</span></div>
 
         <div class="prompt-card">
           <div class="prompt-context"><div class="project-context"><span class="mini-project-icon">S</span><div><small>Работаем в проекте</small><b>Skyblock: Genesis</b></div></div><button type="button">Изменить <svg viewBox="0 0 24 24"><path d="m9 10 3 3 3-3"/></svg></button></div>
@@ -116,8 +116,8 @@
                 <button class="agent-tools-trigger" id="agent-tools-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="capability-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4.5 9.7 7a4 4 0 0 0 2 2l2.8 1.4-2.8 1.3a4 4 0 0 0-2 2l-1.2 2.8-1.3-2.8a4 4 0 0 0-2-2L3 10.5l2.2-1.4a4 4 0 0 0 2-2zM17 13l.7 1.5a3 3 0 0 0 1.5 1.5l1.5.7-1.5.8a3 3 0 0 0-1.5 1.5l-.7 1.5-.8-1.5a3 3 0 0 0-1.5-1.5l-1.5-.8 1.5-.7a3 3 0 0 0 1.5-1.5z"/></svg><span>Инструменты</span><i id="active-tool-count" aria-label="Включено инструментов">1</i></button>
                 <div class="capability-menu" id="capability-menu" role="menu" aria-label="Инструменты агента" aria-hidden="true"><header><div><b>Инструменты агента</b><small>Только для текущей задачи</small></div><span id="capability-plan">Forge Pro</span></header><div class="capability-list">
                   <button class="capability-option active" type="button" role="menuitemcheckbox" aria-checked="true" data-capability="Smart Brief"><span class="capability-symbol" aria-hidden="true">⌁</span><span><b>Smart Brief</b><small>Уточнит цель и критерии готовности</small></span><i aria-hidden="true">✓</i></button>
-                  <button class="capability-option" type="button" role="menuitemcheckbox" aria-checked="false" data-capability="Zorym Browser"><span class="capability-symbol" aria-hidden="true">◎</span><span><b>Zorym Browser</b><small>Изучит интернет и приложит источники</small></span><i aria-hidden="true">✓</i></button>
-                  <button class="capability-option" type="button" role="menuitemcheckbox" aria-checked="false" data-capability="Zorym Crew"><span class="capability-symbol" aria-hidden="true">◌</span><span><b>Zorym Crew</b><small>Подключит агентов для независимой проверки</small></span><i aria-hidden="true">✓</i></button>
+                  <button class="capability-option" type="button" role="menuitemcheckbox" aria-checked="false" data-capability="Astrylo Browser"><span class="capability-symbol" aria-hidden="true">◎</span><span><b>Astrylo Browser</b><small>Изучит интернет и приложит источники</small></span><i aria-hidden="true">✓</i></button>
+                  <button class="capability-option" type="button" role="menuitemcheckbox" aria-checked="false" data-capability="Astrylo Crew"><span class="capability-symbol" aria-hidden="true">◌</span><span><b>Astrylo Crew</b><small>Подключит агентов для независимой проверки</small></span><i aria-hidden="true">✓</i></button>
                 </div></div>
               </div>
             </div>
@@ -165,7 +165,7 @@
         </section>
 
         <div class="agent-dashboard">
-          <article class="active-task-card" id="active-task-card"><div class="card-heading"><div><span class="eyebrow">Активная задача</span><h2 id="active-task-title">Система сезонных заданий</h2></div><span class="status-pill status-live"><i></i><span id="active-task-status">Связывает изменения</span></span></div><p class="task-summary">Zorym AI собирает механику сезонов в единую систему и проверяет влияние на прогресс и награды.</p><div class="task-progress"><i id="task-progress-bar"></i></div><div class="task-stages"><span class="done"><i>✓</i>Карта контекста</span><span class="done"><i>✓</i>Проект решения</span><span class="current"><i>3</i>Связи</span><span><i>4</i>Проверка системы</span></div><div class="task-footer"><span><b>Zorym 1 Orbit</b> · режим Мастер</span><button type="button">Открыть ход работы →</button></div></article>
+          <article class="active-task-card" id="active-task-card"><div class="card-heading"><div><span class="eyebrow">Активная задача</span><h2 id="active-task-title">Система сезонных заданий</h2></div><span class="status-pill status-live"><i></i><span id="active-task-status">Связывает изменения</span></span></div><p class="task-summary">Astrylo AI собирает механику сезонов в единую систему и проверяет влияние на прогресс и награды.</p><div class="task-progress"><i id="task-progress-bar"></i></div><div class="task-stages"><span class="done"><i>✓</i>Карта контекста</span><span class="done"><i>✓</i>Проект решения</span><span class="current"><i>3</i>Связи</span><span><i>4</i>Проверка системы</span></div><div class="task-footer"><span><b>Astrylo 1 Orbit</b> · режим Мастер</span><button type="button">Открыть ход работы →</button></div></article>
           <section class="activity-card"><div class="card-heading"><div><span class="eyebrow">Недавнее</span><h2>Последняя активность</h2></div><button class="text-action" type="button">Все задачи</button></div><div class="activity-list"><button type="button"><span class="activity-symbol success"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9"/></svg></span><span><b>Черновики кода готовы</b><small>Система островов · 12 минут назад</small></span><i>›</i></button><button type="button"><span class="activity-symbol archive"><svg viewBox="0 0 24 24"><path d="M5 8h14v11H5zM4 5h16v3H4M9 12h6"/></svg></span><span><b>Версия 11 сохранена</b><small>Build Vault · вчера</small></span><i>›</i></button><button type="button"><span class="activity-symbol neutral"><svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V8M12 16V5M17 16v-4"/></svg></span><span><b>Отчёт проверки готов</b><small>Экономика сервера · 2 дня назад</small></span><i>›</i></button></div></section>
         </div>
       </div>
@@ -212,7 +212,7 @@
             <header><div><span class="eyebrow">Текущая задача · UI-демо</span><h1>Телепортные площадки</h1></div><div class="game-chat-actions"><button type="button" data-game-tool="time-machine" aria-haspopup="dialog" aria-label="Открыть историю версий">↶</button><span>Roblox</span></div></header>
             <div class="game-chat-thread">
               <article class="game-user-message"><span>АК</span><div><small>Вы · 14:32</small><p>Добавь выбор точки телепортации с превью камеры. Защити систему от повторного нажатия и проверь её в Studio.</p></div></article>
-              <article class="game-agent-message"><span class="game-z"><i></i></span><div><header><b>Zorym AI</b><small>Orbit · Мастер</small></header><p>В демо-проекте вижу четыре площадки и существующий RemoteEvent. Сохраню текущую версию, добавлю интерфейс выбора и покажу, как ProofLoop проверяет путь игрока.</p><span class="game-plan-note">Демо-план · 7 изменений</span></div></article>
+              <article class="game-agent-message"><span class="game-z"><i></i></span><div><header><b>Astrylo AI</b><small>Orbit · Мастер</small></header><p>В демо-проекте вижу четыре площадки и существующий RemoteEvent. Сохраню текущую версию, добавлю интерфейс выбора и покажу, как ProofLoop проверяет путь игрока.</p><span class="game-plan-note">Демо-план · 7 изменений</span></div></article>
               <section class="game-plan-card approved" id="game-plan-card" aria-labelledby="game-plan-title"><header><div><span>План до запуска</span><h2 id="game-plan-title">Безопасное изменение системы телепортации</h2></div><b id="game-plan-status">Согласован</b></header><ol><li><span>01</span><div><b>Сохранить контрольную версию</b><small>Версия 08 · весь затрагиваемый контекст</small></div></li><li><span>02</span><div><b>Собрать интерфейс и серверный маршрут</b><small>4 объекта · 3 скрипта · без удаления данных</small></div></li><li><span>03</span><div><b>Проверить путь и крайние случаи</b><small>6 проверок · до 2 повторных циклов</small></div></li></ol><footer><span>Оценка <b id="plan-cost">36 ед.</b> · списание только после запуска</span><button type="button" id="approve-game-plan">Изменить план</button></footer></section>
               <section class="studio-proof-run state-testing" aria-label="Ход проверки задачи">
                 <header><div><span><i></i>Демо Studio Proof</span><b id="proof-run-title">Проверяю путь игрока</b></div><em id="proof-run-count">4 из 6</em></header>
@@ -225,7 +225,7 @@
               </section>
             </div>
             <div class="game-composer">
-              <textarea id="game-prompt" aria-label="Сообщение Zorym AI" aria-describedby="game-keyboard-hint game-composer-status" placeholder="Опишите механику или изменение…"></textarea>
+              <textarea id="game-prompt" aria-label="Сообщение Astrylo AI" aria-describedby="game-keyboard-hint game-composer-status" placeholder="Опишите механику или изменение…"></textarea>
               <span class="sr-only" id="game-keyboard-hint">Control или Command и Enter — отправить сообщение. Enter — новая строка.</span>
               <div class="game-composer-toolbar">
                 <span class="game-composer-tools"><button type="button" disabled aria-label="Добавить файл — недоступно в UI-демо" title="Недоступно в UI-демо">＋</button><button type="button" disabled aria-label="Добавить контекст проекта — недоступно в UI-демо" title="Недоступно в UI-демо">◎</button></span>
@@ -269,13 +269,13 @@
 
     <section class="view legacy-games-view" data-screen="games-legacy">
       <div class="page-container content-page studio-page">
-        <div class="page-heading"><div><span class="eyebrow">Zorym Games Studio</span><h1>Создайте основу новой игры</h1><p>Ответьте на несколько вопросов — агент подготовит концепцию, архитектуру и первый план разработки.</p></div><span class="studio-step">01 <i></i> 03</span></div>
+        <div class="page-heading"><div><span class="eyebrow">Astrylo Games Studio</span><h1>Создайте основу новой игры</h1><p>Ответьте на несколько вопросов — агент подготовит концепцию, архитектуру и первый план разработки.</p></div><span class="studio-step">01 <i></i> 03</span></div>
         <div class="studio-layout">
           <form class="studio-form" id="studio-form">
             <div class="form-section"><div class="form-number">01</div><div class="form-content"><label for="game-name">Как называется проект?</label><input id="game-name" placeholder="Например, Frostfall" value="Frostfall"><small>Название можно изменить позже</small></div></div>
             <div class="form-section"><div class="form-number">02</div><div class="form-content"><span class="form-label">Выберите платформу</span><div class="platform-cards" data-choice-group="platform"><button class="selected" type="button" data-platform-name="Minecraft Paper"><span class="platform-icon cube"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span><span><b>Minecraft Paper</b><small>Серверный плагин на Java</small></span><i>✓</i></button><button type="button" data-platform-name="Roblox Studio"><span class="platform-icon diamond"><svg viewBox="0 0 24 24"><path d="m7 3 14 4-4 14-14-4zM10 9l5 1-1 5-5-1z"/></svg></span><span><b>Roblox Studio</b><small>Игровые системы на Luau</small></span><i>✓</i></button></div></div></div>
             <div class="form-section"><div class="form-number">03</div><div class="form-content"><span class="form-label">Какой будет игра?</span><div class="genre-chips" data-choice-group="genre"><button class="selected" type="button">Выживание</button><button type="button">RPG</button><button type="button">PvP</button><button type="button">Приключение</button><button type="button">Симулятор</button></div><textarea id="game-description" placeholder="Кратко опишите мир, основную механику и цель игрока…">Кооперативное выживание в мире вечной зимы. Игроки исследуют острова, собирают ресурсы и вместе развивают убежище.</textarea></div></div>
-            <button class="studio-submit" type="submit"><span><small>Продолжить с</small><b>Zorym 1 Orbit</b></span><span>Создать концепцию <i>→</i></span></button>
+            <button class="studio-submit" type="submit"><span><small>Продолжить с</small><b>Astrylo 1 Orbit</b></span><span>Создать концепцию <i>→</i></span></button>
           </form>
           <aside class="concept-panel"><div class="concept-top"><span class="concept-kicker"><i></i>Предпросмотр концепции</span><button type="button" aria-label="Обновить концепцию"><svg viewBox="0 0 24 24"><path d="M19 8a7 7 0 1 0 1 7M19 4v4h-4"/></svg></button></div><div class="concept-identity"><span class="concept-mark">F</span><div><small id="concept-platform">Minecraft Paper</small><h2 id="concept-name">Frostfall</h2><p>Кооперативное выживание</p></div></div><div class="concept-divider"></div><span class="concept-label">План первого релиза</span><ol class="release-plan"><li><span>01</span><div><b>Ядро мира</b><small>Острова, климат и ресурсы</small></div></li><li><span>02</span><div><b>Прогресс игроков</b><small>Убежище, навыки и награды</small></div></li><li><span>03</span><div><b>Кооперативный цикл</b><small>Общие цели и события</small></div></li><li><span>04</span><div><b>Проверка прототипа</b><small>Сценарии и критерии готовности</small></div></li></ol><div class="concept-readiness"><div><span>Готовность брифа</span><b>82%</b></div><div class="resource-track"><i style="width:82%"></i></div><small>Для точного плана агент задаст ещё 2 вопроса</small></div></aside>
         </div>
@@ -285,10 +285,10 @@
 
     <section class="view" data-screen="browser">
       <div class="page-container content-page browser-page">
-        <div class="page-heading browser-heading"><div><span class="eyebrow">Защищённое веб-пространство</span><h1>Zorym Browser</h1><p>Ставьте веб-миссии вместо ручного поиска. Агент изучит источники, покажет ход работы и запросит подтверждение перед важным действием.</p></div><button class="primary-button" id="new-browser-mission" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новая миссия</button></div>
+        <div class="page-heading browser-heading"><div><span class="eyebrow">Защищённое веб-пространство</span><h1>Astrylo Browser</h1><p>Ставьте веб-миссии вместо ручного поиска. Агент изучит источники, покажет ход работы и запросит подтверждение перед важным действием.</p></div><button class="primary-button" id="new-browser-mission" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новая миссия</button></div>
         <div class="browser-workspace">
           <section class="browser-stage">
-            <div class="browser-chrome"><div><i></i><i></i><i></i></div><span>zorym://mission/market-research</span><b><i></i>Изолировано</b></div>
+            <div class="browser-chrome"><div><i></i><i></i><i></i></div><span>astrylo://mission/market-research</span><b><i></i>Изолировано</b></div>
             <div class="browser-stage-body">
               <header><div><span class="eyebrow light">Миссия 04 · Browser Missions</span><h2>Сравнить платформы для запуска продукта</h2></div><span class="mission-status"><i></i>Выполняется</span></header>
               <div class="mission-progress"><div><span>Исследование и проверка данных</span><b>68%</b></div><div><i></i></div><small>Анализирую источники и устраняю противоречия…</small></div>
@@ -307,11 +307,11 @@
 
     <section class="view" data-screen="business">
       <div class="page-container content-page business-page">
-        <div class="page-heading business-heading"><div><span class="eyebrow">Zorym Business · Northstar Group</span><h1>Доброе утро, Алексей</h1><p>Три решения ждут вашего внимания. Остальные процессы идут по плану.</p></div><div class="heading-actions"><button class="secondary-button" type="button">Настроить пространство</button><button class="primary-button" id="business-task" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новая задача</button></div></div>
+        <div class="page-heading business-heading"><div><span class="eyebrow">Astrylo Business · Northstar Group</span><h1>Доброе утро, Алексей</h1><p>Три решения ждут вашего внимания. Остальные процессы идут по плану.</p></div><div class="heading-actions"><button class="secondary-button" type="button">Настроить пространство</button><button class="primary-button" id="business-task" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новая задача</button></div></div>
         <div class="metric-grid" aria-label="Сводка компании"><article><div><small>В работе</small><span class="metric-trend neutral">сейчас</span></div><strong>24</strong><p><i class="live-dot"></i>7 агентов активны</p></article><article><div><small>На согласовании</small><span class="metric-trend warning">нужно решение</span></div><strong>3</strong><p>2 документа · 1 действие</p></article><article><div><small>Завершено за неделю</small><span class="metric-trend positive">+18%</span></div><strong>86</strong><p>На 13 больше прошлой недели</p></article><article><div><small>Бюджет AI</small><span class="metric-trend neutral">68%</span></div><strong>34 200</strong><div class="metric-progress"><i></i></div><p>из 50 000 единиц</p></article></div>
         <div class="business-grid">
-          <section class="surface-panel operations-panel"><div class="panel-heading"><div><span class="eyebrow">Операционный центр</span><h2>Сейчас в работе</h2></div><button class="text-action" type="button">Все задачи →</button></div><div class="operation-list"><article><span class="agent-orb quasar">Q</span><div class="operation-copy"><div><h3>Стратегия выхода в новый регион</h3><span class="status-pill status-thinking">Анализирует</span></div><p>Стратегия · Zorym 1 Quasar</p><div class="operation-progress"><i style="width:68%"></i></div><small>Сравниваю спрос, конкурентов и финансовые риски…</small></div><time>18 мин</time><button type="button" aria-label="Открыть задачу">›</button></article><article><span class="agent-orb orbit">O</span><div class="operation-copy"><div><h3>Предложение для Meridian</h3><span class="status-pill status-checking">Проверяет</span></div><p>Продажи · Zorym 1 Orbit</p><div class="operation-progress"><i style="width:86%"></i></div><small>Проверяю цены и условия перед отправкой…</small></div><time>4 мин</time><button type="button" aria-label="Открыть задачу">›</button></article><article><span class="agent-orb comet">C</span><div class="operation-copy"><div><h3>Разбор обращений за август</h3><span class="status-pill status-working">Выполняет</span></div><p>Поддержка · Zorym 1 Comet</p><div class="operation-progress"><i style="width:41%"></i></div><small>Группирую обращения по причинам и приоритету…</small></div><time>9 мин</time><button type="button" aria-label="Открыть задачу">›</button></article></div></section>
-          <aside class="surface-panel approval-panel"><div class="panel-heading"><div><span class="eyebrow">Decision Room</span><h2>Требует решения <b>3</b></h2></div><button class="text-action" type="button">История</button></div><div class="decision-signal"><span>Риски собраны</span><p>Zorym подготовил аргументы за и против для каждого решения.</p></div><div class="approval-list"><article><div class="approval-meta"><span>Документ</span><time>5 мин назад</time></div><h3>Договор с поставщиком</h3><p>Отмечены два изменённых условия.</p><div class="approval-actions"><button class="review-button" type="button">Просмотреть</button><button class="approve-button" type="button">Утвердить</button></div></article><article><div class="approval-meta"><span>Отправка</span><time>21 мин назад</time></div><h3>Кампания для 1 240 клиентов</h3><p>Письма проверены по правилам бренда.</p><div class="approval-actions"><button class="review-button" type="button">Просмотреть</button><button class="approve-button" type="button">Утвердить</button></div></article><article><div class="approval-meta"><span>Бюджет</span><time>1 ч назад</time></div><h3>Лимит аналитики</h3><p>Запрошено ещё 8 000 единиц.</p><div class="approval-actions"><button class="review-button" type="button">Подробнее</button><button class="approve-button" type="button">Утвердить</button></div></article></div></aside>
+          <section class="surface-panel operations-panel"><div class="panel-heading"><div><span class="eyebrow">Операционный центр</span><h2>Сейчас в работе</h2></div><button class="text-action" type="button">Все задачи →</button></div><div class="operation-list"><article><span class="agent-orb quasar">Q</span><div class="operation-copy"><div><h3>Стратегия выхода в новый регион</h3><span class="status-pill status-thinking">Анализирует</span></div><p>Стратегия · Astrylo 1 Quasar</p><div class="operation-progress"><i style="width:68%"></i></div><small>Сравниваю спрос, конкурентов и финансовые риски…</small></div><time>18 мин</time><button type="button" aria-label="Открыть задачу">›</button></article><article><span class="agent-orb orbit">O</span><div class="operation-copy"><div><h3>Предложение для Meridian</h3><span class="status-pill status-checking">Проверяет</span></div><p>Продажи · Astrylo 1 Orbit</p><div class="operation-progress"><i style="width:86%"></i></div><small>Проверяю цены и условия перед отправкой…</small></div><time>4 мин</time><button type="button" aria-label="Открыть задачу">›</button></article><article><span class="agent-orb comet">C</span><div class="operation-copy"><div><h3>Разбор обращений за август</h3><span class="status-pill status-working">Выполняет</span></div><p>Поддержка · Astrylo 1 Comet</p><div class="operation-progress"><i style="width:41%"></i></div><small>Группирую обращения по причинам и приоритету…</small></div><time>9 мин</time><button type="button" aria-label="Открыть задачу">›</button></article></div></section>
+          <aside class="surface-panel approval-panel"><div class="panel-heading"><div><span class="eyebrow">Decision Room</span><h2>Требует решения <b>3</b></h2></div><button class="text-action" type="button">История</button></div><div class="decision-signal"><span>Риски собраны</span><p>Astrylo подготовил аргументы за и против для каждого решения.</p></div><div class="approval-list"><article><div class="approval-meta"><span>Документ</span><time>5 мин назад</time></div><h3>Договор с поставщиком</h3><p>Отмечены два изменённых условия.</p><div class="approval-actions"><button class="review-button" type="button">Просмотреть</button><button class="approve-button" type="button">Утвердить</button></div></article><article><div class="approval-meta"><span>Отправка</span><time>21 мин назад</time></div><h3>Кампания для 1 240 клиентов</h3><p>Письма проверены по правилам бренда.</p><div class="approval-actions"><button class="review-button" type="button">Просмотреть</button><button class="approve-button" type="button">Утвердить</button></div></article><article><div class="approval-meta"><span>Бюджет</span><time>1 ч назад</time></div><h3>Лимит аналитики</h3><p>Запрошено ещё 8 000 единиц.</p><div class="approval-actions"><button class="review-button" type="button">Подробнее</button><button class="approve-button" type="button">Утвердить</button></div></article></div></aside>
         </div>
         <div class="business-bottom"><section class="surface-panel process-panel"><div class="panel-heading"><div><span class="eyebrow">Автоматизации</span><h2>Ключевые процессы</h2></div><button class="text-action" type="button">Process Studio →</button></div><div class="process-list"><article><span class="process-number">01</span><div><h3>Новая заявка</h3><p>Квалификация → предложение → CRM</p></div><em><i class="live-dot"></i>128 запусков</em><button type="button">›</button></article><article><span class="process-number">02</span><div><h3>Еженедельный отчёт</h3><p>Сбор данных → выводы → рассылка</p></div><em>Готов в пятницу</em><button type="button">›</button></article><article><span class="process-number">03</span><div><h3>Новый сотрудник</h3><p>Документы → доступы → адаптация</p></div><em>4 активных</em><button type="button">›</button></article></div></section><aside class="memory-panel"><div class="memory-orbit"><i></i><i></i><span>M</span></div><span class="memory-label">Business Memory</span><h2>Знания компании в едином контексте</h2><p>486 документов · 12 источников<br>Обновлено 2 часа назад</p><button type="button">Открыть базу знаний <i>→</i></button></aside></div>
       </div>
@@ -319,13 +319,13 @@
 
     <section class="view" data-screen="connections">
       <div class="page-container content-page integrations-page">
-        <div class="page-heading integrations-page-heading"><div><span class="eyebrow">Экосистема Zorym</span><h1>Подключения</h1><p>Объедините код, документы, общение и публикацию в одном рабочем пространстве.</p></div><span class="integration-health"><i></i><span><b>1 интеграция активна</b><small>все подключения работают</small></span></span></div>
+        <div class="page-heading integrations-page-heading"><div><span class="eyebrow">Экосистема Astrylo</span><h1>Подключения</h1><p>Объедините код, документы, общение и публикацию в одном рабочем пространстве.</p></div><span class="integration-health"><i></i><span><b>1 интеграция активна</b><small>все подключения работают</small></span></span></div>
 
         <div class="integration-overview">
           <article><span>Активные</span><strong>1</strong><small>GitHub синхронизирован</small></article>
           <article><span>Поддерживается</span><strong>5</strong><small>включая Roblox и GitHub</small></article>
           <article><span>Скоро</span><strong>2</strong><small>готовим интеграции</small></article>
-          <div><span class="integration-orbit"><i></i><i></i><b>Z</b></span><p><b>Единый контекст</b><small>Агент использует только выбранные вами источники.</small></p></div>
+          <div><span class="integration-orbit"><i></i><i></i><b>A</b></span><p><b>Единый контекст</b><small>Агент использует только выбранные вами источники.</small></p></div>
         </div>
 
         <div class="integrations-toolbar">
@@ -376,7 +376,7 @@
       </div>
     </section>
 
-    <footer class="app-footer"><span>Zorym AI может ошибаться. Проверяйте важные решения.</span><div><a href="#privacy">Конфиденциальность</a><a href="#support">Поддержка</a><span>© 2026 Zorym</span></div></footer>
+    <footer class="app-footer"><span>Astrylo AI может ошибаться. Проверяйте важные решения.</span><div><a href="#privacy">Конфиденциальность</a><a href="#support">Поддержка</a><span>© 2026 Astrylo</span></div></footer>
   </main>
 </div>
 
@@ -402,9 +402,9 @@
 
     <div class="personal-content">
       <section class="profile-panel active" data-profile-panel="personal">
-        <div class="profile-panel-heading"><div><span class="section-kicker">Профиль</span><h3>Личные данные</h3><p>То, как Zorym обращается к вам и показывает ваш аккаунт.</p></div><span class="profile-completeness"><i></i><b>Профиль заполнен</b><small>на 86%</small></span></div>
+        <div class="profile-panel-heading"><div><span class="section-kicker">Профиль</span><h3>Личные данные</h3><p>То, как Astrylo обращается к вам и показывает ваш аккаунт.</p></div><span class="profile-completeness"><i></i><b>Профиль заполнен</b><small>на 86%</small></span></div>
         <form class="settings-form" id="personal-form">
-          <div class="field-row"><label class="settings-field"><span>Имя</span><input id="profile-name-input" name="name" value="Алексей К." autocomplete="name"><small>Отображается в чатах и рабочих пространствах.</small></label><label class="settings-field"><span>Язык интерфейса</span><select id="profile-language"><option selected>Русский</option><option>English</option><option>Қазақша</option></select><small>Zorym отвечает на языке сообщения.</small></label></div>
+          <div class="field-row"><label class="settings-field"><span>Имя</span><input id="profile-name-input" name="name" value="Алексей К." autocomplete="name"><small>Отображается в чатах и рабочих пространствах.</small></label><label class="settings-field"><span>Язык интерфейса</span><select id="profile-language"><option selected>Русский</option><option>English</option><option>Қазақша</option></select><small>Astrylo отвечает на языке сообщения.</small></label></div>
           <label class="settings-field"><span>Email</span><div class="verified-input"><input id="profile-email-input" name="email" type="email" value="alexey@example.com" autocomplete="email"><b>✓ Подтверждён</b></div><small>Используется для входа, чеков и важных уведомлений.</small></label>
           <div class="field-row"><label class="settings-field"><span>Часовой пояс</span><select id="profile-timezone"><option>Москва · UTC+3</option><option>Калининград · UTC+2</option><option>Екатеринбург · UTC+5</option><option>Новосибирск · UTC+7</option></select></label><label class="settings-field"><span>Формат даты</span><select id="profile-date-format"><option>06 сентября 2026</option><option>06.09.2026</option><option>2026-09-06</option></select></label></div>
           <div class="settings-actions"><span id="personal-saved-state">Последнее изменение сегодня, 14:32</span><button class="save-settings" type="submit">Сохранить изменения</button></div>
@@ -417,7 +417,7 @@
           <form class="settings-card password-card" id="password-form"><div class="settings-card-title"><span class="settings-card-icon"><svg viewBox="0 0 24 24"><path d="M5 11V7a7 7 0 0 1 14 0v4M4 11h16v10H4z"/></svg></span><div><h4>Изменить пароль</h4><p>Минимум 10 символов и одна цифра.</p></div></div><label class="settings-field"><span>Текущий пароль</span><input type="password" id="current-password" autocomplete="current-password"></label><label class="settings-field"><span>Новый пароль</span><div class="password-input"><input type="password" id="new-password" autocomplete="new-password"><button class="password-visibility" type="button">Показать</button></div><div class="password-strength"><i></i><i></i><i></i><i></i><span>Введите новый пароль</span></div></label><label class="settings-field"><span>Повторите пароль</span><input type="password" id="confirm-password" autocomplete="new-password"></label><button class="save-settings" type="submit">Обновить пароль</button></form>
           <div class="settings-card protection-card"><div class="settings-card-title"><span class="settings-card-icon violet"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8 7 10 4.2-2 7-5.2 7-10V6zM9 12l2 2 4-5"/></svg></span><div><h4>Двухэтапная защита</h4><p>Код подтверждения при новом входе.</p></div></div><button class="setting-switch" id="two-factor-toggle" type="button" role="switch" aria-checked="false"><span><b>Включить 2FA</b><small>Рекомендуется для защиты проектов</small></span><i></i></button><div class="recovery-note"><span>Коды восстановления</span><b>Будут доступны после подключения 2FA</b></div></div>
         </div>
-        <div class="sessions-block"><div class="sessions-heading"><div><h4>Активные сессии</h4><p>Устройства, на которых выполнен вход в Zorym.</p></div><button id="end-other-sessions" type="button">Завершить остальные</button></div><div class="session-list" id="session-list"><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h5>Chrome · Windows 11 <b>Это устройство</b></h5><p>Москва, Россия · активна сейчас</p></div><i class="session-live"></i></article><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><h5>Safari · iPhone</h5><p>Москва, Россия · 2 часа назад</p></div><button class="end-session" type="button">Завершить</button></article><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h5>Edge · Windows 10</h5><p>Тверь, Россия · 4 дня назад</p></div><button class="end-session" type="button">Завершить</button></article></div></div>
+        <div class="sessions-block"><div class="sessions-heading"><div><h4>Активные сессии</h4><p>Устройства, на которых выполнен вход в Astrylo.</p></div><button id="end-other-sessions" type="button">Завершить остальные</button></div><div class="session-list" id="session-list"><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h5>Chrome · Windows 11 <b>Это устройство</b></h5><p>Москва, Россия · активна сейчас</p></div><i class="session-live"></i></article><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><h5>Safari · iPhone</h5><p>Москва, Россия · 2 часа назад</p></div><button class="end-session" type="button">Завершить</button></article><article data-session><span class="device-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h5>Edge · Windows 10</h5><p>Тверь, Россия · 4 дня назад</p></div><button class="end-session" type="button">Завершить</button></article></div></div>
       </section>
 
       <section class="profile-panel" data-profile-panel="agent-settings">
@@ -426,7 +426,7 @@
           <fieldset class="preference-group"><legend>Модель по умолчанию</legend><div class="profile-model-picker"><button type="button" data-profile-model="Comet"><span class="mini-model comet"><i></i></span><b>Comet</b><small>Быстро и экономно</small><em>01</em></button><button class="selected" type="button" data-profile-model="Orbit"><span class="mini-model orbit"><i></i></span><b>Orbit</b><small>Баланс глубины и скорости</small><em>02</em></button><button type="button" data-profile-model="Quasar"><span class="mini-model quasar"><i></i></span><b>Quasar</b><small>Максимальная глубина</small><em>03</em></button></div></fieldset>
           <fieldset class="preference-group"><legend>Режим работы</legend><div class="profile-mode-picker"><button type="button" data-profile-mode="Импульс"><b>Импульс</b><small>Короткий прямой путь</small></button><button class="selected" type="button" data-profile-mode="Мастер"><b>Мастер</b><small>План, работа и проверка</small></button><button type="button" data-profile-mode="Архитектор"><b>Архитектор</b><small>Системная проработка</small></button></div></fieldset>
           <label class="settings-field instruction-field"><span>Персональные инструкции</span><textarea id="agent-instructions" maxlength="1200" placeholder="Например: объясняй решения простым языком, сохраняй обратную совместимость и всегда предлагай критерии проверки."></textarea><small><span>Применяются к новым чатам</span><b id="instruction-count">0 / 1200</b></small></label>
-          <div class="preference-toggles"><button class="setting-switch active" type="button" role="switch" aria-checked="true" data-agent-toggle="memory"><span><b>Учитывать предпочтения</b><small>Zorym запоминает стиль работы между чатами</small></span><i></i></button><button class="setting-switch" type="button" role="switch" aria-checked="false" data-agent-toggle="reduced-motion"><span><b>Уменьшить анимацию</b><small>Спокойное отображение этапов выполнения</small></span><i></i></button></div>
+          <div class="preference-toggles"><button class="setting-switch active" type="button" role="switch" aria-checked="true" data-agent-toggle="memory"><span><b>Учитывать предпочтения</b><small>Astrylo запоминает стиль работы между чатами</small></span><i></i></button><button class="setting-switch" type="button" role="switch" aria-checked="false" data-agent-toggle="reduced-motion"><span><b>Уменьшить анимацию</b><small>Спокойное отображение этапов выполнения</small></span><i></i></button></div>
           <div class="settings-actions"><span>Настройки можно изменить в любом чате</span><button class="save-settings" type="submit">Сохранить настройки агента</button></div>
         </form>
       </section>
@@ -472,7 +472,7 @@
         </section>
 
         <section class="usage-controls-v2">
-          <div class="usage-alert-row-v2"><div><h4>Предупреждать о расходе</h4><p>Zorym сообщит заранее, когда будет использована выбранная часть лимита.</p></div><button class="setting-switch active compact-switch" id="usage-alert-toggle" type="button" role="switch" aria-checked="true"><i></i></button></div>
+          <div class="usage-alert-row-v2"><div><h4>Предупреждать о расходе</h4><p>Astrylo сообщит заранее, когда будет использована выбранная часть лимита.</p></div><button class="setting-switch active compact-switch" id="usage-alert-toggle" type="button" role="switch" aria-checked="true"><i></i></button></div>
           <div class="usage-threshold" id="usage-threshold"><button type="button" data-threshold="70">70%</button><button class="active" type="button" data-threshold="80">80%</button><button type="button" data-threshold="90">90%</button><span>Уведомим при остатке 20%</span></div>
           <button class="usage-details-trigger-v2" type="button" id="toggle-usage-details"><span><b>Последние списания</b><small>Посмотреть задачи и правила расчёта</small></span><i>⌄</i></button>
           <div class="usage-explanation" id="usage-explanation">
@@ -499,7 +499,7 @@
     <section class="github-connection-card" id="github-connection-card">
       <div class="github-card-main">
         <span class="github-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.3-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8Z"/></svg></span>
-        <div class="github-card-copy"><span class="connection-eyebrow">Разработка</span><h4>GitHub</h4><p id="github-account-copy">Аккаунт <b>Wareon-top</b> подключён к Zorym AI.</p></div>
+        <div class="github-card-copy"><span class="connection-eyebrow">Разработка</span><h4>GitHub</h4><p id="github-account-copy">Аккаунт <b>Wareon-top</b> подключён к Astrylo AI.</p></div>
       </div>
       <div class="github-card-state"><span class="connection-status" id="github-status"><i></i>Подключено</span><button type="button" id="github-connection-action">Отключить</button></div>
       <div class="github-connection-meta" data-github-connected><span><small>Репозитории</small><b>2 доступны</b></span><span><small>Синхронизация</small><b>только что</b></span><span><small>Режим</small><b>Pull Request</b></span></div>
@@ -510,7 +510,7 @@
     <div class="github-connected-content" data-github-connected>
       <section class="connection-card repositories-connection-card">
         <div class="connection-card-heading"><div><h4>Репозитории</h4><p>Агент работает только с включёнными проектами.</p></div><span id="selected-repositories-count">Выбрано 2 из 2</span></div>
-        <div class="repository-access-list"><article><span class="repository-icon">Z</span><div><b>Zorym-AI</b><small><i>Открытый</i> · ветка main</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="Zorym-AI"><i></i></button></article><article><span class="repository-icon private">F</span><div><b>forgeplayai</b><small><i>Приватный</i> · ветка main</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="forgeplayai"><i></i></button></article></div>
+        <div class="repository-access-list"><article><span class="repository-icon">A</span><div><b>Astrylo-AI</b><small><i>Открытый</i> · ветка main</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="Astrylo-AI"><i></i></button></article><article><span class="repository-icon private">F</span><div><b>forgeplayai</b><small><i>Приватный</i> · ветка main</small></div><button class="setting-switch active compact-switch repository-toggle" type="button" role="switch" aria-checked="true" data-repository="forgeplayai"><i></i></button></article></div>
         <button class="repository-manage-button" id="manage-github-repositories" type="button"><span>＋</span>Изменить список в GitHub</button>
       </section>
 
@@ -683,8 +683,8 @@ function messageMarkup(message) {
   const messageModel = modelProfiles[message.model] ? message.model : currentChat().model;
   const messageMode = modeProfiles[message.mode] ? message.mode : currentChat().mode;
   const avatar = isUser ? 'АК' : '<span></span>';
-  const author = isUser ? 'Вы' : 'Zorym AI';
-  const model = isUser ? '' : '<em>Zorym 1 ' + escapeHtml(messageModel) + ' · ' + escapeHtml(messageMode) + '</em>';
+  const author = isUser ? 'Вы' : 'Astrylo AI';
+  const model = isUser ? '' : '<em>Astrylo 1 ' + escapeHtml(messageModel) + ' · ' + escapeHtml(messageMode) + '</em>';
   const workState = message.stage ? modelWorkMarkup(messageModel, message.stage, message.progress, message.state || currentChat().status) : '';
   const verification = !isUser && messageModel === 'Quasar' ? '<div class="verification-chips"><span>Proof Chain</span><span>Shadow Test</span></div>' : '';
   const actions = isUser ? '' : '<div class="message-actions"><button type="button" data-message-action="copy" aria-label="Скопировать ответ"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button><button type="button" data-message-action="helpful" aria-label="Полезный ответ" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21H4V10h3M7 10l4-7 2 1v5h6l1 2-2 8H7z"/></svg></button><button type="button" data-message-action="unhelpful" aria-label="Неполезный ответ" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4v11h3M7 14l4 7 2-1v-5h6l1-2-2-8H7z"/></svg></button></div>';
@@ -704,7 +704,7 @@ function updateRunSelection(chat) {
   const model = modelProfiles[chat.model] ? chat.model : 'Orbit';
   const mode = modeProfiles[chat.mode] ? chat.mode : 'Мастер';
   document.querySelector('#run-selection-status').textContent = model + ' — ' + modelProfiles[model].description + ' · ' + mode + ' — ' + modeProfiles[mode];
-  document.querySelector('#conversation-settings').textContent = 'Zorym 1 ' + model + ' · ' + mode;
+  document.querySelector('#conversation-settings').textContent = 'Astrylo 1 ' + model + ' · ' + mode;
 }
 
 function syncModelShowcase(modelName) {
@@ -759,8 +759,8 @@ function openChat(chatId) {
 function notify(message) {
   toast.textContent = message;
   toast.classList.add('show');
-  window.clearTimeout(window.zorymToastTimer);
-  window.zorymToastTimer = window.setTimeout(function () { toast.classList.remove('show'); }, 2400);
+  window.clearTimeout(window.astryloToastTimer);
+  window.astryloToastTimer = window.setTimeout(function () { toast.classList.remove('show'); }, 2400);
 }
 const mobileMenuButton = document.querySelector('#mobile-menu');
 function closeMobileMenu(returnFocus) {
@@ -865,10 +865,10 @@ function setReducedMotion(reduced) {
   document.body.classList.toggle('reduced-motion', reduced);
   motionToggle.setAttribute('aria-pressed', String(reduced));
   motionToggle.querySelector('b').textContent = reduced ? 'Анимация уменьшена' : 'Анимация включена';
-  try { window.localStorage.setItem('zorym-reduced-motion', reduced ? '1' : '0'); } catch (error) {}
+  try { window.localStorage.setItem('astrylo-reduced-motion', reduced ? '1' : '0'); } catch (error) {}
 }
 motionToggle.addEventListener('click', function () { setReducedMotion(!document.body.classList.contains('reduced-motion')); });
-try { if (window.localStorage.getItem('zorym-reduced-motion') === '1') setReducedMotion(true); } catch (error) {}
+try { if (window.localStorage.getItem('astrylo-reduced-motion') === '1') setReducedMotion(true); } catch (error) {}
 
 document.querySelectorAll('[data-prompt]').forEach(function (button) { button.addEventListener('click', function () { prompt.value = button.dataset.prompt; document.querySelector('#send-task').classList.add('is-ready'); prompt.focus(); }); });
 const toolsTrigger = document.querySelector('#agent-tools-trigger');
@@ -922,7 +922,7 @@ function sendCurrentMessage() {
   chat.status = 'analyzing';
   chat.messages.push({ role: 'assistant', time: time, text: 'Запрос принят. Сверяю цель, контекст проекта и критерии готовности перед выполнением.', stage: modelProfiles[chat.model].stages[0], progress: 14, state: 'analyzing', model: chat.model, mode: chat.mode });
   chat.updated = 'сейчас'; prompt.value = ''; document.querySelector('#send-task').classList.remove('is-ready');
-  renderChatList(); renderConversation(chat); syncChatContext(chat); notify('Zorym AI начал работу'); runChatLifecycle(chat);
+  renderChatList(); renderConversation(chat); syncChatContext(chat); notify('Astrylo AI начал работу'); runChatLifecycle(chat);
   window.setTimeout(function () { chatThread.scrollTo({ top: chatThread.scrollHeight, behavior: 'smooth' }); }, 0);
 }
 document.querySelector('#send-task').addEventListener('click', sendCurrentMessage);
@@ -961,14 +961,14 @@ document.addEventListener('keydown', function (event) {
 
 function filterProjects(filter) { document.querySelectorAll('.project-tile').forEach(function (card) { card.hidden = filter !== 'все' && card.dataset.platform !== filter; }); }
 document.querySelector('#project-search').addEventListener('input', function (event) { const query = event.target.value.trim().toLowerCase(); document.querySelectorAll('.project-tile').forEach(function (card) { card.hidden = query && !card.textContent.toLowerCase().includes(query); }); });
-document.querySelectorAll('[data-open-project]').forEach(function (button) { button.addEventListener('click', function () { const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; }); agentLink.dataset.subtitle = button.dataset.openProject; document.querySelector('.project-context b').textContent = button.dataset.openProject; document.querySelector('.mini-project-icon').textContent = button.dataset.projectAvatar; showView(agentLink); notify('Проект открыт в Zorym AI'); }); });
+document.querySelectorAll('[data-open-project]').forEach(function (button) { button.addEventListener('click', function () { const agentLink = links.find(function (link) { return link.dataset.view === 'agent'; }); agentLink.dataset.subtitle = button.dataset.openProject; document.querySelector('.project-context b').textContent = button.dataset.openProject; document.querySelector('.mini-project-icon').textContent = button.dataset.projectAvatar; showView(agentLink); notify('Проект открыт в Astrylo AI'); }); });
 function newProjectNotice() { notify('Мастер нового проекта готов к запуску'); }
 document.querySelector('#new-project').addEventListener('click', newProjectNotice); document.querySelector('#empty-project').addEventListener('click', newProjectNotice);
 document.querySelectorAll('[data-project-tool]').forEach(function (button) { button.addEventListener('click', function () { notify(button.dataset.projectTool + ' открыт для текущего проекта'); }); });
 
 const gameName = document.querySelector('#game-name');
 gameName.addEventListener('input', function () { document.querySelector('#concept-name').textContent = gameName.value.trim() || 'Новый проект'; document.querySelector('.concept-mark').textContent = (gameName.value.trim()[0] || 'N').toUpperCase(); });
-document.querySelector('#studio-form').addEventListener('submit', function (event) { event.preventDefault(); notify('Концепция передана Zorym AI'); });
+document.querySelector('#studio-form').addEventListener('submit', function (event) { event.preventDefault(); notify('Концепция передана Astrylo AI'); });
 
 document.querySelector('#new-browser-mission').addEventListener('click', function () { notify('Новая веб-миссия готова к настройке'); });
 document.querySelectorAll('[data-browser-action]').forEach(function (button) { button.addEventListener('click', function () { notify(button.dataset.browserAction + ' открыт'); }); });
@@ -1072,8 +1072,8 @@ document.querySelector('#resource-usage-button').addEventListener('click', funct
 document.querySelector('#close-profile').addEventListener('click', closeProfile);
 drawerBackdrop.addEventListener('click', closeProfile);
 
-function saveProfileState(key, value) { try { window.localStorage.setItem('zorym-profile-' + key, JSON.stringify(value)); } catch (error) {} }
-function readProfileState(key, fallback) { try { const value = window.localStorage.getItem('zorym-profile-' + key); return value ? JSON.parse(value) : fallback; } catch (error) { return fallback; } }
+function saveProfileState(key, value) { try { window.localStorage.setItem('astrylo-profile-' + key, JSON.stringify(value)); } catch (error) {} }
+function readProfileState(key, fallback) { try { const value = window.localStorage.getItem('astrylo-profile-' + key); return value ? JSON.parse(value) : fallback; } catch (error) { return fallback; } }
 function profileInitials(name) { return name.split(/\s+/).filter(Boolean).slice(0, 2).map(function (part) { return part[0]; }).join('').toUpperCase() || 'Z'; }
 function updateProfileIdentity(name, email) {
   document.querySelectorAll('[data-profile-name]').forEach(function (item) { item.textContent = name; });
@@ -1240,7 +1240,7 @@ function setGithubConnection(connected) {
   githubStatus.innerHTML = '<i></i>' + (connected ? 'Подключено' : 'Не подключено');
   githubConnectionAction.textContent = connected ? 'Отключить' : 'Подключить GitHub';
   githubConnectionAction.classList.remove('confirm-disconnect');
-  document.querySelector('#github-account-copy').innerHTML = connected ? 'Аккаунт <b>Wareon-top</b> подключён к Zorym AI.' : 'Безопасное подключение через GitHub App.';
+  document.querySelector('#github-account-copy').innerHTML = connected ? 'Аккаунт <b>Wareon-top</b> подключён к Astrylo AI.' : 'Безопасное подключение через GitHub App.';
   const hubCard = document.querySelector('[data-integration="github"]');
   const hubState = hubCard.querySelector('.integration-state');
   hubCard.classList.toggle('connected', connected);
@@ -1262,7 +1262,7 @@ function setGithubConnection(connected) {
   updateRepositoryCount();
 }
 
-const storedGithub = readProfileState('github', { connected: true, repositories: { 'Zorym-AI': true, forgeplayai: true }, policy: 'pull-request', checks: true, sync: true });
+const storedGithub = readProfileState('github', { connected: true, repositories: { 'Astrylo-AI': true, forgeplayai: true }, policy: 'pull-request', checks: true, sync: true });
 document.querySelectorAll('[data-repository]').forEach(function (button) {
   const enabled = storedGithub.repositories ? storedGithub.repositories[button.dataset.repository] !== false : true;
   button.classList.toggle('active', enabled);
@@ -1404,7 +1404,7 @@ document.querySelector('#change-payment-method').addEventListener('click', funct
 document.querySelectorAll('.download-invoice').forEach(function (button) {
   button.addEventListener('click', function () {
     const invoice = button.dataset.invoice;
-    const documentHtml = '<!doctype html><meta charset="utf-8"><title>Документ ' + invoice + '</title><style>body{font:16px Arial;max-width:720px;margin:60px auto;color:#222}h1{font-size:28px}table{width:100%;border-collapse:collapse;margin-top:30px}td{padding:14px;border-bottom:1px solid #ddd}</style><h1>Zorym AI · Электронный чек</h1><p>Документ ' + invoice + '</p><table><tr><td>Тариф</td><td>Forge Pro</td></tr><tr><td>Сумма</td><td>1 490 ₽</td></tr><tr><td>Статус</td><td>Оплачено</td></tr></table>';
+    const documentHtml = '<!doctype html><meta charset="utf-8"><title>Документ ' + invoice + '</title><style>body{font:16px Arial;max-width:720px;margin:60px auto;color:#222}h1{font-size:28px}table{width:100%;border-collapse:collapse;margin-top:30px}td{padding:14px;border-bottom:1px solid #ddd}</style><h1>Astrylo AI · Электронный чек</h1><p>Документ ' + invoice + '</p><table><tr><td>Тариф</td><td>Forge Pro</td></tr><tr><td>Сумма</td><td>1 490 ₽</td></tr><tr><td>Статус</td><td>Оплачено</td></tr></table>';
     const url = URL.createObjectURL(new Blob([documentHtml], { type: 'text/html;charset=utf-8' }));
     const link = document.createElement('a'); link.href = url; link.download = invoice + '.html'; link.click(); URL.revokeObjectURL(url);
     notify('Документ скачан');
@@ -1451,7 +1451,7 @@ function selectWorkspacePane(button){workspaceTabs.forEach(function(item){const 
 workspaceTabs.forEach(function(button){button.addEventListener('click',function(){selectWorkspacePane(button);});button.addEventListener('keydown',function(event){let index=workspaceTabs.indexOf(button);if(event.key==='ArrowRight'||event.key==='ArrowDown')index=(index+1)%workspaceTabs.length;else if(event.key==='ArrowLeft'||event.key==='ArrowUp')index=(index-1+workspaceTabs.length)%workspaceTabs.length;else if(event.key==='Home')index=0;else if(event.key==='End')index=workspaceTabs.length-1;else return;event.preventDefault();selectWorkspacePane(workspaceTabs[index]);workspaceTabs[index].focus();});});
 document.querySelector('#open-games-projects').addEventListener('click',function(){showView(links.find(function(link){return link.dataset.view==='projects';}));});
 document.querySelectorAll('.game-tree button').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.game-tree button').forEach(function(item){item.classList.remove('selected');});button.classList.add('selected');});});
-function sendGameMessage(){const textarea=document.querySelector('.game-composer textarea');const value=textarea.value.trim();if(!value){notify('Сначала опишите механику или изменение');textarea.focus();return;}const thread=document.querySelector('.game-chat-thread');const plan=document.querySelector('#game-plan-card');const message=document.createElement('article');message.className='game-user-message';message.innerHTML='<span>АК</span><div><small>Вы · сейчас</small><p></p></div>';message.querySelector('p').textContent=value;thread.insertBefore(message,plan);const reply=document.createElement('article');reply.className='game-agent-message';reply.innerHTML='<span class="game-z"><i></i></span><div><header><b>Zorym AI</b><small></small></header><p>Принял уточнение. В UI-демо обновляю план и отдельно отмечу, какие проверки потребуют реального Studio Link.</p><span class="game-plan-note">План требует согласования</span></div>';reply.querySelector('header small').textContent=selectedGameValue(gameModel)+' · '+selectedGameValue(gameMode);thread.insertBefore(reply,plan);textarea.value='';plan.classList.add('editing');plan.classList.remove('approved');document.querySelector('#game-plan-status').textContent='Обновляется';document.querySelector('#approve-game-plan').textContent='Согласовать план';notify('Zorym ответил в UI-демо · план обновлён');}
+function sendGameMessage(){const textarea=document.querySelector('.game-composer textarea');const value=textarea.value.trim();if(!value){notify('Сначала опишите механику или изменение');textarea.focus();return;}const thread=document.querySelector('.game-chat-thread');const plan=document.querySelector('#game-plan-card');const message=document.createElement('article');message.className='game-user-message';message.innerHTML='<span>АК</span><div><small>Вы · сейчас</small><p></p></div>';message.querySelector('p').textContent=value;thread.insertBefore(message,plan);const reply=document.createElement('article');reply.className='game-agent-message';reply.innerHTML='<span class="game-z"><i></i></span><div><header><b>Astrylo AI</b><small></small></header><p>Принял уточнение. В UI-демо обновляю план и отдельно отмечу, какие проверки потребуют реального Studio Link.</p><span class="game-plan-note">План требует согласования</span></div>';reply.querySelector('header small').textContent=selectedGameValue(gameModel)+' · '+selectedGameValue(gameMode);thread.insertBefore(reply,plan);textarea.value='';plan.classList.add('editing');plan.classList.remove('approved');document.querySelector('#game-plan-status').textContent='Обновляется';document.querySelector('#approve-game-plan').textContent='Согласовать план';notify('Astrylo ответил в UI-демо · план обновлён');}
 document.querySelector('#game-send').addEventListener('click',sendGameMessage);document.querySelector('.game-composer textarea').addEventListener('keydown',function(event){if(event.key==='Enter'&&(event.metaKey||event.ctrlKey)){event.preventDefault();sendGameMessage();}});
 
 document.addEventListener('keydown', function (event) { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); beginNewChat(); } if (event.key === 'Escape') { closeProfile(); closeIntegrationDetail(); closeRobloxDetail(); closeMobileMenu(); closeCapabilityMenu(); } });
