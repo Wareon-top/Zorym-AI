@@ -40,17 +40,17 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 /* Header */
 .site-header { position: fixed; z-index: 50; top: 0; right: 0; left: 0; border-bottom: 1px solid transparent; transition: background .2s ease, border .2s ease, box-shadow .2s ease; }
 .site-header.scrolled { border-color: rgba(222,225,218,.88); background: rgba(247,248,245,.88); box-shadow: 0 6px 24px rgba(26,29,24,.04); backdrop-filter: blur(18px); }
-.header-inner { display: flex; width: min(1280px, calc(100% - 48px)); height: 76px; align-items: center; justify-content: space-between; margin: 0 auto; }
+.header-inner { display: grid; width: min(1280px, calc(100% - 48px)); height: 76px; grid-template-columns: max-content minmax(0, 1fr) max-content; align-items: center; column-gap: 28px; margin: 0 auto; }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 720; letter-spacing: -.03em; text-decoration: none; }
 .brand-symbol { position: relative; display: grid; width: 34px; height: 34px; place-items: center; overflow: hidden; border-radius: 11px; background: var(--dark); }
 .brand-symbol::before, .brand-symbol::after, .brand-symbol i, .mini-z::before, .mini-z::after, .mini-z i { position: absolute; width: 15px; height: 2px; border-radius: 99px; background: #fff; content: ""; transform-origin: center; }
 .brand-symbol::before, .mini-z::before { transform: translateY(-4px) rotate(-31deg); }
 .brand-symbol i, .mini-z i { transform: translateY(1px) rotate(31deg); }
 .brand-symbol::after, .mini-z::after { width: 11px; transform: translate(2px, 5px) rotate(-31deg); }
-.desktop-nav { position: absolute; left: 50%; display: flex; align-items: center; gap: 30px; transform: translateX(-50%); }
+.desktop-nav { display: flex; min-width: 0; align-items: center; justify-content: center; gap: clamp(18px, 1.6vw, 30px); }
 .desktop-nav a, .login-link { color: #666963; font-size: 13px; font-weight: 560; text-decoration: none; transition: color .15s ease; }
 .desktop-nav a:hover, .login-link:hover { color: var(--ink); }
-.header-actions { display: flex; align-items: center; gap: 18px; }
+.header-actions { display: flex; align-items: center; justify-self: end; gap: 18px; }
 .header-cta { display: inline-flex; min-height: 40px; align-items: center; gap: 12px; border-radius: 11px; background: var(--dark); color: #fff; padding: 0 14px; font-size: 12px; font-weight: 650; text-decoration: none; box-shadow: 0 8px 20px rgba(23,25,23,.12); transition: transform .15s ease, background .15s ease; }
 .header-cta:hover { background: #292c29; transform: translateY(-1px); }
 .header-cta span { color: #b7bbb3; }
