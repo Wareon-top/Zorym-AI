@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Astrylo Control — операционная панель управления пользователями, задачами и инфраструктурой Zorym AI.">
+  <meta name="theme-color" content="#f3f4f1">
+  <title>Astrylo Control</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <a class="skip-link" href="#admin-content">К основному содержимому</a>
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <a class="wordmark" href="#overview" data-panel-target="overview" aria-label="Astrylo Control">
+          <span class="brand-symbol"><i></i></span>
+          <span><b>Astrylo</b><small>Control</small></span>
+        </a>
+        <button class="icon-button sidebar-close" type="button" data-close-menu aria-label="Закрыть меню">×</button>
+      </div>
+
+      <div class="environment-card">
+        <span class="live-dot"></span>
+        <div><b>Production</b><small>eu-central · online</small></div>
+        <span class="environment-health">99.99%</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Разделы админ-панели">
+        <p>Управление</p>
+        <button class="active" type="button" data-panel-target="overview"><svg viewBox="0 0 24 24"><path d="M4 13h6V4H4zm10 7h6v-9h-6zM4 20h6v-3H4zm10-13h6V4h-6z"/></svg><span>Обзор</span><kbd>1</kbd></button>
+        <button type="button" data-panel-target="users"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm13 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Пользователи</span><em>2 847</em></button>
+        <button type="button" data-panel-target="projects"><svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3zM3 7V5h7l2 2"/></svg><span>Проекты</span><em>614</em></button>
+        <button type="button" data-panel-target="queue"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Очередь задач</span><i class="nav-alert">23</i></button>
+        <p>Система</p>
+        <button type="button" data-panel-target="billing"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 10h18M7 15h3"/></svg><span>Тарифы и лимиты</span></button>
+        <button type="button" data-panel-target="infrastructure"><svg viewBox="0 0 24 24"><path d="M4 5h16v5H4zm0 9h16v5H4zM8 7.5h.01M8 16.5h.01"/></svg><span>Инфраструктура</span><i class="nav-ok"></i></button>
+        <button type="button" data-panel-target="audit"><svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3 8-8 10-5-2-8-5-8-10V7zm-3 9 2 2 4-5"/></svg><span>Журнал аудита</span></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="admin-profile" type="button" data-profile>
+          <span>АК</span><div><b>Алексей К.</b><small>Владелец системы</small></div><i>•••</i>
+        </button>
+        <div class="profile-menu" data-profile-menu hidden>
+          <button type="button" data-theme-toggle>Тёмная тема <span>⌘ D</span></button>
+          <button type="button">Настройки доступа</button>
+          <a href="../">Вернуться на сайт ↗</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" data-close-menu></div>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button menu-button" type="button" data-open-menu aria-label="Открыть меню"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+          <div><span>Система</span><b data-page-title>Обзор</b></div>
+        </div>
+        <div class="topbar-actions">
+          <button class="command-button" type="button" data-focus-search><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Поиск по системе</span><kbd>⌘ K</kbd></button>
+          <button class="icon-button notification-button" type="button" aria-label="Уведомления"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i></i></button>
+          <button class="refresh-button" type="button" data-refresh><svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6.1 9a7 7 0 0 1 11.5-2L20 12M4 12l2.4 5a7 7 0 0 0 11.5-2"/></svg><span>Обновить</span></button>
+        </div>
+      </header>
+
+      <main id="admin-content">
+        <section class="panel active" data-panel="overview">
+          <div class="page-heading">
+            <div><p>ОПЕРАЦИОННЫЙ ЦЕНТР · <span data-today></span></p><h1>Всё работает спокойно.</h1><span>Ключевые сигналы продукта, очереди и инфраструктуры в одном месте.</span></div>
+            <div class="heading-meta"><span><i></i>Все системы в норме</span><small data-updated>Обновлено только что</small></div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card metric-dark"><header><span>Выручка за месяц</span><svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 3 7-8M15 7h5v5"/></svg></header><strong>₽412 860</strong><footer><span>+18.4%</span><small>к прошлому месяцу</small></footer><div class="metric-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="metric-card"><header><span>Активные пользователи</span><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7-1 2 2 4-4"/></svg></header><strong>2 847</strong><footer><span class="positive">+247</span><small>за последние 30 дней</small></footer><div class="metric-line"><svg viewBox="0 0 220 46" preserveAspectRatio="none"><path class="area" d="M0 40C24 39 27 29 48 31S79 37 98 22s31 4 53-6 34 2 69-13V46H0z"/><path class="line" d="M0 40C24 39 27 29 48 31S79 37 98 22s31 4 53-6 34 2 69-13"/></svg></div></article>
+            <article class="metric-card"><header><span>Успешность задач</span><svg viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm-4-10 3 3 5-6"/></svg></header><div class="ring-row"><strong>98.4%</strong><div class="success-ring"><span>98</span></div></div><footer><span class="positive">+1.2%</span><small>7 дней без инцидентов</small></footer></article>
+            <article class="metric-card"><header><span>Очередь сейчас</span><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></header><strong>23 <small>задачи</small></strong><footer><span class="warning">4 выполняются</span><small>среднее ожидание 18 сек</small></footer><div class="queue-mini"><span style="--w:72%"></span><span style="--w:54%"></span><span style="--w:38%"></span></div></article>
+          </div>
+
+          <div class="overview-grid">
+            <article class="surface usage-chart-card">
+              <header class="surface-header"><div><small>НАГРУЗКА</small><h2>Задачи Zorym</h2></div><div class="segmented" role="group" aria-label="Период графика"><button class="active" type="button" data-range="7">7 дней</button><button type="button" data-range="30">30 дней</button><button type="button" data-range="90">90 дней</button></div></header>
+              <div class="chart-summary"><strong data-chart-total>18 429</strong><span>задач выполнено</span><em>+14.8%</em></div>
+              <div class="main-chart" role="img" aria-label="График выполненных задач за семь дней">
+                <div class="chart-y"><span>4k</span><span>3k</span><span>2k</span><span>1k</span><span>0</span></div>
+                <div class="chart-plot"><i></i><i></i><i></i><i></i><svg viewBox="0 0 700 210" preserveAspectRatio="none"><defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7662ed" stop-opacity=".25"/><stop offset="1" stop-color="#7662ed" stop-opacity="0"/></linearGradient></defs><path class="chart-area" d="M0 186C45 165 68 174 110 139S182 156 225 115s67 1 111-39 79 20 126-7 70-4 108-28 80 11 130-32V210H0z"/><path class="chart-path" d="M0 186C45 165 68 174 110 139S182 156 225 115s67 1 111-39 79 20 126-7 70-4 108-28 80 11 130-32"/><g><circle cx="570" cy="41" r="5"/><circle cx="570" cy="41" r="10" class="pulse"/></g></svg><div class="chart-x"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div></div>
+              </div>
+              <footer class="chart-legend"><span><i class="violet"></i>Выполнено · 17 902</span><span><i class="green"></i>Проверено · 16 847</span><small>Пик: 3 712 задач · сегодня, 14:00</small></footer>
+            </article>
+
+            <article class="surface model-card">
+              <header class="surface-header"><div><small>МОДЕЛИ</small><h2>Распределение нагрузки</h2></div><button class="more-button" type="button" aria-label="Другие действия">•••</button></header>
+              <div class="model-donut" aria-label="Orbit 56%, Comet 29%, Quasar 15%"><div><strong>31.8M</strong><small>Zorym units</small></div></div>
+              <div class="model-list"><div><span><i class="orbit"></i><b>Orbit</b></span><strong>56%</strong><small>17.8M</small></div><div><span><i class="comet"></i><b>Comet</b></span><strong>29%</strong><small>9.2M</small></div><div><span><i class="quasar"></i><b>Quasar</b></span><strong>15%</strong><small>4.8M</small></div></div>
+              <button class="text-action" type="button" data-panel-target="billing">Открыть лимиты <span>→</span></button>
+            </article>
+          </div>
+
+          <div class="operations-grid">
+            <article class="surface queue-card">
+              <header class="surface-header"><div><small>В РЕАЛЬНОМ ВРЕМЕНИ</small><h2>Очередь исполнения</h2></div><div class="header-actions"><span class="live-badge"><i></i>Live</span><button type="button" data-queue-toggle>Приостановить</button></div></header>
+              <div class="queue-table table-wrap"><table><thead><tr><th>Задача</th><th>Пользователь</th><th>Модель</th><th>Состояние</th><th>Время</th></tr></thead><tbody>
+                <tr data-search="SkyBlock Genesis aleksei orbit"><td><span class="task-id">#A-1842</span><b>Система сезонных заданий</b><small>SkyBlock: Genesis</small></td><td><span class="avatar violet-avatar">АК</span>Алексей К.</td><td><span class="model-pill orbit-pill">Orbit</span></td><td><span class="status running"><i></i>Выполнение · 68%</span><div class="row-progress"><i style="width:68%"></i></div></td><td>01:42</td></tr>
+                <tr data-search="EconomyBridge maria comet"><td><span class="task-id">#A-1841</span><b>Исправить синхронизацию баланса</b><small>EconomyBridge</small></td><td><span class="avatar rose-avatar">МВ</span>Мария В.</td><td><span class="model-pill comet-pill">Comet</span></td><td><span class="status checking"><i></i>Проверка</span></td><td>00:38</td></tr>
+                <tr data-search="Roblox Arena igor quasar"><td><span class="task-id">#A-1840</span><b>Аудит системы матчмейкинга</b><small>Roblox Arena</small></td><td><span class="avatar blue-avatar">ИС</span>Игорь С.</td><td><span class="model-pill quasar-pill">Quasar</span></td><td><span class="status waiting"><i></i>Ожидает</span></td><td>—</td></tr>
+                <tr data-search="CraftCore dmitry orbit"><td><span class="task-id">#A-1839</span><b>Подготовить релиз 2.4.0</b><small>CraftCore</small></td><td><span class="avatar green-avatar">ДО</span>Дмитрий О.</td><td><span class="model-pill orbit-pill">Orbit</span></td><td><span class="status done"><i>✓</i>Готово</span></td><td>02:14</td></tr>
+              </tbody></table></div>
+              <footer class="surface-footer"><span>4 из 23 задач</span><button type="button" data-panel-target="queue">Вся очередь →</button></footer>
+            </article>
+
+            <article class="surface infra-card">
+              <header class="surface-header"><div><small>HEALTH</small><h2>Инфраструктура</h2></div><span class="health-score"><i></i>5 / 5</span></header>
+              <div class="infra-list"><div><span class="service-icon">AP</span><span><b>API Gateway</b><small>3 инстанса · 42 ms</small></span><em>Healthy</em></div><div><span class="service-icon">WK</span><span><b>Worker pool</b><small>6 процессов · 38%</small></span><em>Healthy</em></div><div><span class="service-icon">PG</span><span><b>PostgreSQL</b><small>12.8 GB · 17 conn</small></span><em>Healthy</em></div><div><span class="service-icon">RD</span><span><b>Redis Queue</b><small>23 jobs · 11 MB</small></span><em>Healthy</em></div><div><span class="service-icon">PX</span><span><b>Edge proxy</b><small>TLS · 99.99%</small></span><em>Healthy</em></div></div>
+              <div class="uptime"><div><span>30 дней</span><b>99.99% uptime</b></div><div class="uptime-bars" aria-label="Все сервисы были доступны последние 30 дней"></div></div>
+              <button class="text-action" type="button" data-panel-target="infrastructure">Подробнее о системе <span>→</span></button>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="users">
+          <div class="page-heading compact"><div><p>ПОЛЬЗОВАТЕЛИ</p><h1>Люди и доступ</h1><span>Аккаунты, тарифы, расход лимитов и состояние доступа.</span></div><button class="primary-button" type="button" data-toast="Приглашение подготовлено">+ Пригласить пользователя</button></div>
+          <div class="filter-row"><label class="search-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" placeholder="Имя, email или проект" data-table-search></label><div class="filter-pills"><button class="active" type="button">Все 2 847</button><button type="button">Активные</button><button type="button">Ограничены</button></div><button class="secondary-button" type="button" data-export>Экспорт CSV</button></div>
+          <article class="surface directory-card"><div class="table-wrap"><table class="directory-table"><thead><tr><th>Пользователь</th><th>Тариф</th><th>Проекты</th><th>Лимит месяца</th><th>Последняя активность</th><th></th></tr></thead><tbody>
+            <tr data-user-row data-name="Алексей Крылов" data-email="alexey@studio.dev" data-search="Алексей Крылов alexey studio Forge Pro SkyBlock"><td><span class="avatar violet-avatar">АК</span><span><b>Алексей Крылов</b><small>alexey@studio.dev</small></span></td><td><span class="plan-badge pro">Forge Pro</span></td><td>12</td><td><div class="limit-cell"><span><i style="width:68%"></i></span><small>408 / 600</small></div></td><td><span class="online-dot"></span>Сейчас</td><td><button class="row-menu" type="button">•••</button></td></tr>
+            <tr data-user-row data-name="Мария Волкова" data-email="maria@pixel.team" data-search="Мария Волкова maria Pixel Forge EconomyBridge"><td><span class="avatar rose-avatar">МВ</span><span><b>Мария Волкова</b><small>maria@pixel.team</small></span></td><td><span class="plan-badge">Forge</span></td><td>8</td><td><div class="limit-cell"><span><i style="width:44%"></i></span><small>132 / 300</small></div></td><td>8 мин назад</td><td><button class="row-menu" type="button">•••</button></td></tr>
+            <tr data-user-row data-name="Игорь Сафин" data-email="igor@northbyte.io" data-search="Игорь Сафин igor Northbyte Apex Roblox"><td><span class="avatar blue-avatar">ИС</span><span><b>Игорь Сафин</b><small>igor@northbyte.io</small></span></td><td><span class="plan-badge apex">Apex</span></td><td>27</td><td><div class="limit-cell"><span><i style="width:81%"></i></span><small>972 / 1 200</small></div></td><td>21 мин назад</td><td><button class="row-menu" type="button">•••</button></td></tr>
+            <tr data-user-row data-name="Дмитрий Орлов" data-email="dmitry@craftcore.gg" data-search="Дмитрий Орлов dmitry CraftCore Business"><td><span class="avatar green-avatar">ДО</span><span><b>Дмитрий Орлов</b><small>dmitry@craftcore.gg</small></span></td><td><span class="plan-badge business">Business</span></td><td>41</td><td><div class="limit-cell"><span><i style="width:32%"></i></span><small>1 280 / 4 000</small></div></td><td>1 ч назад</td><td><button class="row-menu" type="button">•••</button></td></tr>
+            <tr data-user-row data-name="Анна Мельник" data-email="anna@example.com" data-search="Анна Мельник anna Spark"><td><span class="avatar amber-avatar">АМ</span><span><b>Анна Мельник</b><small>anna@example.com</small></span></td><td><span class="plan-badge spark">Spark</span></td><td>3</td><td><div class="limit-cell"><span><i style="width:94%"></i></span><small>94 / 100</small></div></td><td>Вчера, 18:43</td><td><button class="row-menu" type="button">•••</button></td></tr>
+          </tbody></table></div><footer class="surface-footer"><span data-result-count>Показано 5 из 2 847</span><div class="pagination"><button type="button" disabled>←</button><button class="active" type="button">1</button><button type="button">2</button><button type="button">3</button><span>…</span><button type="button">570</button><button type="button">→</button></div></footer></article>
+        </section>
+
+        <section class="panel" data-panel="projects">
+          <div class="page-heading compact"><div><p>ПРОЕКТЫ</p><h1>Рабочие пространства</h1><span>614 активных проектов и их последние версии.</span></div><button class="primary-button" type="button" data-toast="Проект можно создать из пользовательского кабинета">+ Новый проект</button></div>
+          <div class="project-grid"><article class="project-tile"><header><span class="project-mark minecraft">M</span><span><b>SkyBlock: Genesis</b><small>Minecraft Paper</small></span><em>Active</em></header><div><span>Задачи<strong>184</strong></span><span>Участники<strong>8</strong></span><span>Версия<strong>v2.8.4</strong></span></div><footer><span>Обновлён 4 мин назад</span><button type="button">Открыть →</button></footer></article><article class="project-tile"><header><span class="project-mark roblox">R</span><span><b>Roblox Arena</b><small>Roblox Studio</small></span><em>Active</em></header><div><span>Задачи<strong>96</strong></span><span>Участники<strong>5</strong></span><span>Версия<strong>v1.12</strong></span></div><footer><span>Обновлён 18 мин назад</span><button type="button">Открыть →</button></footer></article><article class="project-tile"><header><span class="project-mark generic">E</span><span><b>EconomyBridge</b><small>Minecraft Paper</small></span><em>Review</em></header><div><span>Задачи<strong>73</strong></span><span>Участники<strong>3</strong></span><span>Версия<strong>v4.1.0</strong></span></div><footer><span>Обновлён сегодня</span><button type="button">Открыть →</button></footer></article></div>
+        </section>
+
+        <section class="panel" data-panel="queue">
+          <div class="page-heading compact"><div><p>ОЧЕРЕДЬ</p><h1>Исполнение задач</h1><span>Контроль параллельности и состояния каждого запуска.</span></div><button class="primary-button pause-main" type="button" data-queue-toggle>Приостановить очередь</button></div>
+          <div class="queue-kpis"><article><span>Ожидают</span><strong>19</strong><small>≈ 18 сек до старта</small></article><article><span>Выполняются</span><strong>4</strong><small>из 24 доступных слотов</small></article><article><span>За час</span><strong>1 284</strong><small>98.7% успешно</small></article><article><span>Повторные попытки</span><strong>3</strong><small>автоматически</small></article></div>
+          <article class="surface timeline-card"><header class="surface-header"><div><small>ПОТОК</small><h2>Последние события</h2></div><span class="live-badge"><i></i>Live</span></header><div class="event-stream"><div><time>14:42:08</time><i class="event-done">✓</i><span><b>#A-1839 завершена</b><small>Source package проверен и сохранён · Orbit</small></span><em>2м 14с</em></div><div><time>14:41:54</time><i class="event-run"></i><span><b>#A-1842 перешла к выполнению</b><small>Worker 03 получил задачу · Orbit</small></span><em>сейчас</em></div><div><time>14:41:31</time><i class="event-check">◇</i><span><b>#A-1841 проходит проверку</b><small>Кодовый аудит · Comet</small></span><em>38с</em></div><div><time>14:40:58</time><i class="event-wait">·</i><span><b>#A-1840 добавлена в очередь</b><small>Приоритет высокий · Quasar</small></span><em>позиция 3</em></div></div></article>
+        </section>
+
+        <section class="panel" data-panel="billing">
+          <div class="page-heading compact"><div><p>ТАРИФЫ И ЛИМИТЫ</p><h1>Экономика платформы</h1><span>Доход, активные подписки и расход Zorym units.</span></div><button class="secondary-button" type="button" data-export>Скачать отчёт</button></div>
+          <div class="billing-grid"><article class="surface revenue-card"><small>MRR</small><strong>₽412 860</strong><span>+18.4% за месяц</span><div class="revenue-bars"><i style="height:35%"></i><i style="height:44%"></i><i style="height:51%"></i><i style="height:48%"></i><i style="height:63%"></i><i style="height:74%"></i><i style="height:88%"></i></div></article><article class="surface plans-card"><small>ПОДПИСКИ</small><h2>По тарифам</h2><div><span>Free <b>1 428</b></span><i><b style="width:50%"></b></i><span>Spark <b>721</b></span><i><b style="width:25%"></b></i><span>Forge <b>466</b></span><i><b style="width:16%"></b></i><span>Pro + Apex <b>232</b></span><i><b style="width:9%"></b></i></div></article><article class="surface units-card"><small>ZORYM UNITS</small><h2>31.8M использовано</h2><div class="units-meter"><i></i></div><footer><span>31.8M расход</span><span>50M доступно</span></footer><p>63.6% общего месячного пула</p></article></div>
+        </section>
+
+        <section class="panel" data-panel="infrastructure">
+          <div class="page-heading compact"><div><p>ИНФРАСТРУКТУРА</p><h1>Здоровье системы</h1><span>Сервисы, ресурсы и доступность production-контура.</span></div><span class="all-healthy"><i></i>Все сервисы работают</span></div>
+          <div class="service-grid"><article class="service-card"><header><span class="service-icon">AP</span><em>Healthy</em></header><h2>API Gateway</h2><p>3 инстанса · eu-central</p><div><span>CPU <b>24%</b></span><i><b style="width:24%"></b></i><span>RAM <b>418 MB</b></span><i><b style="width:54%"></b></i></div><footer>42 ms latency</footer></article><article class="service-card"><header><span class="service-icon">WK</span><em>Healthy</em></header><h2>Worker pool</h2><p>6 процессов · 24 слота</p><div><span>CPU <b>38%</b></span><i><b style="width:38%"></b></i><span>RAM <b>3.1 GB</b></span><i><b style="width:61%"></b></i></div><footer>4 active jobs</footer></article><article class="service-card"><header><span class="service-icon">PG</span><em>Healthy</em></header><h2>PostgreSQL</h2><p>primary · 12.8 GB</p><div><span>CPU <b>18%</b></span><i><b style="width:18%"></b></i><span>Connections <b>17 / 100</b></span><i><b style="width:17%"></b></i></div><footer>backup 3ч назад</footer></article><article class="service-card"><header><span class="service-icon">RD</span><em>Healthy</em></header><h2>Redis Queue</h2><p>persistent · AOF</p><div><span>CPU <b>9%</b></span><i><b style="width:9%"></b></i><span>RAM <b>11 MB</b></span><i><b style="width:12%"></b></i></div><footer>23 queued jobs</footer></article></div>
+        </section>
+
+        <section class="panel" data-panel="audit">
+          <div class="page-heading compact"><div><p>АУДИТ</p><h1>Журнал действий</h1><span>Кто, когда и что изменил в системе.</span></div><button class="secondary-button" type="button" data-export>Экспорт журнала</button></div>
+          <article class="surface audit-card"><div class="audit-filters"><span>Сегодня, 10 сентября</span><button class="active" type="button">Все события</button><button type="button">Доступ</button><button type="button">Настройки</button><button type="button">Система</button></div><div class="audit-list"><div><time>14:39</time><span class="audit-icon access">AK</span><span><b>Алексей К. изменил роль пользователя</b><small>maria@pixel.team · Editor → Admin</small></span><em>185.22.***.41</em></div><div><time>14:12</time><span class="audit-icon system">SY</span><span><b>Автоматическое масштабирование worker pool</b><small>4 → 6 процессов · очередь превысила 20 задач</small></span><em>system</em></div><div><time>13:48</time><span class="audit-icon settings">AK</span><span><b>Обновлён лимит Forge Pro</b><small>550 → 600 Zorym units</small></span><em>185.22.***.41</em></div><div><time>12:05</time><span class="audit-icon secure">✓</span><span><b>Резервная копия проверена</b><small>forgeplay-20260910T090000Z · checksum valid</small></span><em>system</em></div></div></article>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <aside class="user-drawer" data-user-drawer aria-hidden="true">
+    <header><div><span class="avatar violet-avatar" data-drawer-avatar>АК</span><span><small>ПОЛЬЗОВАТЕЛЬ</small><h2 data-drawer-name>Алексей Крылов</h2></span></div><button class="icon-button" type="button" data-close-drawer aria-label="Закрыть">×</button></header>
+    <div class="drawer-body"><section><small>EMAIL</small><b data-drawer-email>alexey@studio.dev</b></section><div class="drawer-stats"><span><small>Тариф</small><b>Forge Pro</b></span><span><small>Проекты</small><b>12</b></span><span><small>Задачи</small><b>184</b></span></div><section><small>ЛИМИТ МЕСЯЦА</small><div class="drawer-limit"><span><i></i></span><b>408 / 600</b></div></section><section><small>ПОСЛЕДНИЕ ПРОЕКТЫ</small><div class="drawer-project"><span class="project-mark minecraft">M</span><span><b>SkyBlock: Genesis</b><small>4 минуты назад</small></span></div><div class="drawer-project"><span class="project-mark generic">E</span><span><b>EconomyBridge</b><small>2 дня назад</small></span></div></section></div>
+    <footer><button type="button" data-toast="Ссылка для входа подготовлена">Отправить ссылку входа</button><button type="button" class="danger" data-toast="Демо: доступ не изменён">Ограничить доступ</button></footer>
+  </aside>
+  <div class="drawer-backdrop" data-close-drawer></div>
+  <div class="toast" role="status" aria-live="polite" data-toast-box></div>
+  <script src="admin.js"></script>
+</body>
+</html>
